@@ -1,0 +1,40 @@
+\section{Introduction}
+In model-driven software engineering, the intensive use of generative programming techniques has become a common practice for software development since it reduces the development and maintenance effort by developing at a higher-level of abstraction through the use of domain-specific languages (DSLs). 
+Domain-specific languages, as opposed to general-purpose languages, are software languages that focus on a specific problem domain. Thus, the realization of model-driven software development for a specific domain requires the creation of effective code generators and compilers for these DSLs.
+The use of code generators is needed to transform manually designed models to software artifacts, which can be deployed on different target platforms. This can clearly reduce the effort of software implementation. A code generator is able to translate source code programs represented in a graphical modeling language (model) into general purpose programming languages such as C, Java, C++,etc. In turn, generated code is transformed into machine code (binaries) using a set of specific compilers.
+These compilers serve as a basis to target different ranges of platforms. 
+%Many technologies, such as Docker containers, provide new opportunities to automate the deployment of produced code into a distributed and heterogeneous component-based infrastructure
+In fact, during the code generation process, different optimizations may be applied for code transformation. Improvement of source program can refer to several different characteristics of the produced code such execution time, memory consumption, disk writing speed, among others.
+For example, embedded systems for which code is generated often have limited resources. Therefore, optimization techniques must be applied whenever possible to generate efficient code with respect to available resource. 
+As general-purpose optimizations, compiler creators usually
+define fixed and program-independent sequence optimizations.
+For example, in GCC, we can distinguish optimization levels
+from O1 to O3. Each optimization level involves a fixed list of compiler optimization options. 
+
+However, compilers may have a huge number of optimization
+combinations that can be applied and it very hard and time-consuming for software developer to find the
+optimal sequence of optimization options that satisfies user
+key objective. 
+
+In this paper we want to explore the relationship between runtime execution of optimized code and resource consumption like memory consumption.
+We propose a component-based tooled approach to check non-functional properties of compilers through monitoring of generated code in a controlled sandboxing environment. Our approach is based on Docker containers to automate the deployment and monitoring of different variants of optimized code into a distributed and heterogeneous component-based infrastructure. 
+We evaluate the effectiveness of our approach by means of testing optimizations performed by the GCC compiler, a widely used compiler in software engineering community. We present as well a number of case studies, in which the tool was successfully used.
+%This to ensure the efficiency of generated code, deployed components must be checked and verified regarding their non-functional behavior
+
+
+The primary contribution of this paper can be summarized as follows: (1) The paper proposes a docker-based infrastructure to ensure the deployment and monitoring of generated code regarding resource consumption; (3) We evaluate the effectiveness of our approach by testing GCC compiler across two case studies.
+ 
+
+The paper is organized as follows: section 2 describes the motivation. A novelty search technique for compiler optimizations exploration is presented in Section 3. We present in section 4 our infrastructure for non-functional testing using docker containers. The evaluation and results of our experiments across two two case studies are discussed in Section 5. Finally, concluding remarks and future work are provided in Section 6.
+
+
+%The difference between classical compilers like GCC, LLVM and code generators is that code generators are used only by few people comparing to famous compilers like GCC. Moreover, code generators face a high rate of changes and update versions due to new development needs. Hence, it becomes necessary to check the quality of produced code. This will help software maintainers to verify the correct functioning of code generators.  Among the most important properties to check, we distinguish the non functional properties.
+
+%Like traditional compilers, code generators typically perform multiple passes over various intermediate forms during code transformation. Many rules may also be applied and that differs from one generator to another. These passes are complex and highly dependent on target platform architecture. 
+
+ 
+ 
+
+  % \section{Motivations}
+ %\section{Previous work}
+%\section{Approach Overview}
