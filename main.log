@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  21 JAN 2016 20:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  22 JAN 2016 05:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -332,6 +332,10 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
+(/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
@@ -460,22 +464,22 @@ c ex-presses the
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 62.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 60.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (6.0pt too wide) in paragraph at lines 64--65
+Overfull \hbox (6.0pt too wide) in paragraph at lines 62--63
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[5] <Ressources/infra.png, id=29, 483.8075pt x 370.38374pt>
+<Ressources/infra.png, id=25, 483.8075pt x 370.38374pt>
 File: Ressources/infra.png Graphic file (type png)
 
 <use Ressources/infra.png>
-Package pdftex.def Info: Ressources/infra.png used on input line 107.
+Package pdftex.def Info: Ressources/infra.png used on input line 105.
 (pdftex.def)             Requested size: 241.90315pt x 185.1914pt.
-) (./evaluation.tex
+) (./evaluation.tex [5]
 <Ressources/infra_ffmpeg.png, id=31, 463.7325pt x 611.28375pt>
 File: Ressources/infra_ffmpeg.png Graphic file (type png)
 
@@ -504,51 +508,59 @@ File: Ressources/infra_ffmpeg_plot1.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg_plot1.png>
 Package pdftex.def Info: Ressources/infra_ffmpeg_plot1.png used on input line 7
-4.
+6.
 (pdftex.def)             Requested size: 195.2219pt x 132.01085pt.
- [7 <./Ressources/infra_stats.png> <./Ressources/infra_ffmpeg_plot1.png>]
-Overfull \hbox (1.22583pt too wide) in paragraph at lines 93--113
- [] 
- []
-
-<Ressources/infra_novelty.png, id=45, 319.1925pt x 315.1775pt>
-File: Ressources/infra_novelty.png Graphic file (type png)
-
-<use Ressources/infra_novelty.png>
-Package pdftex.def Info: Ressources/infra_novelty.png used on input line 149.
-(pdftex.def)             Requested size: 159.59586pt x 157.58836pt.
-
-<Ressources/infra_novelty_stat2.png, id=46, 547.3248pt x 343.5234pt>
-File: Ressources/infra_novelty_stat2.png Graphic file (type png)
-
-<use Ressources/infra_novelty_stat2.png>
-Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
-155.
-(pdftex.def)             Requested size: 273.66173pt x 171.76128pt.
-
-Overfull \hbox (21.66173pt too wide) in paragraph at lines 155--156
- [][] 
- []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Ressources/infra_novelty_stat3.png, id=47, 515.0442pt x 322.806pt>
+<Ressources/infra_novelty.png, id=39, 319.1925pt x 315.1775pt>
+File: Ressources/infra_novelty.png Graphic file (type png)
+
+<use Ressources/infra_novelty.png>
+Package pdftex.def Info: Ressources/infra_novelty.png used on input line 93.
+(pdftex.def)             Requested size: 159.59586pt x 157.58836pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./Ressources/infra_stats.png>]
+Underfull \hbox (badness 5147) in paragraph at lines 118--120
+[]\OT1/ptm/m/n/8 Convert a greyscale im-age to
+ []
+
+
+Overfull \hbox (8.00978pt too wide) in paragraph at lines 101--123
+ [] 
+ []
+
+[8 <./Ressources/infra_ffmpeg_plot1.png> <./Ressources/infra_novelty.png>]
+<Ressources/infra_novelty_stat3.png, id=50, 514.5624pt x 322.806pt>
 File: Ressources/infra_novelty_stat3.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat3.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat3.png used on input line 
-160.
-(pdftex.def)             Requested size: 257.52147pt x 161.4026pt.
+163.
+(pdftex.def)             Requested size: 257.28056pt x 161.4026pt.
 
-Overfull \hbox (5.52147pt too wide) in paragraph at lines 160--161
+Overfull \hbox (5.28056pt too wide) in paragraph at lines 163--164
  [][] 
  []
 
+<Ressources/infra_novelty_stat2.png, id=51, 547.3248pt x 343.0416pt>
+File: Ressources/infra_novelty_stat2.png Graphic file (type png)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+<use Ressources/infra_novelty_stat2.png>
+Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
+169.
+(pdftex.def)             Requested size: 273.66173pt x 171.52037pt.
 
-) (./related.tex) (./conclusion.tex) (./main.bbl)
+Overfull \hbox (21.66173pt too wide) in paragraph at lines 169--170
+ [][] 
+ []
+
+) (./related.tex) (./conclusion.tex [9 <./Ressources/infra_novelty_stat3.png> <
+./Ressources/infra_novelty_stat2.png>]) (./main.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -560,34 +572,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[8 <./Ressources/infra_novelty.png>] [9
+[10
 
- <./Ressources/infra_novelty_stat2.png> <./Ressources/infra_novelty_stat3.png>]
- (./main.aux) ) 
+] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6374 strings out of 493308
- 94345 string characters out of 6137815
- 216272 words of memory out of 5000000
- 9715 multiletter control sequences out of 15000+600000
- 41497 words of font info for 76 fonts, out of 8000000 for 9000
+ 6450 strings out of 493308
+ 95274 string characters out of 6137815
+ 217019 words of memory out of 5000000
+ 9785 multiletter control sequences out of 15000+600000
+ 44160 words of font info for 79 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
- 38i,12n,42p,1832b,1200s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on main.pdf (9 pages, 1014422 bytes).
+ 38i,12n,42p,1832b,1599s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on main.pdf (10 pages, 1044181 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 97 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

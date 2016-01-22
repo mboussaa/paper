@@ -1,6 +1,6 @@
 \section{Novelty Search Compiler Optimizations Exploration}
  
-The goal of the novelty search approach for compiler optimization, introduced by Lehman and Stanley in 2008
+The goal of the Novelty Search approach for compiler optimization, introduced by Lehman and Stanley in 2008
 [22], is to identify a set of compiler optimization levels that provide a trade-off with respect to resource utilization. 
 
 \subsection{Novelty Search Adaptation}
@@ -61,7 +61,7 @@ distance to the k-nearest neighbors. If the average distance to
 a given point's nearest neighbors is large then it belongs to
 a sparse area and will get a high novelty score. Otherwise,
 if the average distance is small so it belongs certainly to
-a dense region then it will get a low novelty score. The distance between two sequences is computed as the total number of symmetric differences among optimization options. Formally, we define this distance as follows :
+a dense region then it will get a low novelty score. Algorithm 1 shows an overview of the evolutionary process of NS. The distance between two sequences is computed as the total number of symmetric differences among optimization options. Formally, we define this distance as follows :
 \begin{equation}
 distance(S1,S2)=\left | S1 \bigtriangleup S2 \right |
 \end{equation}

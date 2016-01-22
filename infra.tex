@@ -15,7 +15,7 @@ deployment for software programs. Consequently, we will rely on this technology 
 	\item Monitor service containers
 	\item Gather performance metrics (CPU, Memory, I/O, etc.)
 \end{enumerate}
-As a consequence, we are going to integrate a collection of docker technologies to define the adequate infrastructure for testing and monitoring code generators. So which docker technologies must be glued together? and how can we integrate our novelty search optimizations generator within this architecture?
+As a consequence, we are going to integrate a collection of docker technologies to define the adequate infrastructure for testing and monitoring code generators. So which docker technologies must be glued together? and how can we integrate our NS optimizations generator within this architecture?
 
 In the following,  we will describe how can we ease the deployment and configuration of generated code within docker.
 \subsection{Docker as a deployment environment}
@@ -34,15 +34,13 @@ Therefore to run our experiments, each optimized program is executed individuall
 
 Since each program execution requires a new container to be created, it is crucial to remove and kill containers that have finished their job to eliminate the load on the system. In fact, containers/programs are running sequentially without defining any constraints on resource utilization for each container. So once execution is done, resources reserved for the container are automatically released to enable spawning next containers.
 
-/*To obtain comparable and reproducible results, we used the same hardware across all experiments to run Docker: an AMD A10-7700K APU Radeon(TM) R7 Graphics processor with 4 CPU cores (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of system memory*/
-
 \subsection{Monitoring components}
 Docker Containers also rely on control groups (cgroups) to expose a lot of metrics about accumulated CPU cycles, memory, and block I/O usage. These metrics are exposed through pseudo-file systems inside each container. For example, memory and CPU stats are located within $memory.stat$ and $cpuacct.stat$ pseudo-files.
 In order to achieve docker monitoring of our running applications within docker containers, we aim to use some Docker facilities to ease the extraction of performance metrics.
 \subsubsection{cAdvisor: Monitoring component}
 So, we use google containers called cAdvisor as Container Advisor. It is a tool developed by Google to monitor their infrastructure. This container will provide us an understanding of the resource usage and performance characteristics of our running containers. In fact, it automates the mechanism stated above about the extraction of performance metrics using cgroups file systems at runtime. Thus, cAdvisor collects, aggregates, processes, and exports information about running containers. We note that resource usage information is collected in raw data.
 
-cAdvisor does not need any configuration on the host machine. We have just to run cAdvisor container on our docker host. It will then have access to the resource usage and performance characteristics of all running containers. For example, Cadivsor accesses at runtime to CPU consumption metrics available at the cgroup filesystem via stats found in $/sys/fs/cgroup/cpu/docker/(longid)/$ and reports all statistics via web UI ($http://localhost:8080$) to view live resource consumption for each container. Stats related to memory consumption can be found as well in $/sys/fs/cgroup/memory/docker/(longid)/$. CAdvisor will automate the process of service discovery and metrics aggregation so that, instead of gathering manually metrics located in cgroups file systems we will use it to ease this task. It has been widely in different projects namely Heapster and Google Cloud Platform[ref].
+cAdvisor does not need any configuration on the host machine. We have just to run cAdvisor container on our docker host. It will then have access to the resource usage and performance characteristics of all running containers. For example, Cadivsor accesses at runtime to CPU consumption metrics available at the cgroup filesystem via stats found in $/sys/fs/cgroup/cpu/docker/(longid)/$ and reports all statistics via web UI ($http://localhost:8080$) to view live resource consumption for each container. Stats related to memory consumption can be found as well in $/sys/fs/cgroup/memory/docker/(longid)/$. CAdvisor will automate the process of service discovery and metrics aggregation so that, instead of gathering manually metrics located in cgroups file systems we will use it to ease this task. It has been widely in different projects namely Heapster\footnote{https://github.com/kubernetes/heapster} and Google Cloud Platform\footnote{https://cloud.google.com/}.
 
 Cadvisor may induce a little overhead, because it does very fine-grained accounting of the memory usage on running container. This is may not affect the gathered performance values since we run only one generated program by GCC within each container.
 
@@ -101,7 +99,7 @@ panels into static JSON or CSV document. Thereby, we can perform statistical ana
 \subsection{Wrapping everything together: Architecture Overview}
 To summarize, we present, as shown in Figure 1, an overall overview of the different components involved in our docker monitoring infrastructure.
 
-Our testing infrastructure will run different jobs within docker containers. First, we generate and run different versions of code using our target compiler. To do so, we run multiple instances of our preconfigured docker image that corresponds to specific code generator (e.g, GCC compiler). Each container will execute a specific job for the input program. For our case, a job represents a program compiled with new optimization sequence generated by novelty search. In the meanwhile, we run our monitoring components (Cadvisor, InfluxDB and Grafana). CAdvisor collects usage statistics of all running containers and save them at runtime in the time series database InfluxDB. Grafana comes later to allow the end users to define performance metrics and draw up charts.
+Our testing infrastructure will run different jobs within docker containers. First, we generate and run different versions of code using our target compiler. To do so, we run multiple instances of our preconfigured docker image that corresponds to specific code generator (e.g, GCC compiler). Each container will execute a specific job for the input program. For our case, a job represents a program compiled with new optimization sequence generated by NS. In the meanwhile, we run our monitoring components (Cadvisor, InfluxDB and Grafana). CAdvisor collects usage statistics of all running containers and save them at runtime in the time series database InfluxDB. Grafana comes later to allow the end users to define performance metrics and draw up charts.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.50]{Ressources/infra.png}

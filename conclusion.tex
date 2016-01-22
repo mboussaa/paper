@@ -1,1 +1,6 @@
 \section{Conclusion and Future work}
+
+In this paper we have described a new approach for testing and monitoring of code generators using a component-based infrastructure. We used a set of docker components in order to provide a fine-grained understanding of resource consumption. We investigated the problem of GCC compiler optimizations through the use of NS as search engine. Then, we studied the impact of optimizations on memory consumption and execution time across two case studies. Results show that this approach is able to find good optimization sequences across different programs.
+
+As a future work, we are planning to explore more trade-offs among resource usage metrics e.g. the correlation between CPU consumption and platform architectures. We aim as well to compare our findings using NS approach to different multi-objective evolutionary algorithms. Finally, our proposed docker-based approach for testing can easily be adapted and integrated to new case studies, so we would inspect the behavior of different other code generators and try to find non-functional bugs regarding code generation process.
+

@@ -21,6 +21,12 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{pan2006fast}
+Z.~Pan and R.~Eigenmann, ``Fast and effective orchestration of compiler
+  optimizations for automatic performance tuning,'' in \emph{Code Generation
+  and Optimization, 2006. CGO 2006. International Symposium on}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2006, pp. 12--pp.
+
 \bibitem{almagor2004finding}
 L.~Almagor, K.~D. Cooper, A.~Grosul, T.~J. Harvey, S.~W. Reeves,
   D.~Subramanian, L.~Torczon, and T.~Waterman, ``Finding effective compilation
