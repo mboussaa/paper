@@ -1,40 +1,51 @@
 \section{An infrastructure for non-functional testing using docker containers
 technologies}
 
-To facilitate the testing of code generators, we need to deploy produced binaries on an elastic infrastructure that
-provides preconfigured virtual server images, storage and network connectivity that may be
-provisioned by testers. Monitoring information should also be provided to inform about resource utilization required/needed and to automate the resource management. For this purpose, we propose a testing infrastructure based on docker environment. 
+To allows code generator testing, we need to the deploy the test harness, \ie the produced binaries, on an elastic infrastructure that provides preconfigured virtual server images, storage, and the network connectivity that may be provisioned by testers. 
+Monitoring information should also be provided to inform about resource utilization required/needed and to automate the resource management. 
+For this purpose, we propose a testing infrastructure based on the Docker\footnote{\url{https://www.docker.com}} environment. 
 
 Docker will automate the deployment of applications inside software containers. It will simplify the creation
 of highly distributed systems by allowing multiple applications to run autonomously on a server
-(basically a cloud server). Docker will provide a platform as a service (PaaS) style of
-deployment for software programs. Consequently, we will rely on this technology and benefit from all its advantages to:
+(basically a cloud server). 
+Docker provides a platform as a service (PaaS) style of deployment for software programs. 
+Consequently, we rely on this technology and benefit from all its advantages to:
+
 \begin{enumerate}
 	\item Deploy preconfigured application to test within docker containers
 	\item Automate optimization sequences generation
 	\item Monitor service containers
 	\item Gather performance metrics (CPU, Memory, I/O, etc.)
 \end{enumerate}
-As a consequence, we are going to integrate a collection of docker technologies to define the adequate infrastructure for testing and monitoring code generators. So which docker technologies must be glued together? and how can we integrate our NS optimizations generator within this architecture?
 
-In the following,  we will describe how can we ease the deployment and configuration of generated code within docker.
+We integrate a collection of docker technologies to define the adequate infrastructure for testing and monitoring code generators. 
+So which docker technologies must be glued together? and how can we integrate our NS optimizations generator within this architecture?
+
+In the following sections, we describe how can we ease the deployment and configuration of generated code within docker.
+
 \subsection{Docker as a deployment environment}
-Before starting monitoring and testing applications, we have to deploy different applications on different components to ease containers provisioning and profiling.
+
+Before starting to monitor and test applications, we have to deploy different applications on different components to ease containers provisioning and profiling.
 We aim to use Docker Linux containers to monitor the execution of produced binaries by GCC compilers in term of resource usage. 
-Docker is an open source engine that automates the deployment of any application as a
-lightweight, portable, and self-sufficient container that will run virtually on host machine. To achieve that, Docker uses the Linux container technology. The main advantages that Docker offers compared to using a full stack virtualization solution is less performance overhead and resource isolation.
+Docker is an open source engine that automates the deployment of any application as a lightweight, portable, and self-sufficient container that runs virtually on a host machine. 
+To achieve that, Docker uses the Linux container technology. 
+The main advantages that Docker offers compared to using a full stack virtualization solution is less performance overhead and resource isolation.
 
-Using docker, we can define preconfigured applications and servers to host. We can also define the way the service should be deployed in the host machine. As properties, we can define the OS where the service has to run, dependencies, etc. Once docker images are defined, we can instantiate different containers.
+Using docker, we can define preconfigured applications and servers to host. We can also define the way the service should be deployed in the host machine. 
+As properties, we can define the OS where the service has to run, dependencies, etc. Once docker images are defined, we can instantiate different containers.
 
-A simple way to define docker images is to use dockerfiles. Docker can build images automatically by reading the instructions from a Dockerfile. Therefore, for our experiments we describe a dockerfile that defines the target compiler to test, as well the container OS. The same docker image will be used then to execute different instances of generated code.
+A simple way to define docker images is to use Dockerfiles. Docker can build images automatically by reading the instructions from a Dockerfile. 
+Therefore, for our experiments we describe a Dockerfile that defines the target compiler to test, as well the container OS. The same docker image will be used then to execute different instances of generated code.
 
-Docker uses as well Linux control groups to group processes running in the container. This allows us to manage the resources of a group of processes, which is very valuable. This approach gives a lot of flexibility when we want to manage resources, since we can manage every group individually. 
+Docker uses as well Linux control groups to group processes running in the container. This allows us to manage the resources of a group of processes, which is very valuable. 
+This approach increases the flexibility when we want to manage resources, since we can manage every group individually. 
 
-Therefore to run our experiments, each optimized program is executed individually inside an isolated Linux container. By doing so, we ensure that each executed program runs in isolation without being affected by the host machine or any other processes. Moreover, since a container is cheap to create, we will be able to create too many containers as long as we have new programs to execute and the system does not suffer too much from the performance trade-off.
+Therefore, to run our experiments, each optimized program is executed individually inside an isolated Linux container. By doing so, we ensure that each executed program runs in isolation without being affected by the host machine or any other processes. Moreover, since a container is cheap to create, we will be able to create too many containers as long as we have new programs to execute and the system does not suffer too much from the performance trade-off.
 
 Since each program execution requires a new container to be created, it is crucial to remove and kill containers that have finished their job to eliminate the load on the system. In fact, containers/programs are running sequentially without defining any constraints on resource utilization for each container. So once execution is done, resources reserved for the container are automatically released to enable spawning next containers.
 
 \subsection{Monitoring components}
+
 Docker containers rely on control groups (cgroups) to expose a lot of metrics about accumulated CPU cycles, memory, and block I/O usage. In order to achieve docker monitoring of our running applications within docker containers, we aim to use some docker facilities to ease the extraction of performance metrics.
 \subsubsection{Monitoring component: cAdvisor}
 So, we use google containers called cAdvisor as Container Advisor\footnote{https://github.com/google/cadvisor}. It is a tool developed by Google to monitor their infrastructure. This container will provide us an understanding of the resource usage and performance characteristics of our running containers. In fact, it automates the extraction of performance metrics using cgroups file systems at runtime. Thus, cAdvisor collects, aggregates, processes, and exports information about running containers. We note that resource usage information is collected in raw data.
@@ -96,11 +107,11 @@ containers. Thereby, we can compare the profile of CPU and memory consumption am
 panels into static JSON or CSV document. Thereby, we can perform statistical analysis on this data to detect bugs or performance anomalies.
 
 \subsection{Wrapping everything together: Architecture Overview}
+\begin{figure}[b!]
+	\includegraphics[scale=0.48]{Ressources/infra.png}
+	\caption{Overview of the docker-based testing architecture}
+\end{figure}
+
 To summarize, we present, as shown in Figure 1, an overall overview of the different components involved in our docker monitoring infrastructure.
 
 Our testing infrastructure will run different jobs within docker containers. First, we generate and run different versions of code using our target compiler. To do so, we run multiple instances of our preconfigured docker image that corresponds to specific code generator (e.g, GCC compiler). Each container will execute a specific job for the input program. For our case, a job represents a program compiled with new optimization sequence generated by NS. In the meanwhile, we run our monitoring components (cAdvisor, InfluxDB and Grafana). cAdvisor collects usage statistics of all running containers and save them at runtime in the time series database InfluxDB. Grafana comes later to allow the end users to define performance metrics and draw up charts.
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.50]{Ressources/infra.png}
-	\caption{Overview of the docker-based testing architecture}
-\end{figure}

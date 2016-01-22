@@ -34,9 +34,9 @@ Some command options have to be specified for each type of video or audio proces
 FFmpeg defines a set of option flags through command line to configure and generate the output
 file (e.g. number of threads, size, bitrate, the video or audio codec). Video or audio processing with FFmpeg consumes lot of resources in term of memory usage. So, testing GCC on top of this library is very interesting. 
 \subsubsection{Docker-based Infrastructure for monitoring FFmpeg containers}
-\begin{figure}[h]
+\begin{figure}[!b]
 	\centering
-	\includegraphics[scale=0.48]{Ressources/infra_ffmpeg.png}
+	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg.png}
 	\caption{Overview of the different components involved in testing and monitoring of FFmpeg containers}
 \end{figure}
 \begin{figure*}
@@ -135,7 +135,6 @@ Moreover, as the size of the archive grows, the nearest-neighbor calculations th
 
 The parameters of the algorithm were tuned individually in preliminary experiments. For each parameter, a set of values was tested. The parameter values chosen are the mostly used in the literature[ref]. The value that yielded the highest performance scores was chosen. The resulting parameter values are listed in Table 4.
 \begin{table}
-	\begin{center}
 		\caption{Parameters of the evolutionary algorithm}
 		\begin{tabular}{ l l || l l }
 			Parameter & Value & Parameter & Value \\	\hline
@@ -146,7 +145,6 @@ The parameters of the algorithm were tuned individually in preliminary experimen
 			Individual length & 76 & Elitism & 10  \\ 
 			Scaling archive prob. & 0.05 & Solutions added to archive & 3  \\ 
 		\end{tabular}
-	\end{center}
 \end{table}
 
 \subsubsection{Experimental results}
@@ -154,15 +152,15 @@ The goal of this experiment is to compare novelty-based generated sequences to s
 For NS, we select the best sequence that reduces the memory consumption and we compare it to the memory footprint of O0, O1, O2, O3 and Ofast versions. The results show clearly that NS outperforms standard optimizations for all benchmark programs. Using NS, we were able to reach a maximum memory consumption reduction of almost 26\% for the case rsynth program against a maximum of 18\% reduction using Ofast option. As well, We remark that the impact of applying standard optimizations on memory consumption for each program differs from one program to another. we can see that using O1 for bzip2e and O2, O3 for tiffmedian can even increase by almost 13 \% the memory consumption (like the FFmpeg experiments). This agrees to the idea that standard optimizations does not produce always the same impact results on resource consumption and may be highly dependent on the benchmark and the source code they have been tested on. Our approach can clearly provide an alternative to catch most relevant optimization sequence regarding resource consumptions.
 
 
-\begin{figure}[h]
+\begin{figure}[b!]
 	\centering
-	\includegraphics[scale=0.50]{Ressources/infra_novelty_stat3.png}
+	\includegraphics[width=1.\linewidth]{Ressources/infra_novelty_stat3.png}
 	\caption{Evaluating the amount of saved memory after applying standard optimization options comparing to new generated optimizations using NS}
 \end{figure}
 To study the correlation between execution time and memory consumption of running programs, we present in Figure 7 an evaluation of the speedup. We compared the speedup (according to O0) of the best optimization sequences by NS (gathered in Figure 6) and standard optimization options. 
-\begin{figure}[h]
+\begin{figure}[t!]
 	\centering
-	\includegraphics[scale=0.45]{Ressources/infra_novelty_stat2.png}
+	\includegraphics[width=1.\linewidth]{Ressources/infra_novelty_stat2.png}
 	\caption{Evaluating the speedup after applying standard optimization options comparing to new generated optimizations using NS}
 \end{figure}
 The first observation is that optimizations yields high level of speedup for all benchmarks (between 1.5 and 4.3).

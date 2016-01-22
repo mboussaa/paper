@@ -1,6 +1,6 @@
-This is BibTeX, Version 0.99d (TeX Live 2013)
+This is BibTeX, Version 0.99d (TeX Live 2015/MacPorts 2015_8)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: main.aux
+The top-level auxiliary file: ./main.aux
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -8,18 +8,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ref.bib
-Repeated entry---line 270 of file ref.bib
- : @inproceedings{lehman2008exploiting
- :                                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 278 of file ref.bib
- : @article{risi2010evolving
- :                          ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 289 of file ref.bib
- : @incollection{krvcah2012solving
- :                                ,
-I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -27,7 +15,7 @@ I'm skipping whatever remains of this entry
 Done.
 You've used 20 entries,
             4039 wiz_defined-function locations,
-            931 strings with 11664 characters,
+            931 strings with 11668 characters,
 and the built_in function-call counts, 17601 in all, are:
 = -- 1382
 > -- 447
@@ -66,4 +54,3 @@ warning$ -- 0
 while$ -- 90
 width$ -- 22
 write$ -- 218
-(There were 3 error messages)

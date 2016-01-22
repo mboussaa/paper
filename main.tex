@@ -121,7 +121,6 @@
 
 
 
-
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
@@ -375,6 +374,12 @@
 	tabsize=3
 }
 
+
+\setcounter{topnumber}{8}
+\setcounter{bottomnumber}{8}
+\setcounter{totalnumber}{8}
+\renewcommand{\floatpagefraction}{.9}
+
 \DeclareGraphicsExtensions{.pdf,.png,.jpg,.mps} 
 \begin{document}
 %
@@ -421,7 +426,7 @@
 %	\IEEEauthorrefmark{1}gerson.sunye@inria.fr,
 %	\IEEEauthorrefmark{1}benoit.baudry@inria.fr}	
 %}
-\author{\IEEEauthorblockN{Mohamed Boussaa, Olivier Barais, Gerson Sunye and Benoit Baudry}
+\author{\IEEEauthorblockN{Mohamed Boussaa, Olivier Barais, Gerson Suny\'e, and Benoit Baudry}
 \IEEEauthorblockA{
 	Inria/IRISA Rennes, France\\
 Email: \{mohamed.boussaa, olivier.barais, gerson.sunye, benoit.baudry\}@inria.fr
@@ -432,7 +437,9 @@ Email: \{mohamed.boussaa, olivier.barais, gerson.sunye, benoit.baudry\}@inria.fr
 % use for special paper notices
 %\IEEEspecialpapernotice{(Invited Paper)}
 
-
+\newcommand{\etal}{et al.}
+\newcommand{\eg}[0]{e.\,g.}
+\newcommand{\ie}[0]{i.\,e.}
 
 
 % make the title area
@@ -448,6 +455,10 @@ Email: \{mohamed.boussaa, olivier.barais, gerson.sunye, benoit.baudry\}@inria.fr
 \input{conclusion.tex}
 
 
+
+\section*{Acknowledgment}
+
+This work was funded by EU FP7/2007-2013 grant n611337, HEADS project (www.heads-project.eu)
 
 
 

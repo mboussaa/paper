@@ -1,43 +1,41 @@
 \section{Motivation}
 \subsection{Compilers optimizations}
-By the past, researchers have shown that the choice of optimization sequences can have an effect on software performance\cite{almagor2004finding,chen2012deconstructing}. As a consequence, optimizing software programs for performance becomes key objective for industries and software developers because they are often willing to pay additional costs to meet specific performance goals especially for resource-constrained systems.
+In the past, researchers have shown that the choice of optimization sequences may impact software performance~\cite{almagor2004finding,chen2012deconstructing}. 
+As a consequence, software-performance optimization becomes a key objective for both, software industries and developers, which are often willing to pay additional costs to meet specific performance goals, especially for resource-constrained systems.
 
-Universal and predefined sequences (e.g. O1 to O3) may not produce always good performance results and may be highly dependent on the benchmark and the source code they have been tested on\cite{almagor2004finding}\cite{hoste2008cole}.
-In addition, most software engineering programmers are
-not familiar with compiler optimizations and they don't have
-the capability of selecting effective optimization sequences.
-Furthermore, each of these optimizations interacts with the
-code and in turn with all other optimizations in complicated
-ways. A code transformation can create opportunities for other transformations. Similarly, a transformation can eliminate opportunities for other transformations. Thus, interactions are too complex and it is quite difficult for users to predict the effectiveness of optimizations on their source code program
+Universal and predefined sequences, \eg, O1 to O3 in GCC, may not always produce good performance results and may be highly dependent on the benchmark and the source code they have been tested on~\cite{almagor2004finding,hoste2008cole}.
+Indeed, each one of these optimizations interacts with the code and in turn with all other optimizations in complicated ways.
+As a result, most software engineering programmers are not familiar with compiler optimizations and do not have the capability of selecting effective optimization sequences.
+Since code transformations can either create or eliminate opportunities for other transformations, interactions are too complex and it is quite difficult for users to predict the effectiveness of optimizations on their source code program.
 
-To explore the large optimization space, users have to
-evaluate the effect of optimizations and optimization combinations and that for different target platforms. Thus, finding the optimal optimization options for an input source code is challenging, very hard and time-consuming problem. Many approaches have attempted to solve this optimization selection problem using techniques such as genetic algorithms, iterative compilation, etc\cite{hoste2008cole,zhong2009tuning,sandran2012genetic,martins2014exploration}.
+To explore the large optimization space, users have to evaluate the effect of optimizations and optimization combinations, for different target platforms. 
+Thus, finding the optimal optimization options for an input source code is a challenging, very hard, and time-consuming problem. 
+Many approaches~\cite{hoste2008cole,zhong2009tuning,sandran2012genetic,martins2014exploration} have attempted to solve this optimization selection problem using techniques such as genetic algorithms, iterative compilation, etc.
 
 %problem
-
-
-We note also that performing optimizations to source code
-may be so expensive at the expense of resource usage and
-may induce to compiler bugs or crashes. With the increasing
-of resource usage, it is important to evaluate the compiler
-behavior. Indeed, in resource-constrained environment, compiler optimizations may lead to memory leaks or execution
-bottlenecks. 
-
-Thus, a fine-grained understanding of resource
-consumption and analysis of compilers behavior regarding
-optimizations becomes necessary to ensure the efficiency of generated code.
+It is important to notice that performing optimizations to source code may be so expensive in resource usage that it may induce compiler bugs or crashes. 
+%With the increasing of resource usage, it is important to evaluate the compiler behavior. 
+Indeed, in a resource-constrained environment, compiler optimizations may lead to memory leaks or execution bottlenecks. 
+Thus, a fine-grained understanding of resource consumption and analysis of compilers behavior regarding optimizations becomes necessary to ensure the efficiency of generated code.
 
 \subsection{Example: GCC compiler}
-We choose GCC compiler as a motivating example in order to explain how we would study the impact of compiler optimizations using a component-based infrastructure for testing and monitoring.
-The compiler optimization level design space is very huge which needs a heuristic to explore the search space of feasible optimizations sequences. In next section, we present a search-based technique called Novelty Search for automatic generation of optimization sequences. 
 
-GCC exposes its various optimizations via a number of flags that can be turned on or off through command-line compiler switches. For example, the GNU Compiler Collection (GCC) 4.8.4 compiler provides a wide range of command-line optimizations that we can enable or disable (it includes more than 150 options for optimization). We count 76 optimization options that are appearing in the default standard optimization levels O1-O3 of GCC (see table 1). This results in a huge space with $2^{76}$ possible optimization
-combinations.
-We would note that in GCC there are some optimization options that are enabled by default. In our approach, we didn't involve these optimizations since they don't affect either the performance or size of generated binaries.
+The GNU Compiler Collection, GCC, is a very popular collection of programming compilers, available for different platforms.
+GCC exposes its various optimizations via a number of flags that can be turned on or off through command-line compiler switches. 
+The diversity of the available optimization options makes the design space for optimization level very huge, increasing the need for heuristics to explore the search space of feasible optimizations sequences.
 
-Optimization flags in GCC can be turned off by using "fno-"+flag instead of "f"+flag in the beginning of each optimization. We use this technique to play with compiler switches.
+% We choose GCC compiler as a motivating example in order to explain how we would study the impact of compiler optimizations using a component-based infrastructure for testing and monitoring.
+% In next section, we present a search-based technique called Novelty Search for automatic generation of optimization sequences.
+
+For instance, version 4.8.4  provides a wide range of command-line optimizations that can be enabled or disabled, including more than 150 options for optimization. 
+Table~\ref{table:options} summarizes the optimization flags that are enabled by the default optimization levels O1 to O3.
+We count 76 optimization flags, resulting in a huge space with $2^{76}$ possible optimization combinations.
+In our approach, we did not consider some optimization options that are enabled by default, since they do not affect neither the performance nor size of generated binaries.
+Optimization flags in GCC can be turned off by using "fno-"+flag instead of "f"+flag in the beginning of each optimization. 
+We use this technique to play with compiler switches.
 
 \begin{table}
+	\label{table:options}
 	\centering
 	\caption{Compiler optimization options within standard optimization levels}
 	\scalebox{0.88}{
