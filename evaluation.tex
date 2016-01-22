@@ -36,14 +36,14 @@ file (e.g. number of threads, size, bitrate, the video or audio codec). Video or
 \subsubsection{Docker-based Infrastructure for monitoring FFmpeg containers}
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.40]{Ressources/infra_ffmpeg.png}
+	\includegraphics[scale=0.48]{Ressources/infra_ffmpeg.png}
 	\caption{Overview of the different components involved in testing and monitoring of FFMPEG containers}
 \end{figure}
 \begin{figure*}
 	
 	\center
 	
-	\includegraphics[width=15cm,height=6cm]{Ressources/infra_stats.png}
+	\includegraphics[width=15cm,height=7cm]{Ressources/infra_stats.png}
 	\caption{Runtime memory consumption profiles of workload running in FFMPEG containers compiled with O0 (no optimization) and O3 options}
 	
 	\label{AAA}
@@ -73,7 +73,7 @@ To better understand resource usage of optimized containers, we run the same exp
 This results explain that optimizing for execution time (for the case of ffmpeg) is not always efficient regarding memory usage and unfortunately, optimizations may influence negatively on system resources. 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.4]{Ressources/infra_ffmpeg_plot1.png}
+	\includegraphics[scale=0.5]{Ressources/infra_ffmpeg_plot1.png}
 	\caption{Comparison of average memory consumption and execution time of running workload in FFMPEG containers compiled with standard GCC optimization options}
 \end{figure}
 
@@ -166,7 +166,7 @@ For NS, we select the best sequence that reduces the memory consumption and we c
 To study the correlation between execution time and memory consumption of running programs, we present in Figure 7 an evaluation of the speedup. We compared the speedup (according to O0) of the best optimization sequences by NS (gathered in Figure 6) and standard optimization options. 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.50]{Ressources/infra_novelty_stat2.png}
+	\includegraphics[scale=0.45]{Ressources/infra_novelty_stat2.png}
 	\caption{Evaluating the speedup after applying standard optimization options comparing to new generated optimizations using NS}
 \end{figure}
 The first observation is that optimizations yields high level of speedup for all benchmarks (between 1.5 and 4.3).

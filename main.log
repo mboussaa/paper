@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  22 JAN 2016 07:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  22 JAN 2016 08:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -464,20 +464,23 @@ c ex-presses the
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 60.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 59.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (6.0pt too wide) in paragraph at lines 62--63
+Overfull \hbox (6.0pt too wide) in paragraph at lines 61--62
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 <Ressources/infra.png, id=25, 483.8075pt x 370.38374pt>
 File: Ressources/infra.png Graphic file (type png)
 
 <use Ressources/infra.png>
-Package pdftex.def Info: Ressources/infra.png used on input line 105.
+Package pdftex.def Info: Ressources/infra.png used on input line 104.
 (pdftex.def)             Requested size: 241.90315pt x 185.1914pt.
 ) (./evaluation.tex [5]
 <Ressources/infra_ffmpeg.png, id=31, 463.7325pt x 611.28375pt>
@@ -485,14 +488,14 @@ File: Ressources/infra_ffmpeg.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg.png>
 Package pdftex.def Info: Ressources/infra_ffmpeg.png used on input line 39.
-(pdftex.def)             Requested size: 185.4897pt x 244.50917pt.
+(pdftex.def)             Requested size: 222.58907pt x 293.41286pt.
 
 <Ressources/infra_stats.png, id=32, 1517.67pt x 613.29124pt>
 File: Ressources/infra_stats.png Graphic file (type png)
 
 <use Ressources/infra_stats.png>
 Package pdftex.def Info: Ressources/infra_stats.png used on input line 46.
-(pdftex.def)             Requested size: 426.77417pt x 170.7097pt.
+(pdftex.def)             Requested size: 426.77417pt x 199.16756pt.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no œ in font ptmr7t!
@@ -506,9 +509,13 @@ File: Ressources/infra_ffmpeg_plot1.png Graphic file (type png)
 <use Ressources/infra_ffmpeg_plot1.png>
 Package pdftex.def Info: Ressources/infra_ffmpeg_plot1.png used on input line 7
 6.
-(pdftex.def)             Requested size: 195.2219pt x 132.01085pt.
- [7 <./Ressources/infra_stats.png> <./Ressources/infra_ffmpeg_plot1.png>]
-<Ressources/infra_novelty.png, id=45, 319.1925pt x 315.1775pt>
+(pdftex.def)             Requested size: 244.0311pt x 165.01608pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./Ressources/infra_stats.png>]
+<Ressources/infra_novelty.png, id=44, 319.1925pt x 315.1775pt>
 File: Ressources/infra_novelty.png Graphic file (type png)
 
 <use Ressources/infra_novelty.png>
@@ -524,13 +531,7 @@ Overfull \hbox (8.00978pt too wide) in paragraph at lines 101--123
  [] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 1097) has occurred while \output is active []
-
- [8 <./Ressources/infra_novelty.png>]
+[8 <./Ressources/infra_ffmpeg_plot1.png> <./Ressources/infra_novelty.png>]
 <Ressources/infra_novelty_stat3.png, id=50, 514.5624pt x 322.806pt>
 File: Ressources/infra_novelty_stat3.png Graphic file (type png)
 
@@ -543,23 +544,22 @@ Overfull \hbox (5.28056pt too wide) in paragraph at lines 163--164
  [][] 
  []
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 <Ressources/infra_novelty_stat2.png, id=51, 547.3248pt x 343.0416pt>
 File: Ressources/infra_novelty_stat2.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat2.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
 169.
-(pdftex.def)             Requested size: 273.66173pt x 171.52037pt.
-
-Overfull \hbox (21.66173pt too wide) in paragraph at lines 169--170
- [][] 
- []
+(pdftex.def)             Requested size: 246.29388pt x 154.36728pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./related.tex) (./conclusion.tex [9 <./Ressources/infra_novelty_stat3.png> <
-./Ressources/infra_novelty_stat2.png>]) (./main.bbl
+) (./related.tex [9 <./Ressources/infra_novelty_stat3.png> <./Ressources/infra_
+novelty_stat2.png>]) (./conclusion.tex) (./main.bbl
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ” in font ptmri7t!
@@ -579,7 +579,7 @@ Before submitting the final camera ready copy, remember to:
 Here is how much of TeX's memory you used:
  6467 strings out of 493308
  95611 string characters out of 6137815
- 216741 words of memory out of 5000000
+ 216611 words of memory out of 5000000
  9802 multiletter control sequences out of 15000+600000
  44160 words of font info for 79 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
@@ -596,7 +596,7 @@ xlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013
 /texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 1050474 bytes).
+Output written on main.pdf (10 pages, 1050369 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream
