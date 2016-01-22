@@ -16,20 +16,26 @@ Many approaches~\cite{hoste2008cole,zhong2009tuning,sandran2012genetic,martins20
 It is important to notice that performing optimizations to source code may be so expensive in resource usage that it may induce compiler bugs or crashes. 
 %With the increasing of resource usage, it is important to evaluate the compiler behavior. 
 Indeed, in a resource-constrained environment, compiler optimizations may lead to memory leaks or execution bottlenecks. 
-
 Thus, a fine-grained understanding of resource consumption and analysis of compilers behavior regarding optimizations becomes necessary to ensure the efficiency of generated code.
 
 \subsection{Example: GCC compiler}
-We choose GCC compiler as a motivating example in order to explain how we would study the impact of compiler optimizations using a component-based infrastructure for testing and monitoring.
-The compiler optimization level design space is very huge which needs a heuristic to explore the search space of feasible optimizations sequences. In next section, we present a search-based technique called Novelty Search for automatic generation of optimization sequences. 
 
-GCC exposes its various optimizations via a number of flags that can be turned on or off through command-line compiler switches. For example, the GNU Compiler Collection (GCC) 4.8.4 compiler provides a wide range of command-line optimizations that we can enable or disable (it includes more than 150 options for optimization). We count 76 optimization options that are appearing in the default standard optimization levels O1-O3 of GCC (see table 1). This results in a huge space with $2^{76}$ possible optimization
-combinations.
-We would note that in GCC there are some optimization options that are enabled by default. In our approach, we didn't involve these optimizations since they don't affect either the performance or size of generated binaries.
+The GNU Compiler Collection, GCC, is a very popular collection of programming compilers, available for different platforms.
+GCC exposes its various optimizations via a number of flags that can be turned on or off through command-line compiler switches. 
+The diversity of the available optimization options makes the design space for optimization level very huge, increasing the need for heuristics to explore the search space of feasible optimizations sequences.
 
-Optimization flags in GCC can be turned off by using "fno-"+flag instead of "f"+flag in the beginning of each optimization. We use this technique to play with compiler switches.
+% We choose GCC compiler as a motivating example in order to explain how we would study the impact of compiler optimizations using a component-based infrastructure for testing and monitoring.
+% In next section, we present a search-based technique called Novelty Search for automatic generation of optimization sequences.
+
+For instance, version 4.8.4  provides a wide range of command-line optimizations that can be enabled or disabled, including more than 150 options for optimization. 
+Table~\ref{table:options} summarizes the optimization flags that are enabled by the default optimization levels O1 to O3.
+We count 76 optimization flags, resulting in a huge space with $2^{76}$ possible optimization combinations.
+In our approach, we did not consider some optimization options that are enabled by default, since they do not affect neither the performance nor size of generated binaries.
+Optimization flags in GCC can be turned off by using "fno-"+flag instead of "f"+flag in the beginning of each optimization. 
+We use this technique to play with compiler switches.
 
 \begin{table}
+	\lable{table:options}
 	\centering
 	\caption{Compiler optimization options within standard optimization levels}
 	\scalebox{0.88}{
