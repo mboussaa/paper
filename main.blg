@@ -8,49 +8,62 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ref.bib
+Repeated entry---line 245 of file ref.bib
+ : @inproceedings{lehman2008exploiting
+ :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 253 of file ref.bib
+ : @article{risi2010evolving
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 264 of file ref.bib
+ : @incollection{krvcah2012solving
+ :                                ,
+I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 4 entries,
+You've used 8 entries,
             4039 wiz_defined-function locations,
-            837 strings with 8145 characters,
-and the built_in function-call counts, 3632 in all, are:
-= -- 278
-> -- 102
-< -- 30
-+ -- 52
-- -- 19
-* -- 191
-:= -- 534
-add.period$ -- 10
-call.type$ -- 4
-change.case$ -- 4
-chr.to.int$ -- 66
-cite$ -- 4
-duplicate$ -- 252
-empty$ -- 285
-format.name$ -- 23
-if$ -- 828
+            862 strings with 8853 characters,
+and the built_in function-call counts, 7046 in all, are:
+= -- 559
+> -- 179
+< -- 64
++ -- 98
+- -- 31
+* -- 353
+:= -- 1024
+add.period$ -- 18
+call.type$ -- 8
+change.case$ -- 8
+chr.to.int$ -- 144
+cite$ -- 8
+duplicate$ -- 493
+empty$ -- 559
+format.name$ -- 38
+if$ -- 1626
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 47
-newline$ -- 35
-num.names$ -- 4
-pop$ -- 112
+int.to.str$ -- 8
+missing$ -- 86
+newline$ -- 47
+num.names$ -- 8
+pop$ -- 198
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 270
+skip$ -- 545
 stack$ -- 0
-substring$ -- 162
-swap$ -- 212
-text.length$ -- 8
+substring$ -- 350
+swap$ -- 417
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 4
+type$ -- 8
 warning$ -- 0
-while$ -- 17
-width$ -- 5
-write$ -- 62
+while$ -- 34
+width$ -- 9
+write$ -- 102
+(There were 3 error messages)

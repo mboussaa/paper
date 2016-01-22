@@ -21,12 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{pan2006fast}
-Z.~Pan and R.~Eigenmann, ``Fast and effective orchestration of compiler
-  optimizations for automatic performance tuning,'' in \emph{Code Generation
-  and Optimization, 2006. CGO 2006. International Symposium on}.\hskip 1em plus
-  0.5em minus 0.4em\relax IEEE, 2006, pp. 12--pp.
-
 \bibitem{almagor2004finding}
 L.~Almagor, K.~D. Cooper, A.~Grosul, T.~J. Harvey, S.~W. Reeves,
   D.~Subramanian, L.~Torczon, and T.~Waterman, ``Finding effective compilation
@@ -42,5 +36,30 @@ K.~Hoste and L.~Eeckhout, ``Cole: compiler optimization level exploration,'' in
 Y.~Chen, S.~Fang, Y.~Huang, L.~Eeckhout, G.~Fursin, O.~Temam, and C.~Wu,
   ``Deconstructing iterative optimization,'' \emph{ACM Transactions on
   Architecture and Code Optimization (TACO)}, vol.~9, no.~3, p.~21, 2012.
+
+\bibitem{stuermer2007systematic}
+I.~Stuermer, M.~Conrad, H.~Doerr, and P.~Pepper, ``Systematic testing of
+  model-based code generators,'' \emph{Software Engineering, IEEE Transactions
+  on}, vol.~33, no.~9, pp. 622--634, 2007.
+
+\bibitem{lehman2008exploiting}
+J.~Lehman and K.~O. Stanley, ``Exploiting open-endedness to solve problems
+  through the search for novelty.'' in \emph{ALIFE}, 2008, pp. 329--336.
+
+\bibitem{risi2010evolving}
+S.~Risi, C.~E. Hughes, and K.~O. Stanley, ``Evolving plastic neural networks
+  with novelty search,'' \emph{Adaptive Behavior}, vol.~18, no.~6, pp.
+  470--491, 2010.
+
+\bibitem{krvcah2012solving}
+P.~Kr{\v{c}}ah, ``Solving deceptive tasks in robot body-brain co-evolution by
+  searching for behavioral novelty,'' in \emph{Advances in Robotics and Virtual
+  Reality}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2012, pp.
+  167--186.
+
+\bibitem{boussaa2015novelty}
+M.~Boussaa, O.~Barais, G.~Suny{\'e}, and B.~Baudry, ``A novelty search approach
+  for automatic test data generation,'' in \emph{8th International Workshop on
+  Search-Based Software Testing SBST@ ICSE 2015}, 2015, p.~4.
 
 \end{thebibliography}
