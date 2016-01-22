@@ -1,31 +1,23 @@
 \section{Motivation}
 \subsection{Compilers optimizations}
-By the past, researchers have shown that the choice of optimization sequences can have an effect on software performance\cite{almagor2004finding,chen2012deconstructing}. As a consequence, optimizing software programs for performance becomes key objective for industries and software developers because they are often willing to pay additional costs to meet specific performance goals especially for resource-constrained systems.
+In the past, researchers have shown that the choice of optimization sequences may impact software performance~\cite{almagor2004finding,chen2012deconstructing}. 
+As a consequence, software-performance optimization becomes a key objective for both, software industries and developers, which are often willing to pay additional costs to meet specific performance goals, especially for resource-constrained systems.
 
-Universal and predefined sequences (e.g. O1 to O3) may not produce always good performance results and may be highly dependent on the benchmark and the source code they have been tested on\cite{almagor2004finding}\cite{hoste2008cole}.
-In addition, most software engineering programmers are
-not familiar with compiler optimizations and they don't have
-the capability of selecting effective optimization sequences.
-Furthermore, each of these optimizations interacts with the
-code and in turn with all other optimizations in complicated
-ways. A code transformation can create opportunities for other transformations. Similarly, a transformation can eliminate opportunities for other transformations. Thus, interactions are too complex and it is quite difficult for users to predict the effectiveness of optimizations on their source code program
+Universal and predefined sequences, \eg, O1 to O3 in GCC, may not always produce good performance results and may be highly dependent on the benchmark and the source code they have been tested on~\cite{almagor2004finding,hoste2008cole}.
+Indeed, each one of these optimizations interacts with the code and in turn with all other optimizations in complicated ways.
+As a result, most software engineering programmers are not familiar with compiler optimizations and do not have the capability of selecting effective optimization sequences.
+Since code transformations can either create or eliminate opportunities for other transformations, interactions are too complex and it is quite difficult for users to predict the effectiveness of optimizations on their source code program.
 
-To explore the large optimization space, users have to
-evaluate the effect of optimizations and optimization combinations and that for different target platforms. Thus, finding the optimal optimization options for an input source code is challenging, very hard and time-consuming problem. Many approaches have attempted to solve this optimization selection problem using techniques such as genetic algorithms, iterative compilation, etc\cite{hoste2008cole,zhong2009tuning,sandran2012genetic,martins2014exploration}.
+To explore the large optimization space, users have to evaluate the effect of optimizations and optimization combinations, for different target platforms. 
+Thus, finding the optimal optimization options for an input source code is a challenging, very hard, and time-consuming problem. 
+Many approaches~\cite{hoste2008cole,zhong2009tuning,sandran2012genetic,martins2014exploration} have attempted to solve this optimization selection problem using techniques such as genetic algorithms, iterative compilation, etc.
 
 %problem
+It is important to notice that performing optimizations to source code may be so expensive in resource usage that it may induce compiler bugs or crashes. 
+%With the increasing of resource usage, it is important to evaluate the compiler behavior. 
+Indeed, in a resource-constrained environment, compiler optimizations may lead to memory leaks or execution bottlenecks. 
 
-
-We note also that performing optimizations to source code
-may be so expensive at the expense of resource usage and
-may induce to compiler bugs or crashes. With the increasing
-of resource usage, it is important to evaluate the compiler
-behavior. Indeed, in resource-constrained environment, compiler optimizations may lead to memory leaks or execution
-bottlenecks. 
-
-Thus, a fine-grained understanding of resource
-consumption and analysis of compilers behavior regarding
-optimizations becomes necessary to ensure the efficiency of generated code.
+Thus, a fine-grained understanding of resource consumption and analysis of compilers behavior regarding optimizations becomes necessary to ensure the efficiency of generated code.
 
 \subsection{Example: GCC compiler}
 We choose GCC compiler as a motivating example in order to explain how we would study the impact of compiler optimizations using a component-based infrastructure for testing and monitoring.
