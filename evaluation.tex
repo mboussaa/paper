@@ -49,13 +49,13 @@ file (e.g. number of threads, size, bitrate, the video or audio codec). Video or
 	\label{AAA}
 	
 \end{figure*}
-The goal of this experiment is to compile FFmpeg with standard GCC optimization options and run FFmpeg command examples on different versions in order to compare the memory usage profiles and execution time of different variants using our testing architecture. An overview of the different components involved in testing and monitoring of FFmpeg containers is shwon in Figure 2. 
+The goal of this experiment is to compile FFmpeg with standard GCC optimization options and run FFmpeg command examples on different versions in order to compare the memory usage profiles and execution time of different variants using our testing architecture. An overview of the different components involved in testing and monitoring of FFmpeg containers is shown in Figure 2. 
 First, we compile FFmpeg library with different optimization options  (O0, O1, O2, O3 and Ofast) in order to produce 5 variants of FFmpeg. This is done within a Docker container with a Linux image. We configure
 each container to install FFmpeg with a specific configuration and we uploaded all the FFmpeg images in Docker Hub.
 Docker Hub is a cloud-based registry service for building and shipping application or
 service containers. We are using it for building, saving and managing all our docker
 images.
- Then, we execute the same ffmpeg testing examples within each ffmpeg instance container. We choose 15 ffmpeg example commands that cover multiple domains\footnote{http://goo.gl/11VLYM} like video conversion, sound extraction, encoding file for iPod or PSP, etc. This list of examples is saved in a script file to execute within containers. The media files needed for encoding are saved in a shared repository. In Docker environment, we call this repository the “Data Volume”. A data volume is a specially-designated directory within containers that share data with the host machine. Data is persistent and independent of container’s life cycle. So, when we run FFmpeg containers we provide a shared volume with the host
+ Then, we execute the same ffmpeg testing examples within each ffmpeg instance container. We choose 15 ffmpeg example commands that cover multiple domains\footnote{http://goo.gl/11VLYM} like video conversion, sound extraction, encoding file for iPod or PSP, etc. This list of examples is saved in a script file to execute within containers. The media files needed for encoding are saved in a shared repository. In Docker environment, we call this repository the “Data Volume”. A data volume is a specially-designated directory within containers that share data with the host machine. Data is persistent and independent of container's life cycle. So, when we run FFmpeg containers we provide a shared volume with the host
 machine (where the media files are located). As well, the list of ffmpeg commands to execute is mounted in this volume so that we can execute the same workload for each container.
 
 Before running the FFmepg workload on different containers, we run monitoring components (cAdvisor, InfluxDB and Grafana) to start gathering usage statistics.
@@ -163,7 +163,7 @@ For NS, we select the best sequence that reduces the memory consumption and we c
 	\includegraphics[scale=0.50]{Ressources/infra_novelty_stat3.png}
 	\caption{Evaluating the amount of saved memory after applying standard optimization options comparing to new generated optimizations using NS}
 \end{figure}
-To study the correlation between execution time and memory consumption of running programs, we present in Figure 7 an evaluation of the speedup. We compared the speedup (accrording to O0) of the best optimization sequences by NS (gathered in Figure 6) and standard optimization options. 
+To study the correlation between execution time and memory consumption of running programs, we present in Figure 7 an evaluation of the speedup. We compared the speedup (according to O0) of the best optimization sequences by NS (gathered in Figure 6) and standard optimization options. 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.50]{Ressources/infra_novelty_stat2.png}

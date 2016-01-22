@@ -1,17 +1,14 @@
 \section{Novelty Search Compiler Optimizations Exploration}
  
-The goal of the Novelty Search approach for compiler optimization, introduced by Lehman and Stanley in 2008
-[22], is to identify a set of compiler optimization levels that provide a trade-off with respect to resource utilization. 
+The goal of the Novelty Search approach for compiler optimization, introduced by Lehman and Stanley in 2008\cite{lehman2008exploiting}, is to identify a set of compiler optimization levels that provide a trade-off with respect to resource utilization. 
 
 \subsection{Novelty Search Adaptation}
 Optimization options are difficult and even impossible to be chosen by programmers or compiler users. So a tool to help users to choose the best set of options becomes necessary to achieve a compiler optimization with effectiveness and efficiently. 
 
-There have been many previous works that have investigated this problem by using different techniques like search based or machine learning techniques, among others[ref]. Some of the works focused on optimizing compilers in term of execution time. Some others focused on reducing the energy consumption of running programs on hardware machines.
-
 In this work, we aim to provide a new alternative for choosing effective compiler optimization options. In fact, since the search space of possible combinations is too large, we aim to use a new search-based technique called Novelty Search to tackle this issue. The idea of this approach is to explore the search space of possible compiler flag options without regard to any objective. In fact, instead of having a fitness-based selection that aim to optimize either execution time or energy consumption, we select optimization sequences based on a novelty score showing how different they are compared to all other combinations evaluated so far. This makes the tool fitness and program independent.
 
 We think also that the search toward effective optimization sequences is not straightforward since the interactions between optimizations is too complex and difficult to predict and to define. In a previous work for example, Chen et al. \cite{chen2012deconstructing}showed that a handful optimizations may lead to higher speedup than other techniques of iterative optimization. In fact, the fitness-based search may be trapped into some local optima that can not escape. This phenomenon is known as "diversity loss". For example, if the most effective optimization sequence that induces less execution time, lies far from the search space defined by the gradient of the fitness function, then some promising search areas may not be reached. The issue of premature convergence to local optima has been a common problem in evolutionary algorithms. Many methods are proposed to overcome this
-problem. However, all these alternatives use a fitness-based selection to guide the search. 
+problem\cite{banzhaf1996effect,gathercole1996adverse}. However, all these alternatives use a fitness-based selection to guide the search. 
 Therefore, diversity maintenance in the population level is key for avoiding premature convergence. Considering diversity as the unique objective function to be optimized may be a key solution to this problem.
 
 So during the evolutionary process, we use to select optimization sequences that remain in sparse regions of the search space in order to guide the search through novelty. In the meanwhile, we choose to gather non-functional metrics of explored sequences namely memory and CPU consumption. These metrics will provide us a more fine-grained understanding and analysis of compiler's behavior regarding optimizations. 
