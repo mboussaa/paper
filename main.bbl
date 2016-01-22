@@ -21,6 +21,11 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{brambilla2012model}
+M.~Brambilla, J.~Cabot, and M.~Wimmer, ``Model-driven software engineering in
+  practice,'' \emph{Synthesis Lectures on Software Engineering}, vol.~1, no.~1,
+  pp. 1--182, 2012.
+
 \bibitem{almagor2004finding}
 L.~Almagor, K.~D. Cooper, A.~Grosul, T.~J. Harvey, S.~W. Reeves,
   D.~Subramanian, L.~Torczon, and T.~Waterman, ``Finding effective compilation

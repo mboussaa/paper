@@ -29,7 +29,7 @@ optimizations becomes necessary to ensure the efficiency of generated code.
 
 \subsection{Example: GCC compiler}
 We choose GCC compiler as a motivating example in order to explain how we would study the impact of compiler optimizations using a component-based infrastructure for testing and monitoring.
-The compiler optimization level design space is very huge which needs a heuristic to explore the search space of feasible optimizations sequences. In next section, we present a search based technique called Novelty Search for automatic generation of optimization sequences. 
+The compiler optimization level design space is very huge which needs a heuristic to explore the search space of feasible optimizations sequences. In next section, we present a search-based technique called Novelty Search for automatic generation of optimization sequences. 
 
 GCC exposes its various optimizations via a number of flags that can be turned on or off through command-line compiler switches. For example, the GNU Compiler Collection (GCC) 4.8.4 compiler provides a wide range of command-line optimizations that we can enable or disable (it includes more than 150 options for optimization). We count 76 optimization options that are appearing in the default standard optimization levels O1-O3 of GCC. 10 options are enabled by default and the remaining options are defined within O1, O2, O3 and Ofast levels.
 This results in a huge space with $2^{76}$ possible optimization

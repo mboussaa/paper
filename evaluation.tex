@@ -26,7 +26,7 @@ than standard optimization levels in GCC. In this experiment, we focused as well
 
 
 \subsection{Case Study 1: FFMPEG}
-In the first experiment, we set up our infrastructure for testing and monitoring the generated code. In this part, We compiled the FFMPEG library using standard GCC optimizations(O1, O2, O3, Ofast) and we studied the impact of these optimizations on memory consumption and execution time using our docker based infrastructure.
+In the first experiment, we set up our infrastructure for testing and monitoring the generated code. In this part, We compiled the FFMPEG library using standard GCC optimizations(O1, O2, O3, Ofast) and we studied the impact of these optimizations on memory consumption and execution time using our docker-based infrastructure.
 
 \subsubsection{FFMPEG: Multimedia Encoding Library}
 FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It is a very fast video and audio converter. It processes a number of input files specified by the $-i$ option, and generate different output files according to the input plugin. FFmpeg allows different types of video conversion and that depends on the input and output format (video, audio, subtitle, attachment, data).
@@ -66,7 +66,7 @@ To obtain comparable and reproducible results, we used the same hardware across 
 
 \subsubsection{Experimental results}
 
-The first part of this experiment is to compare the no-optimization container with the high-optimization one in order to study the impact of optimizations on resource consumption. Figure 3 shows runtime statistics for two running ffmpeg containers O0 and O3 with the same input workload. This chart present the memory usage profile of two components (FFMPEG O0 and O3) started in the same time and running in parallel. Visually, we can see that the execution of O3 (yellow) is faster than O0 (green) by around 20s. However, we can see that memory usage remains higher than O0 from the beginning to the end of running the ffmpeg examples. 
+The first part of this experiment is to compare the no-optimization container with the high-optimization one in order to study the impact of optimizations on resource consumption. Figure 3 shows runtime statistics for two running ffmpeg containers O0 and O3 with the same input workload. This chart presents the memory usage profile of two components (FFMPEG O0 and O3) started in the same time and running in parallel. Visually, we can see that the execution of O3 (yellow) is faster than O0 (green) by around 20s. However, we can see that memory usage remains higher than O0 from the beginning to the end of running the ffmpeg examples. 
 
 To better understand resource usage of optimized containers, we run the same experiment for all ffmpeg containers and we collected the same metrics. Figure 4 presents a comparison of average memory usage and execution time of FFmpeg containers compiled with all standard GCC optimization options. We remark that the memory usage is increasing as soon as we apply more aggressive optimization.
 
