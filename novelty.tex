@@ -27,7 +27,7 @@ These metrics will provide us a more fine-grained understanding and analysis of 
 
 \begin{algorithm}
 	\caption{Novelty search algorithm for compiler optimizations exploration}
-	\label{alg1}
+	\label{algo:search}
 	\begin{algorithmic}[1]
 		\REQUIRE Optimization sequences $\mathcal{S}$
 		\REQUIRE Benchmark programs $\mathcal{B}$
@@ -71,11 +71,10 @@ However, during the evolutionary process, these flags are turned on or off depen
 \subsubsection{Novelty Metric}
 The Novelty metric expresses the sparseness of an input optimization sequence. It measures its distance to all other sequences in the current population and to all sequences that were discovered in the past (\ie, sequences in the archive).
 This measure expresses the optimization sequence unicity. 
-We can quantify the sparseness of a solution as the average distance to the k-nearest neighbors. If the average distance to
-a given point's nearest neighbors is large then it belongs to
-a sparse area and will get a high novelty score. Otherwise,
-if the average distance is small so it belongs certainly to
-a dense region then it will get a low novelty score. Algorithm 1 shows an overview of the evolutionary process of NS. 
+We can quantify the sparseness of a solution as the average distance to the k-nearest neighbors. 
+If the average distance to a given point's nearest neighbors is large then it belongs to a sparse area and will get a high novelty score. 
+Otherwise, if the average distance is small so it belongs certainly to a dense region then it will get a low novelty score. 
+Algorithm~\ref{algo:search} shows an overview of the evolutionary process of NS. 
 The distance between two sequences is computed as the total number of symmetric differences among optimization options. Formally, we define this distance as follows :
 
 \begin{equation}
