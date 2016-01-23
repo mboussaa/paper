@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  23 JAN 2016 06:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  23 JAN 2016 19:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -113,7 +113,10 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-) (/usr/local/texlive/2013/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
 \c@AlgoLine=\count94
 
@@ -531,7 +534,7 @@ File: Ressources/infra_novelty_stat3.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat3.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat3.png used on input line 
-157.
+156.
 (pdftex.def)             Requested size: 252.0pt x 158.09258pt.
 
 <Ressources/infra_novelty_stat2.png, id=51, 547.3248pt x 343.0416pt>
@@ -539,10 +542,10 @@ File: Ressources/infra_novelty_stat2.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat2.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
-163.
+171.
 (pdftex.def)             Requested size: 252.0pt x 157.94237pt.
-) (./related.tex [9 <./Ressources/infra_novelty_stat3.png>]) (./conclusion.tex)
-
+) (./related.tex [9 <./Ressources/infra_novelty_stat3.png> <./Ressources/infra_
+novelty_stat2.png>]) (./conclusion.tex)
 Underfull \hbox (badness 2318) in paragraph at lines 461--462
 []\OT1/ptm/m/n/10 This work was funded by EU FP7/2007-2013 grant
  []
@@ -551,7 +554,7 @@ Underfull \hbox (badness 2318) in paragraph at lines 461--462
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ” in font ptmri7t!
- [10 <./Ressources/infra_novelty_stat2.png>])
+ [10])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -567,10 +570,10 @@ Before submitting the final camera ready copy, remember to:
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6473 strings out of 493308
- 95679 string characters out of 6137815
- 217565 words of memory out of 5000000
- 9808 multiletter control sequences out of 15000+600000
+ 6488 strings out of 493308
+ 96008 string characters out of 6137815
+ 217633 words of memory out of 5000000
+ 9819 multiletter control sequences out of 15000+600000
  44160 words of font info for 79 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  38i,12n,42p,1832b,1200s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -586,7 +589,7 @@ ve/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/te
 xmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 1053914 bytes).
+Output written on main.pdf (11 pages, 1053842 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream
