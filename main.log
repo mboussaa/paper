@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  23 JAN 2016 19:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  23 JAN 2016 21:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -465,12 +465,12 @@ c ex-presses the
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 70.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 62.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (6.0pt too wide) in paragraph at lines 72--73
+Overfull \hbox (6.0pt too wide) in paragraph at lines 64--65
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -478,7 +478,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 72--73
 File: Ressources/infra.png Graphic file (type png)
 
 <use Ressources/infra.png>
-Package pdftex.def Info: Ressources/infra.png used on input line 111.
+Package pdftex.def Info: Ressources/infra.png used on input line 103.
 (pdftex.def)             Requested size: 232.22496pt x 177.78217pt.
 ) (./evaluation.tex
 <Ressources/infra_ffmpeg.png, id=31, 463.7325pt x 611.28375pt>
@@ -500,10 +500,8 @@ Missing character: There is no ú in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
- [6 <./Ressources/infra.png>]
-Underfull \vbox (badness 6428) has occurred while \output is active []
-
- [7 <./Ressources/infra_stats.png> <./Ressources/infra_ffmpeg.png>]
+ [6 <./Ressources/infra.png>] [7 <./Ressources/infra_stats.png> <./Ressources/i
+nfra_ffmpeg.png>]
 <Ressources/infra_ffmpeg_plot1.png, id=43, 488.0634pt x 330.033pt>
 File: Ressources/infra_ffmpeg_plot1.png Graphic file (type png)
 
@@ -518,6 +516,10 @@ File: Ressources/infra_novelty.png Graphic file (type png)
 <use Ressources/infra_novelty.png>
 Package pdftex.def Info: Ressources/infra_novelty.png used on input line 89.
 (pdftex.def)             Requested size: 159.59586pt x 157.58836pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Underfull \hbox (badness 5147) in paragraph at lines 114--116
 []\OT1/ptm/m/n/8 Convert a greyscale im-age to
@@ -542,10 +544,10 @@ File: Ressources/infra_novelty_stat2.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat2.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
-171.
+169.
 (pdftex.def)             Requested size: 252.0pt x 157.94237pt.
-) (./related.tex [9 <./Ressources/infra_novelty_stat3.png> <./Ressources/infra_
-novelty_stat2.png>]) (./conclusion.tex)
+) (./related.tex [9 <./Ressources/infra_novelty_stat3.png>]) (./conclusion.tex)
+
 Underfull \hbox (badness 2318) in paragraph at lines 461--462
 []\OT1/ptm/m/n/10 This work was funded by EU FP7/2007-2013 grant
  []
@@ -554,7 +556,7 @@ Underfull \hbox (badness 2318) in paragraph at lines 461--462
 Missing character: There is no ‚ in font ptmri7t!
 Missing character: There is no Ä in font ptmri7t!
 Missing character: There is no î in font ptmri7t!
- [10])
+ [10 <./Ressources/infra_novelty_stat2.png>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -572,7 +574,7 @@ Before submitting the final camera ready copy, remember to:
 Here is how much of TeX's memory you used:
  6488 strings out of 493308
  96008 string characters out of 6137815
- 217633 words of memory out of 5000000
+ 217630 words of memory out of 5000000
  9819 multiletter control sequences out of 15000+600000
  44160 words of font info for 79 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
@@ -589,7 +591,7 @@ ve/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/te
 xmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 1053842 bytes).
+Output written on main.pdf (11 pages, 1053861 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream

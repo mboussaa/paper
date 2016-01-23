@@ -33,7 +33,7 @@ FFmpeg is a complete, cross-platform solution to record, convert and stream audi
 Some command options have to be specified for each type of video or audio processing. In fact,
 FFmpeg defines a set of option flags through command line to configure and generate the output
 file (e.g. number of threads, size, bitrate, the video or audio codec). Video or audio processing with FFmpeg consumes lot of resources in term of memory usage. So, testing GCC on top of this library is very interesting. 
-\subsubsection{Docker-based Infrastructure for monitoring FFmpeg containers}
+\subsubsection{Docker-based Infrastructure for Monitoring FFmpeg Containers}
 \begin{figure}[!b]
 	\centering
 	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg.png}
@@ -64,7 +64,7 @@ Using Grafana, we are able to query database and define performance metrics. We 
 
 To obtain comparable and reproducible results, we used the same hardware across all experiments to run Docker: an AMD A10-7700K APU Radeon(TM) R7 Graphics processor with 4 CPU cores (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of system memory.
 
-\subsubsection{Experimental results}
+\subsubsection{Experimental Results}
 
 The first part of this experiment is to compare the no-optimization container with the high-optimization one in order to study the impact of optimizations on resource consumption. Figure 3 shows runtime statistics for two running FFmpeg containers O0 and O3 with the same input workload. This chart presents the memory usage profile of two components (FFmpeg O0 and O3) started in the same time and running in parallel. Visually, we can see that the execution of O3 (yellow) is faster than O0 (green) by around 20s. However, we can see that memory usage remains higher than O0 from the beginning to the end of running the FFmpeg examples. 
 
@@ -78,12 +78,12 @@ This results explain that optimizing for execution time (for the case of FFmpeg)
 \end{figure}
 
 
-\subsection{Case Study 2: Novelty-based exploration of optimization sequences}
+\subsection{Case Study 2: Novelty-based Exploration of Optimization Sequences}
 For the second experiment, we present a set of experiments to evaluate the performance optimized programs across target benchmarks. The goal of this section
 is to show that our approach for exploring the search space of optimizations is able to generate efficient sequences of optimization options in term of performance and
 resource consumption. We define an efficient sequence as a
 set of optimization options that lead to use less resource consumption than GCC default optimizations.
-\subsubsection{Approach}
+\subsubsection{Setting Up Infrastructure}
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.50]{Ressources/infra_novelty.png}
