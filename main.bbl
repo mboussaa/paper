@@ -31,6 +31,18 @@ L.~Almagor, K.~D. Cooper, A.~Grosul, T.~J. Harvey, S.~W. Reeves,
   D.~Subramanian, L.~Torczon, and T.~Waterman, ``Finding effective compilation
   sequences,'' \emph{ACM SIGPLAN Notices}, vol.~39, no.~7, pp. 231--239, 2004.
 
+\bibitem{pan2006fast}
+Z.~Pan and R.~Eigenmann, ``Fast and effective orchestration of compiler
+  optimizations for automatic performance tuning,'' in \emph{Code Generation
+  and Optimization, 2006. CGO 2006. International Symposium on}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2006, pp. 12--pp.
+
+\bibitem{nagiub2013automatic}
+M.~Nagiub and W.~Farag, ``Automatic selection of compiler options using genetic
+  techniques for embedded software design,'' in \emph{Computational
+  Intelligence and Informatics (CINTI), 2013 IEEE 14th International Symposium
+  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 69--74.
+
 \bibitem{chen2012deconstructing}
 Y.~Chen, S.~Fang, Y.~Huang, L.~Eeckhout, G.~Fursin, O.~Temam, and C.~Wu,
   ``Deconstructing iterative optimization,'' \emph{ACM Transactions on
@@ -62,6 +74,15 @@ L.~G. Martins, R.~Nobre, A.~C. Delbem, E.~Marques, and J.~M. Cardoso,
   Languages, compilers and tools for embedded systems}.\hskip 1em plus 0.5em
   minus 0.4em\relax ACM, 2014, pp. 63--72.
 
+\bibitem{yang2011finding}
+X.~Yang, Y.~Chen, E.~Eide, and J.~Regehr, ``Finding and understanding bugs in c
+  compilers,'' in \emph{ACM SIGPLAN Notices}, vol.~46, no.~6.\hskip 1em plus
+  0.5em minus 0.4em\relax ACM, 2011, pp. 283--294.
+
+\bibitem{lehman2008exploiting}
+J.~Lehman and K.~O. Stanley, ``Exploiting open-endedness to solve problems
+  through the search for novelty.'' in \emph{ALIFE}, 2008, pp. 329--336.
+
 \bibitem{banzhaf1996effect}
 W.~Banzhaf, F.~D. Francone, and P.~Nordin, ``The effect of extensive use of the
   mutation operator on generalization in genetic programming using sparse data
@@ -78,12 +99,6 @@ C.~Gathercole and P.~Ross, ``An adverse interaction between crossover and
 M.~R. Jantz and P.~A. Kulkarni, ``Performance potential of optimization phase
   selection during dynamic jit compilation,'' \emph{ACM SIGPLAN Notices},
   vol.~48, no.~7, pp. 131--142, 2013.
-
-\bibitem{pan2006fast}
-Z.~Pan and R.~Eigenmann, ``Fast and effective orchestration of compiler
-  optimizations for automatic performance tuning,'' in \emph{Code Generation
-  and Optimization, 2006. CGO 2006. International Symposium on}.\hskip 1em plus
-  0.5em minus 0.4em\relax IEEE, 2006, pp. 12--pp.
 
 \bibitem{pallister2015identifying}
 J.~Pallister, S.~J. Hollis, and J.~Bennett, ``Identifying compiler options to
@@ -111,10 +126,6 @@ E.~Schulte, J.~Dorn, S.~Harding, S.~Forrest, and W.~Weimer, ``Post-compiler
 I.~Stuermer, M.~Conrad, H.~Doerr, and P.~Pepper, ``Systematic testing of
   model-based code generators,'' \emph{Software Engineering, IEEE Transactions
   on}, vol.~33, no.~9, pp. 622--634, 2007.
-
-\bibitem{lehman2008exploiting}
-J.~Lehman and K.~O. Stanley, ``Exploiting open-endedness to solve problems
-  through the search for novelty.'' in \emph{ALIFE}, 2008, pp. 329--336.
 
 \bibitem{risi2010evolving}
 S.~Risi, C.~E. Hughes, and K.~O. Stanley, ``Evolving plastic neural networks

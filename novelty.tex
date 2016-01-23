@@ -1,62 +1,67 @@
 \section{Novelty Search Compiler Optimizations Exploration}
  
-The goal of the Novelty Search approach for compiler optimization is to identify the set of compiler optimization options that provide a trade-off with respect to resource utilization. 
+The goal of the Novelty Search approach for compiler optimization is to identify the set of compiler optimization options that provides a trade-off with respect to resource utilization. 
 
 \subsection{Novelty Search Adaptation}
 Optimization options are difficult and even impossible to be chosen by programmers or compiler users.
 Therefore, a tool to help users to choose the best set of options becomes necessary to achieve a compiler optimization with effectiveness and efficience. 
 
 In our work, we aim at providing a new alternative for choosing effective compiler optimization options. 
-In fact, since the search space of possible combinations is too large, we aim at using a new search-based technique called Novelty Search to tackle this issue. 
-The idea of this approach is to explore the search space of possible compiler flag options without regard to any objective. 
-Instead of having a fitness-based selection that aim at optimizing either the execution time or the energy consumption, we select optimization sequences based on a novelty score showing how different they are compared to all other combinations evaluated so far. 
-This makes the tool fitness and program independent.
-
+In fact, since the search space of possible combinations is too large, we aim at using a new search-based technique called Novelty Search~\cite{lehman2008exploiting} to tackle this issue. 
+The idea of this approach is to explore the search space of possible compiler flag options by considering sequences diversity as a single objective. 
+Instead of having a fitness-based selection that maximizes one of the non-functional objectives, we select optimization sequences based on a novelty score showing how different they are compared to all other combinations evaluated so far. 
 We claim that the search toward effective optimization sequences is not straightforward since the interactions between optimizations is too complex and difficult to predict and to define. 
-For instance, in a previous work Chen et al.~\cite{chen2012deconstructing} showed that handful optimizations may lead to higher speedup than other techniques of iterative optimization. 
+For instance, in a previous work Chen et al.~\cite{chen2012deconstructing} showed that handful optimizations may lead to higher performance than other techniques of iterative optimization. 
 In fact, the fitness-based search may be trapped into some local optima that can not escape. 
 This phenomenon is known as "diversity loss". For example, if the most effective optimization sequence that induces less execution time, lies far from the search space defined by the gradient of the fitness function, then some promising search areas may not be reached. 
 The issue of premature convergence to local optima has been a common problem in evolutionary algorithms. 
 Many methods are proposed to overcome this problem~\cite{banzhaf1996effect,gathercole1996adverse}. 
-However, all these efforts use a fitness-based selection to guide the search. 
-Therefore, diversity maintenance in the population level is key for avoiding premature convergence. Considering diversity as the unique objective function to be optimized may be a key solution to this problem.
-
-Therefore, during the evolutionary process, we select optimization sequences that remain in sparse regions of the search space in order to guide the search through novelty. 
+However, all these efforts use a fitness-based selection to guide the search. Considering diversity as the unique objective function to be optimized may be a key solution to this problem.
+Therefore, during the evolutionary process, we select optimization sequences that remain in sparse regions of the search space in order to guide the search toward novelty. 
 In the meanwhile, we choose to gather non-functional metrics of explored sequences such as memory consumption. 
-These metrics will provide us a more fine-grained understanding and analysis of compiler's behavior regarding optimizations. 
+We describe in more details the way we are collecting these non-functional metrics in section 4.
+
+Mainly, NS acts like Genetic Algorithms. However, NS needs extra changes. First, a new novelty metric to replace the fitness function. Then, an archive must be added to the algorithm which is a kind of a data base that remembers individuals that were highly novel when they were discovered in past generations. 
+Algorithm~\ref{algo:search} describes the overall idea of our NS adaptation. The algorithm takes as input a source code program and a list of optimizations. We initialize first the novelty parameters and create a new archive with limit size L. In this example, we gathered information about memory consumption. In line 3 \& 4, we compile and execute the input program without any optimization (O0). Then, we measure the resulting memory consumption. By doing so, we will be able to compare it to the memory consumption of new generated solutions. The best solution yields to the lowest memory consumption comparing to O0 usage.
+Before starting the evolutionary process, we generate an initial population with random sequences. Line 6-21 encode the main NS loop, which searches for the best sequence in term of memory consumption. For each sequence in the population, we compile the input program, execute it and evaluate the solution by calculating the average distance from its k-nearest neighbors. Sequences that get a novelty metric higher than the novelty threshold T are added to archive. T defines the threshold for how novel a sequence has to be before it is added to the archive. In the meantime, we check if the solution yields to lowest memory consumption so that we can consider it as the best solution. Finally, genetic operators
+(mutation and crossover) are applied afterwards to fulfill the next population. The process is iterated until reaching the maximum number of evaluations.
+
 
 \begin{algorithm}
 	\caption{Novelty search algorithm for compiler optimizations exploration}
 	\label{algo:search}
 	\begin{algorithmic}[1]
-		\REQUIRE Optimization sequences $\mathcal{S}$
-		\REQUIRE Benchmark programs $\mathcal{B}$
-		
+		\REQUIRE Optimization options $\mathcal{O}$
+		\REQUIRE Program $\mathcal{C}$
 		\REQUIRE Novelty threshold $\mathcal{T}$
 		\REQUIRE Limit $\mathcal{L}$
 		\REQUIRE Nearest neighbors $\mathcal{K}$
-		
-		\ENSURE Best optimization sequence best\_sequence
-		\STATE $initialize\_archive(archive,\mathcal{L})$
-		\STATE $population \gets random\_sequences(\mathcal{S})$
+		\REQUIRE Number of evaluations $\mathcal{N}$
+		\ENSURE Best optimization sequence $best\_sequence$
+		\STATE $initialize\_parameters(\mathcal{L},T,N,K)$
+		\STATE $create\_archive(\mathcal{L})$
+		\STATE 	$generated\_code \gets compile("O0",\mathcal{C})$
+		\STATE 	$minimum\_usage \gets execute(generated\_code)$
+		\STATE $population \gets random\_sequences(\mathcal{O})$
 		\REPEAT
-		
 		\FOR{$sequence \in population$}   
-		\FOR{$program \in \mathcal{B}$}
-		\STATE 	$perfomance \gets execute(sequence,program)$
-		\ENDFOR
+		\STATE 	$generated\_code \gets compile(sequence,\mathcal{C})$
+		\STATE 	$memory\_usage \gets execute(generated\_code)$
 		\STATE	$novelty\_metric(sequence) \gets distFromKnearest(archive,population,\mathcal{K})$
-		
 		\IF{$novelty\_metric > \mathcal{T}$}
 		\STATE	$archive \gets archive \cup sequence$
 		\ENDIF
 		
+			\IF{$memory\_usage < minimum\_usage$}
+			\STATE	$best\_sequence \gets sequence$
+			\STATE	$minimum\_usage \gets memory\_usage$
+			\ENDIF
+			
 		\ENDFOR
-		
 		\STATE		$new\_population \gets generate\_new\_population(population)$
 		\STATE		$generation \gets generation + 1$
 		\UNTIL{generation = N}
-		\RETURN best\_sequence
+		\RETURN $best\_sequence$
 	\end{algorithmic}
 \end{algorithm}
 
@@ -69,12 +74,10 @@ A solution has always the same size which corresponds to the total number of inv
 However, during the evolutionary process, these flags are turned on or off depending on the mutation and crossover operators. As well, we keep the same order of invoking compiler flags since that does not affect the optimization process and it is handled internally by GCC.
 
 \subsubsection{Novelty Metric}
-The Novelty metric expresses the sparseness of an input optimization sequence. It measures its distance to all other sequences in the current population and to all sequences that were discovered in the past (\ie, sequences in the archive).
-This measure expresses the optimization sequence unicity. 
+The Novelty metric expresses the sparseness of an input optimization sequence. It measures its distance to all other sequences in the current population and to all sequences that were discovered in the past (\ie, sequences in the archive). 
 We can quantify the sparseness of a solution as the average distance to the k-nearest neighbors. 
 If the average distance to a given point's nearest neighbors is large then it belongs to a sparse area and will get a high novelty score. 
 Otherwise, if the average distance is small so it belongs certainly to a dense region then it will get a low novelty score. 
-Algorithm~\ref{algo:search} shows an overview of the evolutionary process of NS. 
 The distance between two sequences is computed as the total number of symmetric differences among optimization options. Formally, we define this distance as follows :
 
 \begin{equation}

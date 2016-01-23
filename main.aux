@@ -1,0 +1,83 @@
+\relax 
+\citation{brambilla2012model}
+\citation{almagor2004finding,pan2006fast}
+\citation{nagiub2013automatic}
+\citation{almagor2004finding,chen2012deconstructing}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Motivation}{1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Compilers optimizations}{1}}
+\citation{almagor2004finding,hoste2008cole}
+\citation{hoste2008cole,zhong2009tuning,sandran2012genetic,martins2014exploration}
+\citation{yang2011finding}
+\citation{lehman2008exploiting}
+\citation{chen2012deconstructing}
+\citation{banzhaf1996effect,gathercole1996adverse}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Example: GCC compiler}{2}}
+\newlabel{table:options}{{\unhbox \voidb@x \hbox {II-B}}{2}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Compiler optimization options within standard optimization levels}}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Novelty Search Compiler Optimizations Exploration}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Novelty Search Adaptation}{2}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Novelty search algorithm for compiler optimizations exploration}}{3}}
+\newlabel{algo:search}{{1}{3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-A}1}Optimization sequence representation}{3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-A}2}Novelty Metric}{3}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}An infrastructure for non-functional testing using docker containers technologies}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Docker as a deployment environment}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Monitoring components}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}1}Monitoring component: cAdvisor}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}2}Back-end Database component: InfluxDB}{5}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Resource usage metrics recorded in InfluxDB}}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}3}Front-end Visualization Component: Grafana}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Wrapping everything together: Architecture Overview}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Evaluation}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the docker-based testing architecture}}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}Case Study 1: FFmpeg}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-A}1}FFmpeg: Multimedia Encoding Library}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-A}2}Docker-based Infrastructure for monitoring FFmpeg containers}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Snapshot of runtime memory consumption profiles of FFmpeg containers compiled with O0 (no optimization) and O3 options}}{7}}
+\newlabel{AAA}{{3}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Overview of the different components involved in testing and monitoring of FFmpeg containers}}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-A}3}Experimental results}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Comparison of average memory consumption and execution time of running workload in FFmpeg containers compiled with standard GCC optimization options}}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Case Study 2: Novelty-based exploration of optimization sequences}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Overall process of optimization space exploration and monitoring}}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}1}Approach}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}2}Benchmark programs}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Description of selected benchmark programs}}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}3}Novelty Parameters}{8}}
+\citation{almagor2004finding,hoste2008cole,jantz2013performance,pan2006fast,zhong2009tuning,pallister2015identifying,chen2012deconstructing,sandran2012genetic,martins2014exploration,fursin2008milepost,lin2008automatic,schulte2014post}
+\citation{stuermer2007systematic}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Parameters of the evolutionary algorithm}}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}4}Experimental results}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Related Work}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Evaluating the amount of saved memory after applying standard optimization options comparing to new generated optimizations using NS}}{9}}
+\citation{lehman2008exploiting}
+\citation{risi2010evolving,krvcah2012solving}
+\citation{boussaa2015novelty}
+\bibstyle{IEEEtran}
+\bibdata{ref}
+\bibcite{brambilla2012model}{1}
+\bibcite{almagor2004finding}{2}
+\bibcite{pan2006fast}{3}
+\bibcite{nagiub2013automatic}{4}
+\bibcite{chen2012deconstructing}{5}
+\bibcite{hoste2008cole}{6}
+\bibcite{zhong2009tuning}{7}
+\bibcite{sandran2012genetic}{8}
+\bibcite{martins2014exploration}{9}
+\bibcite{yang2011finding}{10}
+\bibcite{lehman2008exploiting}{11}
+\bibcite{banzhaf1996effect}{12}
+\bibcite{gathercole1996adverse}{13}
+\bibcite{jantz2013performance}{14}
+\bibcite{pallister2015identifying}{15}
+\bibcite{fursin2008milepost}{16}
+\bibcite{lin2008automatic}{17}
+\bibcite{schulte2014post}{18}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Evaluating the speedup after applying standard optimization options comparing to new generated optimizations using NS}}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion and Future work}{10}}
+\@writefile{toc}{\contentsline {section}{References}{10}}
+\bibcite{stuermer2007systematic}{19}
+\bibcite{risi2010evolving}{20}
+\bibcite{krvcah2012solving}{21}
+\bibcite{boussaa2015novelty}{22}
