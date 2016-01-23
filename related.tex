@@ -2,9 +2,19 @@
 Our work is related to iterative compilation research field.
 The basic idea of iterative compilation is to explore
 the compiler optimization space by measuring the impact of optimizations on softwares performance.
-Researches have investigated this optimization problem to catch relevant optimizations regrading performance, energy or code size improvements over standard optimization sequences\cite{almagor2004finding,hoste2008cole,jantz2013performance,pan2006fast,zhong2009tuning,pallister2015identifying,chen2012deconstructing,sandran2012genetic,martins2014exploration,fursin2008milepost,lin2008automatic,schulte2014post}. The vast majority of the work on iterative compilation focuses on increasing the speedup of new optimized code comparing to standard optimizations. It has been proven that optimizations are highly dependent on target platform and input program. Compared to our proposal, we rather focus on comparing the resource consumption of optimized code.
+Several research efforts have investigated this optimization problem to catch relevant optimizations regrading performance, energy or code size improvements over standard optimization sequences~\cite{almagor2004finding,hoste2008cole,jantz2013performance,pan2006fast,zhong2009tuning,pallister2015identifying,chen2012deconstructing,sandran2012genetic,martins2014exploration,fursin2008milepost,lin2008automatic,schulte2014post}. 
+The vast majority of the work on iterative compilation focuses on increasing the speedup of new optimized code comparing to standard optimizations. 
+It has been proven that optimizations are highly dependent on target platform and input program. Compared to our proposal, we rather focus on comparing the resource consumption of optimized code.
 
-For code generators testing, Stuermer et al.\cite{stuermer2007systematic} present a systematic test
-approach for model-based code generators. They, investigated  the impact of optimization rules for model-based code generation by comparing the output of the code execution with the output of the model execution On the one hand. If these outputs are equivalent, it is assumed that the code generators works as expected. They evaluated the effectiveness of this approach by means of testing optimizations performed by the TargetLink code generator. They have used simulink as a simulation environment of models. In our approach, we provide more a visualization infrastructure for non-function testing based on system containers.
+For code generators testing, Stuermer et al.~\cite{stuermer2007systematic} present a systematic test approach for model-based code generators. 
+They investigate  the impact of optimization rules for model-based code generation by comparing the output of the code execution with the output of the model execution. 
+If these outputs are equivalent, it is assumed that the code generator works as expected. 
+They evaluate the effectiveness of this approach by means of testing optimizations performed by the TargetLink code generator. 
+They have used Simulink as a simulation environment of models. 
+In our approach, we provide a visualization infrastructure for non-function testing based on system containers.
 
-The idea of NS has been introduced by Lehman et al.\cite{lehman2008exploiting}. It has been often evaluated in deceptive tasks and especially applied to evolutionary robotics (in the context of neuroevolution)\cite{risi2010evolving,krvcah2012solving}. NS can easily be adapted to different research fields. In this work\cite{boussaa2015novelty}, NS has been adapted for test data generation where novelty score was calculated as the Manhattan distance between the different vectors representing data. In our NS adaptation, we measures the novelty score using the systematic difference between optimization sequences of GCC.
+The idea of NS has been introduced by Lehman et al.~\cite{lehman2008exploiting}. 
+It has been often evaluated in deceptive tasks and especially applied to evolutionary robotics~\cite{risi2010evolving,krvcah2012solving} (in the context of neuroevolution). 
+NS can easily be adapted to different research fields. 
+In a previous work~\cite{boussaa2015novelty}, NS has been adapted for test data generation where novelty score was calculated as the Manhattan distance between the different vectors representing data.
+In our NS adaptation, we measure the novelty score using the systematic difference between optimization sequences of GCC.
