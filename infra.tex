@@ -46,9 +46,11 @@ cAdvisor docker image does not need any configuration on the host machine. We ha
 
 However, cAdvisor monitors and aggregates live data over only 60 seconds interval.Therefore, we would like to record all data over time since container's creation. This is useful to run queries and define non-functional metrics from historical data. Thereby, To make gathered data truly valuable for resources usage monitoring, it becomes necessary to log it in a database at runtime. Thus, we connected our monitoring component to a back-end data base for better understanding of non-functional properties. 
 \subsubsection{Back-end Database Component}
-We use InfluxDB\footnote{https://github.com/influxdata/influxdb}, an open source distributed time series database as backend to record data. It collects docker container performance metrics through cAdvisor for long-term retention, analytics and visualization. When a new container is launched it will be automatically fetched by cAdvisor and its statistics will be continuously sent into InfluxDB while the container is running. When a container is killed, all statistics will be deleted afterward. cAdvisor must be plugged with the new created
-times-series database created in influxDB to use it as a datastore back-end. Hence, we add the ip port of the database to cadvisor image. So, container statistics are sent over TCP port (e.g, 8086) exposed by influxdb.
-InfluxDB allow the user to execute SQL queries on the database. For example the following query reports the average memory usage of container $"generated-code-v1"$ for each 2s since container has been started:
+This component represents a times-series database back-end. It is plugged with the previously described monitoring component to save the non-functional data for long-term retention, analytics and visualization. Hence, we define its corresponding ip port into the monitoring component so that, container statistics are sent over TCP port (e.g, 8086) exposed by the database component.
+
+During the execution of generated code, resource usage stats will be continuously sent into this component. When a container is killed, all statistics will be deleted afterward. We choose a time series database because we are collecting time series data that corresponds to the resource utilization profile of generated code execution.
+
+We use InfluxDB\footnote{https://github.com/influxdata/influxdb}, an open source distributed time series database as backend to record data. InfluxDB allows the user to execute SQL-like queries on the database. For example the following query reports the average memory usage of container $"generated/_code/_v1"$ for each 2s since container has started:
 
 \begin{lstlisting}[
 language=SQL,
@@ -59,23 +61,23 @@ numberstyle=\tiny,
 commentstyle=\color{gray}
 ]
 select mean(memory_usage) from stats where 
-container_name='generated-code-v1' group by 
+container_name='generated/_code/_v1' group by 
 time(2s)
 \end{lstlisting}
-To give an idea about data stored in InfluxDB. The following table describes the different performance metrics stored in InfluxDB:
+To give an idea about data stored in InfluxDB. The following table describes the different metrics stored:
  \begin{table}[h]
  	\begin{center}
  		\begin{tabular}{|p{1cm}|p{6.9cm}|}
  			\hline
  			 Name & Name of the container \\
  			\hline
- 			 Ts & Starting time of the container in epoch time (seconds) \\
+ 			 Ts & Starting time of the container in epoch time \\
  			\hline
  			 Network &  Stats for network bytes and packets in an out of the container \\
  			\hline
- 			 Disk IO &  Disk I/O stats for the container \\
+ 			 Disk IO &  Disk I/O stats \\
  			\hline
- 			 Memory &  Memory usage in KB \\
+ 			 Memory &  Memory usage \\
  			
  			\hline
  		   	CPU &  Cumulative CPU usage \\
@@ -86,7 +88,7 @@ To give an idea about data stored in InfluxDB. The following table describes the
  	\end{center}
  	\caption {Resource usage metrics recorded in InfluxDB}
  \end{table}
-For the moment, we set our back-end for docker monitoring tool (cAdvisor+influxDB). It would be nice to pull all the pieces together visually to view nice charted graphs within a complete dashboard. It is relevant to show performance profiles of memory and CPU consumption of our running applications overtime. To do that, we present Grafana for performance profiling. 
+For instance, we set the back-end container of our component-based infrastructure. It would be nice to pull all the pieces together visually to view resource consumption graphs within a complete dashboard. It is relevant to show performance profiles of memory and CPU consumption for example of our running applications overtime. To do that, we present a front-end visualization component for performance profiling. 
 
 \subsubsection{Front-end Visualization Component}
 Once we have gathered and stored performance data, the next step is visualizing them. That is the role of Grafana\footnote{https://github.com/grafana/grafana}. Grafana can be considered as a web application running within a container. It is one of the best time-series metric visualization tools available. It can easily work with data held in InfluxDB. It provides us a dashboard to run queries against the linked database and chart them accordingly in a very nice layout. Grafana will be the endpoint that we will use to visualize the recorded data. It is easily configurable and will let us choose what to render through Web UI. We run Grafana within a docker container and we link it to InfluxDB by setting the data port 8086 so that it can easily request data from the database.
