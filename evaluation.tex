@@ -9,6 +9,14 @@ provide an understanding of the performance of generated code by GCC.
 In a second experiment, we assess our NS approach for automatic optimization sequences generation by comparing the results found when applying standard optimization sequences to new results provided by our approach. The experimental results show that our novelty-based approach can produce optimization sequences with good performance and less resource consumption
 than standard optimization levels in GCC. In this experiment, we studied the correlation between execution time and memory consumption of generated code.
 
+These two case studies  also enable to validate the global approach for non functional testing of code generators using system containers. 
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg.png}
+	\caption{Overview of the different components involved in testing and monitoring of FFmpeg containers}
+\end{figure}
+
 
 \subsection{Case Study 1: FFmpeg}
 In the first experiment, we set up our infrastructure for testing and monitoring of generated code. In this part, we compiled the FFmpeg library using standard GCC optimizations(O1, O2, O3, Ofast) and we studied the impact of these optimizations on memory consumption and execution time using our Docker-based infrastructure.
@@ -16,21 +24,12 @@ In the first experiment, we set up our infrastructure for testing and monitoring
 \subsubsection{FFmpeg: Multimedia Encoding Library}
 FFmpeg\footnote{https://www.ffmpeg.org/} is a complete, cross-platform solution to record, convert and stream audio and video. It is a very fast video and audio converter. It includes libraries of audio/video codecs and a command-line program for transcoding multimedia files. FFmpeg allows different types of multimedia conversion and that depends on the input and output format (video, audio, subtitle, attachment, data). Video/audio processing with FFmpeg usually need high-performance requirements and a lot of resources in term of memory usage. So, testing GCC on top of this library is very interesting in order to compare resource usage profiles. 
 \subsubsection{Docker-based Infrastructure for Monitoring FFmpeg Containers}
-\begin{figure}[!b]
-	\centering
-	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg.png}
-	\caption{Overview of the different components involved in testing and monitoring of FFmpeg containers}
-\end{figure}
-\begin{figure*}
-	
-	\center
-	
-	\includegraphics[width=14cm,height=5.1cm]{Ressources/infra_stats.png}
+
+\begin{figure}
+	\includegraphics[width=0.9\linewidth]{Ressources/infra_stats.png}[tbh]
 	\caption{Snapshot of runtime memory consumption profiles of FFmpeg containers compiled with O0 (no optimization) and O3 options}
-	
-	\label{AAA}
-	
-\end{figure*}
+%		\label{AAA}
+\end{figure}
 The goal of this experiment is to compile FFmpeg with standard GCC optimization options and run FFmpeg command examples on top of different versions in order to compare the memory usage profiles and execution time of different variants using our testing architecture. An overview of the different components involved in testing and monitoring of FFmpeg containers is shown in Figure 2. 
 First, we compile FFmpeg library with different optimization options  (O0, O1, O2, O3 and Ofast) in order to produce 5 variants of FFmpeg. This is done within Docker containers. We configure each container to install FFmpeg with a specific configuration and we upload all FFmpeg images in Docker Hub\footnote{https://hub.docker.com/}.
 Docker Hub is a cloud-based registry service for building and shipping application or service containers. We are using it for building, saving and managing all our Docker images.
@@ -48,9 +47,9 @@ In this first part of experiments with FFmpeg, we compare a zero-level optimizat
 To better understand the resource usage of optimized code, we run the same experiment for all FFmpeg containers and we collect the same metrics. Figure 4 presents a comparison of average memory usage and execution time of FFmpeg containers compiled with all standard GCC optimization options. We remark that the memory usage is increasing as soon as we apply more aggressive optimization. However, when we apply higher optimization level, we clearly improve the execution time compared to O0. For example, O3 and Ofast have the highest memory consumption (100 MBytes more than O0) and best execution time (speedup around 1.8) which can be inconvenient for systems with limited resources.
 
 This results explain that optimizing for execution time (for the case of FFmpeg) is not always efficient regarding memory usage and unfortunately, optimizations may influence negatively on system resources.
-\begin{figure}[h]
+\begin{figure}[hbt]
 	\centering
-	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg_plot1.png}
+	\includegraphics[width=0.9\linewidth]{Ressources/infra_ffmpeg_plot1.png}
 	\caption{Comparison of average memory consumption and execution time of FFmpeg containers compiled with standard GCC optimization options}
 \end{figure}
 
@@ -58,15 +57,18 @@ This results explain that optimizing for execution time (for the case of FFmpeg)
 \subsection{Case Study 2: Novelty-based Exploration of Optimization Sequences}
 In this second case study, we assess the performance of GCC compiler across different benchmark programs. The goal of this experiment is to show that our approach for exploring the search space of optimizations is able to generate efficient code that yields to less resource consumption than GCC default optimizations.
 \subsubsection{Setting Up Infrastructure}
-\begin{figure}[h]
+\begin{figure}[b]
 	\centering
 	\includegraphics[scale=0.50]{Ressources/infra_novelty.png}
 	\caption{Overall process of monitoring code generated by GCC}
+	
+%	\vspace*{-5cm}
+	
 \end{figure}
 For this experiment, we keep the same architecture settings as first case study. However, in this example, we provide a more generalized approach for automatic testing of code generators using system containers. So, starting from a list of optimizations defined by the user, an input program and a specific target compiler, we are able to execute and monitor optimized code. Figure 5 shows more details about this process. First, our novelty-based test sequences generator generates a huge amount of diverse optimizations. We compile an input program with these generated sequences using GCC. Then, we execute produced binaries sequentially within isolated Docker containers (Docker image with GCC version 4.8.4 installed above). We keep the same monitoring chain to gather resource usage of running containers. This process is repeated until the end of generated sequences. Finally, end-users (testers) can access to resource consumption statistics through InfluxDB or Grafana Web UI to compare the impact of optimizations on resource consumption. In this example too, we choose to focus on studying the trade-off memory usage/execution time. 
 \subsubsection{Benchmark programs}
 To explore the impact of compiler optimizations a set of input programs are needed. We run experiments on commonly used benchmarks named Collective Benchmark (cBench)~\cite{fursin2009collective}. It is a collection of open-source sequential programs in C targeting specific areas of the embedded market. It comes with multiple datasets assembled by the community to enable realistic benchmarking and research on program and architecture optimization. cBench contains more than 20 C programs. The following table describes programs that we have selected from this benchmark to evaluate our approach.
-\begin{table}[h]
+\begin{table}[b]
 	\begin{center}
 		\begin{tabular}{|c|c|p{4cm}|}
 			\hline
