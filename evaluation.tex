@@ -11,11 +11,6 @@ than standard optimization levels in GCC. In this experiment, we studied the cor
 
 These two case studies  also enable to validate the global approach for non functional testing of code generators using system containers. 
 
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg.png}
-	\caption{Overview of the different components involved in testing and monitoring of FFmpeg containers}
-\end{figure}
 
 
 \subsection{Case Study 1: FFmpeg}
@@ -24,6 +19,13 @@ In the first experiment, we set up our infrastructure for testing and monitoring
 \subsubsection{FFmpeg: Multimedia Encoding Library}
 FFmpeg\footnote{https://www.ffmpeg.org/} is a complete, cross-platform solution to record, convert and stream audio and video. It is a very fast video and audio converter. It includes libraries of audio/video codecs and a command-line program for transcoding multimedia files. FFmpeg allows different types of multimedia conversion and that depends on the input and output format (video, audio, subtitle, attachment, data). Video/audio processing with FFmpeg usually need high-performance requirements and a lot of resources in term of memory usage. So, testing GCC on top of this library is very interesting in order to compare resource usage profiles. 
 \subsubsection{Docker-based Infrastructure for Monitoring FFmpeg Containers}
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg.png}
+	\caption{Overview of the different components involved in testing and monitoring of FFmpeg containers}
+\end{figure}
+
 
 \begin{figure}[tbh]
 	\includegraphics[width=1\linewidth]{Ressources/infra_stats.png}
@@ -49,7 +51,7 @@ To better understand the resource usage of optimized code, we run the same exper
 This results explain that optimizing for execution time (for the case of FFmpeg) is not always efficient regarding memory usage and unfortunately, optimizations may influence negatively on system resources.
 \begin{figure}[hbt]
 	\centering
-	\includegraphics[width=0.9\linewidth]{Ressources/infra_ffmpeg_plot1.png}
+	\includegraphics[width=1\linewidth]{Ressources/infra_ffmpeg_plot1.png}
 	\caption{Comparison of average memory consumption and execution time of FFmpeg containers compiled with standard GCC optimization options}
 \end{figure}
 

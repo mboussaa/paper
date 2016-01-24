@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.30)  24 JAN 2016 11:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.30)  24 JAN 2016 11:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,18 +483,16 @@ Package pdftex.def Info: Ressources/infra.png used on input line 105.
 File: Ressources/infra_ffmpeg.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg.png>
-Package pdftex.def Info: Ressources/infra_ffmpeg.png used on input line 16.
+Package pdftex.def Info: Ressources/infra_ffmpeg.png used on input line 25.
 (pdftex.def)             Requested size: 252.0pt x 332.18698pt.
 
-Underfull \vbox (badness 2875) has occurred while \output is active []
-
- [6 <./Ressources/infra.png> <./Ressources/infra_ffmpeg.png>]
-<Ressources/infra_stats.png, id=37, 1517.67pt x 613.29124pt>
+<Ressources/infra_stats.png, id=32, 1517.67pt x 613.29124pt>
 File: Ressources/infra_stats.png Graphic file (type png)
 
 <use Ressources/infra_stats.png>
-Package pdftex.def Info: Ressources/infra_stats.png used on input line 29.
+Package pdftex.def Info: Ressources/infra_stats.png used on input line 31.
 (pdftex.def)             Requested size: 252.0pt x 101.82503pt.
+ [6 <./Ressources/infra.png>]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
@@ -502,30 +500,30 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 
-<Ressources/infra_ffmpeg_plot1.png, id=38, 488.0634pt x 330.033pt>
+<Ressources/infra_ffmpeg_plot1.png, id=37, 488.0634pt x 330.033pt>
 File: Ressources/infra_ffmpeg_plot1.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg_plot1.png>
 Package pdftex.def Info: Ressources/infra_ffmpeg_plot1.png used on input line 5
-2.
-(pdftex.def)             Requested size: 226.79846pt x 153.36304pt.
+4.
+(pdftex.def)             Requested size: 252.0pt x 170.40952pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./Ressources/infra_stats.png>]
+ [7 <./Ressources/infra_ffmpeg.png> <./Ressources/infra_stats.png>]
 <Ressources/infra_novelty.png, id=44, 319.1925pt x 315.1775pt>
 File: Ressources/infra_novelty.png Graphic file (type png)
 
 <use Ressources/infra_novelty.png>
-Package pdftex.def Info: Ressources/infra_novelty.png used on input line 62.
+Package pdftex.def Info: Ressources/infra_novelty.png used on input line 64.
 (pdftex.def)             Requested size: 159.59586pt x 157.58836pt.
 
-Underfull \hbox (badness 3058) in paragraph at lines 90--92
+Underfull \hbox (badness 3058) in paragraph at lines 92--94
 []\OT1/ptm/m/n/8 Convert a greyscale im-age to
  []
 
 
-Overfull \hbox (5.16432pt too wide) in paragraph at lines 73--95
+Overfull \hbox (5.16432pt too wide) in paragraph at lines 75--97
  [] 
  []
 
@@ -535,7 +533,7 @@ File: Ressources/infra_novelty_stat3.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat3.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat3.png used on input line 
-128.
+130.
 (pdftex.def)             Requested size: 252.0pt x 156.18546pt.
 
 <Ressources/infra_novelty_stat2.png, id=51, 547.3248pt x 343.0416pt>
@@ -543,7 +541,7 @@ File: Ressources/infra_novelty_stat2.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat2.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
-140.
+142.
 (pdftex.def)             Requested size: 252.0pt x 157.94237pt.
 ) (./related.tex [9 <./Ressources/infra_novelty_stat3.png> <./Ressources/infra_
 novelty_stat2.png>]) (./conclusion.tex) (./main.bbl
@@ -582,7 +580,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 1092527 bytes).
+Output written on main.pdf (10 pages, 1068565 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream
