@@ -1,6 +1,6 @@
 \section{An Infrastructure for Non-functional Testing Using Docker Containers}
 
-To allow code generator testing, we need to deploy the test harness, \ie the produced binaries, on an elastic infrastructure that provides preconfigured virtual server images, storage, and the network connectivity that may be provisioned by testers. 
+To allow code generator testing, we need to deploy the test harness, \ie the produced binaries, on an elastic infrastructure that provides preconfigured virtual server images, storage, and resources that may be provisioned by testers. 
 Monitoring information should also be provided to inform about resource utilization required/needed and to automate the resource management of deployed components. 
 For this purpose, we propose a testing infrastructure based on Docker\footnote{\url{https://www.docker.com}} environment. 
 
@@ -14,7 +14,7 @@ Consequently, we rely on this technology and benefit from all its advantages to:
 	\item Gather performance metrics (CPU, Memory, I/O, etc.)
 \end{enumerate}
 
-We integrate a collection of Docker components to define the adequate infrastructure for testing and monitoring code generators. 
+We integrate a collection of Docker components to define the adequate infrastructure for testing and monitoring of code generators. 
 In the following sections, we describe the deployment and testing architecture of generated code within Docker.
 
 \subsection{Docker as Deployment Environment}
@@ -41,10 +41,10 @@ In order to test our running applications within Docker containers, we aim to us
 \subsubsection{Monitoring Component}
 This container will provide us an understanding of the resource usage and performance characteristics of our running containers. Generally, Docker containers rely on cgroups file systems to expose a lot of metrics about accumulated CPU cycles, memory, block I/O usage, etc. Therefore, our monitoring component automates the extraction of runtime performance metrics using cgroups. For example, we access to live resource consumption of each container available at the cgroup file system via stats found in $/sys/fs/cgroup/cpu/docker/(longid)/$ (for CPU consumption) and $/sys/fs/cgroup/memory/docker/(longid)/$ (for stats related to memory consumption). This component will automate the process of service discovery and metrics aggregation so that, instead of gathering manually metrics located in cgroups file systems, it will extract automatically runtime resource usage statistics relative to running components. We note that resource usage information is collected in raw data. This process may induce a little overhead, because it does very fine-grained accounting of resource usage on running container. Fortunately, this may not affect the gathered performance values since we run only one generated program by GCC within each container.
 
-To ease the monitoring process, we use google containers called cAdvisor as Container Advisor \footnote{https://github.com/google/cadvisor}. It is a tool developed by Google to monitor their infrastructure. 
+To ease the monitoring process, we use google containers called cAdvisor as Container Advisor\footnote{https://github.com/google/cadvisor}. It is a tool developed by Google to monitor their infrastructure. 
 cAdvisor Docker image does not need any configuration on the host machine. We have just to run it on our Docker host. It will then have access to the resource usage and performance characteristics of all running containers. This image uses the cgroups mechanism described above to collect, aggregate, process, and export ephemeral real-time information about running containers. Then, it reports all statistics via web UI ($http://localhost:8080$) to view live resource consumption of each container. cAdvisor has been widely in different projects such as Heapster\footnote{https://github.com/kubernetes/heapster} and Google Cloud Platform\footnote{https://cloud.google.com/}.
 
-However, cAdvisor monitors and aggregates live data over only 60 seconds interval. Therefore, we would like to record all data over time since container's creation. This is useful to run queries and define non-functional metrics from historical data. Thereby, To make gathered data truly valuable for resources usage monitoring, it becomes necessary to log it in a database at runtime. Thus, we link our monitoring component to a back-end data base for better understanding of non-functional properties. 
+However, cAdvisor monitors and aggregates live data over only 60 seconds interval. Therefore, we would like to record all data over time since container's creation. This is useful to run queries and define non-functional metrics from historical data. Thereby, To make gathered data truly valuable for resources usage monitoring, it becomes necessary to log it in a database at runtime. Thus, we link our monitoring component to a back-end database for better understanding of non-functional properties. 
 \subsubsection{Back-end Database Component}
 This component represents a times-series database back-end. It is plugged with the previously described monitoring component to save the non-functional data for long-term retention, analytics and visualization. Hence, we define its corresponding ip port into the monitoring component so that, container statistics are sent over TCP port (e.g, 8083) exposed by the database component.
 
