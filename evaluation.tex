@@ -1,0 +1,143 @@
+\section{Evaluation}
+In this section, we evaluate the implementation of our approach across two case studies. These experiments aim at answering the following research questions:
+
+1. RQ1: How do standard GCC optimization levels influence on the resource consumption of generated programs?
+To answer this question, we apply standard optimization options to FFmpeg library. Then, we evaluate the memory footprint and execution time of running FFmpeg command lines and we compare the results. The goal of this initial experiment is to
+provide an understanding of the performance of generated code by GCC.
+
+2. RQ2: To what extent can the proposed diversity-based exploration of optimization options impact the resource consumption of generated programs?
+In a second experiment, we assess our NS approach for automatic optimization sequences generation by comparing the results found when applying standard optimization sequences to new results provided by our approach. The experimental results show that our novelty-based approach can produce optimization sequences with good performance and less resource consumption
+than standard optimization levels in GCC. In this experiment, we studied the correlation between execution time and memory consumption of generated code.
+
+These two case studies  also enable to validate the global approach for non functional testing of code generators using system containers. 
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg.png}
+	\caption{Overview of the different components involved in testing and monitoring of FFmpeg containers}
+\end{figure}
+
+
+\subsection{Case Study 1: FFmpeg}
+In the first experiment, we set up our infrastructure for testing and monitoring of generated code. In this part, we compiled the FFmpeg library using standard GCC optimizations(O1, O2, O3, Ofast) and we studied the impact of these optimizations on memory consumption and execution time using our Docker-based infrastructure.
+
+\subsubsection{FFmpeg: Multimedia Encoding Library}
+FFmpeg\footnote{https://www.ffmpeg.org/} is a complete, cross-platform solution to record, convert and stream audio and video. It is a very fast video and audio converter. It includes libraries of audio/video codecs and a command-line program for transcoding multimedia files. FFmpeg allows different types of multimedia conversion and that depends on the input and output format (video, audio, subtitle, attachment, data). Video/audio processing with FFmpeg usually need high-performance requirements and a lot of resources in term of memory usage. So, testing GCC on top of this library is very interesting in order to compare resource usage profiles. 
+\subsubsection{Docker-based Infrastructure for Monitoring FFmpeg Containers}
+
+\begin{figure}
+	\includegraphics[width=0.9\linewidth]{Ressources/infra_stats.png}[tbh]
+	\caption{Snapshot of runtime memory consumption profiles of FFmpeg containers compiled with O0 (no optimization) and O3 options}
+%		\label{AAA}
+\end{figure}
+The goal of this experiment is to compile FFmpeg with standard GCC optimization options and run FFmpeg command examples on top of different versions in order to compare the memory usage profiles and execution time of different variants using our testing architecture. An overview of the different components involved in testing and monitoring of FFmpeg containers is shown in Figure 2. 
+First, we compile FFmpeg library with different optimization options  (O0, O1, O2, O3 and Ofast) in order to produce 5 variants of FFmpeg. This is done within Docker containers. We configure each container to install FFmpeg with a specific configuration and we upload all FFmpeg images in Docker Hub\footnote{https://hub.docker.com/}.
+Docker Hub is a cloud-based registry service for building and shipping application or service containers. We are using it for building, saving and managing all our Docker images.
+
+Afterwards, we execute the same stressload (FFmpeg examples) within each FFmpeg instance container. We choose 15 FFmpeg command examples that cover multiple domains\footnote{http://goo.gl/11VLYM} like video conversion, sound extraction, encoding file for iPod or PSP, etc. This list of examples is saved in a script file that should be executed later within FFmpeg containers. The media files needed for encoding are saved in a shared repository. In Docker environment, we call this repository the “Data Volume”. A data volume is a specially-designated directory within containers that share data with the host machine. Data is persistent and independent of container's life cycle. So, when we run FFmpeg containers we provide a shared volume with the host machine (where the media files are located). As well, the list of FFmpeg commands to execute is mounted in this volume so that, we can execute the same workload each time we run a new container.
+Before running FFmepg workload on different containers, we run monitoring components (cAdvisor, InfluxDB and Grafana) to start gathering usage statistics.
+In fact, in this experiment, we choose to gather statistics about memory consumption and execution time of different containers. 
+
+To obtain comparable and reproducible results, we used the same hardware across all experiments: an AMD A10-7700K APU Radeon(TM) R7 Graphics processor with 4 CPU cores (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of system memory.
+
+\subsubsection{Experimental Results}
+
+In this first part of experiments with FFmpeg, we compare a zero-level optimization container (FFmpeg-O0) with a high-level optimization one (FFmpeg-O3) in order to study the impact of optimizations on memory usage and execution time. Figure 3 shows runtime statistics of running two FFmpeg containers O0 and O3 with the same input workload. This chart depicts a snapshot of our visualization component web UI. It presents the memory usage profiles of two components (FFmpeg O0 and O3) started in the same time and running in parallel. Visually, we can see that the execution time of O3 (yellow) is faster than O0 (green) since O3 execution ended before O0. However, we can see that memory usage remains higher than O0 from the beginning to the end of running FFmpeg examples. 
+
+To better understand the resource usage of optimized code, we run the same experiment for all FFmpeg containers and we collect the same metrics. Figure 4 presents a comparison of average memory usage and execution time of FFmpeg containers compiled with all standard GCC optimization options. We remark that the memory usage is increasing as soon as we apply more aggressive optimization. However, when we apply higher optimization level, we clearly improve the execution time compared to O0. For example, O3 and Ofast have the highest memory consumption (100 MBytes more than O0) and best execution time (speedup around 1.8) which can be inconvenient for systems with limited resources.
+
+This results explain that optimizing for execution time (for the case of FFmpeg) is not always efficient regarding memory usage and unfortunately, optimizations may influence negatively on system resources.
+\begin{figure}[hbt]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Ressources/infra_ffmpeg_plot1.png}
+	\caption{Comparison of average memory consumption and execution time of FFmpeg containers compiled with standard GCC optimization options}
+\end{figure}
+
+
+\subsection{Case Study 2: Novelty-based Exploration of Optimization Sequences}
+In this second case study, we assess the performance of GCC compiler across different benchmark programs. The goal of this experiment is to show that our approach for exploring the search space of optimizations is able to generate efficient code that yields to less resource consumption than GCC default optimizations.
+\subsubsection{Setting Up Infrastructure}
+\begin{figure}[b]
+	\centering
+	\includegraphics[scale=0.50]{Ressources/infra_novelty.png}
+	\caption{Overall process of monitoring code generated by GCC}
+	
+%	\vspace*{-5cm}
+	
+\end{figure}
+For this experiment, we keep the same architecture settings as first case study. However, in this example, we provide a more generalized approach for automatic testing of code generators using system containers. So, starting from a list of optimizations defined by the user, an input program and a specific target compiler, we are able to execute and monitor optimized code. Figure 5 shows more details about this process. First, our novelty-based test sequences generator generates a huge amount of diverse optimizations. We compile an input program with these generated sequences using GCC. Then, we execute produced binaries sequentially within isolated Docker containers (Docker image with GCC version 4.8.4 installed above). We keep the same monitoring chain to gather resource usage of running containers. This process is repeated until the end of generated sequences. Finally, end-users (testers) can access to resource consumption statistics through InfluxDB or Grafana Web UI to compare the impact of optimizations on resource consumption. In this example too, we choose to focus on studying the trade-off memory usage/execution time. 
+\subsubsection{Benchmark programs}
+To explore the impact of compiler optimizations a set of input programs are needed. We run experiments on commonly used benchmarks named Collective Benchmark (cBench)~\cite{fursin2009collective}. It is a collection of open-source sequential programs in C targeting specific areas of the embedded market. It comes with multiple datasets assembled by the community to enable realistic benchmarking and research on program and architecture optimization. cBench contains more than 20 C programs. The following table describes programs that we have selected from this benchmark to evaluate our approach.
+\begin{table}[b]
+	\begin{center}
+		\begin{tabular}{|c|c|p{4cm}|}
+			\hline
+			\textbf{Program} & \textbf{Source lines} & \textbf{Description}\\
+			\hline
+			automative\_susan\_s & 1376 & Image recognition package\\
+			\hline
+			bzip2e & 5125 & Compress any file
+			source code \\
+			\hline
+			bzip2d & 5125 & Decompress zipped files \\
+			\hline
+			office\_rsynth & 4111 & Text to speech program produced by integrating various pieces of code\\
+			\hline
+			consumer\_tiffmedian& 15870 & Apply the median cut algorithm to data in a TIFF file
+			\\
+			
+			\hline
+			 consumer\_tiffdither& 15399 & Convert a greyscale image to bilevel using dithering
+			 \\
+			\hline
+			
+		\end{tabular}
+		
+	\end{center}
+	\caption {Description of selected benchmark programs}
+\end{table}
+\subsubsection{Novelty Parameters}
+%Our experiments use the classical NS algorithm, where we evolve a set of optimization sequences through generations.
+NS is implemented as described in Section 3.
+The first step in the process of selection is to evaluate each individual and compute its novelty score. Novelty is calculated for each organism by taking the mean of its 15 lowest dissimilar optimization sequences (considering all sequences in the current population and in the archive). 
+Then, to create next populations, an elite of the 10 most novel organisms is copied unchanged, after which the rest of the new population is created by tournament selection according to novelty. Standard genetic programming crossover and mutation operators are applied to these novel sequences in order to produce offspring individuals and fulfill the next population.
+In the meanwhile, individuals that get a score higher than the threshold T they are automatically added to the archive as well. 
+In fact, this threshold is dynamic. Every 150 evaluations, we check how many individuals have been copied into the archive. If this number is below 3, the threshold is increased by multiplying it by 0.95, whereas if solutions added to archive are above 3, the threshold is decreased by multiplying it by 1.05. 
+Moreover, as the size of the archive grows, the nearest-neighbor calculations that determine the novelty scores for individuals become more computationally demanding. So to avoid having low accuracy of novelty, we choose to bound the size of the archive. Hence, it follows a first-in first-out data structure which means that when a new solution gets added, the oldest solution in the novelty archive will be discarded. Thus, we ensure individuals diversity by removing old sequences that may no longer be reachable from the current population.
+
+The parameters of the algorithm were tuned individually in preliminary experiments. For each parameter, a set of values was tested. The parameter values chosen are the mostly used in the literature~\cite{lehman2008exploiting}. The value that yielded the highest performance scores was chosen. The resulting parameter values are listed in Table 4.
+\begin{table}
+		\caption{Parameters of NS algorithm}
+		\begin{tabular}{ l l || l l }
+			Parameter & Value & Parameter & Value \\	\hline
+			Novelty nearest-k  & 15 &  Tournament size & 2\\ 
+			Add archive prob. & 30 &  Mutation prob. & 0.1\\  
+			Max archive size & 500 &  Crossover & 0.5  \\  
+			Population size & 100 &  Nb generations &  100 \\  
+			Individual length & 76 & Elitism & 10  \\ 
+			Scaling archive prob. & 0.05 & Solutions added to archive & 3  \\ 
+		\end{tabular}
+\end{table}
+
+\subsubsection{Experimental results}
+
+The goal of this experiment is to compare novelty-based generated sequences to standard GCC optimizations in term of memory consumption. Figure 6 shows this comparison across different benchmark programs. It presents the percentage of saved memory of standard and novelty optimizations over O0 level (no optimization applied).
+ 
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.\linewidth]{Ressources/infra_novelty_stat3.png}
+	\caption{Evaluating the amount of saved memory after applying standard optimization options compared to best generated optimization using NS}
+\end{figure}
+
+For NS, we select the best sequence that reduces the memory consumption and we compare it to the memory footprint of O0, O1, O2, O3 and Ofast versions. The results show clearly that NS outperforms standard optimizations for all benchmark programs. Using NS, we are able to reach a maximum memory consumption reduction of almost 26\% for the case rsynth program against a maximum of 18\% reduction using Ofast option. As well, We remark that the impact of applying standard optimizations on memory consumption for each program differs from one program to another. We can see that using O1 for bzip2e and O2, O3 for tiffmedian can even increase the memory consumption by almost 13 \% (like the FFmpeg experiments). This agrees to the idea that standard optimizations does not produce always the same impact results on resource consumption and may be highly dependent on the benchmark and the source code they have been tested on. Our approach can clearly provide an alternative to catch most relevant optimization sequence regarding resource consumptions.
+
+To study the correlation between execution time and memory consumption of running programs, we present in Figure 7 an evaluation of the speedup. We compared the speedup (according to O0) of the best optimization sequences by NS (gathered in Figure 6) with standard optimization options. 
+The first observation is that optimizations yield to high level of speedup for all benchmark programs (between 1.5 and 4.3).
+The second observation we can make is that different optimizations do not differ too much in term of execution time. We can distinguish that Ofast is slightly more efficient for all programs and NS sequence has almost the same speedup as Ofast. 
+The results of this experiments shows that optimizing for memory usage using NS does not affect programs execution time and we prove that we can find optimizations that reduce memory usage while guaranteeing program performance.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.\linewidth]{Ressources/infra_novelty_stat2.png}
+	\caption{Evaluating the speedup after applying standard optimization options compared to best generated optimization using NS}
+\end{figure}
+
