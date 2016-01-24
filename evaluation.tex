@@ -25,8 +25,8 @@ In the first experiment, we set up our infrastructure for testing and monitoring
 FFmpeg\footnote{https://www.ffmpeg.org/} is a complete, cross-platform solution to record, convert and stream audio and video. It is a very fast video and audio converter. It includes libraries of audio/video codecs and a command-line program for transcoding multimedia files. FFmpeg allows different types of multimedia conversion and that depends on the input and output format (video, audio, subtitle, attachment, data). Video/audio processing with FFmpeg usually need high-performance requirements and a lot of resources in term of memory usage. So, testing GCC on top of this library is very interesting in order to compare resource usage profiles. 
 \subsubsection{Docker-based Infrastructure for Monitoring FFmpeg Containers}
 
-\begin{figure}
-	\includegraphics[width=0.9\linewidth]{Ressources/infra_stats.png}[tbh]
+\begin{figure}[tbh]
+	\includegraphics[width=1\linewidth]{Ressources/infra_stats.png}
 	\caption{Snapshot of runtime memory consumption profiles of FFmpeg containers compiled with O0 (no optimization) and O3 options}
 %		\label{AAA}
 \end{figure}
@@ -70,7 +70,7 @@ For this experiment, we keep the same architecture settings as first case study.
 To explore the impact of compiler optimizations a set of input programs are needed. We run experiments on commonly used benchmarks named Collective Benchmark (cBench)~\cite{fursin2009collective}. It is a collection of open-source sequential programs in C targeting specific areas of the embedded market. It comes with multiple datasets assembled by the community to enable realistic benchmarking and research on program and architecture optimization. cBench contains more than 20 C programs. The following table describes programs that we have selected from this benchmark to evaluate our approach.
 \begin{table}[b]
 	\begin{center}
-		\begin{tabular}{|c|c|p{4cm}|}
+		\begin{tabular}{|c|c|p{3.9cm}|}
 			\hline
 			\textbf{Program} & \textbf{Source lines} & \textbf{Description}\\
 			\hline

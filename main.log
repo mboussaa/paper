@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.30)  24 JAN 2016 11:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.30)  24 JAN 2016 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -113,10 +113,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-) (/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
-Package: placeins 2005/04/18  v 2.2
-)
-(/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
 \c@AlgoLine=\count94
 
@@ -201,12 +198,6 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen132
 \Gin@req@width=\dimen133
 )
-(/usr/share/texlive/texmf-dist/tex/latex/sttools/stfloats.sty
-Package: stfloats 2012/05/29 v1.1 Improve float mechanism and baselineskip sett
-ings
-\@dblbotnum=\count99
-\c@dblbotnumber=\count100
-)
 (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
@@ -232,13 +223,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count101
+\inf@bad=\count99
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count102
-\leftroot@=\count103
+\uproot@=\count100
+\leftroot@=\count101
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count104
-\DOTSCASE@=\count105
+\classnum@=\count102
+\DOTSCASE@=\count103
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -247,15 +238,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen136
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count106
-\c@MaxMatrixCols=\count107
+\macc@depth=\count104
+\c@MaxMatrixCols=\count105
 \dotsspace@=\muskip10
-\c@parentequation=\count108
-\dspbrk@lvl=\count109
+\c@parentequation=\count106
+\dspbrk@lvl=\count107
 \tag@help=\toks17
-\row@=\count110
-\column@=\count111
-\maxfields@=\count112
+\row@=\count108
+\column@=\count109
+\maxfields@=\count110
 \andhelp@=\toks18
 \eqnshift@=\dimen137
 \alignsep@=\dimen138
@@ -272,10 +263,10 @@ LaTeX Info: Redefining \] on input line 2666.
 )
 (./algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count113
-\c@ALC@line=\count114
-\c@ALC@rem=\count115
-\c@ALC@depth=\count116
+\c@ALC@unique=\count111
+\c@ALC@line=\count112
+\c@ALC@rem=\count113
+\c@ALC@depth=\count114
 \ALC@tlm=\skip63
 \algorithmicindent=\skip64
 )
@@ -290,10 +281,10 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigbottomskip=\skip67
 \subfigcapmargin=\dimen145
 \subfiglabelskip=\skip68
-\c@subfigure=\count117
-\c@lofdepth=\count118
-\c@subtable=\count119
-\c@lotdepth=\count120
+\c@subfigure=\count115
+\c@lofdepth=\count116
+\c@subtable=\count117
+\c@lotdepth=\count118
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -303,23 +294,23 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@bottom=\skip70
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count121
+\lst@mode=\count119
 \lst@gtempboxa=\box38
 \lst@token=\toks21
-\lst@length=\count122
+\lst@length=\count120
 \lst@currlwidth=\dimen146
-\lst@column=\count123
-\lst@pos=\count124
+\lst@column=\count121
+\lst@pos=\count122
 \lst@lostspace=\dimen147
 \lst@width=\dimen148
-\lst@newlines=\count125
-\lst@lineno=\count126
+\lst@newlines=\count123
+\lst@lineno=\count124
 \lst@maxwidth=\dimen149
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count127
-\lst@skipnumbers=\count128
+\c@lstnumber=\count125
+\lst@skipnumbers=\count126
 \lst@framebox=\box39
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -360,16 +351,16 @@ LaTeX Font Info:    ... okay on input line 384.
 -- Lines per column: 56 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count129
+\scratchcounter=\count127
 \scratchdimen=\dimen150
 \scratchbox=\box40
-\nofMPsegments=\count130
-\nofMParguments=\count131
+\nofMPsegments=\count128
+\nofMParguments=\count129
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count132
+\MPscratchCnt=\count130
 \MPscratchDim=\dimen151
-\MPnumerator=\count133
-\makeMPintoPDFobject=\count134
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
 \everyMPtoPDFconversion=\toks23
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -418,7 +409,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count135
+\c@lstlisting=\count133
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 446.
 
 
@@ -503,7 +494,7 @@ File: Ressources/infra_stats.png Graphic file (type png)
 
 <use Ressources/infra_stats.png>
 Package pdftex.def Info: Ressources/infra_stats.png used on input line 29.
-(pdftex.def)             Requested size: 226.79846pt x 91.64346pt.
+(pdftex.def)             Requested size: 252.0pt x 101.82503pt.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no œ in font ptmr7t!
@@ -518,6 +509,9 @@ File: Ressources/infra_ffmpeg_plot1.png Graphic file (type png)
 Package pdftex.def Info: Ressources/infra_ffmpeg_plot1.png used on input line 5
 2.
 (pdftex.def)             Requested size: 226.79846pt x 153.36304pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [7 <./Ressources/infra_stats.png>]
 <Ressources/infra_novelty.png, id=44, 319.1925pt x 315.1775pt>
 File: Ressources/infra_novelty.png Graphic file (type png)
@@ -526,12 +520,12 @@ File: Ressources/infra_novelty.png Graphic file (type png)
 Package pdftex.def Info: Ressources/infra_novelty.png used on input line 62.
 (pdftex.def)             Requested size: 159.59586pt x 157.58836pt.
 
-Underfull \hbox (badness 5147) in paragraph at lines 90--92
+Underfull \hbox (badness 3058) in paragraph at lines 90--92
 []\OT1/ptm/m/n/8 Convert a greyscale im-age to
  []
 
 
-Overfull \hbox (8.00978pt too wide) in paragraph at lines 73--95
+Overfull \hbox (5.16432pt too wide) in paragraph at lines 73--95
  [] 
  []
 
@@ -556,7 +550,7 @@ novelty_stat2.png>]) (./conclusion.tex) (./main.bbl
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ” in font ptmri7t!
- [10])
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -568,32 +562,30 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[11
-
-] (./main.aux) ) 
+[10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6478 strings out of 493085
- 95422 string characters out of 6136916
- 219891 words of memory out of 5000000
- 9836 multiletter control sequences out of 15000+600000
+ 6443 strings out of 493085
+ 94724 string characters out of 6136916
+ 219431 words of memory out of 5000000
+ 9809 multiletter control sequences out of 15000+600000
  43082 words of font info for 78 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  38i,12n,42p,1832b,1198s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
-rw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 1092977 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
+tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (10 pages, 1092527 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 97 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
