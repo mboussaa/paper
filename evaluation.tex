@@ -25,7 +25,7 @@ FFmpeg\footnote{https://www.ffmpeg.org/} is a complete, cross-platform solution 
 	
 	\center
 	
-	\includegraphics[width=15cm,height=6cm]{Ressources/infra_stats.png}
+	\includegraphics[width=14cm,height=5.1cm]{Ressources/infra_stats.png}
 	\caption{Snapshot of runtime memory consumption profiles of FFmpeg containers compiled with O0 (no optimization) and O3 options}
 	
 	\label{AAA}
@@ -43,14 +43,14 @@ To obtain comparable and reproducible results, we used the same hardware across 
 
 \subsubsection{Experimental Results}
 
-In this first part of experiments with FFmpeg, we compare a zero-level optimization container (FFmpeg-O0) with a high-level optimization one (FFmpeg-O3) in order to study the impact of optimizations on memory usage and execution time. Figure 3 shows runtime statistics of running two FFmpeg containers O0 and O3 with the same input workload. This chart depicts a snapshot of our visualization container web UI. It presents the memory usage profiles of two components (FFmpeg O0 and O3) started in the same time and running in parallel. Visually, we can see that the execution time of O3 (yellow) is faster than O0 (green) since O3 execution ended before O0. However, we can see that memory usage remains higher than O0 from the beginning to the end of running FFmpeg examples. 
+In this first part of experiments with FFmpeg, we compare a zero-level optimization container (FFmpeg-O0) with a high-level optimization one (FFmpeg-O3) in order to study the impact of optimizations on memory usage and execution time. Figure 3 shows runtime statistics of running two FFmpeg containers O0 and O3 with the same input workload. This chart depicts a snapshot of our visualization component web UI. It presents the memory usage profiles of two components (FFmpeg O0 and O3) started in the same time and running in parallel. Visually, we can see that the execution time of O3 (yellow) is faster than O0 (green) since O3 execution ended before O0. However, we can see that memory usage remains higher than O0 from the beginning to the end of running FFmpeg examples. 
 
 To better understand resource usage of optimized containers, we run the same experiment for all FFmpeg containers and we collect the same metrics. Figure 4 presents a comparison of average memory usage and execution time of FFmpeg containers compiled with all standard GCC optimization options. We remark that the memory usage is increasing as soon as we apply more aggressive optimization. However, when we apply higher optimization level, we clearly improve by almost 50\% the execution time compared to O0.
 
 This results explain that optimizing for execution time (for the case of FFmpeg) is not always efficient regarding memory usage and unfortunately, optimizations may influence negatively on system resources.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{Ressources/infra_ffmpeg_plot1.png}
+	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg_plot1.png}
 	\caption{Comparison of average memory consumption and execution time of running FFmpeg containers compiled with standard GCC optimization options}
 \end{figure}
 
