@@ -95,6 +95,11 @@ C.~Gathercole and P.~Ross, ``An adverse interaction between crossover and
   1st annual conference on genetic programming}.\hskip 1em plus 0.5em minus
   0.4em\relax MIT Press, 1996, pp. 291--296.
 
+\bibitem{fursin2009collective}
+G.~Fursin, ``Collective tuning initiative: automating and accelerating
+  development and optimization of computing systems,'' in \emph{GCC Developers'
+  Summit}, 2009.
+
 \bibitem{jantz2013performance}
 M.~R. Jantz and P.~A. Kulkarni, ``Performance potential of optimization phase
   selection during dynamic jit compilation,'' \emph{ACM SIGPLAN Notices},
