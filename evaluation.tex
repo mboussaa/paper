@@ -1,38 +1,38 @@
 \section{Evaluation}
-In this section we evaluate the implementation of our
-approach across two case studies. 
-
+In this section we present the evaluation of the implementation of our approach across two case studies. 
 These experiments aim at answering the following research questions:
 
-1. RQ1: How do standard GCC optimization levels influence
-on the resource consumption of running programs?
-To answer this question, we apply standard optimization options to FFmpeg library. Then, we evaluate the memory footprint and execution time of running FFmpeg command lines and we
-compare the results. The goal of this initial experiment is to
-provide an understanding of the performance of
-generated code by GCC.
+\textbf{RQ1:} How do standard GCC optimization levels influence the resource consumption of running programs?
+To answer this question, we apply standard optimization options to the FFmpeg library. 
+Then, we evaluate the memory footprint and the execution time of running FFmpeg command lines and we compare the results. 
+The goal of this initial experiment is to provide an understanding of the GCC generated code  performance.
 
-2. RQ2: To what extent can the proposed diversity-based
-exploration of optimization options impact the resource
-consumption of generated programs?
+\textbf{RQ2:} To what extent can the proposed diversity-based exploration of optimization options impact the resource consumption of generated programs?
 In a second experiment, we assess our NS
 approach for automatic optimization sequences generation by
 comparing the results found when applying standard optimization sequences to new
-results provided by our approach. In general, these experiments
-show that our novelty-based approach produces optimization
-sequences with higher performance and less resource consumption
-than standard optimization levels in GCC. In this experiment, we focused as well on the tradeoff execution time/memory consumption.
+results provided by our approach. 
+In general, these experiments show that our novelty-based approach produces optimization sequences with higher performance and less resource consumption
+than standard optimization levels in GCC. 
+In this experiment, we focus as well on the tradeoff execution time/memory consumption.
 
 
 
 
 \subsection{Case Study 1: FFmpeg}
-In the first experiment, we set up our infrastructure for testing and monitoring the generated code. In this part, we compiled the FFmpeg library using standard GCC optimizations(O1, O2, O3, Ofast) and we studied the impact of these optimizations on memory consumption and execution time using our docker-based infrastructure.
+In the first experiment, we set up our infrastructure for testing and monitoring the generated code. 
+In this part, we compile the FFmpeg library using standard GCC optimizations(O1, O2, O3, Ofast) and we study the impact of these optimizations on memory consumption and execution time using our docker-based infrastructure.
 
 \subsubsection{FFmpeg: Multimedia Encoding Library}
-FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It is a very fast video and audio converter. It processes a number of input files specified by the $-i$ option, and generate different output files according to the input plugin. FFmpeg allows different types of multimedia conversion and that depends on the input and output format (video, audio, subtitle, attachment, data).
-Some command options have to be specified for each type of video or audio processing. In fact,
-FFmpeg defines a set of option flags through command line to configure and generate the output
-file (e.g. number of threads, size, bitrate, the video or audio codec). Video or audio processing with FFmpeg consumes lot of resources in term of memory usage. So, testing GCC on top of this library is very interesting. 
+FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. 
+It is a very fast video and audio converter. It processes a number of input files specified by the $-i$ option, and generates different output files according to the input plugin. 
+FFmpeg allows different types of multimedia conversion and depending on the input and output format (video, audio, subtitle, attachment, data).
+Some command options have to be specified for each type of video or audio processing. 
+In fact, FFmpeg defines a set of option flags through command line to configure and generate the output
+file (\eg, number of threads, size, bitrate, the video or audio codec). 
+Video or audio processing with FFmpeg consumes lot of resources in term of memory usage. 
+Thus, testing GCC on top of this library is very interesting. 
+
 \subsubsection{Docker-based Infrastructure for monitoring FFmpeg containers}
 \begin{figure}[!b]
 	\centering
@@ -49,20 +49,27 @@ file (e.g. number of threads, size, bitrate, the video or audio codec). Video or
 	\label{AAA}
 	
 \end{figure*}
-The goal of this experiment is to compile FFmpeg with standard GCC optimization options and run FFmpeg command examples on top of different versions in order to compare the memory usage profiles and execution time of different variants using our testing architecture. An overview of the different components involved in testing and monitoring of FFmpeg containers is shown in Figure 2. 
-First, we compile FFmpeg library with different optimization options  (O0, O1, O2, O3 and Ofast) in order to produce 5 variants of FFmpeg. This is done within a Docker container with a Linux image. We configure
-each container to install FFmpeg with a specific configuration and we uploaded all the FFmpeg images in Docker Hub\footnote{https://hub.docker.com/}.
+The goal of this experiment is to compile FFmpeg with standard GCC optimization options and run FFmpeg command examples on top of different versions in order to compare the memory usage profiles and execution time of different variants using our test architecture. 
+An overview of the different components involved in testing and monitoring of FFmpeg containers is shown in Figure 2. 
+First, we compile FFmpeg library with different optimization options  (O0, O1, O2, O3 and Ofast) in order to produce 5 variants of FFmpeg. 
+This is done within a Docker container with a Linux image. We configure
+each container to install FFmpeg with a specific configuration and we upload all the FFmpeg images in Docker Hub\footnote{https://hub.docker.com/}.
 Docker Hub is a cloud-based registry service for building and shipping application or
-service containers. We are using it for building, saving and managing all our docker
-images.
- Afterwards, we execute the same training FFmpeg examples within each FFmpeg instance container. We choose 15 FFmpeg command examples that cover multiple domains\footnote{http://goo.gl/11VLYM} like video conversion, sound extraction, encoding file for iPod or PSP, etc. This list of examples is saved in a script file that should be executed later within FFmpeg containers. The media files needed for encoding are saved in a shared repository. In docker environment, we call this repository the “Data Volume”. A data volume is a specially-designated directory within containers that share data with the host machine. Data is persistent and independent of container's life cycle. So, when we run FFmpeg containers we provide a shared volume with the host
-machine (where the media files are located). As well, the list of FFmpeg commands to execute is mounted in this volume so that we can execute the same workload each time wr run a new container.
+service containers. 
+We  use it for building, saving and managing all our docker images.
+Afterwards, we execute the same training FFmpeg examples within each FFmpeg instance container. We choose 15 FFmpeg command examples that cover multiple domains\footnote{http://goo.gl/11VLYM} like video conversion, sound extraction, encoding file for iPod or PSP, etc. 
+This list of examples is saved in a script file that should be executed later within FFmpeg containers. 
+The media files needed for encoding are saved in a shared repository. 
+In the docker environment, this repository is called “Data Volume”. 
+A data volume is a specially-designated directory within containers that share data with the host machine. 
+Data is persistent and independent of container's life cycle. So, when we run FFmpeg containers we provide a shared volume with the host
+machine (where the media files are located). As well, the list of FFmpeg commands to execute is mounted in this volume so that we can execute the same workload each time we run a new container.
 
 Before running the FFmepg workload on different containers, we run monitoring components (cAdvisor, InfluxDB and Grafana) to start gathering usage statistics.
 
 Using Grafana, we are able to query database and define performance metrics. We use for this experiment to gather statistics about memory consumption and execution time of different containers. 
 
-To obtain comparable and reproducible results, we used the same hardware across all experiments to run Docker: an AMD A10-7700K APU Radeon(TM) R7 Graphics processor with 4 CPU cores (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of system memory.
+To obtain comparable and reproducible results, we use the same hardware across all experiments to run Docker: an AMD A10-7700K APU Radeon(TM) R7 Graphics processor with 4 CPU cores (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of system memory.
 
 \subsubsection{Experimental results}
 
@@ -79,19 +86,31 @@ This results explain that optimizing for execution time (for the case of FFmpeg)
 
 
 \subsection{Case Study 2: Novelty-based exploration of optimization sequences}
-For the second experiment, we present a set of experiments to evaluate the performance optimized programs across target benchmarks. The goal of this section
+For the second experiment, we present a set of experiments to evaluate the performance of optimized programs across target benchmarks. The goal of this section
 is to show that our approach for exploring the search space of optimizations is able to generate efficient sequences of optimization options in term of performance and
 resource consumption. We define an efficient sequence as a
 set of optimization options that lead to use less resource consumption than GCC default optimizations.
+
 \subsubsection{Approach}
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.50]{Ressources/infra_novelty.png}
 	\caption{Overall process of optimization space exploration and monitoring}
 \end{figure}
-We want to keep the same architecture settings as first case study for this experiment. However, in this example, we provide a more generalized approach for automatic testing of code generators using system containers. So, starting from a list of  optimizations defined by the used, an input program and a specific target compiler, we will be able to execute and monitor optimized code. Figure 5 shows more details about this process. First, our novelty-based test sequences generator will generate a huge amount of diverse optimizations. We compile an input program with these generated sequences using our GCC compiler. Then, program execution is done sequentially within isolated docker containers (docker image with GCC version 4.8.4 installed above). We keep the same monitoring chain to gather resource usage of running containers. This process is repeated until the end of generated sequences. Finally, end users (testers) can access to resource consumption statistics through InfluxDB or Grafana Web UI to compare the impact of optimizations on resource consumption. In this example too, we choose to focus on studying the trade-off memory usage/execution time. 
+
+We want to keep the same architecture settings as first case study for this experiment. However, in this example, we provide a more generalized approach for automatic testing of code generators using system containers. 
+Therefore, starting from a list of  optimizations defined by the used, an input program and a specific target compiler, we are able to execute and monitor optimized code. 
+Figure 5 shows more details about this process. First, our novelty-based test sequences generator generates a huge amount of diverse optimizations. 
+We compile an input program with these generated sequences using our GCC compiler. 
+Then, program execution is done sequentially within isolated docker containers (docker image with GCC version 4.8.4 installed above). 
+We keep the same monitoring chain to gather resource usage of running containers. 
+This process is repeated until the end of generated sequences. 
+Finally, the end users (testers) can access to resource consumption statistics through InfluxDB or Grafana Web UI to compare the impact of optimizations on resource consumption. 
+In this example, we also choose to focus on studying the trade-off memory usage/execution time.
+
 \subsubsection{Benchmark programs}
-To explore the impact of compiler optimizations a set of test input programs are needed. We run experiments on commonly used benchmarks named Collective Benchmark (cBench)[ref]. It is a collection of open-source sequential programs in C targeting specific areas of the embedded market. It comes with multiple datasets assembled by the community to enable realistic benchmarking and research on program and architecture optimization. cBench contains more than 20 C programs. The following table describes programs that we have selected from this benchmark to evaluate our approach.
+To explore the impact of compiler optimizations a set of test input programs are needed. We run experiments on commonly used benchmarks named Collective Benchmark (cBench)~\cite{}. 
+It is a collection of open-source sequential programs in C targeting specific areas of the embedded market. It comes with multiple datasets assembled by the community to enable realistic benchmarking and research on program and architecture optimization. cBench contains more than 20 C programs. The following table describes programs that we have selected from this benchmark to evaluate our approach.
 \begin{table}[h]
 	\begin{center}
 		\begin{tabular}{|c|c|p{4cm}|}
