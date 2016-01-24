@@ -29,7 +29,7 @@ The diversity of the available optimization options makes the design space for o
 For instance, version 4.8.4 provides a wide range of command-line optimizations that can be enabled or disabled, including more than 150 options for optimization. 
 Table I summarizes the optimization flags that are enabled by the default optimization levels O1 to O3.
 We count 76 optimization flags, resulting in a huge space with $2^{76}$ possible optimization combinations.
-In our approach, we did not consider some optimization options that are enabled by default, since they do not affect neither the performance nor size of generated binaries.
+In our approach, we did not consider some optimization options that are enabled by default, since they do not affect the performance of generated binaries.
 Optimization flags in GCC can be turned off by using "fno-"+flag instead of "f"+flag in the beginning of each optimization. 
 We use this technique to play with compiler switches.
 

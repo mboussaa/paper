@@ -17,12 +17,13 @@ This phenomenon is known as "diversity loss". For example, if the most effective
 The issue of premature convergence to local optima has been a common problem in evolutionary algorithms. 
 Many methods are proposed to overcome this problem~\cite{banzhaf1996effect,gathercole1996adverse}. 
 However, all these efforts use a fitness-based selection to guide the search. Considering diversity as the unique objective function to be optimized may be a key solution to this problem.
+
 Therefore, during the evolutionary process, we select optimization sequences that remain in sparse regions of the search space in order to guide the search toward novelty. 
 In the meanwhile, we choose to gather non-functional metrics of explored sequences such as memory consumption. 
 We describe in more details the way we are collecting these non-functional metrics in section 4.
 
-Mainly, NS acts like Genetic Algorithms. However, NS needs extra changes. First, a new novelty metric to replace the fitness function. Then, an archive must be added to the algorithm which is a kind of a data base that remembers individuals that were highly novel when they were discovered in past generations. 
-Algorithm~\ref{algo:search} describes the overall idea of our NS adaptation. The algorithm takes as input a source code program and a list of optimizations. We initialize first the novelty parameters and create a new archive with limit size L. In this example, we gathered information about memory consumption. In line 3 \& 4, we compile and execute the input program without any optimization (O0). Then, we measure the resulting memory consumption. By doing so, we will be able to compare it to the memory consumption of new generated solutions. The best solution yields to the lowest memory consumption comparing to O0 usage.
+Mainly, NS acts like Genetic Algorithms. However, NS needs extra changes. First, a new novelty metric is required to replace the fitness function. Then, an archive must be added to the algorithm which is a kind of a data base that remembers individuals that were highly novel when they were discovered in past generations. 
+Algorithm~\ref{algo:search} describes the overall idea of our NS adaptation. The algorithm takes as input a source code program and a list of optimizations. We initialize first the novelty parameters and create a new archive with limit size L. In this example, we gathered information about memory consumption. In line 3 \& 4, we compile and execute the input program without any optimization (O0). Then, we measure the resulting memory consumption. By doing so, we will be able to compare it to the memory consumption of new generated solutions. The best solution yields to the lowest memory consumption compared to O0 usage.
 Before starting the evolutionary process, we generate an initial population with random sequences. Line 6-21 encode the main NS loop, which searches for the best sequence in term of memory consumption. For each sequence in the population, we compile the input program, execute it and evaluate the solution by calculating the average distance from its k-nearest neighbors. Sequences that get a novelty metric higher than the novelty threshold T are added to archive. T defines the threshold for how novel a sequence has to be before it is added to the archive. In the meantime, we check if the solution yields to lowest memory consumption so that we can consider it as the best solution. Finally, genetic operators
 (mutation and crossover) are applied afterwards to fulfill the next population. The process is iterated until reaching the maximum number of evaluations.
 
@@ -79,12 +80,10 @@ We can quantify the sparseness of a solution as the average distance to the k-ne
 If the average distance to a given point's nearest neighbors is large then it belongs to a sparse area and will get a high novelty score. 
 Otherwise, if the average distance is small so it belongs certainly to a dense region then it will get a low novelty score. 
 The distance between two sequences is computed as the total number of symmetric differences among optimization options. Formally, we define this distance as follows :
-
 \begin{equation}
 distance(S1,S2)=\left | S1 \bigtriangleup S2 \right |
 \end{equation}
-
-where $S1$ et $S2$ are two selected optimization sequences (solutions), In this equation, we calculate the cardinality of the symmetric difference between the two sequences. This distance will be 0 if two optimization sequences are similar and higher than 0 if there is at least one optimization difference. The maximum distance is equal to the total number of input flags.
+where $S1$ et $S2$ are two selected optimization sequences (solutions). In this equation, we calculate the cardinality of the symmetric difference between the two sequences. This distance will be 0 if two optimization sequences are similar and higher than 0 if there is at least one optimization difference. The maximum distance is equal to the total number of input flags.
 
 To measure the sparseness of a solution, we will use the previously defined distance to compute the average distance of a sequence to its k-nearest neighbors. In this context, we define the novelty metric of a particular solution as follows:
 \begin{equation}
