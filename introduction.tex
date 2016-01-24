@@ -5,7 +5,7 @@ The use of code generators is needed to transform manually designed models to so
 These compilers serve as a basis to target different ranges of platforms. 
 %Many technologies, such as Docker containers, provide new opportunities to automate the deployment of produced code into a distributed and heterogeneous component-based infrastructure
 
-In fact, during the code generation process, different optimizations may be applied for code transformation. Improvement of source program can refer to several different characteristics of the produced code such execution time, memory consumption, disk writing speed, among others~\cite{almagor2004finding,pan2006fast}.
+In fact, during the code generation process, different optimizations may be applied for code transformation. Improvement of source program can refer to several different characteristics of the produced code such execution time, memory consumption, code size, among others~\cite{almagor2004finding,pan2006fast}.
 For example, embedded systems for which code is generated often have limited resources. 
 Therefore, optimization techniques must be applied whenever possible to generate efficient code with respect to available resources\cite{nagiub2013automatic}. 
 As general-purpose optimizations, compiler creators usually define fixed and program-independent sequence optimizations.
@@ -14,7 +14,7 @@ However, compilers may have a huge number of potential optimization combinations
 
 In this paper we explore the relationship between runtime execution of optimized code and non-functional properties.
 We propose a component-based tooled approach to check compilers non-functional properties through the monitoring of generated code in a controlled sandboxing environment. 
-Our approach is based on microservices to automate the deployment and the monitoring of different variants of optimized code into a distributed and heterogeneous component-based infrastructure. 
+Our approach is based on microservices to automate the deployment and monitoring of different variants of optimized code into a distributed and heterogeneous component-based infrastructure. 
 We assess the effectiveness of our approach by evaluating the optimizations performed by the GCC compiler, a widely used compiler in software engineering community. 
 We also present a number of case studies, in which the tool was successfully used.
 %This to ensure the efficiency of generated code, deployed components must be checked and verified regarding their non-functional behavior
