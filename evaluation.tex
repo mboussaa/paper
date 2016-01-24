@@ -1,38 +1,22 @@
 \section{Evaluation}
-In this section we evaluate the implementation of our
-approach across two case studies. 
+In this section we evaluate the implementation of our approach across two case studies. 
 
 These experiments aim at answering the following research questions:
 
-1. RQ1: How do standard GCC optimization levels influence
-on the resource consumption of running programs?
-To answer this question, we apply standard optimization options to FFmpeg library. Then, we evaluate the memory footprint and execution time of running FFmpeg command lines and we
-compare the results. The goal of this initial experiment is to
-provide an understanding of the performance of
-generated code by GCC.
+1. RQ1: How do standard GCC optimization levels influence on the resource consumption of generated programs?
+To answer this question, we apply standard optimization options to FFmpeg library. Then, we evaluate the memory footprint and execution time of running FFmpeg command lines and we compare the results. The goal of this initial experiment is to
+provide an understanding of the performance of generated code by GCC.
 
-2. RQ2: To what extent can the proposed diversity-based
-exploration of optimization options impact the resource
-consumption of generated programs?
-In a second experiment, we assess our NS
-approach for automatic optimization sequences generation by
-comparing the results found when applying standard optimization sequences to new
-results provided by our approach. In general, these experiments
-show that our novelty-based approach produces optimization
-sequences with higher performance and less resource consumption
-than standard optimization levels in GCC. In this experiment, we focused as well on the tradeoff execution time/memory consumption.
-
-
+2. RQ2: To what extent can the proposed diversity-based exploration of optimization options impact the resource consumption of generated programs?
+In a second experiment, we assess our NS approach for automatic optimization sequences generation by comparing the results found when applying standard optimization sequences to new results provided by our approach. The experimental results show that our novelty-based approach can produce optimization sequences with good performance and less resource consumption
+than standard optimization levels in GCC. In this experiment, we studied the correlation between execution time and memory consumption of generated code.
 
 
 \subsection{Case Study 1: FFmpeg}
-In the first experiment, we set up our infrastructure for testing and monitoring the generated code. In this part, we compiled the FFmpeg library using standard GCC optimizations(O1, O2, O3, Ofast) and we studied the impact of these optimizations on memory consumption and execution time using our docker-based infrastructure.
+In the first experiment, we set up our infrastructure for testing and monitoring of generated code. In this part, we compiled the FFmpeg library using standard GCC optimizations(O1, O2, O3, Ofast) and we studied the impact of these optimizations on memory consumption and execution time using our docker-based infrastructure.
 
 \subsubsection{FFmpeg: Multimedia Encoding Library}
-FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It is a very fast video and audio converter. It processes a number of input files specified by the $-i$ option, and generate different output files according to the input plugin. FFmpeg allows different types of multimedia conversion and that depends on the input and output format (video, audio, subtitle, attachment, data).
-Some command options have to be specified for each type of video or audio processing. In fact,
-FFmpeg defines a set of option flags through command line to configure and generate the output
-file (e.g. number of threads, size, bitrate, the video or audio codec). Video or audio processing with FFmpeg consumes lot of resources in term of memory usage. So, testing GCC on top of this library is very interesting. 
+FFmpeg\footnote{https://www.ffmpeg.org/} is a complete, cross-platform solution to record, convert and stream audio and video. It is a very fast video and audio converter. It includes libraries of audio/video codecs and a command-line program for transcoding multimedia files. FFmpeg allows different types of multimedia conversion and that depends on the input and output format (video, audio, subtitle, attachment, data). Video/audio processing with FFmpeg usually need high-performance requirements and a lot of resources in term of memory usage. So, testing GCC on top of this library is very interesting in order to compare resource usage profiles. 
 \subsubsection{Docker-based Infrastructure for Monitoring FFmpeg Containers}
 \begin{figure}[!b]
 	\centering
