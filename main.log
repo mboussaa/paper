@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.30)  24 JAN 2016 11:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.30)  24 JAN 2016 11:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -428,10 +428,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 11.
-) (./motivation.tex
-Underfull \vbox (badness 6300) has occurred while \output is active []
-
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) (./motivation.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
@@ -580,7 +577,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 1068565 bytes).
+Output written on main.pdf (10 pages, 1068667 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream

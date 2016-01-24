@@ -8,7 +8,7 @@ These compilers serve as a basis to target different ranges of platforms.
 In fact, during the code generation process, different optimizations may be applied for code transformation. Improvement of source program can refer to several different characteristics of the produced code such execution time, memory consumption, code size, among others~\cite{almagor2004finding,pan2006fast}.
 For example, embedded systems for which code is generated often have limited resources. 
 Therefore, optimization techniques must be applied whenever possible to generate efficient code with respect to available resources\cite{nagiub2013automatic}. 
-As general-purpose optimizations, compiler creators\footnote{We consider compilers as a kind of code generator in this paper.} usually define fixed and program-independent sequence optimizations.
+As general-purpose optimizations, compiler creators\footnote{We consider compilers as a kind of code generators in this paper. Indeed, from the testing point of view, we do not make any differences between testing code generators and testing compilers} usually define fixed and program-independent sequence optimizations.
 For example, in GCC, we can distinguish optimization levels from O1 to O3. Each optimization level involves a fixed list of compiler optimization options. 
 However, industrial code generators may have a huge number of potential optimization combinations, making it hard and time-consuming for software developers to find the sequence of optimizations that satisfies user key objectives. 
 
