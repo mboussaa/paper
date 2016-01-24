@@ -20,18 +20,7 @@ In the first experiment, we set up our infrastructure for testing and monitoring
 FFmpeg\footnote{https://www.ffmpeg.org/} is a complete, cross-platform solution to record, convert, and stream audio and video. It is a very fast video and audio converter. It includes libraries of audio/video codecs and a command-line program for transcoding multimedia files. FFmpeg allows different types of multimedia conversion and that depends on the input and output format (video, audio, subtitle, attachment, data). Video/audio processing with FFmpeg usually need high-performance requirements and an important amount of resources in term of memory usage. So, testing GCC on top of this library is very interesting in order to compare resource usage profiles. 
 \subsubsection{Docker-based Infrastructure for Monitoring FFmpeg Containers}
 
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg.png}
-	\caption{Overview of the different components involved in testing and monitoring of FFmpeg containers}
-\end{figure}
 
-
-\begin{figure}[tbh]
-	\includegraphics[width=1\linewidth]{Ressources/infra_stats.png}
-	\caption{Snapshot of runtime memory consumption profiles of FFmpeg containers compiled with O0 (no optimization) and O3 options}
-%		\label{AAA}
-\end{figure}
 The goal of this experiment is to compile FFmpeg with standard GCC optimization options and run FFmpeg command examples on top of different versions in order to compare the memory usage profiles and execution time of different variants using our test architecture. An overview of the different components involved in testing and monitoring of FFmpeg containers is shown in Figure 2. 
 First, we compile FFmpeg library with different optimization options  (O0, O1, O2, O3 and Ofast) in order to produce 5 variants of FFmpeg. This is done within Docker containers. We configure each container to install FFmpeg with a specific configuration and we upload all FFmpeg images in Docker Hub\footnote{https://hub.docker.com/}.
 Docker Hub is a cloud-based registry service for building and shipping application or service containers. We use it for building, saving, and managing all our Docker images.
@@ -43,6 +32,18 @@ In fact, in this experiment, we choose to gather statistics about memory consump
 To obtain comparable and reproducible results, we use the same hardware across all experiments: an AMD A10-7700K APU Radeon(TM) R7 Graphics processor with 4 CPU cores (2.0 GHz), running Linux with a 64 bit kernel and 16 GB of system memory.
 
 \subsubsection{Experimental Results}
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=1.\linewidth]{Ressources/infra_ffmpeg.png}
+	\caption{Overview of the different components involved in testing and monitoring of FFmpeg containers}
+\end{figure}
+
+
+\begin{figure}[tbh]
+	\includegraphics[width=1\linewidth]{Ressources/infra_stats.png}
+	\caption{Snapshot of runtime memory consumption profiles of FFmpeg containers compiled with O0 (no optimization) and O3 options}
+	%		\label{AAA}
+\end{figure}
 
 In this first part of experiments with FFmpeg, we compare a zero-level optimization container (FFmpeg-O0) with a high-level optimization one (FFmpeg-O3) in order to study the impact of optimizations on memory usage and execution time. Figure 3 shows runtime statistics of running two FFmpeg containers O0 and O3 with the same input workload. This chart depicts a snapshot of our visualization component web UI. It presents the memory usage profiles of two components (FFmpeg O0 and O3) started in the same time and running in parallel. Visually, we can see that the execution time of O3 (yellow) is faster than O0 (green) since O3 execution ended before O0. However, we can see that memory usage remains higher than O0 from the beginning to the end of running FFmpeg examples. 
 
