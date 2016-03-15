@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  15 MAR 2016 12:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  15 MAR 2016 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -522,21 +522,43 @@ Package pdftex.def Info: Ressources/sensitivity.png used on input line 30.
 (pdftex.def)             Requested size: 252.0pt x 65.87607pt.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 34.
+LaTeX Warning: File `Ressources/approach by example.png' not found on input lin
+e 36.
+
+<Ressources/approach by example.png, id=32, 381.425pt x 366.36874pt>
+File: Ressources/approach by example.png Graphic file (type png)
+
+<use Ressources/approach by example.png>
+Package pdftex.def Info: Ressources/approach by example.png used on input line 
+36.
+(pdftex.def)             Requested size: 252.0pt x 242.05008pt.
+
+
+LaTeX Warning: File `Ressources/geneco approach.png' not found on input line 42
+.
+
+<Ressources/geneco approach.png, id=33, 657.45625pt x 308.15125pt>
+File: Ressources/geneco approach.png Graphic file (type png)
+
+<use Ressources/geneco approach.png>
+Package pdftex.def Info: Ressources/geneco approach.png used on input line 42.
+(pdftex.def)             Requested size: 252.0pt x 118.1096pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 50.
+               Default added (so using `tbp') on input line 46.
 
 
-Overfull \hbox (315.88448pt too wide) in paragraph at lines 54--64
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 62.
+
+
+Overfull \hbox (315.88448pt too wide) in paragraph at lines 66--76
  [][] 
  []
 
-[6 <./Ressources/infra.png>] [7
-
- <./Ressources/sensitivity.png>]
+[6 <./Ressources/infra.png>] [7 <./Ressources/sensitivity.png> <./Ressources/ap
+proach by example.png> <./Ressources/geneco approach.png>]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
@@ -544,65 +566,65 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 
-<Ressources/infra_ffmpeg.png, id=41, 463.7325pt x 611.28375pt>
+<Ressources/infra_ffmpeg.png, id=45, 463.7325pt x 611.28375pt>
 File: Ressources/infra_ffmpeg.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg.png>
-Package pdftex.def Info: Ressources/infra_ffmpeg.png used on input line 106.
+Package pdftex.def Info: Ressources/infra_ffmpeg.png used on input line 118.
 (pdftex.def)             Requested size: 252.0pt x 332.18698pt.
 
-<Ressources/infra_stats.png, id=42, 1517.67pt x 613.29124pt>
+<Ressources/infra_stats.png, id=46, 1517.67pt x 613.29124pt>
 File: Ressources/infra_stats.png Graphic file (type png)
 
 <use Ressources/infra_stats.png>
-Package pdftex.def Info: Ressources/infra_stats.png used on input line 112.
+Package pdftex.def Info: Ressources/infra_stats.png used on input line 124.
 (pdftex.def)             Requested size: 252.0pt x 101.82503pt.
  [8
 
 
 ]
-<Ressources/infra_ffmpeg_plot1.png, id=46, 488.0634pt x 330.033pt>
+<Ressources/infra_ffmpeg_plot1.png, id=50, 488.0634pt x 330.033pt>
 File: Ressources/infra_ffmpeg_plot1.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg_plot1.png>
 Package pdftex.def Info: Ressources/infra_ffmpeg_plot1.png used on input line 1
-24.
+36.
 (pdftex.def)             Requested size: 252.0pt x 170.40952pt.
 
 Underfull \vbox (badness 1057) has occurred while \output is active []
 
 
-<Ressources/infra_novelty.png, id=47, 319.1925pt x 315.1775pt>
+<Ressources/infra_novelty.png, id=51, 319.1925pt x 315.1775pt>
 File: Ressources/infra_novelty.png Graphic file (type png)
 
 <use Ressources/infra_novelty.png>
-Package pdftex.def Info: Ressources/infra_novelty.png used on input line 134.
+Package pdftex.def Info: Ressources/infra_novelty.png used on input line 146.
 (pdftex.def)             Requested size: 159.59586pt x 157.58836pt.
  [9 <./Ressources/infra_ffmpeg.png> <./Ressources/infra_stats.png> <./Ressource
 s/infra_ffmpeg_plot1.png> <./Ressources/infra_novelty.png>]
-Underfull \hbox (badness 3058) in paragraph at lines 162--164
+Underfull \hbox (badness 3058) in paragraph at lines 174--176
 []\OT1/ptm/m/n/8 Convert a greyscale im-age to
  []
 
 
-Overfull \hbox (5.16432pt too wide) in paragraph at lines 145--167
+Overfull \hbox (5.16432pt too wide) in paragraph at lines 157--179
  [] 
  []
 
-<Ressources/infra_novelty_stat3.png, id=55, 599.3592pt x 371.4678pt>
+<Ressources/infra_novelty_stat3.png, id=59, 599.3592pt x 371.4678pt>
 File: Ressources/infra_novelty_stat3.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat3.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat3.png used on input line 
-200.
+212.
 (pdftex.def)             Requested size: 252.0pt x 156.18546pt.
  [10 <./Ressources/infra_novelty_stat3.png>] <Ressources/infra_novelty_stat2.pn
-g, id=60, 547.3248pt x 343.0416pt>
+g, id=64, 547.3248pt x 343.0416pt>
 File: Ressources/infra_novelty_stat2.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat2.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
-212.
+224.
 (pdftex.def)             Requested size: 252.0pt x 157.94237pt.
 ) (./related.tex) (./conclusion.tex)
 (./main.bbl [11 <./Ressources/infra_novelty_stat2.png>]
@@ -625,10 +647,10 @@ Before submitting the final camera ready copy, remember to:
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6805 strings out of 493308
- 99435 string characters out of 6137815
+ 6815 strings out of 493308
+ 99751 string characters out of 6137815
  224956 words of memory out of 5000000
- 10119 multiletter control sequences out of 15000+600000
+ 10127 multiletter control sequences out of 15000+600000
  46058 words of font info for 92 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  38i,14n,42p,1832b,1198s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -644,10 +666,10 @@ ve/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/te
 xmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 1084813 bytes).
+Output written on main.pdf (12 pages, 1148946 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
+ 109 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
