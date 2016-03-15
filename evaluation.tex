@@ -2,26 +2,27 @@
 So far, we have presented a sound procedure and automated component-based framework for extracting non-functional properties of generated code. In this section, we evaluate the implementation of our approach by explaining the design of our empirical study; the research questions we set out to answer, the different methods we used to answer these questions. The experimental material is
 available for replication purposes at [ref].
 
-conducting an empirical study across a set. These experiments aim at answering the following research questions:
+These experiments aim at answering the following research questions:
 
 \textbf{RQ1: Mono-objective SBSE Validation.} 
 \textit{How does the proposed diversity-based exploration of optimization sequences perform compared to other mono-objective algorithms in term of memory consumption, CPU, execution time, etc.?} 
+In this experiment, we generate a set of random Csmith programs \textit{"the training set"} and apply different mono-objective algorithms to assess the different non-functional properties of produced binaries. We compare as well manually generated sequences to standard GCC optimization levels. Our quality metric in this experiment is the percentage of overall performance improvement across all programs under test. The goal of this initial experiment is to: (1) evaluate the effectiveness of our component-based infrastructure to extract non-functional properties such as memory and CPU consumptions; (2) evaluate the performance of our proposed diversity-based exploration of optimization sequences (NS) to GA and RS; and finally (3) find the optimal solution relative to the input training set. 
 
 \textbf{RQ2: Sensitivity.} 
 \textit{How sensitive are benchmark programs to compiler optimization options?}
+Another interesting experiment is to test the sensitivity of training set programs to best optimal sequence previously discovered in RQ1. To do so, we apply best discovered optimizations to new unseen Csmith and CBench programs and compared the performance results. The idea of this experiment is to test if only Csmith programs are sensitive to compiler optimizations. If so, this will be useful for compiler users and researchers to use GENECO in order to build general optimization sequences from their representative training set programs.
 
 
-\textbf{RQ3: Optimizations' impact of  on resource consumption.} 
+\textbf{RQ3: Impact of optimizations on resource consumption.} 
 \textit{How compiler optimizations impact on the non-functional properties of generated programs?}
-
+To answer this question, we use GENECO to generate best sequences per-Benchmark in term of speedup, and compare the memory footprint and CPU consumption of best optimized code. The goal of this experiment is to provide an understanding of the resource consumption of generated code by GCC. 
 
 \textbf{RQ4: Trade-offs between non-functional properties.} 
 \textit{How can multi-objective approaches be useful to find trade-offs between non-functional properties?}
+The goal of this experiment is to put more emphasis on resource consumption and use GENECO to find trade-offs between non-functional properties of generated code like $<$ExecutionTime--MemoryUsage$>$ , etc.
 
 
-
-
-
+All these experiments are conducted using GENECO and they enable us to validate our global approach for non-functional testing of code generators using system containers. 
 
 
 \begin{figure}[!t]
@@ -33,7 +34,6 @@ conducting an empirical study across a set. These experiments aim at answering t
 \begin{table}[]
 	\centering
 	\caption{My caption}
-	\label{my-label}
 	\begin{tabular}{|l|l|l|l|l|l|l|c|}
 		\hline
 		\multirow{2}{*}{} & \multicolumn{7}{l|}{Average Performance Improvement (\%)} \\ \cline{2-8} 
@@ -63,7 +63,8 @@ conducting an empirical study across a set. These experiments aim at answering t
 	\end{tabular}
 \end{table}
 
-
+\cleardoublepage
+\cleardoublepage
 
 In this section, we evaluate the implementation of our approach across two case studies. These experiments aim at answering the following research questions:
 
