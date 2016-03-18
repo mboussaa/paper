@@ -2,7 +2,8 @@
 So far, we have presented a sound procedure and automated component-based framework for extracting non-functional properties of generated code. In this section, we evaluate the implementation of our approach by explaining the design of our empirical study; the research questions we set out to answer, the different methods we used to answer these questions. The experimental material is
 available for replication purposes at [ref].
 
-These experiments aim at answering the following research questions:
+\subsection{Research questions}
+Our experiments aim at answering the following research questions:
 
 \textbf{RQ1: Mono-objective SBSE Validation.} 
 \textit{How does the proposed diversity-based exploration of optimization sequences perform compared to other mono-objective algorithms in term of memory consumption, CPU, execution time, etc.?} 
@@ -19,10 +20,97 @@ To answer this question, we use GENECO to generate best sequences per-Benchmark 
 
 \textbf{RQ4: Trade-offs between non-functional properties.} 
 \textit{How can multi-objective approaches be useful to find trade-offs between non-functional properties?}
-The goal of this experiment is to put more emphasis on resource consumption and use GENECO to find trade-offs between non-functional properties of generated code like $<$ExecutionTime--MemoryUsage$>$, etc.
+A multi-objective approach provides a trade-off between the two objectives
+where the developers can select their desired solution from the Pareto-optimal front. The goal of this experiment is to put more emphasis on resource consumption and use multi-objective algorithms to find trade-offs between non-functional properties of generated code like $<$ExecutionTime--MemoryUsage$>$, etc.
 
 
 All these experiments are conducted using GENECO and they enable us to validate our global approach for non-functional testing of code generators using system containers. 
+
+\subsection{Setup and Methodology}
+\subsubsection{Setting up infrastructure}
+
+For this experiment, we keep the same architecture settings as first case study. However, we provide a more generalized approach for automatic testing of code generators using system containers. So, starting from a list of optimizations defined by the user, an input program and a specific target compiler, we are able to execute and monitor optimized code. Figure 5 shows more details about this process. First, our novelty-based test sequences generator generates a huge amount of diverse optimizations. We compile an input program with these generated sequences using GCC. Then, we execute produced binaries sequentially within isolated Docker containers (Docker image with GCC version 4.8.4 installed above). We keep the same monitoring chain to gather resource usage of running containers. This process is repeated until the end of generated sequences. Finally, end-users (testers) can access to resource consumption statistics through InfluxDB or Grafana Web UI to compare the impact of optimizations on resource consumption. In this example too, we choose to focus on studying the trade-off memory usage/execution time. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Ressources/infraup.png}
+	\caption{Overview of the Docker-based testing architecture}
+\end{figure}
+\subsubsection{Programs used in the empirical study}
+To explore the impact of compiler optimizations a set of input programs are needed. We run experiments on commonly used benchmarks named Collective Benchmark (cBench)~\cite{fursin2009collective}. It is a collection of open-source sequential programs in C targeting specific areas of the embedded market. It comes with multiple datasets assembled by the community to enable realistic benchmarking and research on program and architecture optimization. cBench contains more than 20 C programs. The following table describes programs that we have selected from this benchmark to evaluate our approach.
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c|c|p{3.9cm}|}
+			\hline
+			\textbf{Program} & \textbf{Source lines} & \textbf{Description}\\
+			\hline
+			automative\_susan\_s & 1376 & Image recognition package\\
+			\hline
+			bzip2e & 5125 & Compress any file
+			source code \\
+			\hline
+			bzip2d & 5125 & Decompress zipped files \\
+			\hline
+			office\_rsynth & 4111 & Text to speech program produced by integrating various pieces of code\\
+			\hline
+			consumer\_tiffmedian& 15870 & Apply the median cut algorithm to data in a TIFF file
+			\\
+			
+			\hline
+			consumer\_tiffdither& 15399 & Convert a greyscale image to bilevel using dithering
+			\\
+			\hline
+			
+		\end{tabular}
+		
+	\end{center}
+	\caption {Description of selected benchmark programs}
+\end{table}
+
+\subsubsection{Parameter Tuning and Setting}
+%Our experiments use the classical NS algorithm, where we evolve a set of optimization sequences through generations.
+NS is implemented as described in Section 3.
+The first step in the process of selection is to evaluate each individual and compute its novelty score. Novelty is calculated for each organism by taking the mean of its 15 lowest dissimilar optimization sequences (considering all sequences in the current population and in the archive). 
+Then, to create next populations, an elite of the 10 most novel organisms is copied unchanged, after which the rest of the new population is created by tournament selection according to novelty. Standard genetic programming crossover and mutation operators are applied to these novel sequences in order to produce offspring individuals and fulfill the next population.
+In the meanwhile, individuals that get a score higher than the threshold T they are automatically added to the archive as well. 
+In fact, this threshold is dynamic. Every 150 evaluations, we check how many individuals have been copied into the archive. If this number is below 3, the threshold is increased by multiplying it by 0.95, whereas if solutions added to archive are above 3, the threshold is decreased by multiplying it by 1.05. 
+Moreover, as the size of the archive grows, the nearest-neighbor calculations that determine the novelty scores for individuals become more computationally demanding. So to avoid having low accuracy of novelty, we choose to bound the size of the archive. Hence, it follows a first-in first-out data structure which means that when a new solution gets added, the oldest solution in the novelty archive will be discarded. Thus, we ensure individuals diversity by removing old sequences that may no longer be reachable from the current population.
+
+The parameters of the algorithm were tuned individually in preliminary experiments. For each parameter, a set of values was tested. The parameter values chosen are the mostly used in the literature~\cite{lehman2008exploiting}. The value that yielded the highest performance scores was chosen. The resulting parameter values are listed in Table 4.
+\begin{table}
+	\caption{Parameters of NS algorithm}
+	\begin{tabular}{ l l || l l }
+		Parameter & Value & Parameter & Value \\	\hline
+		Novelty nearest-k  & 15 &  Tournament size & 2\\ 
+		Add archive prob. & 30 &  Mutation prob. & 0.1\\  
+		Max archive size & 500 &  Crossover & 0.5  \\  
+		Population size & 100 &  Nb generations &  100 \\  
+		Individual length & 76 & Elitism & 10  \\ 
+		Scaling archive prob. & 0.05 & Solutions added to archive & 3  \\ 
+	\end{tabular}
+\end{table}
+
+\subsubsection{Evaluation Metrics Used}
+When comparing two mono-objective algorithms, it is usual to
+compare their best solutions found so far during the optimization
+process. However, this is not applicable when comparing two multi-objective
+evolutionary algorithms since each of them gives as output
+a set of non-dominated (Pareto equivalent) solutions. For this reason,
+we use performance indicator to compare multi-objective algorithms.
+For mono-objective algorithms we used to evaluate solutions using the following metrics:
+
+-\textit{Memory Consumption Reduction (MR)}: corresponds to the percentage of memory usage reduction of running container compared to the baseline. The baseline in our experiments is the amount of memory usage in O0 level with no optimizations. Larger values for this metric mean better performance. 
+
+-\textit{CPU Consumption Reduction (CR)}: corresponds to the percentage improvement in speed of execution of an optimized code compared to execution time of baseline version.
+
+-\textit{Speedup (S)}: corresponds to the percentage of memory usage reduction of running container compared to the baseline. The baseline in our experiments is the amount of memory usage in O0 level with no optimizations. Larger values for this metric mean better performance.
+\subsection{Experimental Results}
+In the following paragraphs, we report the results of our experiments.
+\subsubsection{RQ1. Mono-objective SBSE Validation}
+\subsubsection{RQ2. Sensitivity}
+\subsubsection{RQ3. Impact of optimizations on resource consumption}
+\subsubsection{RQ4. Trade-offs between non-functional properties}
+\subsection{Discussions}
+
 
 
 \begin{figure}[!t]
@@ -43,18 +131,22 @@ All these experiments are conducted using GENECO and they enable us to validate 
 	\caption{fig}
 \end{figure}
 
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=1\hsize]{Ressources/genecoApproach22.png}
+	\caption{fig}
+\end{figure}
+
 \begin{table}[]
 	\centering
 	\caption{My caption}
+	\label{my-label}
 	\begin{tabular}{|l|l|l|l|l|l|l|c|}
 		\hline
-		\multirow{2}{*}{} & \multicolumn{7}{l|}{Average Performance Improvement (\%)} \\ \cline{2-8} 
-		& \multicolumn{1}{c|}{O1} & \multicolumn{1}{c|}{O2} & \multicolumn{1}{c|}{O3} & \multicolumn{1}{c|}{Ofast} & \multicolumn{1}{c|}{RS} & \multicolumn{1}{c|}{GA} & NS \\ \hline
-		Execution Speedup &  &  &  &  &  &  &  \\ \hline
-		Memory &  &  &  &  &  &  &  \\ \hline
-		CPU &  &  &  &  &  &  &  \\ \hline
-		Compilation Speedup &  &  &  &  &  &  &  \\ \hline
-		Code Size &  &  &  &  &  &  &  \\ \hline
+		& O1                    & O2                    & O3                    & Ofast                 & RS                    & GA                    & NS \\ \hline
+		S  & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} &    \\ \hline
+		MR &                       &                       &                       &                       &                       &                       &    \\ \hline
+		CR &                       &                       &                       &                       &                       &                       &    \\ \hline
 	\end{tabular}
 \end{table}
 
