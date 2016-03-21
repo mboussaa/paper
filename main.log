@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  18 MAR 2016 09:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  21 MAR 2016 12:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -518,55 +518,53 @@ Underfull \hbox (badness 2359) in paragraph at lines 8--11
 
  []
 
-[6 <./Ressources/genecoApproach.png>]
-<Ressources/infraup.png, id=35, 442.65375pt x 310.15875pt>
+[6 <./Ressources/genecoApproach.png>] [7]
+<Ressources/infraup.png, id=39, 442.65375pt x 310.15875pt>
 File: Ressources/infraup.png Graphic file (type png)
 
 <use Ressources/infraup.png>
-Package pdftex.def Info: Ressources/infraup.png used on input line 35.
+Package pdftex.def Info: Ressources/infraup.png used on input line 114.
 (pdftex.def)             Requested size: 226.79846pt x 158.91716pt.
 
-Underfull \hbox (badness 3058) in paragraph at lines 59--61
-[]\OT1/ptm/m/n/8 Convert a greyscale im-age to
- []
+<Ressources/sensitivity.png, id=40, 492.84125pt x 135.50626pt>
+File: Ressources/sensitivity.png Graphic file (type png)
 
+<use Ressources/sensitivity.png>
+Package pdftex.def Info: Ressources/sensitivity.png used on input line 127.
+(pdftex.def)             Requested size: 252.0pt x 69.28714pt.
 
-Overfull \hbox (5.16432pt too wide) in paragraph at lines 42--64
- [] 
- []
+<Ressources/infra_novelty_stat2.png, id=41, 547.3248pt x 343.0416pt>
+File: Ressources/infra_novelty_stat2.png Graphic file (type png)
+
+<use Ressources/infra_novelty_stat2.png>
+Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
+154.
+(pdftex.def)             Requested size: 252.0pt x 157.94237pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7 <./Ressources/infraup.png>]
-<Ressources/sensitivity.png, id=41, 492.84125pt x 135.50626pt>
-File: Ressources/sensitivity.png Graphic file (type png)
-
-<use Ressources/sensitivity.png>
-Package pdftex.def Info: Ressources/sensitivity.png used on input line 118.
-(pdftex.def)             Requested size: 252.0pt x 69.28714pt.
-
 
 LaTeX Warning: File `Ressources/approach by example.png' not found on input lin
-e 124.
+e 166.
 
 <Ressources/approach by example.png, id=42, 381.425pt x 366.36874pt>
 File: Ressources/approach by example.png Graphic file (type png)
 
 <use Ressources/approach by example.png>
 Package pdftex.def Info: Ressources/approach by example.png used on input line 
-124.
+166.
 (pdftex.def)             Requested size: 252.0pt x 242.05008pt.
 
 
-LaTeX Warning: File `Ressources/geneco approach.png' not found on input line 13
-0.
+LaTeX Warning: File `Ressources/geneco approach.png' not found on input line 17
+2.
 
 <Ressources/geneco approach.png, id=43, 657.45625pt x 308.15125pt>
 File: Ressources/geneco approach.png Graphic file (type png)
 
 <use Ressources/geneco approach.png>
-Package pdftex.def Info: Ressources/geneco approach.png used on input line 130.
+Package pdftex.def Info: Ressources/geneco approach.png used on input line 172.
 
 (pdftex.def)             Requested size: 252.0pt x 118.1096pt.
 
@@ -574,27 +572,25 @@ Package pdftex.def Info: Ressources/geneco approach.png used on input line 130.
 File: Ressources/genecoApproach22.png Graphic file (type png)
 
 <use Ressources/genecoApproach22.png>
-Package pdftex.def Info: Ressources/genecoApproach22.png used on input line 136
+Package pdftex.def Info: Ressources/genecoApproach22.png used on input line 178
 .
 (pdftex.def)             Requested size: 252.0pt x 247.43283pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 140.
+               Default added (so using `tbp') on input line 182.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 154.
-
-
-Overfull \hbox (315.88448pt too wide) in paragraph at lines 158--168
+Overfull \hbox (315.88448pt too wide) in paragraph at lines 186--196
  [][] 
  []
 
-[8 <./Ressources/sensitivity.png> <./Ressources/approach by example.png> <./Res
-sources/geneco approach.png>] [9
+[8 <./Ressources/infraup.png> <./Ressources/sensitivity.png>]
 
- <./Ressources/genecoApproach22.png>]
+LaTeX Warning: Text page 9 contains only floats.
+
+[9 <./Ressources/infra_novelty_stat2.png> <./Ressources/approach by example.png
+> <./Ressources/geneco approach.png> <./Ressources/genecoApproach22.png>]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
@@ -602,68 +598,66 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 
-<Ressources/infra_ffmpeg.png, id=55, 463.7325pt x 611.28375pt>
+<Ressources/infra_ffmpeg.png, id=57, 463.7325pt x 611.28375pt>
 File: Ressources/infra_ffmpeg.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg.png>
-Package pdftex.def Info: Ressources/infra_ffmpeg.png used on input line 210.
+Package pdftex.def Info: Ressources/infra_ffmpeg.png used on input line 237.
 (pdftex.def)             Requested size: 252.0pt x 332.18698pt.
 
-<Ressources/infra_stats.png, id=56, 1517.67pt x 613.29124pt>
+<Ressources/infra_stats.png, id=58, 1517.67pt x 613.29124pt>
 File: Ressources/infra_stats.png Graphic file (type png)
 
 <use Ressources/infra_stats.png>
-Package pdftex.def Info: Ressources/infra_stats.png used on input line 216.
+Package pdftex.def Info: Ressources/infra_stats.png used on input line 243.
 (pdftex.def)             Requested size: 252.0pt x 101.82503pt.
  [10
 
 
 ]
-<Ressources/infra_ffmpeg_plot1.png, id=60, 488.0634pt x 330.033pt>
+<Ressources/infra_ffmpeg_plot1.png, id=62, 488.0634pt x 330.033pt>
 File: Ressources/infra_ffmpeg_plot1.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg_plot1.png>
 Package pdftex.def Info: Ressources/infra_ffmpeg_plot1.png used on input line 2
-28.
+55.
 (pdftex.def)             Requested size: 252.0pt x 170.40952pt.
 
 Underfull \vbox (badness 1057) has occurred while \output is active []
 
 
-<Ressources/infra_novelty.png, id=61, 319.1925pt x 315.1775pt>
+<Ressources/infra_novelty.png, id=63, 319.1925pt x 315.1775pt>
 File: Ressources/infra_novelty.png Graphic file (type png)
 
 <use Ressources/infra_novelty.png>
-Package pdftex.def Info: Ressources/infra_novelty.png used on input line 238.
+Package pdftex.def Info: Ressources/infra_novelty.png used on input line 265.
 (pdftex.def)             Requested size: 159.59586pt x 157.58836pt.
  [11 <./Ressources/infra_ffmpeg.png> <./Ressources/infra_stats.png> <./Ressourc
 es/infra_ffmpeg_plot1.png> <./Ressources/infra_novelty.png>]
-Underfull \hbox (badness 3058) in paragraph at lines 266--268
+Underfull \hbox (badness 3058) in paragraph at lines 293--295
 []\OT1/ptm/m/n/8 Convert a greyscale im-age to
  []
 
 
-Overfull \hbox (5.16432pt too wide) in paragraph at lines 249--271
+Overfull \hbox (5.16432pt too wide) in paragraph at lines 276--298
  [] 
  []
 
-<Ressources/infra_novelty_stat3.png, id=69, 599.3592pt x 371.4678pt>
+<Ressources/infra_novelty_stat3.png, id=71, 599.3592pt x 371.4678pt>
 File: Ressources/infra_novelty_stat3.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat3.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat3.png used on input line 
-304.
+331.
 (pdftex.def)             Requested size: 252.0pt x 156.18546pt.
- [12 <./Ressources/infra_novelty_stat3.png>] <Ressources/infra_novelty_stat2.pn
-g, id=74, 547.3248pt x 343.0416pt>
+ [12 <./Ressources/infra_novelty_stat3.png>]
 File: Ressources/infra_novelty_stat2.png Graphic file (type png)
-
-<use Ressources/infra_novelty_stat2.png>
+ <use Ressources/infra_novelty_stat2.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
-316.
+343.
 (pdftex.def)             Requested size: 252.0pt x 157.94237pt.
-) (./related.tex) (./conclusion.tex)
-(./main.bbl [13 <./Ressources/infra_novelty_stat2.png>]
+) (./related.tex)
+(./conclusion.tex) (./main.bbl [13]
 Missing character: There is no ‚ in font ptmri7t!
 Missing character: There is no Ä in font ptmri7t!
 Missing character: There is no î in font ptmri7t!
@@ -679,18 +673,16 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[14
-
-] (./main.aux)
+[14] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6826 strings out of 493308
- 100082 string characters out of 6137815
- 220995 words of memory out of 5000000
- 10135 multiletter control sequences out of 15000+600000
+ 6829 strings out of 493308
+ 100130 string characters out of 6137815
+ 223006 words of memory out of 5000000
+ 10138 multiletter control sequences out of 15000+600000
  46058 words of font info for 92 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  38i,14n,42p,1832b,1198s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -706,7 +698,7 @@ dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts
 /type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on main.pdf (14 pages, 1196141 bytes).
+Output written on main.pdf (14 pages, 1198873 bytes).
 PDF statistics:
  120 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream

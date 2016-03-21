@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
@@ -13,44 +13,44 @@ Database file #1: ref.bib
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 22 entries,
+You've used 25 entries,
             4039 wiz_defined-function locations,
-            941 strings with 12047 characters,
-and the built_in function-call counts, 18946 in all, are:
-= -- 1475
-> -- 474
-< -- 168
-+ -- 255
-- -- 81
-* -- 924
-:= -- 2709
-add.period$ -- 56
-call.type$ -- 22
-change.case$ -- 22
-chr.to.int$ -- 393
-cite$ -- 22
-duplicate$ -- 1337
-empty$ -- 1619
-format.name$ -- 101
-if$ -- 4431
+            957 strings with 12542 characters,
+and the built_in function-call counts, 21151 in all, are:
+= -- 1648
+> -- 518
+< -- 187
++ -- 279
+- -- 88
+* -- 1026
+:= -- 3031
+add.period$ -- 63
+call.type$ -- 25
+change.case$ -- 24
+chr.to.int$ -- 435
+cite$ -- 25
+duplicate$ -- 1494
+empty$ -- 1827
+format.name$ -- 110
+if$ -- 4952
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 236
-newline$ -- 89
-num.names$ -- 22
-pop$ -- 565
+int.to.str$ -- 25
+missing$ -- 264
+newline$ -- 98
+num.names$ -- 25
+pop$ -- 630
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1460
+skip$ -- 1639
 stack$ -- 0
-substring$ -- 942
-swap$ -- 1099
-text.length$ -- 37
+substring$ -- 1042
+swap$ -- 1224
+text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 22
+type$ -- 25
 warning$ -- 0
-while$ -- 96
-width$ -- 24
-write$ -- 235
+while$ -- 107
+width$ -- 27
+write$ -- 263
