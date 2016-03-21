@@ -75,7 +75,11 @@ The variables that represent compiler options are represented as genes in a chro
 Thus, a solution represents the CFLAGS value used by GCC to compile programs.
 A solution has always the same size which corresponds to the total number of involved flags. 
 However, during the evolutionary process, these flags are turned on or off depending on the mutation and crossover operators. As well, we keep the same order of invoking compiler flags since that does not affect the optimization process and it is handled internally by GCC.
-
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\hsize]{Ressources/individual.png}
+	\caption{fig}
+\end{figure}
 \subsubsection{Novelty Metric}
 The Novelty metric expresses the sparseness of an input optimization sequence. It measures its distance to all other sequences in the current population and to all sequences that were discovered in the past (\ie, sequences in the archive). 
 We can quantify the sparseness of a solution as the average distance to the k-nearest neighbors. 

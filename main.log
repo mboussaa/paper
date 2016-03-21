@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  21 MAR 2016 12:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  21 MAR 2016 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -363,11 +363,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-(./main.aux
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-)
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 387.
@@ -468,27 +464,42 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdftex.map}
 
 
-]
-Overfull \vbox (297.0pt too high) detected at line 132
+] <Ressources/compilation.png, id=11, 394.47375pt x 130.4875pt>
+File: Ressources/compilation.png Graphic file (type png)
+
+<use Ressources/compilation.png>
+Package pdftex.def Info: Ressources/compilation.png used on input line 21.
+(pdftex.def)             Requested size: 252.0pt x 83.35838pt.
+
+Overfull \vbox (297.0pt too high) detected at line 136
  []
 
 
-Overfull \hbox (85.35826pt too wide) in paragraph at lines 132--132
+Overfull \hbox (85.35826pt too wide) in paragraph at lines 136--136
 [][]| 
  []
 
-) (./novelty.tex [2]
+) (./novelty.tex [2 <./Ressources/compilation.png>]
 Overfull \hbox (10.0pt too wide) detected at line 69
 [][] 
  []
 
-[3]
-Underfull \hbox (badness 1490) in paragraph at lines 80--85
+<Ressources/individual.png, id=19, 861.2175pt x 126.4725pt>
+File: Ressources/individual.png Graphic file (type png)
+
+<use Ressources/individual.png>
+Package pdftex.def Info: Ressources/individual.png used on input line 80.
+(pdftex.def)             Requested size: 252.0pt x 37.00607pt.
+
+Underfull \vbox (badness 5878) has occurred while \output is active []
+
+ [3]
+Underfull \hbox (badness 1490) in paragraph at lines 84--89
  \OT1/ptm/m/it/10 2) Nov-elty Met-ric: [][] \OT1/ptm/m/n/10 The Nov-elty met-ri
 c ex-presses the
  []
 
-) (./infra.tex [4]
+) (./infra.tex [4 <./Ressources/individual.png>]
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
@@ -506,7 +517,7 @@ Underfull \hbox (badness 2368) in paragraph at lines 93--94
 []\OT1/ptm/m/n/10 For in-stance, we set the back-end con-tainer of our
  []
 
-[5] <Ressources/genecoApproach.png, id=29, 479.7925pt x 426.59375pt>
+[5] <Ressources/genecoApproach.png, id=34, 479.7925pt x 426.59375pt>
 File: Ressources/genecoApproach.png Graphic file (type png)
 
 <use Ressources/genecoApproach.png>
@@ -519,78 +530,88 @@ Underfull \hbox (badness 2359) in paragraph at lines 8--11
  []
 
 [6 <./Ressources/genecoApproach.png>] [7]
-<Ressources/infraup.png, id=39, 442.65375pt x 310.15875pt>
+<Ressources/infraup.png, id=43, 442.65375pt x 310.15875pt>
 File: Ressources/infraup.png Graphic file (type png)
 
 <use Ressources/infraup.png>
 Package pdftex.def Info: Ressources/infraup.png used on input line 114.
 (pdftex.def)             Requested size: 226.79846pt x 158.91716pt.
 
-<Ressources/sensitivity.png, id=40, 492.84125pt x 135.50626pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Ressources/sensitivity.png, id=44, 492.84125pt x 135.50626pt>
 File: Ressources/sensitivity.png Graphic file (type png)
 
 <use Ressources/sensitivity.png>
-Package pdftex.def Info: Ressources/sensitivity.png used on input line 127.
+Package pdftex.def Info: Ressources/sensitivity.png used on input line 129.
 (pdftex.def)             Requested size: 252.0pt x 69.28714pt.
-
-<Ressources/infra_novelty_stat2.png, id=41, 547.3248pt x 343.0416pt>
+ [8 <./Ressources/infraup.png> <./Ressources/sensitivity.png>]
+<Ressources/infra_novelty_stat2.png, id=50, 547.3248pt x 343.0416pt>
 File: Ressources/infra_novelty_stat2.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat2.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
-154.
+156.
 (pdftex.def)             Requested size: 252.0pt x 157.94237pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 LaTeX Warning: File `Ressources/approach by example.png' not found on input lin
-e 166.
+e 176.
 
-<Ressources/approach by example.png, id=42, 381.425pt x 366.36874pt>
+<Ressources/approach by example.png, id=51, 381.425pt x 366.36874pt>
 File: Ressources/approach by example.png Graphic file (type png)
 
 <use Ressources/approach by example.png>
 Package pdftex.def Info: Ressources/approach by example.png used on input line 
-166.
+176.
 (pdftex.def)             Requested size: 252.0pt x 242.05008pt.
 
 
-LaTeX Warning: File `Ressources/geneco approach.png' not found on input line 17
+LaTeX Warning: File `Ressources/geneco approach.png' not found on input line 18
 2.
 
-<Ressources/geneco approach.png, id=43, 657.45625pt x 308.15125pt>
+<Ressources/geneco approach.png, id=52, 657.45625pt x 308.15125pt>
 File: Ressources/geneco approach.png Graphic file (type png)
 
 <use Ressources/geneco approach.png>
-Package pdftex.def Info: Ressources/geneco approach.png used on input line 172.
+Package pdftex.def Info: Ressources/geneco approach.png used on input line 182.
 
 (pdftex.def)             Requested size: 252.0pt x 118.1096pt.
 
-<Ressources/genecoApproach22.png, id=44, 443.6575pt x 435.6275pt>
+<Ressources/genecoApproach22.png, id=53, 443.6575pt x 435.6275pt>
 File: Ressources/genecoApproach22.png Graphic file (type png)
 
 <use Ressources/genecoApproach22.png>
-Package pdftex.def Info: Ressources/genecoApproach22.png used on input line 178
+Package pdftex.def Info: Ressources/genecoApproach22.png used on input line 188
 .
 (pdftex.def)             Requested size: 252.0pt x 247.43283pt.
+File: Ressources/compilation.png Graphic file (type png)
+ <use Ressources/compilation.png>
+Package pdftex.def Info: Ressources/compilation.png used on input line 212.
+(pdftex.def)             Requested size: 252.0pt x 83.35838pt.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 182.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: Ressources/individual.png Graphic file (type png)
+<use Ressources/individual.png>
+Package pdftex.def Info: Ressources/individual.png used on input line 217.
+(pdftex.def)             Requested size: 252.0pt x 37.00607pt.
 
 
-Overfull \hbox (315.88448pt too wide) in paragraph at lines 186--196
- [][] 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8 <./Ressources/infraup.png> <./Ressources/sensitivity.png>]
+) (./related.tex [9 <./Ressources/infra_novelty_stat2.png> <./Ressources/approa
+ch by example.png> <./Ressources/geneco approach.png>]) (./conclusion.tex)
+(./main.bbl
+Missing character: There is no ‚ in font ptmri7t!
+Missing character: There is no Ä in font ptmri7t!
+Missing character: There is no î in font ptmri7t!
+ [10 <./Ressources/genecoApproach22.png>]) [11
 
-LaTeX Warning: Text page 9 contains only floats.
-
-[9 <./Ressources/infra_novelty_stat2.png> <./Ressources/approach by example.png
-> <./Ressources/geneco approach.png> <./Ressources/genecoApproach22.png>]
+]
+(./evaluation_CBSE.tex
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
@@ -598,69 +619,61 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 
-<Ressources/infra_ffmpeg.png, id=57, 463.7325pt x 611.28375pt>
+<Ressources/infra_ffmpeg.png, id=67, 463.7325pt x 611.28375pt>
 File: Ressources/infra_ffmpeg.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg.png>
-Package pdftex.def Info: Ressources/infra_ffmpeg.png used on input line 237.
+Package pdftex.def Info: Ressources/infra_ffmpeg.png used on input line 37.
 (pdftex.def)             Requested size: 252.0pt x 332.18698pt.
 
-<Ressources/infra_stats.png, id=58, 1517.67pt x 613.29124pt>
+<Ressources/infra_stats.png, id=68, 1517.67pt x 613.29124pt>
 File: Ressources/infra_stats.png Graphic file (type png)
 
 <use Ressources/infra_stats.png>
-Package pdftex.def Info: Ressources/infra_stats.png used on input line 243.
+Package pdftex.def Info: Ressources/infra_stats.png used on input line 43.
 (pdftex.def)             Requested size: 252.0pt x 101.82503pt.
- [10
+ [12
 
 
 ]
-<Ressources/infra_ffmpeg_plot1.png, id=62, 488.0634pt x 330.033pt>
+<Ressources/infra_ffmpeg_plot1.png, id=72, 488.0634pt x 330.033pt>
 File: Ressources/infra_ffmpeg_plot1.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg_plot1.png>
-Package pdftex.def Info: Ressources/infra_ffmpeg_plot1.png used on input line 2
-55.
+Package pdftex.def Info: Ressources/infra_ffmpeg_plot1.png used on input line 5
+5.
 (pdftex.def)             Requested size: 252.0pt x 170.40952pt.
 
-Underfull \vbox (badness 1057) has occurred while \output is active []
-
-
-<Ressources/infra_novelty.png, id=63, 319.1925pt x 315.1775pt>
+<Ressources/infra_novelty.png, id=73, 319.1925pt x 315.1775pt>
 File: Ressources/infra_novelty.png Graphic file (type png)
 
 <use Ressources/infra_novelty.png>
-Package pdftex.def Info: Ressources/infra_novelty.png used on input line 265.
+Package pdftex.def Info: Ressources/infra_novelty.png used on input line 65.
 (pdftex.def)             Requested size: 159.59586pt x 157.58836pt.
- [11 <./Ressources/infra_ffmpeg.png> <./Ressources/infra_stats.png> <./Ressourc
+ [13 <./Ressources/infra_ffmpeg.png> <./Ressources/infra_stats.png> <./Ressourc
 es/infra_ffmpeg_plot1.png> <./Ressources/infra_novelty.png>]
-Underfull \hbox (badness 3058) in paragraph at lines 293--295
+Underfull \hbox (badness 3058) in paragraph at lines 93--95
 []\OT1/ptm/m/n/8 Convert a greyscale im-age to
  []
 
 
-Overfull \hbox (5.16432pt too wide) in paragraph at lines 276--298
+Overfull \hbox (5.16432pt too wide) in paragraph at lines 76--98
  [] 
  []
 
-<Ressources/infra_novelty_stat3.png, id=71, 599.3592pt x 371.4678pt>
+<Ressources/infra_novelty_stat3.png, id=82, 599.3592pt x 371.4678pt>
 File: Ressources/infra_novelty_stat3.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat3.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat3.png used on input line 
-331.
+131.
 (pdftex.def)             Requested size: 252.0pt x 156.18546pt.
- [12 <./Ressources/infra_novelty_stat3.png>]
+ [14 <./Ressources/infra_novelty_stat3.png>]
 File: Ressources/infra_novelty_stat2.png Graphic file (type png)
  <use Ressources/infra_novelty_stat2.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
-343.
+143.
 (pdftex.def)             Requested size: 252.0pt x 157.94237pt.
-) (./related.tex)
-(./conclusion.tex) (./main.bbl [13]
-Missing character: There is no ‚ in font ptmri7t!
-Missing character: There is no Ä in font ptmri7t!
-Missing character: There is no î in font ptmri7t!
 )
 
 ** Conference Paper **
@@ -673,35 +686,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[14] (./main.aux)
+[15
 
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6829 strings out of 493308
- 100130 string characters out of 6137815
- 223006 words of memory out of 5000000
- 10138 multiletter control sequences out of 15000+600000
+ 6842 strings out of 493308
+ 100456 string characters out of 6137815
+ 218844 words of memory out of 5000000
+ 10146 multiletter control sequences out of 15000+600000
  46058 words of font info for 92 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
- 38i,14n,42p,1832b,1198s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texli
-ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
-/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2013/texmf-
-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts
-/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/ur
-w/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/ut
-mri8a.pfb>
-Output written on main.pdf (14 pages, 1198873 bytes).
+ 38i,12n,42p,1832b,1198s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on main.pdf (15 pages, 1232671 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
