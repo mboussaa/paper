@@ -21,10 +21,16 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{brambilla2012model}
-M.~Brambilla, J.~Cabot, and M.~Wimmer, ``Model-driven software engineering in
-  practice,'' \emph{Synthesis Lectures on Software Engineering}, vol.~1, no.~1,
-  pp. 1--182, 2012.
+\bibitem{hoste2008cole}
+K.~Hoste and L.~Eeckhout, ``Cole: compiler optimization level exploration,'' in
+  \emph{Proceedings of the 6th annual IEEE/ACM international symposium on Code
+  generation and optimization}.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
+  2008, pp. 165--174.
+
+\bibitem{le2014compiler}
+V.~Le, M.~Afshari, and Z.~Su, ``Compiler validation via equivalence modulo
+  inputs,'' in \emph{ACM SIGPLAN Notices}, vol.~49, no.~6.\hskip 1em plus 0.5em
+  minus 0.4em\relax ACM, 2014, pp. 216--226.
 
 \bibitem{almagor2004finding}
 L.~Almagor, K.~D. Cooper, A.~Grosul, T.~J. Harvey, S.~W. Reeves,
@@ -37,22 +43,32 @@ Z.~Pan and R.~Eigenmann, ``Fast and effective orchestration of compiler
   and Optimization, 2006. CGO 2006. International Symposium on}.\hskip 1em plus
   0.5em minus 0.4em\relax IEEE, 2006, pp. 12--pp.
 
-\bibitem{nagiub2013automatic}
-M.~Nagiub and W.~Farag, ``Automatic selection of compiler options using genetic
-  techniques for embedded software design,'' in \emph{Computational
-  Intelligence and Informatics (CINTI), 2013 IEEE 14th International Symposium
-  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 69--74.
+\bibitem{molyneaux2009art}
+I.~Molyneaux, \emph{The Art of Application Performance Testing: Help for
+  Programmers and Quality Assurance}.\hskip 1em plus 0.5em minus 0.4em\relax "
+  O'Reilly Media, Inc.", 2009.
+
+\bibitem{ballal2015compiler}
+P.~A. Ballal, H.~Sarojadevi, and P.~Harsha, ``Compiler optimization: A genetic
+  algorithm approach,'' \emph{International Journal of Computer Applications},
+  vol. 112, no.~10, 2015.
 
 \bibitem{chen2012deconstructing}
 Y.~Chen, S.~Fang, Y.~Huang, L.~Eeckhout, G.~Fursin, O.~Temam, and C.~Wu,
   ``Deconstructing iterative optimization,'' \emph{ACM Transactions on
   Architecture and Code Optimization (TACO)}, vol.~9, no.~3, p.~21, 2012.
 
-\bibitem{hoste2008cole}
-K.~Hoste and L.~Eeckhout, ``Cole: compiler optimization level exploration,'' in
-  \emph{Proceedings of the 6th annual IEEE/ACM international symposium on Code
-  generation and optimization}.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
-  2008, pp. 165--174.
+\bibitem{demertzi2011analyzing}
+M.~Demertzi, M.~Annavaram, and M.~Hall, ``Analyzing the effects of compiler
+  optimizations on application reliability,'' in \emph{Workload
+  Characterization (IISWC), 2011 IEEE International Symposium on}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, 2011, pp. 184--193.
+
+\bibitem{nagiub2013automatic}
+M.~Nagiub and W.~Farag, ``Automatic selection of compiler options using genetic
+  techniques for embedded software design,'' in \emph{Computational
+  Intelligence and Informatics (CINTI), 2013 IEEE 14th International Symposium
+  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 69--74.
 
 \bibitem{zhong2009tuning}
 S.~Zhong, Y.~Shen, and F.~Hao, ``Tuning compiler optimization options via
@@ -94,11 +110,6 @@ C.~Gathercole and P.~Ross, ``An adverse interaction between crossover and
   restricted tree depth in genetic programming,'' in \emph{Proceedings of the
   1st annual conference on genetic programming}.\hskip 1em plus 0.5em minus
   0.4em\relax MIT Press, 1996, pp. 291--296.
-
-\bibitem{le2014compiler}
-V.~Le, M.~Afshari, and Z.~Su, ``Compiler validation via equivalence modulo
-  inputs,'' in \emph{ACM SIGPLAN Notices}, vol.~49, no.~6.\hskip 1em plus 0.5em
-  minus 0.4em\relax ACM, 2014, pp. 216--226.
 
 \bibitem{nagai2013scaling}
 E.~Nagai, A.~Hashimoto, and N.~Ishiura, ``Scaling up size and number of

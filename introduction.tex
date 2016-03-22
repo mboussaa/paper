@@ -1,34 +1,57 @@
 \section{Introduction}
-In model-driven software engineering, the intensive use of generative programming techniques has become a common practice for software development since it reduces the development and maintenance effort by developing at a higher-level of abstraction through the use of domain-specific languages~\cite{brambilla2012model} (DSLs). 
-DSLs, as opposed to general-purpose languages, are software languages that focus on specific problem domains. Thus, the realization of model-driven software development for a specific domain requires the creation of effective code generators and compilers for these DSLs.
-The use of code generators is needed to transform manually designed models to software artifacts, which can be deployed on different target platforms. This can clearly reduce the effort of software implementation. A code generator is able to translate source code programs represented in a graphical modeling language (model) into general purpose programming languages such as C, Java, C++, etc. In turn, generated code is transformed into machine code (binaries) using a set of specific compilers.
-These compilers serve as a basis to target different ranges of platforms. 
+Compiler users tend to improve software programs in a safe and profitable way. Modern compilers provide a broad collection of optimizations that can be applied during the code generation process. 
+For functional testing of compilers, software testers generally use to re-execute a set of test suites on different optimized software versions and compare the functional outcome that can be either pass (correct behaviour) or fail (incorrect behaviour, crashes or bugs)~\cite{hoste2008cole,le2014compiler}. 
+
+For non-functional testing, improvement of source code programs in term of performance can refer to several different non-functional properties of the produced code such as code size, resource or energy consumption, execution time, among others~\cite{almagor2004finding,pan2006fast}.
+Testing non-functional properties is more challenging because compilers may have a huge number of potential optimization combinations, making it hard and time-consuming for software developers to find/construct the sequence of optimizations that satisfies user specific key objectives and criteria. It also requires a comprehensive understanding of the underlying system architecture, the target application and the available optimizations of the compiler.
+
+In some cases, these optimizations may negatively decrease the quality of the software and deteriorate application performance over time~\cite{molyneaux2009art}. 
+As a consequence, compiler creators usually define fixed and program-independent sequence optimizations, which are based on their experiences and heuristics. For example, in GCC, we can distinguish optimization levels from O1 to O3. Each optimization level involves a fixed list of compiler optimization options and provide different trade-offs in terms of non-functional properties.
+Nevertheless, there is no guarantee that these optimization levels will perform well on untested architectures or for unseen applications. 
+Thus, it is necessary to detect possible issues caused by source code changes such as performance regressions and help users to validate optimizations that induce to performance improvement.
 %Many technologies, such as Docker containers, provide new opportunities to automate the deployment of produced code into a distributed and heterogeneous component-based infrastructure
 
-In fact, during the code generation process, different optimizations may be applied for code transformation. Improvement of source program can refer to several different characteristics of the produced code such execution time, memory consumption, code size, among others~\cite{almagor2004finding,pan2006fast}.
-For example, embedded systems for which code is generated often have limited resources. 
-Therefore, optimization techniques must be applied whenever possible to generate efficient code with respect to available resources\cite{nagiub2013automatic}. 
-As general-purpose optimizations, compiler creators\footnote{We consider compilers as a kind of code generators in this paper. Indeed, from the testing point of view, we do not make any differences between testing code generators and testing compilers} usually define fixed and program-independent sequence optimizations.
-For example, in GCC, we can distinguish optimization levels from O1 to O3. Each optimization level involves a fixed list of compiler optimization options. 
-However, industrial code generators may have a huge number of potential optimization combinations, making it hard and time-consuming for software developers to find the sequence of optimizations that satisfies user key objectives. 
+We note also that when trying to optimize the performance of a software application,
+many non-functional properties and design constraints must be involved and satisfied simultaneously to better optimize code.
+Most of previous works try to optimize a single criterion (usually the execution time)~\cite{ballal2015compiler,chen2012deconstructing,demertzi2011analyzing} and ignore other important non-functional properties (\eg, resource consumption such as memory or CPU usage) that must be taken into consideration and can be equally important in relation to the performance. Sometimes, optimizing for execution time could induce higher resource consumption and vice versa. For example, embedded systems for which code is generated often have limited resources. Therefore, optimization techniques must be applied whenever possible to generate efficient code and improve performance (in term of execution time) with respect to available resources (in term of CPU or memory usage)~\cite{nagiub2013automatic}.
+Therefore, it is important to construct optimization levels that represent multiple trade-offs between non-functional properties, enabling the software designer to choose among different optimal solutions which best suit the system specifications.
 
-In this paper we explore the relationship between runtime execution of optimized code and non-functional properties.
-We propose a component-based tooled approach to check code generators non-functional properties through the monitoring of generated code in a controlled sandboxing environment. 
-Our approach is based on microservices to automate the deployment and monitoring of different variants of optimized code into a distributed and heterogeneous component-based infrastructure. 
-We assess the effectiveness of our approach by evaluating the optimizations performed by the GCC compiler, a widely used compiler in software engineering community. 
-We also present a number of case studies, in which the tool was successfully used.
+
+
+%In this context, compilers suppose a decisive factor in the optimization. Compilers
+%currently offer a large number of optimization options. However, this capability
+%is never fully exploited as it involves a comprehensive understanding of
+%the underlying computer architecture, the target application and the operation
+%of the compiler.
+
+ 
+
+In this paper, we propose NOTICE (as NOn-functional TestIng of CompilErs), a component-based framework for non-functional testing of compilers through the monitoring of generated code in a controlled sand-boxing environment. Our approach is based on micro-services to automate the deployment and monitoring of different variants of optimized code. NOTICE is an on-demand tool that employs mono and multi-objective evolutionary search algorithms to construct optimization sequences that satisfy user key objectives (execution time, code size, compilation time, CPU or memory usage, etc.).
+In this paper, we make the following contributions:
+\begin{itemize}  
+	
+	
+	
+	\item The paper introduces a novel formulation of the compiler optimizations exploration problem using Novelty Search. We evaluate the effectiveness of our approach by verifying the optimizations performed by GCC compiler.
+	Our experimental results show that NOTICE is able to auto-tune compilers and construct optimizations that yield to better performance results than standard optimization levels.
+	% and, to the best of our knowledge, this is the first paper in the literature to %use Novelty Search to evaluate optimization sequences.
+	
+	\item We propose a micro-service infrastructure to ensure the deployment and monitoring of generated code. Thus, we explore the relationship between runtime execution of optimized code and non-functional properties by providing a fine-grained understanding of resource consumption and analysis of compilers behavior regarding optimizations.
+	
+
+	\item We also demonstrate that NOTICE can be used to automatically construct optimization levels that represent optimal trade-offs between multiple non-functional properties, such as execution time, memory usage, CPU consumption, etc.
+\end{itemize}
+
+
+ 
 %This to ensure the efficiency of generated code, deployed components must be checked and verified regarding their non-functional behavior
 %\footnote{\url{https://www.docker.com}} 
 
-The primary contribution of this paper can be summarized as follows: 
-(1) We propose a microservice infrastructure to ensure the deployment and monitoring of generated code regarding resource consumption; 
-(2) We evaluate the effectiveness of our approach by testing the GCC compiler optimizations across two case studies.
- 
+
 
 The paper is organized as follows.
 Section II describes the motivation behind this work. A search-based technique for compiler optimizations exploration is presented in Section III. 
-We present in Section IV our infrastructure for non-functional testing using microservices. 
-The evaluation and results of our experiments across two case studies are discussed in Section V. 
+We present in Section IV our infrastructure for non-functional testing using microservices.  The evaluation and results of our experiments across two case studies are discussed in Section V. 
 Finally, related work, concluding remarks and future work are provided in Sections VI and VII.
 
 

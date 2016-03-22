@@ -4,13 +4,19 @@
 %In search-based structural testing, metaheuristic search techniques have been frequently used to automate the test data generation. In Genetic Algorithms (GAs) for example, test data are rewarded on the basis of an objective function that represents generally the number of statements or branches covered. However, owing to the wide diversity of possible test data values, it is hard to find the set of test data that can satisfy a specific coverage criterion. In this paper, we introduce the use of Novelty Search (NS) algorithm to the test data generation problem based on statement-covered criteria. We believe that such approach to test data generation is attractive because it allows the exploration of the huge space of test data within the input domain. In this approach, we seek to explore the search space without regard to any objectives. In fact, instead of having a fitness-based selection we select test cases based on a novelty score showing how different they are compared to all other solutions evaluated so far.
 
 \begin{abstract}
-The intensive use of domain specific languages (DSL) and generative programming techniques provides an elegant engineering solution to deal with the heterogeneity of platforms or technological stacks. However, the use of DSLs also leads to the creation of numerous code generators and compilers. Generally, different optimization techniques must be applied to generate efficient code with respect to memory consumption, execution time, code size, among others. Due to the huge number of optimizations, finding the best optimization sequence for a given platform and a given program is more and more challenging. 
 
-This paper proposes GENECO, a generic component-based approach for non-functional testing of code generators through the monitoring of generated code in a controlled sand-boxing environment. 
-This approach provides a fine-grained understanding of resource consumption and analysis of components behavior regarding optimizations. 
+
+Compiler users tend to improve software programs in a safe and profitable way.
+Generally, they can apply different optimization techniques to generate efficient code with respect to non-functional properties such as memory consumption, execution time, code size, among others. However, due to the huge number of optimizations provided by modern compilers, finding the best optimization sequence for a specific objective and a given program is more and more challenging. 
+
+This paper proposes NOTICE, a component-based framework for non-functional testing of compilers through the monitoring of generated code in a controlled sand-boxing environment.
+NOTICE is an on-demand tool that employs different mono and multi-objective evolutionary search algorithms to construct optimization sequences that satisfy user key objectives (execution time, CPU or memory usage, etc.).
+In our approach, we explore the relationship between runtime execution of optimized code and resource consumption (CPU and memory usage) by providing a fine-grained understanding and analysis of compilers behavior regarding optimizations.
 We evaluate the effectiveness of our approach by verifying the optimizations performed by GCC compiler.
 Our experimental results show that our approach is able to auto-tune compilers and construct optimizations that yield to better performance results than standard optimization levels.
-We also demonstrate that GENECO can be used to automatically construct optimization levels that represent optimal trade-offs between multiple non-functional properties, such as execution time, memory usage, CPU consumption, etc.
+We also demonstrate that NOTICE can be used to automatically construct optimization levels that represent optimal trade-offs between multiple non-functional properties, such as execution time, memory usage, CPU consumption, etc.
+
+
 
  
 
@@ -19,7 +25,7 @@ We also demonstrate that GENECO can be used to automatically construct optimizat
 %they are highly dependent on target platforms
 \end{abstract}
 \smallskip
-\noindent \textbf{Keywords.} \textit{docker, non-functional properties, code generator, testing}.
+\noindent \textbf{Keywords.} \textit{software quality, non-functional properties, compilers, testing}.
 % HD-Services will run within a heterogeneous and distributed infrastructure. To facilitate the testing of this kind of services, we need to deploy HD-services on an elastic infrastructure that provides preconfigured virtual server images, storage and network connectivity that may be provisioned by HD-Developers. Monitoring information should also be provided to inform about resource utilization required/needed and to automate the resource management. For this purpose, we propose a testing infrastructure based on docker environment. Docker will automate the deployment of applications inside software containers. It will simplify the creation of highly distributed systems by allowing multiple applications to run autonomously on a server (basically a cloud server). Docker will provide a platform as a service (PaaS) style of deployment for HD-Services. Consequently, we will rely on this technology and benefit from all its advantages to:
 %1- Deploy preconfigured application to test within docker containers
 %2- Automate test suites generation
