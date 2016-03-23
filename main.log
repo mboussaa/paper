@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  22 MAR 2016 20:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  23 MAR 2016 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -520,7 +520,7 @@ File: Ressources/genecoApproach.png Graphic file (type png)
 Package pdftex.def Info: Ressources/genecoApproach.png used on input line 106.
 (pdftex.def)             Requested size: 252.0pt x 224.0627pt.
 ) (./evaluation.tex [6 <./Ressources/genecoApproach.png>]
-Underfull \hbox (badness 2359) in paragraph at lines 8--11
+Underfull \hbox (badness 2359) in paragraph at lines 8--10
 \OT1/ptm/m/it/10 pro-posed diversity-based ex-plo-ration of op-ti-miza-tion se-
 
  []
@@ -531,20 +531,20 @@ File: Ressources/infraup.png Graphic file (type png)
 <use Ressources/infraup.png>
 Package pdftex.def Info: Ressources/infraup.png used on input line 112.
 (pdftex.def)             Requested size: 226.79846pt x 158.91716pt.
- [8 <./Ressources/infraup.png>]
-<Ressources/sensitivity.png, id=49, 492.84125pt x 135.50626pt>
+
+<Ressources/sensitivity.png, id=45, 492.84125pt x 135.50626pt>
 File: Ressources/sensitivity.png Graphic file (type png)
 
 <use Ressources/sensitivity.png>
 Package pdftex.def Info: Ressources/sensitivity.png used on input line 127.
 (pdftex.def)             Requested size: 252.0pt x 69.28714pt.
-
-<Ressources/infra_novelty_stat2.png, id=50, 547.3248pt x 343.0416pt>
+) (./results.tex [8 <./Ressources/infraup.png> <./Ressources/sensitivity.png>]
+<Ressources/infra_novelty_stat2.png, id=51, 547.3248pt x 343.0416pt>
 File: Ressources/infra_novelty_stat2.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat2.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
-154.
+31.
 (pdftex.def)             Requested size: 252.0pt x 157.94237pt.
 
 
@@ -552,63 +552,54 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: File `Ressources/approach by example.png' not found on input lin
-e 174.
+e 54.
 
-<Ressources/approach by example.png, id=51, 381.425pt x 366.36874pt>
+<Ressources/approach by example.png, id=52, 381.425pt x 366.36874pt>
 File: Ressources/approach by example.png Graphic file (type png)
 
 <use Ressources/approach by example.png>
 Package pdftex.def Info: Ressources/approach by example.png used on input line 
-174.
+54.
 (pdftex.def)             Requested size: 252.0pt x 242.05008pt.
 
 
-LaTeX Warning: File `Ressources/geneco approach.png' not found on input line 18
-0.
+LaTeX Warning: File `Ressources/geneco approach.png' not found on input line 60
+.
 
-<Ressources/geneco approach.png, id=52, 657.45625pt x 308.15125pt>
+<Ressources/geneco approach.png, id=53, 657.45625pt x 308.15125pt>
 File: Ressources/geneco approach.png Graphic file (type png)
 
 <use Ressources/geneco approach.png>
-Package pdftex.def Info: Ressources/geneco approach.png used on input line 180.
-
+Package pdftex.def Info: Ressources/geneco approach.png used on input line 60.
 (pdftex.def)             Requested size: 252.0pt x 118.1096pt.
 
-<Ressources/genecoApproach22.png, id=53, 443.6575pt x 435.6275pt>
-File: Ressources/genecoApproach22.png Graphic file (type png)
-
-<use Ressources/genecoApproach22.png>
-Package pdftex.def Info: Ressources/genecoApproach22.png used on input line 186
-.
-(pdftex.def)             Requested size: 252.0pt x 247.43283pt.
-File: Ressources/compilation.png Graphic file (type png)
- <use Ressources/compilation.png>
-Package pdftex.def Info: Ressources/compilation.png used on input line 210.
-(pdftex.def)             Requested size: 252.0pt x 83.35838pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-File: Ressources/individual.png Graphic file (type png)
-<use Ressources/individual.png>
-Package pdftex.def Info: Ressources/individual.png used on input line 215.
-(pdftex.def)             Requested size: 252.0pt x 37.00607pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./related.tex
 
 LaTeX Warning: Text page 9 contains only floats.
 
-[9 <./Ressources/sensitivity.png> <./Ressources/infra_novelty_stat2.png> <./Res
-sources/approach by example.png> <./Ressources/geneco approach.png>])
-(./conclusion.tex) (./main.bbl [10 <./Ressources/genecoApproach22.png>]
+[9 <./Ressources/infra_novelty_stat2.png> <./Ressources/approach by example.png
+> <./Ressources/geneco approach.png>]
+<Ressources/genecoApproach22.png, id=60, 443.6575pt x 435.6275pt>
+File: Ressources/genecoApproach22.png Graphic file (type png)
+
+<use Ressources/genecoApproach22.png>
+Package pdftex.def Info: Ressources/genecoApproach22.png used on input line 66.
+
+(pdftex.def)             Requested size: 252.0pt x 247.43283pt.
+File: Ressources/compilation.png Graphic file (type png)
+ <use Ressources/compilation.png>
+Package pdftex.def Info: Ressources/compilation.png used on input line 90.
+(pdftex.def)             Requested size: 252.0pt x 83.35838pt.
+File: Ressources/individual.png Graphic file (type png)
+
+<use Ressources/individual.png>
+Package pdftex.def Info: Ressources/individual.png used on input line 95.
+(pdftex.def)             Requested size: 252.0pt x 37.00607pt.
+) (./related.tex) (./conclusion.tex) (./main.bbl [10 <./Ressources/genecoApproa
+ch22.png>]
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ” in font ptmri7t!
-)
-[11] (./evaluation_CBSE.tex
+) [11] (./evaluation_CBSE.tex
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no œ in font ptmr7t!
@@ -687,8 +678,8 @@ Before submitting the final camera ready copy, remember to:
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6844 strings out of 493308
- 100497 string characters out of 6137815
+ 6847 strings out of 493308
+ 100528 string characters out of 6137815
  220618 words of memory out of 5000000
  10148 multiletter control sequences out of 15000+600000
  46058 words of font info for 92 fonts, out of 8000000 for 9000
@@ -707,7 +698,7 @@ al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
 f-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/fo
 nts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on main.pdf (15 pages, 1241058 bytes).
+Output written on main.pdf (15 pages, 1241262 bytes).
 PDF statistics:
  131 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
