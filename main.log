@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  25 MAR 2016 09:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  25 MAR 2016 14:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -484,7 +484,7 @@ Overfull \hbox (85.35826pt too wide) in paragraph at lines 137--137
  []
 
 ) (./novelty.tex [2 <./Ressources/autotuning.png>]
-Overfull \hbox (10.0pt too wide) detected at line 70
+Overfull \hbox (10.0pt too wide) detected at line 69
 [][] 
  []
 
@@ -492,10 +492,10 @@ Overfull \hbox (10.0pt too wide) detected at line 70
 File: Ressources/individual.png Graphic file (type png)
 
 <use Ressources/individual.png>
-Package pdftex.def Info: Ressources/individual.png used on input line 81.
+Package pdftex.def Info: Ressources/individual.png used on input line 80.
 (pdftex.def)             Requested size: 252.0pt x 37.00607pt.
  [3]
-Underfull \hbox (badness 1490) in paragraph at lines 85--90
+Underfull \hbox (badness 1490) in paragraph at lines 84--89
  \OT1/ptm/m/it/10 2) Nov-elty Met-ric: [][] \OT1/ptm/m/n/10 The Nov-elty met-ri
 c ex-presses the
  []
@@ -504,17 +504,17 @@ c ex-presses the
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 62.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 68.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (6.0pt too wide) in paragraph at lines 64--65
+Overfull \hbox (6.0pt too wide) in paragraph at lines 70--71
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 2368) in paragraph at lines 93--94
+Underfull \hbox (badness 2368) in paragraph at lines 99--100
 []\OT1/ptm/m/n/10 For in-stance, we set the back-end con-tainer of our
  []
 
@@ -522,7 +522,7 @@ Underfull \hbox (badness 2368) in paragraph at lines 93--94
 File: Ressources/genecoApproach.png Graphic file (type png)
 
 <use Ressources/genecoApproach.png>
-Package pdftex.def Info: Ressources/genecoApproach.png used on input line 106.
+Package pdftex.def Info: Ressources/genecoApproach.png used on input line 112.
 (pdftex.def)             Requested size: 252.0pt x 222.4811pt.
 ) (./evaluation.tex [6 <./Ressources/genecoApproach.png>]
 Underfull \hbox (badness 2359) in paragraph at lines 7--9
@@ -567,32 +567,32 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: File `Ressources/approach by example.png' not found on input lin
-e 75.
+e 76.
 
 <Ressources/approach by example.png, id=52, 381.425pt x 366.36874pt>
 File: Ressources/approach by example.png Graphic file (type png)
 
 <use Ressources/approach by example.png>
 Package pdftex.def Info: Ressources/approach by example.png used on input line 
-75.
+76.
 (pdftex.def)             Requested size: 252.0pt x 242.05008pt.
 
 
-LaTeX Warning: File `Ressources/geneco approach.png' not found on input line 81
+LaTeX Warning: File `Ressources/geneco approach.png' not found on input line 82
 .
 
 <Ressources/geneco approach.png, id=53, 657.45625pt x 308.15125pt>
 File: Ressources/geneco approach.png Graphic file (type png)
 
 <use Ressources/geneco approach.png>
-Package pdftex.def Info: Ressources/geneco approach.png used on input line 81.
+Package pdftex.def Info: Ressources/geneco approach.png used on input line 82.
 (pdftex.def)             Requested size: 252.0pt x 118.1096pt.
 
 <Ressources/genecoApproach22.png, id=54, 443.6575pt x 435.6275pt>
 File: Ressources/genecoApproach22.png Graphic file (type png)
 
 <use Ressources/genecoApproach22.png>
-Package pdftex.def Info: Ressources/genecoApproach22.png used on input line 87.
+Package pdftex.def Info: Ressources/genecoApproach22.png used on input line 88.
 
 (pdftex.def)             Requested size: 252.0pt x 247.43283pt.
 
@@ -600,7 +600,7 @@ Package pdftex.def Info: Ressources/genecoApproach22.png used on input line 87.
 File: Ressources/compilation.png Graphic file (type png)
 
 <use Ressources/compilation.png>
-Package pdftex.def Info: Ressources/compilation.png used on input line 111.
+Package pdftex.def Info: Ressources/compilation.png used on input line 112.
 (pdftex.def)             Requested size: 252.0pt x 83.35838pt.
 
 
@@ -608,7 +608,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: Ressources/individual.png Graphic file (type png)
 <use Ressources/individual.png>
-Package pdftex.def Info: Ressources/individual.png used on input line 116.
+Package pdftex.def Info: Ressources/individual.png used on input line 117.
 (pdftex.def)             Requested size: 252.0pt x 37.00607pt.
 
 
@@ -701,7 +701,7 @@ Before submitting the final camera ready copy, remember to:
 Here is how much of TeX's memory you used:
  6853 strings out of 493308
  100674 string characters out of 6137815
- 221257 words of memory out of 5000000
+ 221184 words of memory out of 5000000
  10153 multiletter control sequences out of 15000+600000
  46058 words of font info for 92 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
@@ -719,7 +719,7 @@ al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
 f-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/fo
 nts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on main.pdf (15 pages, 1248841 bytes).
+Output written on main.pdf (15 pages, 1248732 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
