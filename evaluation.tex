@@ -1,6 +1,5 @@
 \section{Evaluation}
-So far, we have presented a sound procedure and automated component-based framework for extracting non-functional properties of generated code. In this section, we evaluate the implementation of our approach by explaining the design of our empirical study; the research questions we set out to answer, the different methods we used to answer these questions. The experimental material is
-available for replication purposes at [ref].
+So far, we have presented a sound procedure and automated component-based framework for extracting non-functional properties of generated code. In this section, we evaluate the implementation of our approach by explaining the design of our empirical study; the research questions we set out to answer, the different methods we used to answer these questions. The experimental material is available for replication purposes at [ref].
 
 \subsection{Research questions}
 Our experiments aim at answering the following research questions:
@@ -86,12 +85,7 @@ The parameters of the algorithm were tuned individually in preliminary experimen
 \end{table}
 
 \subsubsection{Evaluation Metrics Used}
-When comparing two mono-objective algorithms, it is usual to
-compare their best solutions found so far during the optimization
-process. However, this is not applicable when comparing two multi-objective
-evolutionary algorithms since each of them gives as output
-a set of non-dominated (Pareto equivalent) solutions. For this reason,
-we use performance indicator to compare multi-objective algorithms.
+
 For mono-objective algorithms we used to evaluate solutions using the following metrics:
 
 -\textit{Memory Consumption Reduction (MR)}: corresponds to the percentage ratio of memory usage reduction of running container over the baseline. The baseline in our experiments is the amount of memory usage at O0 level with no optimizations. Larger values for this metric mean better performance. Memory usage is measured in bytes.
@@ -100,7 +94,9 @@ For mono-objective algorithms we used to evaluate solutions using the following 
 
 -\textit{Speedup (S)}: corresponds to the percentage improvement in speed of execution of an optimized code compared to execution time of baseline version. Programs execution time is measured in seconds.
 
-For multi-objective algorithms we used to evaluate solutions using the following metric:
+
+When comparing two mono-objective algorithms, it is usual to compare their best solutions found so far during the optimization process. However, this is not applicable when comparing two multi-objective evolutionary algorithms since each of them gives as output a set of non-dominated (Pareto equivalent) solutions. For this reason, we use performance indicator to compare multi-objective algorithms.
+Thus, for multi-objective algorithms we used to evaluate solutions using the following metric:
 
 -\textit{Hypervolume (HV)}: corresponds to the proportion of the objective space that is dominated by the Pareto front approximation returned by the algorithm and delimited by a reference point. The HV reference point is the point obtained by taking the maximum value observed. Thus, the HV metric can be computed as the area between the Pareto frontier and the HV reference point. Larger values for this metric mean better performance. The most interesting features of this indicator are its Pareto dominance compliance and its ability to capture both convergence and diversity\cite{deb2001multi}. 
 
@@ -112,16 +108,13 @@ First a meta-heuristic (mono or multi-objective) is applied to generate specific
 	\includegraphics[width=0.9\linewidth]{Ressources/infraup.png}
 	\caption{Overview of the Docker-based testing architecture}
 \end{figure}
-To answer the first research question RQ1, we implement three mono-objective algorithms GA and RS as well our NS adaptation for optimization sequences generation. As it is shown on the left side of figure 3, we used NOTICE to search for best optimization sequence from a set of input programs. For this reason, we generated 10 random programs using Csmith \textit{"training set"} and apply the generated sequences to these programs. Thus, the code quality objective function in this
-experiments is equal to the average individual performance fitness values for all programs under test. The non-functional property could be CR, MR or S. It depends on the user design choice.
 
-To test the generality of the best optimizations discovered, we apply in RQ2 these sequences to new unseen programs as it is shown on the right part of figure 3. We choose to apply optimizations to new 10 Csmith and 10 Cbench programs. Through this experiment, we would like to test the sensitivity of input programs and general applicability of optimization sequences.
 
-To answer RQ3, we study the impact of these optimizations on memory and CPU consumption using our Docker-based infrastructure. Following again a mono-objective approach, we try in this experiment to maximize the speedup \textit{S} and study in the mean time the impact of \textit{S} on resource consumptions namely memory and CPU usage. In this experiment, we choose 5 Cbench programs to investigate resource consumptions per-benchmark.
 
-Finally in RQ4, we try to use NOTICE to find trade-offs between non-functional properties. In this experiment, we choose to focus on the trade-off $<$ExecutionTime--MemoryUsage$>$. We report the comparison results of three multi-objective algorithm adaptations NSGA-II, RS and NS. 
-Sequences evaluation is done across 5 Cbench programs as it is conducted in RQ1.
-We evaluate the quality of the obtained Pareto optimal optimization levels, both qualitatively by visual inspection of the Pareto frontiers, and quantitatively by using the HV metric.
+
+
+
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\linewidth]{Ressources/sensitivity.png}

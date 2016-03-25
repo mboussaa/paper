@@ -70,6 +70,10 @@ M.~Nagiub and W.~Farag, ``Automatic selection of compiler options using genetic
   Intelligence and Informatics (CINTI), 2013 IEEE 14th International Symposium
   on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 69--74.
 
+\bibitem{lehman2008exploiting}
+J.~Lehman and K.~O. Stanley, ``Exploiting open-endedness to solve problems
+  through the search for novelty.'' in \emph{ALIFE}, 2008, pp. 329--336.
+
 \bibitem{zhong2009tuning}
 S.~Zhong, Y.~Shen, and F.~Hao, ``Tuning compiler optimization options via
   simulated annealing,'' in \emph{Future Information Technology and Management
@@ -95,10 +99,6 @@ X.~Yang, Y.~Chen, E.~Eide, and J.~Regehr, ``Finding and understanding bugs in c
   compilers,'' in \emph{ACM SIGPLAN Notices}, vol.~46, no.~6.\hskip 1em plus
   0.5em minus 0.4em\relax ACM, 2011, pp. 283--294.
 
-\bibitem{lehman2008exploiting}
-J.~Lehman and K.~O. Stanley, ``Exploiting open-endedness to solve problems
-  through the search for novelty.'' in \emph{ALIFE}, 2008, pp. 329--336.
-
 \bibitem{banzhaf1996effect}
 W.~Banzhaf, F.~D. Francone, and P.~Nordin, ``The effect of extensive use of the
   mutation operator on generalization in genetic programming using sparse data
@@ -110,6 +110,11 @@ C.~Gathercole and P.~Ross, ``An adverse interaction between crossover and
   restricted tree depth in genetic programming,'' in \emph{Proceedings of the
   1st annual conference on genetic programming}.\hskip 1em plus 0.5em minus
   0.4em\relax MIT Press, 1996, pp. 291--296.
+
+\bibitem{deb2002fast}
+K.~Deb, A.~Pratap, S.~Agarwal, and T.~Meyarivan, ``A fast and elitist
+  multiobjective genetic algorithm: Nsga-ii,'' \emph{Evolutionary Computation,
+  IEEE Transactions on}, vol.~6, no.~2, pp. 182--197, 2002.
 
 \bibitem{nagai2013scaling}
 E.~Nagai, A.~Hashimoto, and N.~Ishiura, ``Scaling up size and number of

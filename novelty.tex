@@ -1,8 +1,9 @@
-\section{Novelty Search Compiler Optimizations Exploration}
+\section{Evolutionary Exploration of Compiler Optimizations }
  
 
-Lots of techniques (random search based, meta-heuristic, constraint programming) can be used to explore the large set of optimization combinations of a modern code generator. In our approach, we study the use of Novelty Search techniques. 
-Our goal of the Novelty Search approach for compiler optimization is to identify the set of compiler optimization options that provides a trade-off with respect to resource utilization. 
+Lots of techniques (random search based, meta-heuristics, constraint programming, machine learning, etc.) can be used to explore the large set of optimization combinations of modern compilers. 
+In our approach, we study the use of Novelty Search technique. 
+Our goal of the Novelty Search approach for compiler optimization is to identify the set of compiler optimization options that optimize non-functional properties of code.
 
 \subsection{Novelty Search Adaptation}
 Optimization options are difficult and even impossible to be chosen by programmers or compiler users.
@@ -96,3 +97,7 @@ To measure the sparseness of a solution, we will use the previously defined dist
 NM(S) = \frac{1}{k} \sum_{i=1}^{k} distance(S,\mu _{i})
 \end{equation}
 where $\mu _{i}$ is the $i^{th}$ nearest neighbor of the solution S within the population and the archive of novel individuals.
+
+\subsection{Novelty Search For Multi-objective Search}
+NS can be easily adapted to a multi-search problem as well. In this adaptation, the SBSE formulation remains the same as described above (Algorithm 1). However, in order to evaluate the new discovered solution, we have to consider two main objectives and add the non-dominated solutions to the Pareto non-dominated set. We apply the Pareto dominance relation to find solutions that are not Pareto dominated by any other solution discovered so far like in NSGA-II~\cite{deb2002fast}. Then, this Pareto non-dominated set is returned as the result.
+There is typically more than one optimal solution in the end of NS. The size of the final Pareto set yielded is bounded by the size of the initial population chosen.
