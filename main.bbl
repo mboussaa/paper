@@ -116,6 +116,11 @@ K.~Deb, A.~Pratap, S.~Agarwal, and T.~Meyarivan, ``A fast and elitist
   multiobjective genetic algorithm: Nsga-ii,'' \emph{Evolutionary Computation,
   IEEE Transactions on}, vol.~6, no.~2, pp. 182--197, 2002.
 
+\bibitem{nethercote2007valgrind}
+N.~Nethercote and J.~Seward, ``Valgrind: a framework for heavyweight dynamic
+  binary instrumentation,'' in \emph{ACM Sigplan notices}, vol.~42,
+  no.~6.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2007, pp. 89--100.
+
 \bibitem{nagai2013scaling}
 E.~Nagai, A.~Hashimoto, and N.~Ishiura, ``Scaling up size and number of
   expressions in random testing of arithmetic optimization of c compilers,'' in
