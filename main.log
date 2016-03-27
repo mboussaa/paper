@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.27)  27 MAR 2016 19:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.27)  27 MAR 2016 22:52
 entering extended mode
 **./main.tex
 (main.tex
@@ -439,7 +439,7 @@ Overfull \hbox (85.35826pt too wide) in paragraph at lines 137--137
  []
 
 ) (novelty.tex [2 <./Ressources/autotuning.png>]
-Overfull \hbox (10.0pt too wide) detected at line 69
+Overfull \hbox (10.0pt too wide) detected at line 72
 [][] 
  []
 
@@ -447,10 +447,10 @@ Overfull \hbox (10.0pt too wide) detected at line 69
 File: Ressources/individual.png Graphic file (type png)
 
 <use Ressources/individual.png>
-Package pdftex.def Info: Ressources/individual.png used on input line 80.
+Package pdftex.def Info: Ressources/individual.png used on input line 83.
 (pdftex.def)             Requested size: 252.0pt x 37.00607pt.
  [3]
-Underfull \hbox (badness 1490) in paragraph at lines 84--89
+Underfull \hbox (badness 1490) in paragraph at lines 87--92
  \OT1/ptm/m/it/10 2) Nov-elty Met-ric: [][] \OT1/ptm/m/n/10 The Nov-elty met-ri
 c ex-presses the
  []
@@ -464,7 +464,7 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 69.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<Ressources/genecoApproach.png, id=33, 479.7925pt x 423.5825pt>
+<Ressources/genecoApproach.png, id=36, 479.7925pt x 423.5825pt>
 File: Ressources/genecoApproach.png Graphic file (type png)
 
 <use Ressources/genecoApproach.png>
@@ -476,17 +476,14 @@ Underfull \hbox (badness 2359) in paragraph at lines 7--9
 
  []
 
-[7] <Ressources/infraup.png, id=43, 442.65375pt x 310.15875pt>
+[7] <Ressources/infraup.png, id=46, 442.65375pt x 310.15875pt>
 File: Ressources/infraup.png Graphic file (type png)
 
 <use Ressources/infraup.png>
 Package pdftex.def Info: Ressources/infraup.png used on input line 108.
 (pdftex.def)             Requested size: 226.79846pt x 158.91716pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Ressources/sensitivity.png, id=44, 492.84125pt x 135.50626pt>
+<Ressources/sensitivity.png, id=47, 492.84125pt x 135.50626pt>
 File: Ressources/sensitivity.png Graphic file (type png)
 
 <use Ressources/sensitivity.png>
@@ -497,7 +494,7 @@ Package pdftex.def Info: Ressources/sensitivity.png used on input line 120.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (results.tex [8 <./Ressources/infraup.png> <./Ressources/sensitivity.png>]
-<Ressources/infra_novelty_stat2.png, id=50, 547.3248pt x 343.0416pt>
+<Ressources/infra_novelty_stat2.png, id=53, 547.3248pt x 343.0416pt>
 File: Ressources/infra_novelty_stat2.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat2.png>
@@ -509,7 +506,7 @@ Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line
 LaTeX Warning: File `Ressources/approach by example.png' not found on input lin
 e 76.
 
-<Ressources/approach by example.png, id=51, 381.425pt x 366.36874pt>
+<Ressources/approach by example.png, id=54, 381.425pt x 366.36874pt>
 File: Ressources/approach by example.png Graphic file (type png)
 
 <use Ressources/approach by example.png>
@@ -521,14 +518,14 @@ Package pdftex.def Info: Ressources/approach by example.png used on input line
 LaTeX Warning: File `Ressources/geneco approach.png' not found on input line 82
 .
 
-<Ressources/geneco approach.png, id=52, 657.45625pt x 308.15125pt>
+<Ressources/geneco approach.png, id=55, 657.45625pt x 308.15125pt>
 File: Ressources/geneco approach.png Graphic file (type png)
 
 <use Ressources/geneco approach.png>
 Package pdftex.def Info: Ressources/geneco approach.png used on input line 82.
 (pdftex.def)             Requested size: 252.0pt x 118.1096pt.
 
-<Ressources/genecoApproach22.png, id=53, 443.6575pt x 435.6275pt>
+<Ressources/genecoApproach22.png, id=56, 443.6575pt x 435.6275pt>
 File: Ressources/genecoApproach22.png Graphic file (type png)
 
 <use Ressources/genecoApproach22.png>
@@ -536,7 +533,7 @@ Package pdftex.def Info: Ressources/genecoApproach22.png used on input line 88.
 
 (pdftex.def)             Requested size: 252.0pt x 247.43283pt.
 
-<Ressources/compilation.png, id=54, 394.47375pt x 130.4875pt>
+<Ressources/compilation.png, id=57, 394.47375pt x 130.4875pt>
 File: Ressources/compilation.png Graphic file (type png)
 
 <use Ressources/compilation.png>
@@ -569,14 +566,14 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 
-<Ressources/infra_ffmpeg.png, id=69, 463.7325pt x 611.28375pt>
+<Ressources/infra_ffmpeg.png, id=72, 463.7325pt x 611.28375pt>
 File: Ressources/infra_ffmpeg.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg.png>
 Package pdftex.def Info: Ressources/infra_ffmpeg.png used on input line 37.
 (pdftex.def)             Requested size: 252.0pt x 332.18698pt.
 
-<Ressources/infra_stats.png, id=70, 1517.67pt x 613.29124pt>
+<Ressources/infra_stats.png, id=73, 1517.67pt x 613.29124pt>
 File: Ressources/infra_stats.png Graphic file (type png)
 
 <use Ressources/infra_stats.png>
@@ -586,7 +583,7 @@ Package pdftex.def Info: Ressources/infra_stats.png used on input line 43.
 
 
 ]
-<Ressources/infra_ffmpeg_plot1.png, id=74, 488.0634pt x 330.033pt>
+<Ressources/infra_ffmpeg_plot1.png, id=77, 488.0634pt x 330.033pt>
 File: Ressources/infra_ffmpeg_plot1.png Graphic file (type png)
 
 <use Ressources/infra_ffmpeg_plot1.png>
@@ -594,7 +591,7 @@ Package pdftex.def Info: Ressources/infra_ffmpeg_plot1.png used on input line 5
 5.
 (pdftex.def)             Requested size: 252.0pt x 170.40952pt.
 
-<Ressources/infra_novelty.png, id=75, 319.1925pt x 315.1775pt>
+<Ressources/infra_novelty.png, id=78, 319.1925pt x 315.1775pt>
 File: Ressources/infra_novelty.png Graphic file (type png)
 
 <use Ressources/infra_novelty.png>
@@ -611,7 +608,7 @@ Overfull \hbox (5.16432pt too wide) in paragraph at lines 76--98
  [] 
  []
 
-<Ressources/infra_novelty_stat3.png, id=84, 599.3592pt x 371.4678pt>
+<Ressources/infra_novelty_stat3.png, id=87, 599.3592pt x 371.4678pt>
 File: Ressources/infra_novelty_stat3.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat3.png>
@@ -638,39 +635,38 @@ Before submitting the final camera ready copy, remember to:
 
 [15
 
-] (main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- )
+] (main.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6038 strings out of 493634
- 89713 string characters out of 3141308
- 202302 words of memory out of 3000000
- 9296 multiletter control sequences out of 15000+200000
- 46058 words of font info for 92 fonts, out of 3000000 for 9000
+ 6052 strings out of 493634
+ 89842 string characters out of 3141308
+ 201302 words of memory out of 3000000
+ 9303 multiletter control sequences out of 15000+200000
+ 51443 words of font info for 102 fonts, out of 3000000 for 9000
  1028 hyphenation exceptions out of 8191
  27i,12n,42p,1629b,4884s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.
 enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pf
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on main.pdf (15 pages, 1302759 bytes).
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/time
+s/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.p
+fb>
+Output written on main.pdf (15 pages, 1330190 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
+ 143 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
