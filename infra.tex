@@ -39,7 +39,7 @@ We resume, in the following, the main advantages of this approach:
 	\item Thanks to the use of Dockerfile, NOTICE can be easily configured by compiler users to define the target compiler to test (\eg, GCC compiler version), the container OS, the input program under test and the optimization options, etc. NOTICE use the same Docker image to execute different instances of generated code.
 	\item Docker uses Linux control groups (cgroups) to group processes running in the container. This allows us to manage the resources of a group of processes, which is very valuable. 
 	This approach increases the flexibility when we want to manage resources, since we can manage every group individually. 
-	\item Although containers run in isolation, they can share data with the host machine and other running containers. Thus, non-functional data relative to resource consumption can be easily gathered and managed by other containers (\eg, for storage purpose, visualization)
+	\item Although containers run in isolation, they can share data with the host machine and other running containers. Thus, non-functional data relative to resource consumption can be easily gathered and managed by other containers (i.e., for storage purpose, visualization)
 \end{enumerate}
 
 
@@ -53,7 +53,7 @@ cAdvisor Docker image does not need any configuration on the host machine. We ha
 
 However, cAdvisor monitors and aggregates live data over only 60 seconds interval. Therefore, we would like to record all data over time since container's creation. This is useful to run queries and define non-functional metrics from historical data. Thereby, to make gathered data truly valuable for resource usage monitoring, it becomes necessary to log it into a database at runtime. Thus, we link our monitoring component to a back-end database. 
 \subsubsection{Back-end Database Component}
-This component represents a times-series database back-end. It is plugged with the previously described monitoring component to save the non-functional data for long-term retention, analytics and visualization. Hence, we define its corresponding ip port into the monitoring component so that, container statistics are sent over TCP port (e.g, 8083) exposed by the database component.
+This component represents a times-series database back-end. It is plugged with the previously described monitoring component to save the non-functional data for long-term retention, analytics and visualization. Hence, we define its corresponding ip port into the monitoring component so that, container statistics are sent over TCP port (e.g., 8083) exposed by the database component.
 
 During the execution of generated code, resource usage stats are continuously sent to this component. When a container is killed, NOTICE is able to access to its relative resource usage metrics through the database. We choose a time series database because we are collecting time series data that corresponds to the resource utilization profiles of programs execution.
 
@@ -76,17 +76,17 @@ To give an idea about data stored in InfluxDB. The following table describes the
  		\begin{tabular}{|p{1cm}|p{6.9cm}|}
  			\hline
  			 \textbf{Metric} & \textbf{Description} \\
- 			\hline
+ 		\hhline{|=|=|}	
  			 Name & Container Name \\
- 			\hline
+ 		
  			 T & Elapsed time since container's creation \\
- 			\hline
+ 		
  			 Network &  Stats for network bytes and packets in an out of the container \\
- 			\hline
+ 		
  			 Disk IO &  Disk I/O stats \\
- 			\hline
+ 		
  			 Memory &  Memory usage \\
- 			\hline
+ 			
  		   	 CPU &  CPU usage \\
  			\hline
  			

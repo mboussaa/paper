@@ -5,7 +5,7 @@ So far, we have presented a sound procedure and automated component-based framew
 Our experiments aim at answering the following research questions:
 
 \textbf{RQ1: Mono-objective SBSE Validation.} 
-\textit{How does the proposed diversity-based exploration of optimization sequences perform compared to other mono-objective algorithms in term of memory consumption, CPU, execution time, etc.?} 
+\textit{How does the proposed diversity-based exploration of optimization sequences perform compared to other mono-objective algorithms in term of memory and CPU consumption, execution time, etc.?} 
  
 
 \textbf{RQ2: Sensitivity.} 
@@ -26,11 +26,11 @@ To answer these questions, we conduct several experiments using NOTICE to valida
 \subsection{Experimental Setup}
 \subsubsection{Programs used in the empirical study}
 To explore the impact of compiler optimizations a set of input programs are needed. 
-To do so, we used a random C program generator called Csmith \cite{yang2011finding}.
+To do so, we use a random C program generator called Csmith \cite{yang2011finding}.
 Csmith is a tool that can generate random C programs that statically and dynamically conform to the C99 standard. It has been widely used to perform functional testing of compilers \cite{le2014compiler} \cite{nagai2013scaling}. Csmith can generate C programs that utilize a much wider range of C features including complex control flow and data structures such as pointers, arrays, and structs. Csmith programs come with their test suites that explore the structure of generated programs. 
-Authors argue that Csmith is an effective bug-finding tool because it generates tests that explore atypical combinations of C language features. They argue as well that larger programs are more effective for functional testing. Thus, we run Csmith for 24 hours and gathered the largest generated programs. We depicted 20 C programs with average source lines 12K.
+Authors argue that Csmith is an effective bug-finding tool because it generates tests that explore atypical combinations of C language features. They argue as well, that larger programs are more effective for functional testing. Thus, we run Csmith for 24 hours and gathered the largest generated programs. We depicted 30 C programs with average source lines 12K.
 
-As well, we run experiments on commonly used benchmarks in iterative compilation named Collective Benchmark (cBench)~\cite{fursin2009collective}. It is a collection of open-source sequential programs in C targeting specific areas of the embedded market. It comes with multiple datasets assembled by the community to enable realistic benchmarking and research on program and architecture optimization. cBench contains more than 20 C programs. 
+Moreover, we run experiments on commonly used benchmarks in iterative compilation named Collective Benchmark (cBench)~\cite{fursin2009collective}. It is a collection of open-source sequential programs in C, targeting specific areas of the embedded market. It comes with multiple datasets assembled by the community to enable realistic benchmarking and research on program and architecture optimization. cBench contains more than 20 C programs. 
 \iffalse
 \begin{table}[h]
 	\begin{center}
@@ -63,24 +63,28 @@ As well, we run experiments on commonly used benchmarks in iterative compilation
 \fi
 \subsubsection{Parameter Tuning and Setting}
 %Our experiments use the classical NS algorithm, where we evolve a set of optimization sequences through generations.
-NS is implemented as described in Section 3.
-The first step in the process of selection is to evaluate each individual and compute its novelty score. Novelty is calculated for each organism by taking the mean of its 15 lowest dissimilar optimization sequences (considering all sequences in the current population and in the archive). 
+An important aspect for meta-heuristic search algorithms lies in the parameters tuning and selection, which is necessary to ensure not only fair comparison, but also for potential replication. 
+During mono-objective search, we use to compare NS to RS and GA~\cite{cooper2002adaptive} and to NSGA-II~\cite{deb2002fast} and RS in multi-objective optimization. Each initial population/solution of different algorithms is completely random. The stopping criterion is when the maximum number of fitness evaluations is reached.
+The resulting parameter values are listed in Table 3. The same parameter setting are applied to all algorithms under comparison.
+
+NS, which is our main concern in this work, is implemented as described in Section 3. During the evolutionary process, each solution is evaluated using the novelty metric. Novelty is calculated for each solution by taking the mean of its 15 lowest dissimilar optimization sequences (considering all sequences in the current population and in the archive). Initially, the archive is empty. 
 Then, to create next populations, an elite of the 10 most novel organisms is copied unchanged, after which the rest of the new population is created by tournament selection according to novelty. Standard genetic programming crossover and mutation operators are applied to these novel sequences in order to produce offspring individuals and fulfill the next population.
 In the meanwhile, individuals that get a score higher than the threshold T they are automatically added to the archive as well. 
-In fact, this threshold is dynamic. Every 150 evaluations, we check how many individuals have been copied into the archive. If this number is below 3, the threshold is increased by multiplying it by 0.95, whereas if solutions added to archive are above 3, the threshold is decreased by multiplying it by 1.05. 
+In fact, this threshold is dynamic. Every 200 evaluations, we check how many individuals have been copied into the archive. If this number is below 3, the threshold is increased by multiplying it by 0.95, whereas if solutions added to archive are above 3, the threshold is decreased by multiplying it by 1.05. 
 Moreover, as the size of the archive grows, the nearest-neighbor calculations that determine the novelty scores for individuals become more computationally demanding. So to avoid having low accuracy of novelty, we choose to bound the size of the archive. Hence, it follows a first-in first-out data structure which means that when a new solution gets added, the oldest solution in the novelty archive will be discarded. Thus, we ensure individuals diversity by removing old sequences that may no longer be reachable from the current population.
 
-The parameters of the algorithm were tuned individually in preliminary experiments. For each parameter, a set of values was tested. The parameter values chosen are the mostly used in the literature~\cite{lehman2008exploiting}. The value that yielded the highest performance scores was chosen. The resulting parameter values are listed in Table 4.
+The parameters of the algorithm were tuned individually in preliminary experiments. For each parameter, a set of values was tested. The parameter values chosen are the mostly used in the literature~\cite{lehman2008exploiting}. The value that yielded the highest performance scores was chosen.  
+
 \begin{table}
-	\caption{Parameters of NS algorithm}
-	\begin{tabular}{ l l || l l }
-		Parameter & Value & Parameter & Value \\	\hline
+	\caption{Algorithms parameters}
+	\begin{tabular}{| l |l| l |l| }\hline
+		\textbf{Parameter} & \textbf{Value} & \textbf{Parameter} & \textbf{Value} \\	\hhline{|=|=|=|=|}	
 		Novelty nearest-k  & 15 &  Tournament size & 2\\ 
 		Add archive prob. & 30 &  Mutation prob. & 0.1\\  
 		Max archive size & 500 &  Crossover & 0.5  \\  
-		Population size & 100 &  Nb generations &  100 \\  
+		Population size & 100 &  Nb generations &  50 \\  
 		Individual length & 76 & Elitism & 10  \\ 
-		Scaling archive prob. & 0.05 & Solutions added to archive & 3  \\ 
+		Scaling archive prob. & 0.05 & Solutions added to archive & 3  \\ 	\hline
 	\end{tabular}
 \end{table}
 

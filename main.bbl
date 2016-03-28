@@ -99,6 +99,9 @@ X.~Yang, Y.~Chen, E.~Eide, and J.~Regehr, ``Finding and understanding bugs in c
   compilers,'' in \emph{ACM SIGPLAN Notices}, vol.~46, no.~6.\hskip 1em plus
   0.5em minus 0.4em\relax ACM, 2011, pp. 283--294.
 
+\bibitem{timmurphy.org}
+``Notice settings,'' \url{https://github.com/mboussaa/paper}.
+
 \bibitem{banzhaf1996effect}
 W.~Banzhaf, F.~D. Francone, and P.~Nordin, ``The effect of extensive use of the
   mutation operator on generalization in genetic programming using sparse data
