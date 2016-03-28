@@ -7,9 +7,9 @@ Universal and predefined sequences, \eg, O1 to O3 in GCC, may not always produce
 Indeed, each one of these optimizations interacts with the code and in turn with all other optimizations in complicated ways. Similarly, code transformations can either create or eliminate opportunities for other transformations and it is quite difficult for users to predict the effectiveness of optimizations on their source code program.
 As a result, most software engineering programmers that are not familiar with compiler optimizations find difficulties to select effective optimization sequences.
 
-To explore the large optimization space, users have to evaluate the effect of optimizations and optimization combinations, for different target platforms (see Figure 1). 
-Thus, finding the optimal optimization options for an input source code is a challenging, very hard, and time-consuming problem. 
-Many approaches~\cite{hoste2008cole,zhong2009tuning,sandran2012genetic,martins2014exploration} have attempted to solve this optimization selection problem using techniques such as genetic algorithms, iterative compilation, etc.
+To explore the large optimization space, users have to evaluate the effect of optimizations according to a specific performance objective (see Figure 1). 
+Thus, finding the optimal optimizations combination for an input source code is a challenging, very hard, and time-consuming problem. 
+Many approaches~\cite{hoste2008cole,zhong2009tuning,sandran2012genetic,martins2014exploration} have attempted to solve this optimization selection problem using techniques such as genetic algorithms (GAs), machine learning, etc.
 
 %problem
 It is important to notice that performing optimizations to source code can be so expensive at the expense of resource usage and may induce to compiler bugs or crashes. 
@@ -19,7 +19,7 @@ Thus, a fine-grained understanding of resource consumption and analysis of compi
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\hsize]{Ressources/autotuning.png}
-	\caption{fig}
+	\caption{Process of compiler optimizations exploration}
 \end{figure}
 \subsection{Example: GCC Compiler}
 

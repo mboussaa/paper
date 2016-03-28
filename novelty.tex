@@ -1,7 +1,7 @@
 \section{Evolutionary Exploration of Compiler Optimizations }
  
 
-Lots of techniques (random search based, meta-heuristics, constraint programming, machine learning, etc.) can be used to explore the large set of optimization combinations of modern compilers. 
+Lots of techniques (meta-heuristics, constraint programming, etc.) can be used to explore the large set of optimization combinations of modern compilers. 
 In our approach, we study the use of Novelty Search (NS) technique to identify the set of compiler optimization options that optimize non-functional properties of code.
 
 \subsection{Novelty Search Adaptation}
@@ -19,12 +19,11 @@ This phenomenon is known as \textit{"diversity loss"}. For example, if the most 
 The issue of premature convergence to local optima has been a common problem in evolutionary algorithms. 
 Many methods are proposed to overcome this problem~\cite{banzhaf1996effect,gathercole1996adverse}. 
 However, all these efforts use a fitness-based selection to guide the search. Considering diversity as the unique objective function to be optimized may be a key solution to this problem.
-
 Therefore, during the evolutionary process, we select optimization sequences that remain in sparse regions of the search space in order to guide the search toward novelty. 
 In the meanwhile, we choose to gather non-functional metrics of explored sequences such as memory consumption. 
 We describe in more details the way we are collecting these non-functional metrics in section 4.
 
-Mainly, NS acts like Genetic Algorithms. However, NS needs extra changes. First, a new novelty metric is required to replace the fitness function. Then, an archive must be added to the algorithm which is a kind of a database that remembers individuals that were highly novel when they were discovered in past generations. 
+Generally, NS acts like GAs (Example of GA use in  \cite{cooper2002adaptive}). However, NS needs extra changes. First, a new novelty metric is required to replace the fitness function. Then, an archive must be added to the algorithm which is a kind of a database that remembers individuals that were highly novel when they were discovered in past generations. 
 Algorithm~\ref{algo:search} describes the overall idea of our NS adaptation. The algorithm takes as input a source code program and a list of optimizations. We initialize first the novelty parameters and create a new archive with limit size L. In this example, we gathered information about memory consumption. In line 3 \& 4, we compile and execute the input program without any optimization (O0). Then, we measure the resulting memory consumption. By doing so, we will be able to compare it to the memory consumption of new generated solutions. The best solution is the one that yields to the lowest memory consumption compared to O0 usage.
 Before starting the evolutionary process, we generate an initial population with random sequences. Line 6-21 encode the main NS loop, which searches for the best sequence in term of memory consumption. For each sequence in the population, we compile the input program, execute it and evaluate the solution by calculating the average distance from its k-nearest neighbors. Sequences that get a novelty metric higher than the novelty threshold T are added to archive. T defines the threshold for how novel a sequence has to be before it is added to the archive. In the meantime, we check if the solution yields to lowest memory consumption so that we can consider it as the best solution. Finally, genetic operators
 (mutation and crossover) are applied afterwards to fulfill the next population. This process is iterated until reaching the maximum number of evaluations.
@@ -35,7 +34,7 @@ Before starting the evolutionary process, we generate an initial population with
   \small
 	\caption{Novelty search algorithm for compiler optimizations exploration}
 	\label{algo:search}
-	\begin{algorithmic}[3]
+	\begin{algorithmic}[1]
 	
 		\REQUIRE Optimization options $\mathcal{O}$
 		\REQUIRE Program $\mathcal{C}$
@@ -77,11 +76,11 @@ For our case study, a candidate solution represents all compiler switches that a
 The variables that represent compiler options are represented as genes in a chromosome. 
 Thus, a solution represents the CFLAGS value used by GCC to compile programs.
 A solution has always the same size which corresponds to the total number of involved flags. 
-However, during the evolutionary process, these flags are turned on or off depending on the mutation and crossover operators. As well, we keep the same order of invoking compiler flags since that does not affect the optimization process and it is handled internally by GCC.
+However, during the evolutionary process, these flags are turned on or off depending on the mutation and crossover operators (see example in figure 2). As well, we keep the same order of invoking compiler flags since that does not affect the optimization process and it is handled internally by GCC.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\hsize]{Ressources/individual.png}
-	\caption{fig}
+	\caption{Solution representation}
 \end{figure}
 \subsubsection{Novelty Metric}
 The Novelty metric expresses the sparseness of an input optimization sequence. It measures its distance to all other sequences in the current population and to all sequences that were discovered in the past (\ie, sequences in the archive). 

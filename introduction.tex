@@ -13,7 +13,7 @@ Thus, it is necessary to detect possible issues caused by source code changes su
 
 We note also that when trying to optimize the performance of a software application,
 many non-functional properties and design constraints must be involved and satisfied simultaneously to better optimize code.
-Most of previous works try to optimize a single criterion (usually the execution time)~\cite{ballal2015compiler,chen2012deconstructing,demertzi2011analyzing} and ignore other important non-functional properties, more precisely resource consumption properties such as memory or CPU usage, that must be taken into consideration and can be equally important in relation to the performance. Sometimes, optimizing for execution time can lead to higher resource consumption and vice versa. For example, embedded systems for which code is generated often have limited resources. Therefore, optimization techniques must be applied whenever possible to generate efficient code and improve performance (in term of execution time) with respect to available resources (in term of CPU or memory usage)~\cite{nagiub2013automatic}.
+Most of previous works try to optimize a single criterion (usually the execution time)~\cite{ballal2015compiler,chen2012deconstructing,demertzi2011analyzing} and ignore other important non-functional properties, more precisely resource consumption properties such as memory or CPU usage, that must be taken into consideration and can be equally important in relation to the performance. Sometimes, improving program execution time can be so expensive at the expense of resource usage which may decrease system performance. For example, embedded systems for which code is generated often have limited resources. Thus, optimization techniques must be applied whenever possible to generate efficient code and improve performance (in term of execution time) with respect to available resources (in term of CPU or memory usage)~\cite{nagiub2013automatic}.
 Therefore, it is important to construct optimization levels that represent multiple trade-offs between non-functional properties, enabling the software designer to choose among different optimal solutions which best suit the system specifications.
 
 
@@ -49,10 +49,7 @@ In this paper, we make the following contributions:
 
 
 
-The paper is organized as follows.
-Section II describes the motivation behind this work. A search-based technique for compiler optimizations exploration is presented in Section III. 
-We present in Section IV our infrastructure for non-functional testing using microservices.  The evaluation and results of our experiments across two case studies are discussed in Section V. 
-Finally, related work, concluding remarks and future work are provided in Sections VI and VII.
+The paper is organized as follows. Section II describes the motivation behind this work. A search-based technique for compiler optimizations exploration is presented in Section III. We present in Section IV our infrastructure for non-functional testing using micro-services. The evaluation and results of our experiments are discussed in Section V. Finally, related work, concluding remarks and future work are provided in Sections VI and VII.
 
 
 %The difference between classical compilers like GCC, LLVM and code generators is that code generators are used only by few people comparing to famous compilers like GCC. Moreover, code generators face a high rate of changes and update versions due to new development needs. Hence, it becomes necessary to check the quality of produced code. This will help software maintainers to verify the correct functioning of code generators.  Among the most important properties to check, we distinguish the non functional properties.

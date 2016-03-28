@@ -111,6 +111,11 @@ C.~Gathercole and P.~Ross, ``An adverse interaction between crossover and
   1st annual conference on genetic programming}.\hskip 1em plus 0.5em minus
   0.4em\relax MIT Press, 1996, pp. 291--296.
 
+\bibitem{cooper2002adaptive}
+K.~D. Cooper, D.~Subramanian, and L.~Torczon, ``Adaptive optimizing compilers
+  for the 21st century,'' \emph{The Journal of Supercomputing}, vol.~23, no.~1,
+  pp. 7--22, 2002.
+
 \bibitem{deb2002fast}
 K.~Deb, A.~Pratap, S.~Agarwal, and T.~Meyarivan, ``A fast and elitist
   multiobjective genetic algorithm: Nsga-ii,'' \emph{Evolutionary Computation,
