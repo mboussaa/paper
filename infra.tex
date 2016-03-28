@@ -62,13 +62,13 @@ We use InfluxDB\footnote{https://github.com/influxdata/influxdb}, an open source
 \begin{lstlisting}[
 language=SQL,
 showspaces=false,
-basicstyle=\ttfamily,
-numberstyle=\tiny,
+basicstyle=\small,
+numberstyle=\small,
 commentstyle=\color{gray},
 linewidth=\columnwidth
 ]
-select mean(memory_usage) from stats where 
-container_name='generated_code_v1'
+select mean (memory_usage) from stats 
+where container_name='generated_code_v1'
 \end{lstlisting}
 To give an idea about data stored in InfluxDB. The following table describes the different stored metrics:
  \begin{table}[h]
