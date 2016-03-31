@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  29 MAR 2016 17:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  31 MAR 2016 19:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -365,6 +365,19 @@ Package: amsthm 2004/08/06 v2.20
 (/usr/local/texlive/2013/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 1994/05/23 v2.03 Table rule package (DPC)
 )
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count131
+\calc@Bcount=\count132
+\calc@Adimen=\dimen163
+\calc@Bdimen=\dimen164
+\calc@Askip=\skip74
+\calc@Bskip=\skip75
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count133
+\calc@Cskip=\skip76
+)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
@@ -397,16 +410,16 @@ LaTeX Font Info:    ... okay on input line 390.
 -- Lines per column: 56 (exact).
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count131
-\scratchdimen=\dimen163
+\scratchcounter=\count134
+\scratchdimen=\dimen165
 \scratchbox=\box40
-\nofMPsegments=\count132
-\nofMParguments=\count133
+\nofMPsegments=\count135
+\nofMParguments=\count136
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count134
-\MPscratchDim=\dimen164
-\MPnumerator=\count135
-\makeMPintoPDFobject=\count136
+\MPscratchCnt=\count137
+\MPscratchDim=\dimen166
+\MPnumerator=\count138
+\makeMPintoPDFobject=\count139
 \everyMPtoPDFconversion=\toks29
 ) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -455,7 +468,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count137
+\c@lstlisting=\count140
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 459.
 
 
@@ -537,7 +550,7 @@ Package pdftex.def Info: Ressources/infraup.png used on input line 113.
 File: Ressources/sensitivity.png Graphic file (type png)
 
 <use Ressources/sensitivity.png>
-Package pdftex.def Info: Ressources/sensitivity.png used on input line 12.
+Package pdftex.def Info: Ressources/sensitivity.png used on input line 20.
 (pdftex.def)             Requested size: 252.0pt x 69.28714pt.
  [8 <./Ressources/infraup.png> <./Ressources/sensitivity.png>]
 <Ressources/infra_novelty_stat2.png, id=53, 547.3248pt x 343.0416pt>
@@ -545,7 +558,7 @@ File: Ressources/infra_novelty_stat2.png Graphic file (type png)
 
 <use Ressources/infra_novelty_stat2.png>
 Package pdftex.def Info: Ressources/infra_novelty_stat2.png used on input line 
-51.
+72.
 (pdftex.def)             Requested size: 252.0pt x 157.94237pt.
 ) (./related.tex) (./conclusion.tex
 [9 <./Ressources/infra_novelty_stat2.png>]) (./main.bbl
@@ -566,10 +579,10 @@ Before submitting the final camera ready copy, remember to:
 
 [10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6862 strings out of 493308
- 99903 string characters out of 6137815
- 219813 words of memory out of 5000000
- 10170 multiletter control sequences out of 15000+600000
+ 6937 strings out of 493308
+ 100957 string characters out of 6137815
+ 220643 words of memory out of 5000000
+ 10242 multiletter control sequences out of 15000+600000
  48247 words of font info for 93 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  38i,11n,42p,1626b,1217s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -588,7 +601,7 @@ live/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/
 texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 496711 bytes).
+Output written on main.pdf (10 pages, 496666 bytes).
 PDF statistics:
  107 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream
