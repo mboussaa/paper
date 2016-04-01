@@ -24,10 +24,10 @@ As it is shown on the left-hand side of figure 5, given a set of input programs 
 
 
 \paragraph{Results}
-The goal of thus experiement is to 
+results
 
 
-
+\iffalse
 \begin{table}[h]
 	\centering
 	\caption{My caption}
@@ -42,7 +42,7 @@ The goal of thus experiement is to
 		CR &                       &                       &                       &                       &                       &                       &    \\ \hline
 	\end{tabular}
 \end{table}
-
+\fi
 
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
 		\textbf{Key findings for RQ1.} \\
@@ -97,10 +97,13 @@ RESULTS
 		blabla }}
 \subsection{Discussions}
 \subsection{Threats to Validity}
-\textit{External validity} refers to the generalizability of our findings. In this study, we performed experiments on different widely used benchmark programs and with different sizes. We also use to generate 30 Csmith programs (10 as training set and 20 for evaluation). However, we cannot assert that the best discovered set of optimizations can be generalized to industrial applications since optimizations are highly dependent on input programs and target architecture. In fact, experiments conducted on RQ1 and RQ2 have to be replicated to other case studies to confirm our findings; and build general optimization sequences from other representative training set programs chosen by compilers users.
-
+Any automated approach has limitations. We resume, in the following paragraphs, external and internal threats that can be raised:
+ 
+\textit{External validity} refers to the generalizability of our findings. In this study, we perform experiments on different widely used benchmark programs in iterative compilation. We also use to generate 30 Csmith programs (10 as training set and 20 for evaluation). However, we cannot assert that the best discovered set of optimizations can be generalized to industrial applications since optimizations are highly dependent on input programs and target architecture. In fact, experiments conducted on RQ1 and RQ2 have to be replicated to other case studies to confirm our findings; and build general optimization sequences from other representative training set programs chosen by compilers users.
 Moreover, we build NOTICE to handle only optimizations performed by GCC versions, we did not investigate optimizations performed by other commonly used compilers, such as Clang or LLVM. In future work, we plan to provide more advanced version of NOTICE with multi-compiler evaluation.
 
+\textit{Internal validity} is concerned with the causal relationship between the treatment and the outcome. Meta-heuristic algorithms are stochastic optimizers, they can provide different results for the same problem instance from one run to another. Are we providing a statistically sound method? or it is just a random result. Due to time constraints, we run all experiments only once. Generally, in iterative compilation, previous works\cite{hoste2008cole} do not provide statistical tests to prove the effectiveness of their approaches. This is because experiments take too long time. However, we can deal with these internal threats to validity by performing at least 5 independent simulation runs for each problem instance.
+ 
  
 \iffalse
 \begin{table}[]
