@@ -96,8 +96,11 @@ RESULTS
 		\textbf{Key findings for RQ4.} \\
 		blabla }}
 \subsection{Discussions}
- 
- 
+\subsection{Threats to Validity}
+\textit{External validity} refers to the generalizability of our findings. In this study, we performed experiments on different widely used benchmark programs and with different sizes. We also use to generate 30 Csmith programs (10 as training set and 20 for evaluation). However, we cannot assert that the best discovered set of optimizations can be generalized to industrial applications since optimizations are highly dependent on input programs and target architecture. In fact, experiments conducted on RQ1 and RQ2 have to be replicated to other case studies to confirm our findings; and build general optimization sequences from other representative training set programs chosen by compilers users.
+
+Moreover, we build NOTICE to handle only optimizations performed by GCC versions, we did not investigate optimizations performed by other commonly used compilers, such as Clang or LLVM. In future work, we plan to provide more advanced version of NOTICE with multi-compiler evaluation.
+
  
 \iffalse
 \begin{table}[]

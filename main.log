@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  1 APR 2016 12:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  1 APR 2016 14:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -562,7 +562,7 @@ Underfull \hbox (badness 1931) in paragraph at lines 84--85
 use NO-
  []
 
-) (./related.tex) (./conclusion.tex) (./main.bbl [9]
+) (./related.tex) (./conclusion.tex [9]) (./main.bbl
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ” in font ptmri7t!
@@ -602,7 +602,7 @@ live/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/
 texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 331521 bytes).
+Output written on main.pdf (10 pages, 332194 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream
