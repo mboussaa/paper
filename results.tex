@@ -27,7 +27,7 @@ As it is shown on the left-hand side of figure 5, given a set of input programs 
 results
 
 
-\iffalse
+
 \begin{table}[h]
 	\centering
 	\caption{My caption}
@@ -42,7 +42,7 @@ results
 		CR &                       &                       &                       &                       &                       &                       &    \\ \hline
 	\end{tabular}
 \end{table}
-\fi
+\
 
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
 		\textbf{Key findings for RQ1.} \\
@@ -96,13 +96,23 @@ RESULTS
 		\textbf{Key findings for RQ4.} \\
 		blabla }}
 \subsection{Discussions}
+%For RQ1, experiments take about 21 days. These optimization
+%times might seem long. However, it should be noted that
+%these tests have to be performed once off-line, while the
+%results (optimization sequences) can be re-used without additional
+%overhead for a large number of devices. Therefore, the
+%high performance requirements imposed on today’s systems
+%fully justify the observed optimization times.
+
+
+%speeding up the search process may be an interesting avenue for future research.
 \subsection{Threats to Validity}
 Any automated approach has limitations. We resume, in the following paragraphs, external and internal threats that can be raised:
  
 \textit{External validity} refers to the generalizability of our findings. In this study, we perform experiments on different widely used benchmark programs in iterative compilation. We also use to generate 30 Csmith programs (10 as training set and 20 for evaluation). However, we cannot assert that the best discovered set of optimizations can be generalized to industrial applications since optimizations are highly dependent on input programs and target architecture. In fact, experiments conducted on RQ1 and RQ2 have to be replicated to other case studies to confirm our findings; and build general optimization sequences from other representative training set programs chosen by compilers users.
 Moreover, we build NOTICE to handle only optimizations performed by GCC versions, we did not investigate optimizations performed by other commonly used compilers, such as Clang or LLVM. In future work, we plan to provide more advanced version of NOTICE with multi-compiler evaluation.
 
-\textit{Internal validity} is concerned with the causal relationship between the treatment and the outcome. Meta-heuristic algorithms are stochastic optimizers, they can provide different results for the same problem instance from one run to another. Are we providing a statistically sound method? or it is just a random result. Due to time constraints, we run all experiments only once. Generally, in iterative compilation, previous works\cite{hoste2008cole} do not provide statistical tests to prove the effectiveness of their approaches. This is because experiments take too long time. However, we can deal with these internal threats to validity by performing at least 5 independent simulation runs for each problem instance.
+\textit{Internal validity} is concerned with the causal relationship between the treatment and the outcome. Meta-heuristic algorithms are stochastic optimizers, they can provide different results for the same problem instance from one run to another. Are we providing a statistically sound method? or it is just a random result. Due to time constraints, we run all experiments only once. Following the state-of-art approaches in iterative compilation, previous works\cite{hoste2008cole,martinez2014multi} do not provide statistical tests to prove the effectiveness of their approaches. This is because experiments take too long time. However, we can deal with these internal threats to validity by performing at least 5 independent simulation runs for each problem instance.
  
  
 \iffalse

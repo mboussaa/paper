@@ -145,6 +145,11 @@ K.~Deb, \emph{Multi-objective optimization using evolutionary
   algorithms}.\hskip 1em plus 0.5em minus 0.4em\relax John Wiley \& Sons, 2001,
   vol.~16.
 
+\bibitem{martinez2014multi}
+A.~Mart{\'\i}nez-{\'A}lvarez, J.~Calvo-Zaragoza, S.~Cuenca-Asensi, A.~Ortiz,
+  and A.~Jimeno-Morenilla, ``Multi-objective adaptive evolutionary strategy for
+  tuning compilations,'' \emph{Neurocomputing}, vol. 123, pp. 381--389, 2014.
+
 \bibitem{pallister2015identifying}
 J.~Pallister, S.~J. Hollis, and J.~Bennett, ``Identifying compiler options to
   minimize energy consumption for embedded platforms,'' \emph{The Computer
