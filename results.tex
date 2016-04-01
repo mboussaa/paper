@@ -1,11 +1,12 @@
 \subsection{Experimental Methodology and Results}
-In the following paragraphs, we report the results of our experiments.
+In the following paragraphs, we report the methodology and results of our experiments.
 
 \subsubsection{RQ1. Mono-objective SBSE Validation}
 \paragraph{Method}
-To answer the first research question RQ1, we implement three mono-objective search algorithms for compiler optimizations exploration (RS, GA and NS) in order to evaluate the non-functional properties of optimized code. We compare the results to standard GCC optimization levels (O1, O2, O3 and Ofast). 
-In this experiment, we are trying to optimize for performance (S) and resource consumption metrics (MR and CR). Each non-functional property is improved separately and independently of other metrics. 
-As it is shown on the left side of figure 5, we used NOTICE to search for best optimization sequence from a set of input programs. For this reason, we generate a set of random Csmith programs \textit{"the training set"} (10 programs) and apply generated sequences to these programs. Thus, the code quality metric, in this setting, is equal to the average performance improvement (S, MR or CR) and that, for all programs under test.
+To answer the first research question RQ1, we implement three mono-objective search algorithms for compiler optimizations exploration (RS, GA and NS) in order to evaluate non-functional properties of optimized code. We compare the performance results of different heuristics to standard GCC optimization levels (O1, O2, O3 and Ofast). 
+In this experiment, we are trying to optimize for execution time (S), memory usage (MR) and CPU consumption (CR). Each non-functional property is improved separately and independently of other metrics. 
+
+As it is shown on the left-hand side of figure 5, given a set of input programs \textit{"the training set"}, a list of optimizations and a performance objective, we use NOTICE to search for best optimization sequence. Thus, we generate a set of random Csmith programs \textit{"the training set"} (10 programs) and apply generated sequences to these programs. In this setting, the code quality metric is equal to the average performance improvement (S, MR or CR) and that, for all programs under test.
 
 
 
@@ -33,7 +34,9 @@ The goal of thus experiement is to
 	\label{my-label}
 	\begin{tabular}{|l|l|l|l|l|l|l|c|}
 		\hline
-		& O1                    & O2                    & O3                    & Ofast                 & RS                    & GA                    & NS \\ \hline
+		& \textbf{O1}                    & \textbf{O2}                    & \textbf{O3}                    & \textbf{Ofast}                 & \textbf{RS}                    & \textbf{GA}                    & 
+		\textbf{NS} \\
+		\hhline{|=|=|=|=|=|=|=|=|}
 		S  & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} &    \\ \hline
 		MR &                       &                       &                       &                       &                       &                       &    \\ \hline
 		CR &                       &                       &                       &                       &                       &                       &    \\ \hline
@@ -46,11 +49,8 @@ The goal of thus experiement is to
 		blabla }}
 \subsubsection{RQ2. Sensitivity}
 \paragraph{Method}
-Another interesting experiment is to test the sensitivity of training set programs to best optimal sequence previously discovered in RQ1. To do so, we apply best discovered optimizations to new unseen Csmith and CBench programs and compared the performance results. The idea of this experiment is to test whether only Csmith programs are more sensitive to compiler optimizations or not. If so, this will be useful for compiler users and researchers to use NOTICE in order to build general optimization sequences from their representative training set programs.
+Another interesting experiment is to test the sensitivity of \textit{"training set"} programs to compiler optimizations and evaluate the general applicability of best optimal optimization sets previously discovered in RQ1. To do so, we apply best discovered optimizations to new unseen Csmith (20 random programs) and Cbench programs (20 programs) and we compare then, the performance improvements (see right-hand side of figure 5). The idea of this experiment is to test whether only Csmith programs are more sensitive to compiler optimizations or not. If so, this will be useful for compiler users and researchers to use NOTICE in order to build general optimization sequences from their representative training set programs.
 
-
-
-To test the generality of the best optimizations discovered, we apply in RQ2 these sequences to new unseen programs as it is shown on the right part of figure 3. We choose to apply optimizations to new 10 Csmith and 10 Cbench programs. Through this experiment, we would like to test the sensitivity of input programs and general applicability of optimization sequences.
 \paragraph{Results}
 results
 
@@ -59,19 +59,20 @@ results
 		blabla }}
 \subsubsection{RQ3. Impact of optimizations on resource consumption}
 \paragraph{Method}
-To answer this question, we use NOTICE to generate best sequences per-Benchmark in term of speedup, and compare the memory footprint and CPU consumption of best optimized code. The goal of this experiment is to provide an understanding of the resource consumption of generated code by GCC. 
+To answer RQ3, we study the impact of standard optimization levels and best generated optimizations on memory and CPU consumption using NOTICE. Following again a mono-objective approach, we try in this experiment to maximize the speedup \textit{S} per-benchmark and study, at the same time, the impact of speedup \textit{S} on resource consumption namely memory footprint and CPU usage. 
+In this experiment, we apply standard optimizations and different mono-objective heuristics individually to 5 Cbench programs and use NOTICE to profile applications in term of resource usage.   
+The goal of this experiment is to: (1) use NOTICE infrastructure to provide an understanding of optimizations behavior, in term of resource consumption, when trying to optimize for execution time; (2) prove the usefulness of resource consumption reduction as key objective for performance improvement.
 
 
 
 
-To answer RQ3, we study the impact of these optimizations on memory and CPU consumption using our Docker-based infrastructure. Following again a mono-objective approach, we try in this experiment to maximize the speedup \textit{S} and study in the mean time the impact of \textit{S} on resource consumptions namely memory and CPU usage. In this experiment, we choose 5 Cbench programs to investigate resource consumptions per-benchmark.
 \paragraph{Results}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1.\linewidth]{Ressources/infra_novelty_stat2.png}
-	\caption{Evaluating the speedup after applying standard optimization options compared to best generated optimization using NS}
-\end{figure}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=1.\linewidth]{Ressources/infra_novelty_stat2.png}
+%	\caption{Evaluating the speedup after applying standard optimization options compared to best generated optimization using NS}
+%\end{figure}
 results
 
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
@@ -79,17 +80,17 @@ results
 		blabla }}
 \subsubsection{RQ4. Trade-offs between non-functional properties}
 \paragraph{Method}
-A multi-objective approach provides a trade-off between two objectives where the developers can select their desired solution from the Pareto-optimal front. The goal of this experiment is to put more emphasis on resource consumption and use multi-objective algorithms to find trade-offs between non-functional properties of generated code like $<$ExecutionTime--MemoryUsage$>$, etc.
 
-
-
-Finally in RQ4, we try to use NOTICE to find trade-offs between non-functional properties. In this experiment, we choose to focus on the trade-off $<$ExecutionTime--MemoryUsage$>$. We report the comparison results of three multi-objective algorithm adaptations NSGA-II, RS and NS. 
+Finally, to answer RQ4, we use NOTICE to find trade-offs between non-functional properties. In this experiment, we choose to focus on the trade-off $<$ExecutionTime--MemoryUsage$>$. We report the comparison results of our NS adaptation for optimizations generation to the current state-of-the-art multi-objective approaches namely NSGA-II and RS. 
+  
 Sequences evaluation is done across 5 Cbench programs as it is conducted in RQ1.
 We evaluate the quality of the obtained Pareto optimal optimization levels, both qualitatively by visual inspection of the Pareto frontiers, and quantitatively by using the HV metric.
-\paragraph{Results}
-In this section, we compare our NS adaptation for optimizations generation to the current, state-of-the-art multi-objective approaches namely NSGA-II and RS. Two tradeoffs are investigated in this section; $<$execution time--memory usage$>$ and $<$execution time--CPU usage$>$.
 
-First, we conduct a quantitative study by comparing the HV metric for both tradeoffs than we conduct a quantitative study through pareto front distribution charts.
+%Two tradeoffs are investigated in this section; $<$execution time--memory usage$>$ and $<$execution time--CPU usage$>$.
+
+
+\paragraph{Results}
+RESULTS
 
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
 		\textbf{Key findings for RQ4.} \\
