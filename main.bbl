@@ -188,9 +188,11 @@ M.~Boussaa, O.~Barais, G.~Suny{\'e}, and B.~Baudry, ``A novelty search approach
   for automatic test data generation,'' in \emph{8th International Workshop on
   Search-Based Software Testing SBST@ ICSE 2015}, 2015, p.~4.
 
-\bibitem{stuermer2007systematic}
-I.~Stuermer, M.~Conrad, H.~Doerr, and P.~Pepper, ``Systematic testing of
-  model-based code generators,'' \emph{Software Engineering, IEEE Transactions
-  on}, vol.~33, no.~9, pp. 622--634, 2007.
+\bibitem{lokuciejewski2010multi}
+P.~Lokuciejewski, S.~Plazar, H.~Falk, P.~Marwedel, and L.~Thiele,
+  ``Multi-objective exploration of compiler optimizations for real-time
+  systems,'' in \emph{Object/Component/Service-Oriented Real-Time Distributed
+  Computing (ISORC), 2010 13th IEEE International Symposium on}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2010, pp. 115--122.
 
 \end{thebibliography}
