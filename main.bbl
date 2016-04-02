@@ -195,4 +195,9 @@ P.~Lokuciejewski, S.~Plazar, H.~Falk, P.~Marwedel, and L.~Thiele,
   Computing (ISORC), 2010 13th IEEE International Symposium on}.\hskip 1em plus
   0.5em minus 0.4em\relax IEEE, 2010, pp. 115--122.
 
+\bibitem{stuermer2007systematic}
+I.~Stuermer, M.~Conrad, H.~Doerr, and P.~Pepper, ``Systematic testing of
+  model-based code generators,'' \emph{Software Engineering, IEEE Transactions
+  on}, vol.~33, no.~9, pp. 622--634, 2007.
+
 \end{thebibliography}
