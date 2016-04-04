@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  2 APR 2016 19:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  4 APR 2016 05:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -501,7 +501,7 @@ File: Ressources/autotuning.png Graphic file (type png)
 
 <use Ressources/autotuning.png>
 Package pdftex.def Info: Ressources/autotuning.png used on input line 21.
-(pdftex.def)             Requested size: 252.0pt x 80.50012pt.
+(pdftex.def)             Requested size: 226.79846pt x 72.44905pt.
 ) (./novelty.tex [2 <./Ressources/autotuning.png>]
 Overfull \hbox (10.0pt too wide) detected at line 72
 [][] 
@@ -522,11 +522,8 @@ c ex-presses the
 ) (./infra.tex [4 <./Ressources/individual.png>]
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
-)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5] <Ressources/genecoApproach.png, id=37, 479.7925pt x 423.5825pt>
+) [5]
+<Ressources/genecoApproach.png, id=37, 479.7925pt x 423.5825pt>
 File: Ressources/genecoApproach.png Graphic file (type png)
 
 <use Ressources/genecoApproach.png>
@@ -581,8 +578,8 @@ Before submitting the final camera ready copy, remember to:
 [11] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  6936 strings out of 493308
- 100839 string characters out of 6137815
- 222006 words of memory out of 5000000
+ 100849 string characters out of 6137815
+ 223365 words of memory out of 5000000
  10242 multiletter control sequences out of 15000+600000
  48247 words of font info for 93 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
@@ -602,7 +599,7 @@ live/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/
 texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 336585 bytes).
+Output written on main.pdf (11 pages, 337320 bytes).
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream

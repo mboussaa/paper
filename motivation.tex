@@ -7,7 +7,7 @@ Universal and predefined sequences, \eg, O1 to O3 in GCC, may not always produce
 Indeed, each one of these optimizations interacts with the code and in turn with all other optimizations in complicated ways. Similarly, code transformations can either create or eliminate opportunities for other transformations and it is quite difficult for users to predict the effectiveness of optimizations on their source code program.
 As a result, most software engineering programmers that are not familiar with compiler optimizations find difficulties to select effective optimization sequences.
 
-To explore the large optimization space, users have to evaluate the effect of optimizations according to a specific performance objective (see Figure 1). 
+To explore the large optimization space, users have to evaluate the effect of optimizations according to a specific performance objective (see Figure 1). Performance can depend on different properties such as execution time, compilation time, resource consumption, code size, etc.
 Thus, finding the optimal optimizations combination for an input source code is a challenging, very hard, and time-consuming problem. 
 Many approaches~\cite{hoste2008cole,zhong2009tuning,sandran2012genetic,martins2014exploration} have attempted to solve this optimization selection problem using techniques such as genetic algorithms (GAs), machine learning, etc.
 
@@ -18,7 +18,7 @@ Indeed, in a resource-constrained environment and because of insufficient resour
 Thus, a fine-grained understanding of resource consumption and analysis of compilers behavior regarding optimizations becomes necessary to ensure the efficiency of generated code.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\hsize]{Ressources/autotuning.png}
+	\includegraphics[width=0.9\linewidth]{Ressources/autotuning.png}
 	\caption{Process of compiler optimizations exploration}
 \end{figure}
 \subsection{Example: GCC Compiler}
@@ -28,12 +28,16 @@ GCC exposes its various optimizations via a number of flags that can be turned o
 % We choose GCC compiler as a motivating example in order to explain how we would study the impact of compiler optimizations using a component-based infrastructure for testing and monitoring.
 % In next section, we present a search-based technique called Novelty Search for automatic generation of optimization sequences.
 
-For instance, version 4.8.4 provides a wide range of command-line optimizations that can be enabled or disabled, including more than 150 options for optimization. The diversity of available optimization options makes the design space for optimization level very huge, increasing the need for heuristics to explore the search space of feasible optimizations sequences.
-For instance, we count 76 optimization flags that are enabled by the default optimization levels. O1 turns on 32 flags. O2 level turns on all optimization flags specified by O1 plus 35 other options. O3 enables all O2 options plus 8 more optimizations and finally Ofast turns on all O3 optimizations plus one more aggressive optimization. 
+For instance, version 4.8.4 provides a wide range of command-line optimizations that can be enabled or disabled, including more than 150 options for optimization. The diversity of available optimization options makes the design space for optimization level very huge, increasing the need for heuristics to explore the search space of feasible optimization sequences.
+For instance, we count 76 optimization flags that are enabled by 4 default optimization levels (O1, O2, O3, Ofast). 
+For instance, O1 reduces code size and execution time without performing any optimizations that take a great deal of compilation time. It turns on 32 flags. 
+O2 increases both compilation time and the performance of generated code. It turns on all optimization flags specified by O1 plus 35 other options. 
+O3 is more aggressive level which enables all O2 options plus 8 more optimizations. 
+Finally, Ofast is the most aggressive level which enables optimizations that are not valid for all standard-compliant programs. It turns on all O3 optimizations plus one more aggressive optimization. 
 %For example, in GCC, we can distinguish optimization levels from O1 to O3. Each optimization level involves a fixed list of compiler optimization options
 This results in a huge space with $2^{76}$ possible optimization combinations. The list of optimizations is available here~\cite{mboussaa}.
-In our approach, we did not consider some optimization options that are enabled by default, since they do not affect the performance of generated binaries.
-Optimization flags in GCC can be turned off by using "fno-"+flag instead of "f"+flag in the beginning of each optimization. 
+%In our approach, we did not consider some optimization options that are enabled by default, since they do not affect the performance of generated binaries.
+Optimization flags in GCC can be turned off by using \textit{"fno-"}+flag instead of \textit{"f"}+flag in the beginning of each optimization. 
 We use this technique to play with compiler switches.
 \iffalse
 \begin{table}
@@ -61,7 +65,7 @@ We use this technique to play with compiler switches.
 			-fipa-pure-const \newline
 			-fipa-profile \newline
 			-fipa-reference\newline 
-			-fmerge-constants\newline
+			-fmerge-constants\newline 
 			-fsplit-wide-types \newline
 			-ftree-bit-ccp \newline
 			-ftree-builtin-call-dce \newline

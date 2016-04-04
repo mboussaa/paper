@@ -3,7 +3,7 @@ In the following paragraphs, we report the methodology and results of our experi
 
 \subsubsection{RQ1. Mono-objective SBSE Validation}
 \paragraph{Method}
-To answer the first research question RQ1, we implement three mono-objective search algorithms for compiler optimizations exploration (RS, GA and NS) in order to evaluate non-functional properties of optimized code. We compare the performance results of different heuristics to standard GCC optimization levels (O1, O2, O3 and Ofast). 
+To answer the first research question RQ1, we implement three mono-objective search algorithms for compiler optimizations exploration (RS, GA and NS) in order to evaluate the non-functional properties of optimized code. We compare the performance results of different heuristics to standard GCC optimization levels (O1, O2, O3 and Ofast). 
 In this experiment, we are trying to optimize for execution time (S), memory usage (MR) and CPU consumption (CR). Each non-functional property is improved separately and independently of other metrics. 
 
 As it is shown on the left-hand side of figure 5, given a set of input programs \textit{"the training set"}, a list of optimizations and a performance objective, we use NOTICE to search for best optimization sequence. Thus, we generate a set of random Csmith programs \textit{"the training set"} (10 programs) and apply generated sequences to these programs. In this setting, the code quality metric is equal to the average performance improvement (S, MR or CR) and that, for all programs under test.
@@ -61,7 +61,7 @@ results
 \paragraph{Method}
 To answer RQ3, we study the impact of standard optimization levels and best generated optimizations on memory and CPU consumption using NOTICE. Following again a mono-objective approach, we try in this experiment to maximize the speedup \textit{S} per-benchmark and study, at the same time, the impact of speedup \textit{S} on resource consumption namely memory footprint and CPU usage. 
 In this experiment, we apply standard optimizations and different mono-objective heuristics individually to 5 Cbench programs and use NOTICE to profile applications in term of resource usage.   
-The goal of this experiment is to: (1) use NOTICE infrastructure to provide an understanding of optimizations behavior, in term of resource consumption, when trying to optimize for execution time; (2) prove the usefulness of resource consumption reduction as key objective for performance improvement.
+The goal of this experiment is to: (1) use NOTICE infrastructure to provide an understanding of optimizations behavior, in term of resource consumption, when trying to optimize for execution time; (2) prove the usefulness of resource consumption reduction as a key objective for performance improvement.
 
 
 
@@ -81,7 +81,7 @@ results
 \subsubsection{RQ4. Trade-offs between non-functional properties}
 \paragraph{Method}
 
-Finally, to answer RQ4, we use NOTICE to find trade-offs between non-functional properties. In this experiment, we choose to focus on the trade-off $<$ExecutionTime--MemoryUsage$>$. We report the comparison results of our NS adaptation for optimizations generation to the current state-of-the-art multi-objective approaches namely NSGA-II and RS. 
+Finally, to answer RQ4, we use NOTICE to find trade-offs between non-functional properties. In this experiment, we choose to focus on the trade-off \textit{$<$ExecutionTime--MemoryUsage$>$}. We report the comparison results of our NS adaptation for optimizations generation to the current state-of-the-art multi-objective approaches namely NSGA-II and RS. 
   
 Sequences evaluation is done across 5 Cbench programs as it is conducted in RQ1.
 We evaluate the quality of the obtained Pareto optimal optimization levels, both qualitatively by visual inspection of the Pareto frontiers, and quantitatively by using the HV metric.
@@ -98,7 +98,7 @@ RESULTS
 \subsection{Discussions}
 For RQ1, experiments take about 21 days to run all algorithms. These optimization times might seem long. However, it should be noted that this search can be conducted only once, since in RQ2, we show that best optimizations can be used with unseen programs of the same category as the training set, used to generate optimizations. This has to be proved with other case studies. As an alternative, it would be great to test model-based code generators. Code generators apply to same rules to generate new software programs. Thus, we can use NOTICE to define general-purpose optimizations from a set of generated code artifacts. 
 Multi-objective search as conducted in RQ4, takes about 7 days, which we believe is acceptable for practical use. Nevertheless, speeding up the search speed
-may be an interesting factor for future research.
+may be an interesting feature for future research.
 
 
 
@@ -109,7 +109,7 @@ Any automated approach has limitations. We resume, in the following paragraphs, 
 \textit{External validity} refers to the generalizability of our findings. In this study, we perform experiments on different widely used benchmark programs in iterative compilation. We also use to generate 30 Csmith programs (10 as training set and 20 for evaluation). However, we cannot assert that the best discovered set of optimizations can be generalized to industrial applications since optimizations are highly dependent on input programs and target architecture. In fact, experiments conducted on RQ1 and RQ2 have to be replicated to other case studies to confirm our findings; and build general optimization sequences from other representative training set programs chosen by compilers users.
 Moreover, we build NOTICE to handle only optimizations performed by GCC versions, we did not investigate optimizations performed by other commonly used compilers, such as Clang or LLVM. In future work, we plan to provide more advanced version of NOTICE with multi-compiler evaluation.
 
-\textit{Internal validity} is concerned with the causal relationship between the treatment and the outcome. Meta-heuristic algorithms are stochastic optimizers, they can provide different results for the same problem instance from one run to another. Are we providing a statistically sound method? or it is just a random result. Due to time constraints, we run all experiments only once. Following the state-of-art approaches in iterative compilation, previous works\cite{hoste2008cole,martinez2014multi} do not provide statistical tests to prove the effectiveness of their approaches. This is because experiments take too long time. However, we can deal with these internal threats to validity by performing at least 5 independent simulation runs for each problem instance.
+\textit{Internal validity} is concerned with the causal relationship between the treatment and the outcome. Meta-heuristic algorithms are stochastic optimizers, they can provide different results for the same problem instance from one run to another. Are we providing a statistically sound method? or it is just a random result. Due to time constraints, we run all experiments only once. Following the state-of-art approaches in iterative compilation, previous works\cite{hoste2008cole,martinez2014multi} did not provide statistical tests to prove the effectiveness of their approaches. This is because experiments take too long time. However, we can deal with these internal threats to validity by performing at least 5 independent simulation runs for each problem instance.
  
  
 \iffalse

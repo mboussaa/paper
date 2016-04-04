@@ -21,6 +21,11 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{chen2016empirical}
+J.~Chen, W.~Hu, D.~Hao, Y.~Xiong, H.~Zhang, L.~Zhang, and B.~Xie, ``An
+  empirical comparison of compiler testing techniques,'' in \emph{Proceedings
+  of the 38th International Conference on Software Engineering}, 2016.
+
 \bibitem{hoste2008cole}
 K.~Hoste and L.~Eeckhout, ``Cole: compiler optimization level exploration,'' in
   \emph{Proceedings of the 6th annual IEEE/ACM international symposium on Code
