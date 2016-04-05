@@ -1,5 +1,5 @@
 \section{An Infrastructure for Non-functional Testing Using System Containers}
-In general, there are many non-functional properties that can be influenced by compiler optimizations, \eg, performance (execution time), code quality, robustness, etc. In this paper, we focus on the efficiency of optimized code in term of resource consumption (memory and CPU).
+In general, there are many non-functional properties that can be influenced by compiler optimizations, \eg, performance (execution time), code quality, robustness, etc. In this paper, we focus on the efficiency of optimized code in terms of resource consumption (memory and CPU).
 Therefore, we need to deploy the test harness, i.e., the produced binaries, on an elastic infrastructure that provides to compiler users facilities to ensure the deployment and monitoring of different variants of optimized code. 
 %Monitoring information should also be provided to inform about resource utilization required/needed and to automate the resource management of deployed components. 
 For this purpose, we propose NOTICE, a non-functional testing infrastructure based on System Container techniques such as Docker\footnote{\url{https://www.docker.com}} environment. 
@@ -19,7 +19,7 @@ Consequently, we rely on this technology and benefit from all its advantages to:
 Before starting to monitor and test generated code, we have to describe the deployment environment of NOTICE.
 \subsection{System Containers as Deployment Environment}
 
-NOTICE represents a component-based infrastructure based on Docker Linux containers to monitor the execution of produced binaries by compilers in term of resource usage. 
+NOTICE represents a component-based infrastructure based on Docker Linux containers to monitor the execution of produced binaries by compilers in terms of resource usage. 
 Docker is an open source engine that automates the deployment of any application as a lightweight, portable, and self-sufficient container that runs virtually on a host machine. 
 %To achieve that, Docker uses the Linux container technology. 
 Using Docker, we can define preconfigured applications and servers to host as virtual images. We can also define the way the service should be deployed in the host machine. 
