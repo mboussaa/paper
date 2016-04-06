@@ -1,8 +1,8 @@
 \section{Evolutionary Exploration of Compiler Optimizations }
- 
+
 
 Lots of techniques (meta-heuristics, constraint programming, etc.) can be used to explore the large set of optimization combinations of modern compilers. 
-In our approach, we study the use of Novelty Search (NS) technique to identify the set of compiler optimization options that optimize non-functional properties of code.
+In our approach, we study the use of the Novelty Search (NS) technique to identify the set of compiler optimization options that optimize non-functional properties of code.
 
 \subsection{Novelty Search Adaptation}
 %Optimization options are difficult and even impossible to be chosen by programmers or compiler users.
@@ -10,7 +10,7 @@ In our approach, we study the use of Novelty Search (NS) technique to identify t
 
 In this work, we aim at providing a new alternative for choosing effective compiler optimization options compared to the state of the art approaches. 
 In fact, since the search space of possible combinations is too large, we aim at using a new search-based technique called Novelty Search~\cite{lehman2008exploiting} to tackle this issue. 
-The idea of this approach is to explore the search space of possible compiler flag options by considering sequences diversity as a single objective. 
+The idea of this technique is to explore the search space of possible compiler flag options by considering sequences diversity as a single objective. 
 Instead of having a fitness-based selection that maximizes one of the non-functional objectives, we select optimization sequences based on a novelty score showing how different they are compared to all other combinations evaluated so far. 
 We claim that the search toward effective optimization sequences is not straightforward since the interactions between optimizations is too complex and difficult to define. 
 For instance, in a previous work~\cite{chen2012deconstructing}, Chen et al. showed that handful optimizations may lead to higher performance than other techniques of iterative optimization. 
@@ -83,6 +83,7 @@ However, during the evolutionary process, these flags are turned on or off depen
 	\includegraphics[width=1\hsize]{Ressources/individual.png}
 	\caption{Solution representation}
 \end{figure}
+
 \subsubsection{Novelty Metric}
 The Novelty metric expresses the sparseness of an input optimization sequence. It measures its distance to all other sequences in the current population and to all sequences that were discovered in the past (\ie, sequences in the archive). 
 We can quantify the sparseness of a solution as the average distance to the k-nearest neighbors. 
@@ -92,9 +93,9 @@ The distance between two sequences is computed as the total number of symmetric 
 \begin{equation}
 distance(S1,S2)=\left | S1 \bigtriangleup S2 \right |
 \end{equation}
-where $S1$ et $S2$ are two selected optimization sequences (solutions). In this equation, we calculate the cardinality of the symmetric difference between two sequences. This distance will be 0 if two optimization sequences are similar and higher than 0 if there is at least one optimization difference. The maximum distance is equal to the total number of input flags.
+where $S1$ et $S2$ are two selected optimization sequences (solutions). In this equation, we calculate the cardinality of the symmetric difference between two sequences. This distance is 0 if two optimization sequences are similar and higher than 0 if there is at least one optimization difference. The maximum distance is equal to the total number of input flags.
 
-To measure the sparseness of a solution, we will use the previously defined distance to compute the average distance of a sequence to its k-nearest neighbors. In this context, we define the novelty metric of a particular solution as follows:
+To measure the sparseness of a solution, we use the previously defined distance to compute the average distance of a sequence to its k-nearest neighbors. In this context, we define the novelty metric of a particular solution as follows:
 \begin{equation}
 NM(S) = \frac{1}{k} \sum_{i=1}^{k} distance(S,\mu _{i})
 \end{equation}
@@ -103,5 +104,5 @@ where $\mu _{i}$ is the $i^{th}$ nearest neighbor of the solution S within the p
 \subsection{Novelty Search For Multi-objective Optimization}
 A multi-objective approach provides a trade-off between two objectives where the developers can select their desired solution from the Pareto-optimal front. The idea of this approach is to use multi-objective algorithms to find trade-offs between non-functional properties of generated code such as \textit{$<$ExecutionTime--MemoryUsage$>$}. The correlations we are trying to investigate are more related to the trade-offs between resource consumption and execution time.
   
-For instance, NS can be easily adapted to multi-objective problems. In this adaptation, the SBSE formulation remains the same as described above (Algorithm 1). However, in order to evaluate the new discovered solutions, we have to consider two main objectives and add the non-dominated solutions to the Pareto non-dominated set. We apply the Pareto dominance relation to find solutions that are not Pareto dominated by any other solution discovered so far, like in NSGA-II~\cite{lokuciejewski2010multi, deb2002fast}. Then, this Pareto non-dominated set is returned as the result. The metric used to evaluate one solution compared to previously discovered ones is called Hypervolume (HV)~\cite{deb2001multi}.
+For instance, NS can be easily adapted to multi-objective problems. In this adaptation, the SBSE formulation remains the same as described in Algorithm 1. However, in order to evaluate the new discovered solutions, we have to consider two main objectives and add the non-dominated solutions to the Pareto non-dominated set. We apply the Pareto dominance relation to find solutions that are not Pareto dominated by any other solution discovered so far, like in NSGA-II~\cite{lokuciejewski2010multi, deb2002fast}. Then, this Pareto non-dominated set is returned as the result. The metric used to evaluate one solution compared to previously discovered ones is called Hypervolume (HV)~\cite{deb2001multi}.
 There is typically more than one optimal solution at the end of NS. The size of the final Pareto set yielded is bounded by the size of the initial population chosen.
