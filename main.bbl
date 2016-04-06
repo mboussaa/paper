@@ -124,10 +124,22 @@ K.~D. Cooper, D.~Subramanian, and L.~Torczon, ``Adaptive optimizing compilers
   for the 21st century,'' \emph{The Journal of Supercomputing}, vol.~23, no.~1,
   pp. 7--22, 2002.
 
+\bibitem{lokuciejewski2010multi}
+P.~Lokuciejewski, S.~Plazar, H.~Falk, P.~Marwedel, and L.~Thiele,
+  ``Multi-objective exploration of compiler optimizations for real-time
+  systems,'' in \emph{Object/Component/Service-Oriented Real-Time Distributed
+  Computing (ISORC), 2010 13th IEEE International Symposium on}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2010, pp. 115--122.
+
 \bibitem{deb2002fast}
 K.~Deb, A.~Pratap, S.~Agarwal, and T.~Meyarivan, ``A fast and elitist
   multiobjective genetic algorithm: Nsga-ii,'' \emph{Evolutionary Computation,
   IEEE Transactions on}, vol.~6, no.~2, pp. 182--197, 2002.
+
+\bibitem{deb2001multi}
+K.~Deb, \emph{Multi-objective optimization using evolutionary
+  algorithms}.\hskip 1em plus 0.5em minus 0.4em\relax John Wiley \& Sons, 2001,
+  vol.~16.
 
 \bibitem{nethercote2007valgrind}
 N.~Nethercote and J.~Seward, ``Valgrind: a framework for heavyweight dynamic
@@ -144,11 +156,6 @@ E.~Nagai, A.~Hashimoto, and N.~Ishiura, ``Scaling up size and number of
 G.~Fursin, ``Collective tuning initiative: automating and accelerating
   development and optimization of computing systems,'' in \emph{GCC Developers'
   Summit}, 2009.
-
-\bibitem{deb2001multi}
-K.~Deb, \emph{Multi-objective optimization using evolutionary
-  algorithms}.\hskip 1em plus 0.5em minus 0.4em\relax John Wiley \& Sons, 2001,
-  vol.~16.
 
 \bibitem{martinez2014multi}
 A.~Mart{\'\i}nez-{\'A}lvarez, J.~Calvo-Zaragoza, S.~Cuenca-Asensi, A.~Ortiz,
@@ -192,13 +199,6 @@ P.~Kr{\v{c}}ah, ``Solving deceptive tasks in robot body-brain co-evolution by
 M.~Boussaa, O.~Barais, G.~Suny{\'e}, and B.~Baudry, ``A novelty search approach
   for automatic test data generation,'' in \emph{8th International Workshop on
   Search-Based Software Testing SBST@ ICSE 2015}, 2015, p.~4.
-
-\bibitem{lokuciejewski2010multi}
-P.~Lokuciejewski, S.~Plazar, H.~Falk, P.~Marwedel, and L.~Thiele,
-  ``Multi-objective exploration of compiler optimizations for real-time
-  systems,'' in \emph{Object/Component/Service-Oriented Real-Time Distributed
-  Computing (ISORC), 2010 13th IEEE International Symposium on}.\hskip 1em plus
-  0.5em minus 0.4em\relax IEEE, 2010, pp. 115--122.
 
 \bibitem{stuermer2007systematic}
 I.~Stuermer, M.~Conrad, H.~Doerr, and P.~Pepper, ``Systematic testing of

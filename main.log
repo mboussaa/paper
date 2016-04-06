@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  5 APR 2016 11:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  6 APR 2016 05:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -547,28 +547,31 @@ Underfull \hbox (badness 2359) in paragraph at lines 7--9
 File: Ressources/infraup.png Graphic file (type png)
 
 <use Ressources/infraup.png>
-Package pdftex.def Info: Ressources/infraup.png used on input line 113.
+Package pdftex.def Info: Ressources/infraup.png used on input line 114.
 (pdftex.def)             Requested size: 226.79846pt x 153.2168pt.
 ) (./results.tex
+Underfull \vbox (badness 5954) has occurred while \output is active []
+
+
 <Ressources/sensitivity.png, id=47, 492.84125pt x 135.50626pt>
 File: Ressources/sensitivity.png Graphic file (type png)
 
 <use Ressources/sensitivity.png>
-Package pdftex.def Info: Ressources/sensitivity.png used on input line 21.
+Package pdftex.def Info: Ressources/sensitivity.png used on input line 12.
 (pdftex.def)             Requested size: 252.0pt x 69.28714pt.
  [8 <./Ressources/infraup.png> <./Ressources/sensitivity.png>] <Ressources/rq3.
-png, id=53, 639.38875pt x 476.78125pt>
+png, id=53, 641.39626pt x 475.7775pt>
 File: Ressources/rq3.png Graphic file (type png)
 
 <use Ressources/rq3.png>
-Package pdftex.def Info: Ressources/rq3.png used on input line 92.
-(pdftex.def)             Requested size: 252.0pt x 187.91548pt.
+Package pdftex.def Info: Ressources/rq3.png used on input line 97.
+(pdftex.def)             Requested size: 252.0pt x 186.92456pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 102--103
+Underfull \hbox (badness 1931) in paragraph at lines 107--108
  \OT1/ptm/m/it/10 a) Method: [][] \OT1/ptm/m/n/10 Fi-nally, to an-swer RQ4, we 
 use NO-
  []
@@ -615,7 +618,7 @@ e/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/tex
 mf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 380049 bytes).
+Output written on main.pdf (12 pages, 380107 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  72 compressed objects within 1 object stream
