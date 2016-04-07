@@ -63,17 +63,32 @@ We remark as well that applying standard optimizations has an impact on the exec
 -- Novelty Search is a good candidate to improve code in terms of non-functional properties since it able to discover optimization combinations that outperform RS and NS  }}
 \subsubsection{RQ2. Sensitivity}
 \paragraph{Method}
-Another interesting experiment is to test the sensitivity of \textit{"training set"} programs to compiler optimizations and evaluate the general applicability of best optimal optimization sets previously discovered in RQ1 (i.e., sequences generated using NS relative to each non-functional property). To this end, we apply best discovered optimizations to new unseen Csmith (100 new random programs) and we compare then, the performance improvements (see right-hand side of figure 5). The idea of this experiment is to test whether new Csmith programs are more sensitive to previously discovered optimizations or not. If so, this will be useful for compiler users and researchers to use NOTICE in order to build general optimization sequences from their representative training set programs.
+Another interesting experiment is to test the sensitivity of input programs to compiler optimizations and evaluate the general applicability of best optimal optimization sets, previously discovered in RQ1 (i.e., sequences generated using NS relative to each non-functional property). To this end, we apply best discovered optimizations to new unseen Csmith (100 new random programs) and we compare then, the performance improvements (see right-hand side of figure 5). The idea of this experiment is to test whether new Csmith programs are sensitive to previously discovered optimizations or not. If so, this will be useful for compiler users and researchers to use NOTICE in order to build general optimization sequences from their representative \textit{training set} programs.
 
 \paragraph{Results}
 results
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\linewidth]{Ressources/cpu.png}
+	\caption{Evaluation method to answer RQ1 and RQ2}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\linewidth]{Ressources/mem.png}
+	\caption{Evaluation method to answer RQ1 and RQ2}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.\linewidth]{Ressources/time.png}
+	\caption{Evaluation method to answer RQ1 and RQ2}
+\end{figure}
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
 		\textbf{Key findings for RQ2.} \\
 		blabla }}
 \subsubsection{RQ3. Impact of optimizations on resource consumption}
 \paragraph{Method}
-In this experiment, we use NOTICE to provide an understanding of optimizations behavior, in terms of resource consumption, when trying to optimize for execution time. Thus, we choose one instance of obtained results in RQ1 related to the best speedup improvement (i.e., results obtained in line 1 of table 3) and we study the impact of performance improvement on memory and CPU consumption. We also compare resource consumption data to standard GCC levels as they ware presented in Table 3. Improvements are always calculated over the non-optimized version. The idea of this experiment is to: (1) prove, or not, the usefulness of involving resource metrics as key objectives for performance improvement; (2) the need, or not, of multi-objective search strategy to handle both resource usage and performance metrics.
+In this experiment, we use NOTICE to provide an understanding of optimizations behavior, in terms of resource consumption, when trying to optimize for execution time. Thus, we choose one instance of obtained results in RQ1 related to the best speedup improvement (i.e., results obtained in line 1 of table 3) and we study the impact of performance improvement on memory and CPU consumption. We also compare resource usage data to standard GCC levels as they ware presented in Table 3. Improvements are always calculated over the non-optimized version. The idea of this experiment is to: (1) prove, or not, the usefulness of involving resource metrics as key objectives for performance improvement; (2) the need, or not, of multi-objective search strategy to handle both resource usage and performance metrics.
 
 %In this experiment, we apply standard optimizations and different mono-objective heuristics individually to 5 Cbench programs and use NOTICE to profile applications in terms of resource usage.  
 
@@ -89,8 +104,13 @@ In this experiment, we use NOTICE to provide an understanding of optimizations b
 %	\includegraphics[width=1.\linewidth]{Ressources/infra_novelty_stat2.png}
 %	\caption{Evaluating the speedup after applying standard optimization options compared to best generated optimization using NS}
 %\end{figure}
-results
+Figure 6 shows the impact of speedup optimization on resource consumption. It is important to notice that there is no correlation between speedup and resource usage. For instance, O2 and O3 that have the best speedup improvement present opposite impact on resource usage. Applying O2 induces -8.4\% of MR and -5\% of CR. However, applying O3 improve MR and CR by 4.2\% and 3.4\%. The outcome of applying different mono-objective algorithm for optimizing speedup also shows that resource consumption is always in conflict with execution speed. The highest CR and MR improvement is reached using NS with only 1.2\% and 5.4\%. This improvement is considerably low compared to scores reached when we used resource usage metrics as key objectives in RQ1 (i.e., 15.6\% for MR and 23.5\% for CR). These results agree to the idea that compiler optimizations do not put too much emphasis on the trade-offs execution time and resource consumption.
 
+%Thus, NOTICE can clearly provide an alternative to catch most relevant optimization sequence regarding resource consumptions.
+
+%This agrees to the idea that standard optimizations mdoes not produce always
+%the same impact results on resource consumption and may be highly dependent on the benchmark and the source code they have been tested on.
+%Using O2, we find that the memory consumption has increased by almost 8.4\% compared to the baseline. Same findings for CR when applying O1, O2 and Ofast. 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\linewidth]{Ressources/rq3.png}
