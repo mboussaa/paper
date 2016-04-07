@@ -30,7 +30,7 @@ As it is shown on the left-hand side of figure 5, given a list of optimizations 
 %\iffalse
 \begin{table}[h]
 	\centering
-	\caption{Mono-objective optimization results}
+	\caption{Results of mono-objective optimization}
 	\label{my-label}
 	\begin{tabular}{|l|l|l|l|l|l|l|c|}
 		\hline
@@ -46,7 +46,7 @@ As it is shown on the left-hand side of figure 5, given a list of optimizations 
 %-NS better than 3 algos\\
 %-conflicting results for standard levels
 %The goal of this first experiment is to compare the performance improvement of novelty-based generated sequences to standard GCC optimizations and to RS and GA.  
-Table 3 reports the comparison results of 3 non-functional properties CR, MR and S. Results describe the percentage improvement of MR and CR over the baseline, which is the O0 version. The speedup is also calculated over the baseline. At the first glance, we can clearly see that all search-based meta-heuristics outperform standard GCC levels with minimum improvement of 10\% for memory usage and 18\% for CPU time when applying RS. 
+Table 3 reports the comparison results of 3 non-functional properties CR, MR and S. Results describe the percentage improvement of MR and CR over the baseline, which is the O0 version. The speedup is also calculated over the baseline. At the first glance, we can clearly see that all search-based algorithms outperform standard GCC levels with minimum improvement of 10\% for memory usage and 18\% for CPU time when applying RS. 
 Our proposed NS approach has the best improvement results for 3 metrics with 1.365 of speedup, 15.6\% of memory reduction and 23.5\% of CPU time reduction. NS is clearly better than GA in terms of speedup. However, for MR and CR, NS is slightly better than GA with 0.4\% improvement for MR and 1.3\% for CR. RS has the lowest optimization performance but is still better than standard levels.
 We remark as well that applying standard optimizations has an impact on the execution time with a speedup of 1.107 for O2 and O3. Ofast has the same impact as O2 and O3 for the execution time. However, the impact of GCC levels on resource consumption is not always efficient. O2, for example, increases resource consumption compared to O0 (-8.4\% for MR and -5\% for CR).
 %Thus, NOTICE can clearly provide an alternative to catch most relevant optimization sequence regarding resource consumptions.
@@ -63,10 +63,13 @@ We remark as well that applying standard optimizations has an impact on the exec
 -- Novelty Search is a good candidate to improve code in terms of non-functional properties since it able to discover optimization combinations that outperform RS and NS  }}
 \subsubsection{RQ2. Sensitivity}
 \paragraph{Method}
-Another interesting experiment is to test the sensitivity of input programs to compiler optimizations and evaluate the general applicability of best optimal optimization sets, previously discovered in RQ1 (i.e., sequences generated using NS relative to each non-functional property). To this end, we apply best discovered optimizations to new unseen Csmith (100 new random programs) and we compare then, the performance improvements (see right-hand side of figure 5). The idea of this experiment is to test whether new Csmith programs are sensitive to previously discovered optimizations or not. If so, this will be useful for compiler users and researchers to use NOTICE in order to build general optimization sequences from their representative \textit{training set} programs.
+Another interesting experiment is to test the sensitivity of input programs to compiler optimizations and evaluate the general applicability of best optimal optimization sets, previously discovered in RQ1. Theses sequences correspond to best sequences generated using NS for the 3 non-functional properties that we are focusing on namely S, MR and CR. 
+Thus, we apply best discovered optimizations to new unseen Csmith (100 new random programs) and we compare then, the performance improvement across these programs (see right-hand side of figure 5). We also apply standard optimizations, O2 and O3, to new Csmith programs to compare performance results.
+The idea of this experiment is to test whether new Csmith programs are sensitive to previously discovered optimizations or not. If so, this will be useful for compiler users and researchers to use NOTICE in order to build general optimization sequences from their representative \textit{training set} programs.
 
 \paragraph{Results}
-results
+Figure 6 shows the distribution of memory, CPU and speedup improvement across new Csmith programs. For each non-functional property, we apply O2, O3 and best NS sequences. Speedup results show that the 3 optimization strategies have almost the same distribution with a median value of 1.12 for speedup. This can be explained by the fact that NS needs too long time to find the sequence that will better optimize the execution speed. O2 and O3 have also the same impact on CR and MR which is almost the same for both levels (CR median value is 8\% and around 5\% for MR).
+However, the impact of applying best generated sequences using NS clearly outperform O2 and O3 with almost 10\% of CPU improvement and 7\% of memory improvement. This proves that NS sequences are efficient and can be used to optimize resource consumption of Csmith programs.
 
 \begin{figure}[h]
 	\centering
@@ -75,8 +78,10 @@ results
 \end{figure}
 
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
-		\textbf{Key findings for RQ2.} \\
-		blabla }}
+		\textbf{Key findings for RQ2.}
+	
+	-- Csmith programs are sensitive to compiler optimizations\\
+	-- For CPU and memory improvement, best discovered sequences using NS can be applied to improve resource usage    }}
 \subsubsection{RQ3. Impact of optimizations on resource consumption}
 \paragraph{Method}
 In this experiment, we use NOTICE to provide an understanding of optimizations behavior, in terms of resource consumption, when trying to optimize for execution time. Thus, we choose one instance of obtained results in RQ1 related to the best speedup improvement (i.e., results obtained in line 1 of table 3) and we study the impact of performance improvement on memory and CPU consumption. We also compare resource usage data to standard GCC levels as they ware presented in Table 3. Improvements are always calculated over the non-optimized version. The idea of this experiment is to: (1) prove, or not, the usefulness of involving resource metrics as key objectives for performance improvement; (2) the need, or not, of multi-objective search strategy to handle both resource usage and performance metrics.
@@ -110,7 +115,8 @@ Figure 6 shows the impact of speedup optimization on resource consumption. It is
 
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
 		\textbf{Key findings for RQ3.} \\
-		blabla }}
+-- There is no consensus between application performance and resource consumption.\\
+-- Applying standard compiler levels can induce undesirable effects on system resources }}
 \subsubsection{RQ4. Trade-offs between non-functional properties}
 \paragraph{Method}
 
