@@ -135,7 +135,10 @@ The goal of this experiment is to check whether it exists, or not optimizations 
 
 
 \paragraph{Results}
-Figure 8 visualizes the Pareto optimal solutions that achieved the best performance assessment for the trade-off \textit{$<$ExecutionTime--MemoryUsage$>$}. The horizontal axis indicates the memory usage in raw data (in Bytes) as it is collected using NOTICE. In similar fashion, the vertical axis shows the execution time in seconds. Furthermore, the figure shows the impact of standard GCC options and best NS sequences on memory and execution time. Based on these results, we can see that NSGA-II performs better than NS-II. In fact, NSGA-II yields to the best set of solutions that present the optimal trade-off between the two objectives. Then, it is up to compiler users to use one solution from this Pareto front that satisfies his non-functional requirements (6 solutions for NSGA-II and 5 for NS-II). For example, he could choose one solution that maximizes the execution speed in favor of memory reduction. On the other side, NS-II is capable to generate only one non-dominated solution. For NS-MR, it reduces as expected the memory consumption compared to other optimization levels. The same effect on execution time when applying the best speedup sequence NS-S.
+Figure 8 visualizes the Pareto optimal solutions that achieved the best performance assessment for the trade-off \textit{$<$ExecutionTime--MemoryUsage$>$}. The horizontal axis indicates the memory usage in raw data (in Bytes) as it is collected using NOTICE. In similar fashion, the vertical axis shows the execution time in seconds. Furthermore, the figure shows the impact of standard GCC options and best NS sequences on memory and execution time. Based on these results, we can see that NSGA-II performs better than NS-II. In fact, NSGA-II yields to the best set of solutions that presents the optimal trade-off between the two objectives. Then, it is up to compiler users to use one solution from this Pareto front that satisfies his non-functional requirements (6 solutions for NSGA-II and 5 for NS-II). For example, he could choose one solution that maximizes the execution speed in favor of memory reduction. On the other side, NS-II is capable to generate only one non-dominated solution. For NS-MR, it reduces as expected the memory consumption compared to other optimization levels. The same effect on execution time when applying the best speedup sequence NS-S. We note also that all standard GCC levels dominated by our different heuristics NS-II, NSGA-II, NS-S and NS-MR.
+This agrees to the claim that standard compiler levels do not present a suitable trade-off between execution time and memory usage.
+
+
  
 
 
@@ -153,9 +156,13 @@ Figure 8 visualizes the Pareto optimal solutions that achieved the best performa
 -- NSGA-II performs better than our NS adaptation for multi-objective optimization. However, NS-II performs clearly better than standard GCC optimizations and previously discovered sequences in RQ1.
 }}
 \subsection{Discussions}
-For RQ1, experiments take about 21 days to run all algorithms. These optimization times might seem long. However, it should be noted that this search can be conducted only once, since in RQ2, we show that best optimizations can be used with unseen programs of the same category as the training set, used to generate optimizations. This has to be proved with other case studies. As an alternative, it would be great to test model-based code generators. Code generators apply to same rules to generate new software programs. Thus, we can use NOTICE to define general-purpose optimizations from a set of generated code artifacts. 
-Multi-objective search as conducted in RQ4, takes about 48 hours, which we believe is acceptable for practical use. Nevertheless, speeding up the search speed
-may be an interesting feature for future research.
+Through experimental results, we can conclude that NOTICE provides facilities to compiler users to find non-functional trade-offs. Searching for best optimization sequences can be conducted either through a mono-objective or multi-objective search.
+For RQ1, experiments take about 21 days to run all algorithms. These optimization time might seem long. However, it should be noted that this search can be conducted only once, since in RQ2, we show that best gathered optimizations can be used with unseen programs of the same category as the training set, used to generate optimizations. This has to be proved with other case studies. As an alternative, it would be great to test model-based code generators. Code generators apply to same rules to generate new software programs. Thus, we can use NOTICE to define general-purpose optimizations from a set of generated code artifacts. 
+Multi-objective search as conducted in RQ4, takes about 48 hours, which we believe is acceptable for practical use. Nevertheless, speeding up the search speed may be an interesting feature for future research.
+%good performance to detect most of the existing antipatterns, which
+%could be very helpful to provide advice to both service clients and
+%providers on the quality of their Web services.
+
 
 
 
