@@ -1,12 +1,14 @@
 \section{An Infrastructure for Non-functional Testing Using System Containers}
 %an updated performance comparison of VM and linux containers
-In general, there are many non-functional properties that can be influenced by compiler optimizations, \eg, performance (execution time), code quality, robustness, etc. In this paper, we focus on the efficiency of optimized code in terms of resource consumption (memory and CPU).
-Therefore, we need to deploy the test harness, i.e., the software artifacts needed to perform a test, on an elastic infrastructure that provides to compiler users facilities to ensure the deployment and monitoring of different variants of optimized code. 
+In general, there are many non-functional properties that can be influenced by compiler optimizations, \eg, performance (execution time), code quality, robustness, etc. 
+In this paper, we focus on the efficiency of optimized code in terms of resource consumption (memory and CPU). 
+To assess the performance of optimized code many configurations, i.e., optimizations, must be applied to software programs. Running different applications with different configurations on one single machine is complicated because system has limited resources and it can lead to performance regressions. 
+Therefore, we need to deploy the test harness, i.e., the software artifacts needed to perform a test, on an elastic infrastructure that provides to compiler users facilities to ensure the deployment and monitoring of different configurations of optimized code. 
 %Monitoring information should also be provided to inform about resource utilization required/needed and to automate the resource management of deployed components. 
 For this purpose, we propose NOTICE, a non-functional testing infrastructure based on System Container techniques such as Docker\footnote{\url{https://www.docker.com}} environment. 
-%Docker will automate the deployment and execution of applications inside software containers by allowing multiple applications to run autonomously on a server (basically a cloud server). 
+This framework will automate the deployment and execution of applications inside software containers by allowing multiple program configurations to run autonomously on different servers (i.e., a cloud servers). It also provides a distributed environment where system resources can be managed and limited according to the needs. 
 %It provides a platform as a service (PaaS) style of deployment for software programs. 
-We rely on this technology and benefit from all its advantages to:
+We rely on this component-based infrastructure and benefit from all its advantages to:
 \begin{enumerate}
 	\item Deploy generated code within containers
 	\item Automate optimization sequences generation
