@@ -25,7 +25,7 @@ To answer these questions, we conduct several experiments using NOTICE to valida
 \subsection{Experimental Setup}
 \subsubsection{Programs Used in the Empirical Study}
 To explore the impact of compiler optimizations a set of input programs are needed. 
-To do so, we use a random C program generator called Csmith~\cite{yang2011finding}.
+To this end, we use a random C program generator called Csmith~\cite{yang2011finding}.
 Csmith is a tool that can generate random C programs that statically and dynamically conform to the C99 standard. It has been widely used to perform functional testing of compilers~\cite{chen2016empirical,le2014compiler,nagai2013scaling} but not the case for checking non-functional requirements. Csmith can generate C programs that utilize a much wider range of C features including complex control flow and data structures such as pointers, arrays, and structs. Csmith programs come with their test suites that explore the structure of generated programs. 
 Authors argue that Csmith is an effective bug-finding tool because it generates tests that explore atypical combinations of C language features. They also argue that larger programs are more effective for functional testing. Thus, we run Csmith for 24 hours and gathered the largest generated programs. We depicted 111 C programs with an average number of source lines of 12K. 10 programs are used as training set for RQ1, 100 other programs to answer RQ2 and 1 last program to run RQ4 experiment.
 Selected Csmith programs are described in more details at~\cite{mboussaa}.
@@ -64,7 +64,7 @@ Selected Csmith programs are described in more details at~\cite{mboussaa}.
 \subsubsection{Parameters Tuning}
 %Our experiments use the classical NS algorithm, where we evolve a set of optimization sequences through generations.
 An important aspect for meta-heuristic search algorithms lies in the parameters tuning and selection, which is necessary to ensure not only fair comparison, but also for potential replication.
-NOTICE implements 3 mono-objective search algorithms (NS, RS and GA~\cite{cooper2002adaptive}) and 3 multi-objective optimizations (NS, RS and NSGA-II~\cite{deb2002fast}). Each initial population/solution of different algorithms is completely random. The stopping criterion is when the maximum number of fitness evaluations is reached.
+NOTICE implements three mono-objective search algorithms (NS, RS and GA~\cite{cooper2002adaptive}) and two multi-objective optimizations (NS and NSGA-II~\cite{deb2002fast}). Each initial population/solution of different algorithms is completely random. The stopping criterion is when the maximum number of fitness evaluations is reached.
 The resulting parameter values are listed in Table 2. The same parameter settings are applied to all algorithms under comparison.
 
 NS, which is our main concern in this work, is implemented as described in Section 3. During the evolutionary process, each solution is evaluated using the novelty metric. Novelty is calculated for each solution by taking the mean of its 15 nearest optimization sequences in terms of similarity (considering all sequences in the current population and in the archive). Initially, the archive is empty. Novelty distance is normalized in the range [0-100].
@@ -73,7 +73,7 @@ In the meanwhile, individuals that get a score higher than 30 (threshold T), the
 In fact, this threshold is dynamic. Every 200 evaluations, we check how many individuals have been copied into the archive. If this number is below 3, the threshold is increased by multiplying it by 0.95, whereas if solutions added to archive are above 3, the threshold is decreased by multiplying it by 1.05. 
 Moreover, as the size of the archive grows, the nearest-neighbor calculation that determines the novelty scores for individuals becomes more computationally demanding. So, to avoid having low accuracy of novelty, we choose to bound the size of the archive (archive size = 500). Hence, it follows a first-in first-out data structure which means that when a new solution gets added, the oldest solution in the novelty archive will be discarded. Thus, we ensure individual diversity by removing old sequences that may no longer be reachable from the current population.
 
-Algorithm parameters were tuned individually in preliminary experiments. For each parameter, a set of values was tested. The parameter values chosen are the mostly used in the literature~\cite{lehman2008exploiting}. The value that yielded the highest performance score was chosen.  
+Algorithm parameters were tuned individually in preliminary experiments. For each parameter, a set of values was tested. The parameter values chosen are the mostly used in the literature~\cite{inden2013examination}. The value that yielded the highest performance score was chosen.  
 
 \begin{table}
 	\caption{Algorithm parameters}
