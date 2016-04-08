@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  8 APR 2016 07:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  8 APR 2016 08:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -591,12 +591,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--121
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9 <./Ressources/box.png> <./Ressources/rq3.png>]
-<Ressources/pareto.png, id=60, 760.8425pt x 484.81125pt>
+<Ressources/pareto.png, id=60, 752.8125pt x 483.8075pt>
 File: Ressources/pareto.png Graphic file (type png)
 
 <use Ressources/pareto.png>
-Package pdftex.def Info: Ressources/pareto.png used on input line 137.
-(pdftex.def)             Requested size: 252.0pt x 160.57262pt.
+Package pdftex.def Info: Ressources/pareto.png used on input line 138.
+(pdftex.def)             Requested size: 252.0pt x 161.95287pt.
 ) (./related.tex [10 <./Ressources/pareto.png>])
 (./conclusion.tex) (./main.bbl [11]
 Missing character: There is no â in font ptmri7t!
@@ -638,7 +638,7 @@ live/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/
 texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 504622 bytes).
+Output written on main.pdf (12 pages, 505257 bytes).
 PDF statistics:
  117 PDF objects out of 1000 (max. 8388607)
  72 compressed objects within 1 object stream
