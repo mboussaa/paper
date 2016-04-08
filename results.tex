@@ -122,10 +122,12 @@ These results agree to the idea that compiler optimizations do not put too much 
 \subsubsection{RQ4. Trade-offs between non-functional properties}
 \paragraph{Method}
 
-Finally, to answer RQ4, we use again NOTICE to find trade-offs between non-functional properties. In this experiment, we choose to focus on the trade-off \textit{$<$ExecutionTime--MemoryUsage$>$}. In addition to our NS adaptation for multi-objective optimization, we implement one of the commonly used multi-objective approaches namely NSGA-II\cite{deb2002fast}. In the following, we denote this NS adaptation as \textit{NS-II}. Apart from that, we apply different optimization strategies to assess our approach. First, we apply standard GCC levels. Then, we apply best generated sequences relative to memory and speedup optimization (the same sequences that we have used in RQ2). Thus, we denote by \textit{NS-MR} the sequence relative to the best optimization set for MR and \textit{NS-S} to the sequence that leads to the best speedup. This is useful to compare mono-objective solutions to new generated ones.
+Finally, to answer RQ4, we use NOTICE again to find trade-offs between non-functional properties. In this experiment, we choose to focus on the trade-off \textit{$<$ExecutionTime--MemoryUsage$>$}. In addition to our NS adaptation for multi-objective optimization, we implement a commonly used multi-objective approache namely NSGA-II\cite{deb2002fast}. In the following, we denote our NS adaptation as \textit{NS-II}. We recall that NS-II is not a multi-objective approach as NSGA-II. It is the same algorithm used in previous research questions with only one goal \textit{'novelty'}. However, in this experiment, we return the optimal Pareto front solutions instead of returning one optimal solution relative to one goal. 
+Apart from that, we apply different optimization strategies to assess our approach. First, we apply standard GCC levels. Then, we apply best generated sequences relative to memory and speedup optimization to the input program (the same sequences that we have used in RQ2). Thus, we denote by \textit{NS-MR} the sequence relative to the best optimization set for MR and \textit{NS-S} to the sequence that leads to the best speedup. This is useful to compare mono-objective solutions to new generated ones.
 
-In this experiment, we generate and assess the efficiency of generated sequences using only one Csmith program.
-We evaluate the quality of the obtained Pareto optimal optimization levels based on the raw data of memory and execution time. Then, we compare qualitatively the results by visual inspection of the Pareto frontiers.
+In this experiment, we assess the efficiency of generated sequences using only one Csmith program.
+We evaluate the quality of the obtained Pareto optimal optimization levels based on raw data values of memory and execution time. Then, we compare qualitatively the results by visual inspection of the Pareto frontiers.
+The goal of this experiment is to check whether it exists, or not optimizations that can reduce both execution time and memory usage.
 %We report the comparison results of our NS adaptation for optimizations generation to the current state-of-the-art multi-objective approaches namely NSGA-II. 
 
 
@@ -133,14 +135,14 @@ We evaluate the quality of the obtained Pareto optimal optimization levels based
 
 
 \paragraph{Results}
-Figure 8 visualizes the Pareto optimal solutions generated that achieved the best performance assessment for the objective \textit{$<$ExecutionTime--MemoryUsage$>$}. The horizontal axis indicates the memory usage in raw data (in Bytes) as it is collected using NOTICE. In similar fashion, the vertical axis shows the execution time in seconds. Furthermore, the figure shows the impact of standard GCC options and best NS sequences for memory and execution time. Based on these results, we can see that NSGA-II outperforms better than NS-II. In fact, these best solutions from the Pareto-optimal front leads to best trade-off between the two objectives. Therefore, it is up to compiler users to use one solution from this Pareto front (6 solutions for NSGA-II and 5 for NS-II) that satisfies his needs. For example, he could choose one solution that maximize the execution speed in favor of memory reduction. On the other side, NS-II is capable to generate only one solution that is non-dominated by any other one. 
+Figure 8 visualizes the Pareto optimal solutions that achieved the best performance assessment for the trade-off \textit{$<$ExecutionTime--MemoryUsage$>$}. The horizontal axis indicates the memory usage in raw data (in Bytes) as it is collected using NOTICE. In similar fashion, the vertical axis shows the execution time in seconds. Furthermore, the figure shows the impact of standard GCC options and best NS sequences for memory and execution time. Based on these results, we can see that NSGA-II outperforms better than NS-II. In fact, these best solutions from the Pareto-optimal front leads to best trade-of between the two objectives. Therefore, it is up to compiler users to use one solution from this Pareto front that satisfies his needs (6 solutions for NSGA-II and 5 for NS-II). For example, he could choose one solution that maximize the execution speed in favor of memory reduction. On the other side, NS-II is capable to generate only one non-dominated solution but the obtained Pareto front is still close to NSGA-II. For NS-MR, it clearly reduce the memory consumption compared to other optimization levels. The same outcome with NS-S.
  
 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.\linewidth]{Ressources/pareto.png}
-	\caption{Impact of speedup improvement on memory and CPU consumption for each optimization strategy}
+	\caption{Obtained pareto fronts using NSGA-II and NS-II}
 \end{figure}
 
 
