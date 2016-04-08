@@ -6,7 +6,7 @@ To assess the performance of optimized code many configurations, i.e., optimizat
 Therefore, we need to deploy the test harness, i.e., the software artifacts needed to perform a test, on an elastic infrastructure that provides to compiler users facilities to ensure the deployment and monitoring of different configurations of optimized code. 
 %Monitoring information should also be provided to inform about resource utilization required/needed and to automate the resource management of deployed components. 
 For this purpose, we propose NOTICE, a non-functional testing infrastructure based on System Container techniques such as Docker\footnote{\url{https://www.docker.com}} environment. 
-This framework will automate the deployment and execution of applications inside software containers by allowing multiple program configurations to run autonomously on different servers (i.e., a cloud servers). It also provides a distributed environment where system resources can be managed and limited according to the needs. 
+This framework will automate the deployment and execution of applications inside software containers by allowing multiple program configurations to run autonomously on different servers (i.e., a cloud servers). It also provides a distributed environment where system resources can be finely managed and limited according to the needs. 
 %It provides a platform as a service (PaaS) style of deployment for software programs. 
 We rely on this component-based infrastructure and benefit from all its advantages to:
 \begin{enumerate}
@@ -106,12 +106,12 @@ For instance, resource usage statistics are collected and stored using NOTICE. I
 \subsubsection{Front-end Visualization Component}
 %Once we gather and store resource usage data, the next step is visualizing them. That is the role of the visualization component. It will be the endpoint component that we use to visualize the recorded data. 
 NOTICE provides a dashboard to run queries and view different profiles of resource consumption of running components through web UI. 
-Thanks to this component, we can compare visually the profiles of resource consumption of running containers. 
+Thanks to this component, we can compare visually the profiles of resource consumption. 
 %Moreover, we use this component to export the data currently being viewed into static CSV document. 
 %Thereby, we can perform statistical analysis and process data to analyze performance behavior. 
 %An overview of the monitoring dashboard is shown in Figure 3.
 
-To do so, we choose Grafana\footnote{https://github.com/grafana/grafana}, a time-series visualization tool available for Docker. It is considered as a web application running within a container. We run Grafana and we link it to InfluxDB by setting up the data source port 8086 so that, it can easily request data from the database. 
+To do so, we choose Grafana\footnote{https://github.com/grafana/grafana}, a time-series visualization tool available for Docker. It is a web application running within a container. We run Grafana and we link it to InfluxDB by setting up the data source port 8086 so that, it can easily request data from the database. 
 We recall that InfluxDB also provides a web UI to query the database and show graphs. But, Grafana will let us to display live results over time in much pretty looking graphs. Same as InfluxDB, we use SQL queries to extract non-functional metrics from the database for visualization.
 
 \subsection{Wrapping Everything Together: Architecture Overview}
