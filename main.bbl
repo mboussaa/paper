@@ -79,6 +79,17 @@ M.~Nagiub and W.~Farag, ``Automatic selection of compiler options using genetic
 J.~Lehman and K.~O. Stanley, ``Exploiting open-endedness to solve problems
   through the search for novelty.'' in \emph{ALIFE}, 2008, pp. 329--336.
 
+\bibitem{chen2010evaluating}
+Y.~Chen, Y.~Huang, L.~Eeckhout, G.~Fursin, L.~Peng, O.~Temam, and C.~Wu,
+  ``Evaluating iterative optimization across 1000 datasets,'' in \emph{ACM
+  Sigplan Notices}, vol.~45, no.~6.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
+  2010, pp. 448--459.
+
+\bibitem{escobar2015evaluation}
+R.~D. Escobar, A.~R. Angula, and M.~Corsi, ``Evaluation of gcc optimization
+  parameters,'' \emph{Revista Ingenierias USBmed}, vol.~3, no.~2, pp. 31--39,
+  2015.
+
 \bibitem{zhong2009tuning}
 S.~Zhong, Y.~Shen, and F.~Hao, ``Tuning compiler optimization options via
   simulated annealing,'' in \emph{Future Information Technology and Management
@@ -151,11 +162,6 @@ E.~Nagai, A.~Hashimoto, and N.~Ishiura, ``Scaling up size and number of
   expressions in random testing of arithmetic optimization of c compilers,'' in
   \emph{Workshop on Synthesis And System Integration of Mixed Information
   Technologies (SASIMI 2013)}, 2013, pp. 88--93.
-
-\bibitem{fursin2009collective}
-G.~Fursin, ``Collective tuning initiative: automating and accelerating
-  development and optimization of computing systems,'' in \emph{GCC Developers'
-  Summit}, 2009.
 
 \bibitem{martinez2014multi}
 A.~Mart{\'\i}nez-{\'A}lvarez, J.~Calvo-Zaragoza, S.~Cuenca-Asensi, A.~Ortiz,

@@ -44,7 +44,7 @@ Before starting the evolutionary process, we generate an initial population with
 		\REQUIRE Nearest neighbors $\mathcal{K}$
 		\REQUIRE Number of evaluations $\mathcal{N}$
 		\ENSURE Best optimization sequence $best\_sequence$
-		\STATE $initialize\_parameters(\mathcal{L},T,N,K)$
+		\STATE $initialize\_parameters(\mathcal{L},\mathcal{T},\mathcal{N},\mathcal{K})$
 		\STATE $create\_archive(\mathcal{L})$
 		\STATE 	$generated\_code \gets compile(\textit{"-O0"},\mathcal{C})$
 		\STATE 	$minimum\_usage \gets execute(generated\_code)$
@@ -66,7 +66,7 @@ Before starting the evolutionary process, we generate an initial population with
 		\ENDFOR
 		\STATE		$new\_population \gets generate\_new\_population(population)$
 		\STATE		$generation \gets generation + 1$
-		\UNTIL{generation = N}
+		\UNTIL{$generation = \mathcal{N}$}
 		\RETURN $best\_sequence$
 	\end{algorithmic}
 \end{algorithm}
