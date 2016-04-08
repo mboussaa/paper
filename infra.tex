@@ -1,4 +1,5 @@
 \section{An Infrastructure for Non-functional Testing Using System Containers}
+%an updated performance comparison of VM and linux containers
 In general, there are many non-functional properties that can be influenced by compiler optimizations, \eg, performance (execution time), code quality, robustness, etc. In this paper, we focus on the efficiency of optimized code in terms of resource consumption (memory and CPU).
 Therefore, we need to deploy the test harness, i.e., the software artifacts needed to perform a test, on an elastic infrastructure that provides to compiler users facilities to ensure the deployment and monitoring of different variants of optimized code. 
 %Monitoring information should also be provided to inform about resource utilization required/needed and to automate the resource management of deployed components. 
@@ -21,12 +22,13 @@ Before starting to monitor and test generated code, we have to describe the depl
 NOTICE represents a component-based infrastructure based on Docker Linux containers to monitor the execution of produced binaries by compilers in terms of resource usage. 
 Docker is an open source engine that automates the deployment of any application as a lightweight, portable, and self-sufficient container that runs virtually on a host machine. 
 %To achieve that, Docker uses the Linux container technology. 
-Using Docker, we can define preconfigured applications and servers to host as virtual images. We can also define the way the service should be deployed in the host machine. 
+Using Docker, we can define preconfigured applications and servers to host as virtual images. We can also define the way the service should be deployed in the host machine using configuration files called Dockerfiles. 
 %As properties, we can define the OS where the service has to run, dependencies, etc. 
-A simple way to build images automatically is to use Dockerfiles which represents configuration files.
+%A simple way to build images automatically is to use Dockerfiles which represents configuration files.
 %Docker can build images automatically by reading the instructions from a Dockerfile. 
-We use Docker Hub\footnote{https://hub.docker.com/} for building, saving, and managing all our Docker images. It represents a cloud-based registry service for building and shipping application or service containers.
-Once Docker images are defined, we can instantiate different containers. 
+We use Docker Hub\footnote{https://hub.docker.com/} for building, saving, and managing all our Docker images. 
+%It represents a cloud-based registry service for building and shipping application or service containers.
+We can then instantiate different containers from these Docker image. 
 %Basically, each container deploys an optimized version of the input source code program.
 
 Therefore, to run our experiments, each optimized program is executed individually inside an isolated Linux container. By doing so, we ensure that each executed program runs in isolation without being affected by the host machine or any other processes. Moreover, since a container is cheap to create, we are able to create too many containers as long as we have new programs to execute. 
@@ -47,7 +49,7 @@ In order to test our running applications within Docker containers, we aim to us
 \subsubsection{Monitoring Component}
 This container provides an understanding of the resource usage and performance characteristics of our running containers. Generally, Docker containers rely on cgroups file systems to expose a lot of metrics about accumulated CPU cycles, memory, block I/O usage, etc. Therefore, our monitoring component automates the extraction of runtime performance metrics using cgroups. For example, we access to live resource consumption of each container available at the cgroup file system via stats found in $/sys/fs/cgroup/cpu/docker/(longid)/$ (for CPU consumption) and $/sys/fs/cgroup/memory/docker/(longid)/$ (for stats related to memory consumption). This component will automate the process of service discovery and metrics aggregation. Thus, instead of gathering manually metrics located in cgroups file systems, it will extract automatically runtime resource usage statistics relative to running components. We note that resource usage information is collected in raw data. This process may induce a little overhead, because it does very fine-grained accounting of resource usage on running container. Fortunately, this may not affect the gathered performance values since NOTICE run only one optimized version of code within each container.
 
-To ease the monitoring process, NOTICE integrates cAdvisor, a Container Advisor\footnote{https://github.com/google/cadvisor}. It is a tool developed by Google to monitor their infrastructure. 
+To ease the monitoring process, NOTICE integrates cAdvisor, a Container Advisor\footnote{https://github.com/google/cadvisor}. It is a tool that monitors service containers at runtime. 
 cAdvisor Docker image does not need any configuration on the host machine. We have just to run it on our host machine. It will then have access to resource usage and performance characteristics of all running containers. This image uses the cgroups mechanism described above to collect, aggregate, process, and export ephemeral real-time information about running containers. Then, it reports all statistics via web UI ($http://localhost:8080$) to view live resource consumption of each container. cAdvisor has been widely used in different projects such as Heapster\footnote{https://github.com/kubernetes/heapster} and Google Cloud Platform\footnote{https://cloud.google.com/}.
 
 However, cAdvisor monitors and aggregates live data over only 60 seconds interval. Therefore, we would like to record all data over time since container's creation. This is useful to run queries and define non-functional metrics from historical data. Thereby, to make gathered data truly valuable for resource usage monitoring, it becomes necessary to log it into a database at runtime. Thus, we link our monitoring component to a back-end database. 
@@ -97,7 +99,7 @@ To give an idea about data stored in InfluxDB, Table 1 describes the different s
  \end{table}
  
 Apart from that, NOTICE provides also information about the size of generated binaries and the compilation time needed to produced code.
-For instance, resource usage statistics are collected and stored using NOTICE. It would be nice to view resource consumption graphs within a complete dashboard. It is relevant to show performance profiles of memory and CPU consumption of our running programs overtime. To do so, we present a front-end visualization component for performance profiling. 
+For instance, resource usage statistics are collected and stored using NOTICE. It is relevant to show resource usage profiles of running programs overtime. To do so, we present a front-end visualization component for performance profiling. 
 
 \subsubsection{Front-end Visualization Component}
 %Once we gather and store resource usage data, the next step is visualizing them. That is the role of the visualization component. It will be the endpoint component that we use to visualize the recorded data. 
@@ -107,7 +109,7 @@ Thanks to this component, we can compare visually the profiles of resource consu
 %Thereby, we can perform statistical analysis and process data to analyze performance behavior. 
 %An overview of the monitoring dashboard is shown in Figure 3.
 
-To do so, we choose Grafana\footnote{https://github.com/grafana/grafana}, one of the best time-series visualization tools available for Docker. It is considered as a web application running within a container. We run Grafana and we link it to InfluxDB by setting up the data source port 8086 so that, it can easily request data from the database. 
+To do so, we choose Grafana\footnote{https://github.com/grafana/grafana}, a time-series visualization tool available for Docker. It is considered as a web application running within a container. We run Grafana and we link it to InfluxDB by setting up the data source port 8086 so that, it can easily request data from the database. 
 We recall that InfluxDB also provides a web UI to query the database and show graphs. But, Grafana will let us to display live results over time in much pretty looking graphs. Same as InfluxDB, we use SQL queries to extract non-functional metrics from the database for visualization.
 
 \subsection{Wrapping Everything Together: Architecture Overview}
