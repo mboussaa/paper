@@ -90,19 +90,6 @@ R.~D. Escobar, A.~R. Angula, and M.~Corsi, ``Evaluation of gcc optimization
   parameters,'' \emph{Revista Ingenierias USBmed}, vol.~3, no.~2, pp. 31--39,
   2015.
 
-\bibitem{zhong2009tuning}
-S.~Zhong, Y.~Shen, and F.~Hao, ``Tuning compiler optimization options via
-  simulated annealing,'' in \emph{Future Information Technology and Management
-  Engineering, 2009. FITME'09. Second International Conference On}.\hskip 1em
-  plus 0.5em minus 0.4em\relax IEEE, 2009, pp. 305--308.
-
-\bibitem{sandran2012genetic}
-T.~Sandran, M.~N.~B. Zakaria, and A.~J. Pal, ``A genetic algorithm approach
-  towards compiler flag selection based on compilation and execution
-  duration,'' in \emph{Computer \& Information Science (ICCIS), 2012
-  International Conference on}, vol.~1.\hskip 1em plus 0.5em minus 0.4em\relax
-  IEEE, 2012, pp. 270--274.
-
 \bibitem{martins2014exploration}
 L.~G. Martins, R.~Nobre, A.~C. Delbem, E.~Marques, and J.~M. Cardoso,
   ``Exploration of compiler optimization sequences using clustering-based
@@ -123,12 +110,6 @@ W.~Banzhaf, F.~D. Francone, and P.~Nordin, ``The effect of extensive use of the
   mutation operator on generalization in genetic programming using sparse data
   sets,'' in \emph{Parallel Problem Solving from Nature—PPSN IV}.\hskip 1em
   plus 0.5em minus 0.4em\relax Springer, 1996, pp. 300--309.
-
-\bibitem{gathercole1996adverse}
-C.~Gathercole and P.~Ross, ``An adverse interaction between crossover and
-  restricted tree depth in genetic programming,'' in \emph{Proceedings of the
-  1st annual conference on genetic programming}.\hskip 1em plus 0.5em minus
-  0.4em\relax MIT Press, 1996, pp. 291--296.
 
 \bibitem{cooper2002adaptive}
 K.~D. Cooper, D.~Subramanian, and L.~Torczon, ``Adaptive optimizing compilers
@@ -173,22 +154,11 @@ J.~Pallister, S.~J. Hollis, and J.~Bennett, ``Identifying compiler options to
   minimize energy consumption for embedded platforms,'' \emph{The Computer
   Journal}, vol.~58, no.~1, pp. 95--109, 2015.
 
-\bibitem{fursin2008milepost}
-G.~Fursin, C.~Miranda, O.~Temam, M.~Namolaru, E.~Yom-Tov, A.~Zaks,
-  B.~Mendelson, E.~Bonilla, J.~Thomson, H.~Leather \emph{et~al.}, ``Milepost
-  gcc: machine learning based research compiler,'' in \emph{GCC Summit}, 2008.
-
 \bibitem{lin2008automatic}
 S.-C. Lin, C.-K. Chang, and S.-C. Lin, ``Automatic selection of gcc
   optimization options using a gene weighted genetic algorithm,'' in
   \emph{Computer Systems Architecture Conference, 2008. ACSAC 2008. 13th
   Asia-Pacific}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2008, pp. 1--8.
-
-\bibitem{schulte2014post}
-E.~Schulte, J.~Dorn, S.~Harding, S.~Forrest, and W.~Weimer, ``Post-compiler
-  software optimization for reducing energy,'' in \emph{ACM SIGARCH Computer
-  Architecture News}, vol.~42, no.~1.\hskip 1em plus 0.5em minus 0.4em\relax
-  ACM, 2014, pp. 639--652.
 
 \bibitem{risi2010evolving}
 S.~Risi, C.~E. Hughes, and K.~O. Stanley, ``Evolving plastic neural networks

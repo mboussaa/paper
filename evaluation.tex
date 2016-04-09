@@ -87,7 +87,7 @@ Algorithm parameters were tuned individually in preliminary experiments. For eac
 		Scaling archive prob. & 0.05 & Solutions added to archive & 3  \\ 	\hline
 	\end{tabular}
 \end{table}
-
+\setlength{\textfloatsep}{2pt}
 \subsubsection{Evaluation Metrics Used}
 
 For mono-objective algorithms, we use to evaluate solutions using the following metrics:
@@ -110,7 +110,7 @@ First, a meta-heuristic (mono or multi-objective) is applied to generate specifi
 Then, we generate a new optimized code and deploy the output binary within a new instance of our preconfigured Docker image (step 2). While executing the optimized code inside the container, we collect runtime performance data (step 4) and record it in a new time-series database using our InfluxDB back-end container (step 5). Next, NOTICE accesses remotely to stored data in InfluxDB using REST API calls and assigns new performance values to the current solution (step 6). The choice of performance metrics depends on experiment objectives (Memory improvement, speedup, etc.).
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\linewidth]{Ressources/infraup.png}
+	\includegraphics[width=0.8\linewidth]{Ressources/infraup.png}
 	\caption{NOTICE experimental infrastructure}
 \end{figure}
 

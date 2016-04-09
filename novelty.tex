@@ -17,7 +17,7 @@ For instance, in a previous work~\cite{chen2012deconstructing}, Chen et al. show
 In fact, the fitness-based search may be trapped into some local optima that can not escape. 
 This phenomenon is known as \textit{"diversity loss"}. For example, if the most effective optimization sequence that induces less execution time, lies far from the search space defined by the gradient of the fitness function, then some promising search areas may not be reached. 
 The issue of premature convergence to local optima has been a common problem in evolutionary algorithms. 
-Many methods are proposed to overcome this problem~\cite{banzhaf1996effect,gathercole1996adverse}. 
+Many methods are proposed to overcome this problem~\cite{banzhaf1996effect}. 
 However, all these efforts use a fitness-based selection to guide the search. Considering diversity as the unique objective function to be optimized may be a key solution to this problem.
 Therefore, during the evolutionary process, we select optimization sequences that remain in sparse regions of the search space in order to guide the search toward novelty. 
 In the meanwhile, we choose to gather non-functional metrics of explored sequences such as memory consumption. 
@@ -82,6 +82,7 @@ However, during the evolutionary process, these flags are turned on or off depen
 	\centering
 	\includegraphics[width=1\hsize]{Ressources/individual.png}
 	\caption{Solution representation}
+	
 \end{figure}
 
 \subsubsection{Novelty Metric}
