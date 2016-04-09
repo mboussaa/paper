@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  9 APR 2016 02:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  9 APR 2016 03:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -508,16 +508,7 @@ Underfull \hbox (badness 1430) in paragraph at lines 35--38
 
 
 ])
-(./motivation.tex
-
-LaTeX Warning: Citation `zhong2009tuning' on page 2 undefined on input line 12.
-
-
-
-LaTeX Warning: Citation `sandran2012genetic' on page 2 undefined on input line 
-12.
-
-<Ressources/autotuning.png, id=12, 361.35pt x 115.43124pt>
+(./motivation.tex <Ressources/autotuning.png, id=12, 361.35pt x 115.43124pt>
 File: Ressources/autotuning.png Graphic file (type png)
 
 <use Ressources/autotuning.png>
@@ -631,35 +622,31 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[12] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[12] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 7482 strings out of 493308
- 107447 string characters out of 6137815
- 316550 words of memory out of 5000000
- 10774 multiletter control sequences out of 15000+600000
+ 7480 strings out of 493308
+ 107410 string characters out of 6137815
+ 316514 words of memory out of 5000000
+ 10772 multiletter control sequences out of 15000+600000
  48247 words of font info for 93 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  38i,11n,42p,1626b,1217s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texli
-ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive
-/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw
-/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utm
-ri8a.pfb>
-Output written on main.pdf (12 pages, 506216 bytes).
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.
+enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
+fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
+/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/urw/times/utmri8a.pfb>
+Output written on main.pdf (12 pages, 505801 bytes).
 PDF statistics:
  117 PDF objects out of 1000 (max. 8388607)
  72 compressed objects within 1 object stream
