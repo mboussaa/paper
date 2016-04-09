@@ -30,7 +30,7 @@ Using Docker, we can define preconfigured applications and servers to host as vi
 %Docker can build images automatically by reading the instructions from a Dockerfile. 
 We use Docker Hub\footnote{https://hub.docker.com/} for building, saving, and managing all our Docker images. 
 %It represents a cloud-based registry service for building and shipping application or service containers.
-We can then instantiate different containers from these Docker image. 
+We can then instantiate different containers from these Docker images. 
 %Basically, each container deploys an optimized version of the input source code program.
 
 Therefore, to run our experiments, each optimized program is executed individually inside an isolated Linux container. By doing so, we ensure that each executed program runs in isolation without being affected by the host machine or any other processes. Moreover, since a container is cheap to create, we are able to create too many containers as long as we have new programs to execute. 
@@ -121,7 +121,7 @@ To summarize, we present, in Figure 3, an overall overview of the different comp
 \centering
 	\includegraphics[width=1.\linewidth]{Ressources/genecoApproach.png}
 	\caption{NOTICE architecture overview}
-	\vspace{-1.5em}
+	\vspace{-0.8em}
 \end{figure}
 %\setlength{\textfloatsep}{3pt}
 Our testing infrastructure will run different jobs within Docker containers. First, in the top level layer, we use NOTICE to generate different configurations of code using compiler optimizations (e.g., GCC compiler). Then, we wrap generated code within multiple instances of our preconfigured Docker image. Each container will execute a specific job. For our case, a job represents a program compiled with a new optimization sequence (e.g., using NS). In the meanwhile, we start our runtime testing components (e.g., cAdvisor, InfluxDB and Grafana). The monitoring component collects usage statistics of all running containers and save them at runtime in the time series database component. The visualization component comes later to allow end users to define performance metrics and draw up charts. The use of the front-end visualization component is optional and NOTICE can directly access to information stored in the database through REST API calls.  
