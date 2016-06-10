@@ -1,6 +1,6 @@
-This is BibTeX, Version 0.99d (TeX Live 2013)
+This is BibTeX, Version 0.99d (TeX Live 2015/MacPorts 2015_11)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: main.aux
+The top-level auxiliary file: ./main.aux
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -8,8 +8,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ref.bib
-Warning--I didn't find a database entry for "zhong2009tuning"
-Warning--I didn't find a database entry for "sandran2012genetic"
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -17,7 +15,7 @@ Warning--I didn't find a database entry for "sandran2012genetic"
 Done.
 You've used 30 entries,
             4039 wiz_defined-function locations,
-            987 strings with 13476 characters,
+            985 strings with 13447 characters,
 and the built_in function-call counts, 25212 in all, are:
 = -- 1993
 > -- 629
@@ -56,4 +54,3 @@ warning$ -- 0
 while$ -- 127
 width$ -- 32
 write$ -- 314
-(There were 2 warnings)
