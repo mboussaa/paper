@@ -9,13 +9,13 @@ In this experiment, we choose to optimize for execution time (S), memory usage (
 \vspace{-1em}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1.\linewidth]{Ressources/sensitivity.png}
+	\includegraphics[width=1.\linewidth]{Ressources/sensitivity.pdf}
 	\caption{Evaluation strategy to answer RQ1 and RQ2}
 	
 \end{figure}
 
 \setlength\abovecaptionskip{0.25ex}
-As it is shown on the left-hand side of figure 5, given a list of optimizations and a performance objective, we use NOTICE to search for best optimization sequence across a set of input programs that we call \textit{"the training set"}. Thus, we generate a set of random Csmith programs \textit{"the training set"} (10 programs) and apply generated sequences to these programs. Therefore, the code quality metric, in this setting, is equal to the average performance improvement (S, MR or CR) and that, for all programs under test. 
+As it is shown on the left-hand side of figure 5, given a list of optimizations and a performance objective, we use NOTICE to search for the best optimization sequence across a set of input programs that we call \textit{"the training set"}. Thus, we generate a set of random Csmith programs \textit{"the training set"} (10 programs) and apply generated sequences to these programs. Therefore, the code quality metric, in this setting, is equal to the average performance improvement (S, MR or CR) and that, for all programs under test. 
 
 %while p
 %the goal of this initial experiment is to: (1) evaluate the effectiveness of our component-based infrastructure to extract non-functional properties such as memory and CPU consumptions; (2) evaluate the performance of our proposed diversity-based exploration of optimization sequences (NS) to GA and RS; and finally (3) find the optimal solution relative to the input training set.
@@ -64,11 +64,11 @@ We remark as well that applying standard optimizations has an impact on the exec
 \noindent\fbox{\parbox{\linewidth-2\fboxrule-2\fboxsep}{
 		\textbf{Key findings for RQ1.} \\
 -- Best discovered optimization sequences using mono-objective search techniques always provide better results than standard GCC optimization levels.\\
--- Novelty Search is a good candidate to improve code in terms of non-functional properties since it is able to discover optimization combinations that outperform RS and NS.  }}
+-- Novelty Search is a good candidate to improve code in terms of non-functional properties since it is able to discover optimization combinations that outperform RS and GA.  }}
 \\
 \subsubsection{RQ2. Sensitivity}
 \paragraph{Method}
-Another interesting experiment is to test the sensitivity of input programs to compiler optimizations and evaluate the general applicability of best optimal optimization sets, previously discovered in RQ1. Theses sequences correspond to the best generated sequences using NS for the three non-functional properties S, MR and CR (i.e., sequences obtained in column 8 of Table 3). 
+Another interesting experiment is to test the sensitivity of input programs to compiler optimizations and evaluate the general applicability of best optimal optimization sets, previously discovered in RQ1. These sequences correspond to the best generated sequences using NS for the three non-functional properties S, MR and CR (i.e., sequences obtained in column 8 of Table 3). 
 Thus, we apply best discovered optimizations to new unseen Csmith (100 new random programs) and we compare then, the performance improvement across these programs (see right-hand side of figure 5). We also apply standard optimizations, O2 and O3, to new Csmith programs in order to compare the performance results.
 The idea of this experiment is to test whether new generated Csmith programs are sensitive to previously discovered optimizations or not. 
 %If so, then compiler users and researchers can use NOTICE to auto-tune compilers and build optimizations for their input programs. 
@@ -81,7 +81,7 @@ If so, this will be useful for compiler users and researchers to use NOTICE in o
 	\caption{Boxplots of the obtained performance results across 100 unseen Csmith programs, for each non-functional property: Speedup (S), memory (MR) and CPU (CR) and for each optimization strategy: O2, O3 and NS}
 \end{figure}
 \paragraph{Results}
-Figure 6 shows the distribution of memory, CPU and speedup improvement across new Csmith programs. For each non-functional property, we apply O2, O3 and best NS sequences. Speedup results show that the three optimization strategies lead to almost the same distribution with a median value of 1.12 for speedup. This can be explained by the fact that NS needs too long time to find the sequence that best optimize the execution speed. In the meanwhile, O2 and O3 have also the same impact on CR and MR which is almost the same for both levels (CR median value is 8\% and around 5\% for MR).
+Figure 6 shows the distribution of memory, CPU and speedup improvement across new Csmith programs. For each non-functional property, we apply O2, O3 and best NS sequences. Speedup results show that the three optimization strategies lead to almost the same distribution with a median value of 1.12 for speedup. This can be explained by the fact that NS needs too long time to find the sequence that best optimize the execution speed. Meanwhile, O2 and O3 have also the same impact on CR and MR which is almost the same for both levels (CR median value is 8\% and around 5\% for MR).
 However, the impact of applying best generated sequences using NS clearly outperforms O2 and O3 with almost 10\% of CPU improvement and 7\% of memory improvement. This proves that NS sequences are efficient and can be used to optimize resource consumption of new Csmith programs. This result also proves that Csmith code generator applies the same rules and structures to generate C code. For this reason, applied optimization sequences always have a positive impact on the non-functional properties.
 
 
@@ -108,7 +108,7 @@ In this experiment, we use NOTICE to provide an understanding of optimizations b
 %	\caption{Evaluating the speedup after applying standard optimization options compared to best generated optimization using NS}
 %\end{figure}
 Figure 7 shows the impact of speedup optimization on resource consumption. For instance, O2 and O3 that led to the best speedup improvement among standard optimization levels in RQ1, present opposite impact on resource usage. Applying O2 induces -8.4\% of MR and -5\% of CR. However, applying O3 improves MR and CR respectively by 3.4\% and 4.2\%. Hence, we note that when applying standard levels, there is no clear correlation between speedup and resource usage since compiler optimizations are generally used to optimize the execution speed and never evaluated to reduce system resources.
-On the other hand, the outcome of applying different mono-objective algorithms for speedup optimization also proves that resource consumption is always in conflict with execution speed. The highest MR and CR is reached using NS with respectively 1.2\% and 5.4\%. This improvement is considerably low compared to scores reached when we have applied resource usage metrics as key objectives in RQ1 (i.e., 15.6\% for MR and 23.5\% for CR). Furthermore, we note also that generated sequences using RS and GA have a high impact on system resources since all resource usage values are worst than the baseline.
+On the other hand, the outcome of applying different mono-objective algorithms for speedup optimization also proves that resource consumption is always in conflict with execution speed. The highest MR and CR is reached using NS with respectively 1.2\% and 5.4\%. This improvement is considerably low compared to scores reached when we have applied resource usage metrics as key objectives in RQ1 (i.e., 15.6\% for MR and 23.5\% for CR). Furthermore, we note that generated sequences using RS and GA have a high impact on system resources since all resource usage values are worse than the baseline.
 These results agree to the idea that compiler optimizations do not put too much emphasis on the trade-off between execution time and resource consumption.
 
 %Thus, NOTICE can clearly provide an alternative to catch most relevant optimization sequence regarding resource consumptions.
@@ -118,7 +118,7 @@ These results agree to the idea that compiler optimizations do not put too much 
 %Using O2, we find that the memory consumption has increased by almost 8.4\% compared to the baseline. Same findings for CR when applying O1, O2 and Ofast. 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\linewidth]{Ressources/rq3.png}
+	\includegraphics[width=1\linewidth]{Ressources/rq3.pdf}
 	\caption{Impact of speedup improvement on memory and CPU consumption for each optimization strategy}
 \end{figure}
 
@@ -143,7 +143,7 @@ The goal of this experiment is to check whether it exists, or not, a sequence th
 
 
 \paragraph{Results}
-Figure 8 visualizes the Pareto optimal solutions that achieved the best performance assessment for the trade-off \textit{$<$ExecutionTime--MemoryUsage$>$}. The horizontal axis indicates the memory usage in raw data (in Bytes) as it is collected using NOTICE. In similar fashion, the vertical axis shows the execution time in seconds. Furthermore, the figure shows the impact of applying standard GCC options and best NS sequences on memory and execution time. Based on these results, we can see that NSGA-II performs better than NS-II. In fact, NSGA-II yields to the best set of solutions that presents the optimal trade-off between the two objectives. Then, it is up to compiler users to use one solution from this Pareto front that satisfies his non-functional requirements (6 solutions for NSGA-II and 5 for NS-II). For example, he could choose one solution that maximizes the execution speed in favor of memory reduction. On the other side, NS-II is capable to generate only one non-dominated solution. For NS-MR, it reduces as expected the memory consumption compared to other optimization levels. The same effect on execution time when applying the best speedup sequence NS-S. We note also that all standard GCC levels are dominated by our different heuristics NS-II, NSGA-II, NS-S and NS-MR.
+Figure 8 shows the Pareto optimal solutions that achieved the best performance assessment for the trade-off \textit{$<$ExecutionTime--MemoryUsage$>$}. The horizontal axis indicates the memory usage in raw data (in Bytes) as it is collected using NOTICE. In similar fashion, the vertical axis shows the execution time in seconds. Furthermore, the figure shows the impact of applying standard GCC options and best NS sequences on memory and execution time. Based on these results, we can see that NSGA-II performs better than NS-II. In fact, NSGA-II yields to the best set of solutions that presents the optimal trade-off between the two objectives. Then, it is up to compiler user to use one solution from this Pareto front that satisfies his non-functional requirements (six solutions for NSGA-II and five for NS-II). For example, he could choose one solution that maximizes the execution speed in favor of memory reduction. On the other side, NS-II is capable to generate only one non-dominated solution. For NS-MR, it reduces as expected the memory consumption compared to other optimization levels. The same effect on execution time when applying the best speedup sequence NS-S. We also note that all standard GCC levels are dominated by our different heuristics NS-II, NSGA-II, NS-S and NS-MR.
 This agrees to the claim that standard compiler levels do not present a suitable trade-off between execution time and memory usage.
 
 
@@ -152,7 +152,7 @@ This agrees to the claim that standard compiler levels do not present a suitable
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\linewidth]{Ressources/pareto.png}
+	\includegraphics[width=0.9\linewidth]{Ressources/pareto.pdf}
 	\caption{Comparison results of obtained Pareto fronts using NSGA-II and NS-II}
 \end{figure}
 
@@ -164,8 +164,9 @@ This agrees to the claim that standard compiler levels do not present a suitable
 -- NSGA-II performs better than our NS adaptation for multi-objective optimization. However, NS-II performs clearly better than standard GCC optimizations and previously discovered sequences in RQ1.
 }}
 \subsection{Discussions}
-Through these experimental results, we can conclude that NOTICE provides facilities to compiler users to find non-functional trade-offs. Searching for best optimization sequences can be conducted either through a mono-objective or multi-objective search. It really depends on the non-functional requirements of compiler users. NOTICE infrastructure has shown its capability and scalability to satisfy user requirements and key objectives in order to produce efficient code in terms of non-functional properties. During all experiments, standard optimization levels have been fairly outperformed by our different heuristics. Thus, compiler users can use NOTICE to build their specific sequences without worrying about the impact of GCC levels which might be, in some cases, greedy in terms of resource usage.
-We would notice that for RQ1, experiments take about 21 days to run all algorithms. These optimization time might seem long. However, it should be noted that this search can be conducted only once, since in RQ2, we show that best gathered optimizations can be used with unseen programs of the same category as the training set, used to generate optimizations. This has to be proved with other case studies. As an alternative, it would be great to test model-based code generators. In the same fashion as Csmith, code generators apply to same rules to generate new software programs. Thus, we can use NOTICE to define general-purpose optimizations from a set of generated code artifacts. 
+Through these experimental results, we show that NOTICE is able to provide facilities to compiler users to test the impact of compiler optimizations on the non-functional properties of generated code. It provides also a search engine for best optimization sequences through mono-objective and multi-objective search algorithms. NOTICE infrastructure has shown its capability and scalability to satisfy user requirements and key objectives in order to produce efficient code in terms of non-functional properties. During all experiments, standard optimization levels have been fairly outperformed by our different heuristics. 
+Moreover, we have also shown (in RQ1 and RQ3) that optimizing for performance may be, in some cases, greedy in terms of resource usage. For example, the impact of standard optimization levels on resource usage is not always efficient even though it leads to performance improvement. 
+Thus, compiler users would use NOTICE to test the impact of optimizations on the non-functional properties and build their specific sequences by trying to find trade-offs among these non-functional properties (RQ4). We would notice that for RQ1, experiments take about 21 days to run all algorithms. This run time might seem long but, it should be noted that this search can be conducted only once, since in RQ2 we showed that best gathered optimizations can be used with unseen programs of the same category as the training set, used to generate optimizations. This has to be proved with other case studies. As an alternative, it would be great to test model-based code generators. In the same fashion as Csmith, code generators apply to same rules to generate new software programs. Thus, we can use NOTICE to define general-purpose optimizations from a set of generated code artifacts. 
 Multi-objective search as conducted in RQ4, takes about 48 hours, which we believe is acceptable for practical use. Nevertheless, speeding up the search speed may be an interesting feature for future research.
 %good performance to detect most of the existing antipatterns, which
 %could be very helpful to provide advice to both service clients and
@@ -180,7 +181,7 @@ Any automated approach has limitations. We resume, in the following paragraphs, 
  
 \textit{External validity} refers to the generalizability of our findings. In this study, we perform experiments on random programs using Csmith and we use iterative compilation techniques to produce best optimization sequences. We believe that the use of Csmith programs as input programs is very relevant because compilers have been widely tested across Csmith programs~\cite{chen2016empirical,yang2011finding}. Csmith programs has been used only for functional testing, but not for non-functional testing. However, we cannot assert that the best discovered set of optimizations can be generalized to industrial applications since optimizations are highly dependent on input programs and on the target architecture. In fact, experiments conducted on RQ1 and RQ2 should be replicated to other case studies to confirm our findings; and build general optimization sequences from other representative training set programs chosen by compilers users.
 
-\textit{Internal validity} is concerned with the causal relationship between the treatment and the outcome. Meta-heuristic algorithms are stochastic optimizers, they can provide different results for the same problem instance from one run to another. Are we providing a statistically sound method? or it is just a random result. Due to time constraints, we run all experiments only once. Following the state-of-the-art approaches in iterative compilation, previous research efforts~\cite{hoste2008cole,martinez2014multi} did not provide statistical tests to prove the effectiveness of their approaches. This is because experiments are time consuming. However, we can deal with these internal threats to validity by performing at least 5 independent simulation runs for each problem instance.  
+\textit{Internal validity} is concerned with the causal relationship between the treatment and the outcome. Meta-heuristic algorithms are stochastic optimizers, they can provide different results for the same problem instance from one run to another. Are we providing a statistically sound method? or it is just a random result. Due to time constraints, we run all experiments only once. Following the state-of-the-art approaches in iterative compilation, previous research efforts~\cite{hoste2008cole,martinez2014multi} did not provide statistical tests to prove the effectiveness of their approaches. This is because experiments are time-consuming. However, we can deal with these internal threats to validity by performing at least five independent simulation runs for each problem instance.  
  
  
 \iffalse

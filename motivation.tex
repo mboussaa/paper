@@ -1,6 +1,6 @@
 \section{Motivation}
 \subsection{Compiler Optimizations}
-In the past, researchers have shown that the choice of optimization sequences may impact software performance~\cite{almagor2004finding,chen2012deconstructing}. 
+In the past, researchers have shown that the choice of optimization sequences may influence software performance~\cite{almagor2004finding,chen2012deconstructing}. 
 As a consequence, software-performance optimization becomes a key objective for both software industries and developers, which are often willing to pay additional costs to meet specific performance goals, especially for resource-constrained systems.
 
 Universal and predefined sequences, \eg, O1 to O3 in GCC, may not always produce good performance results and may be highly dependent on the benchmark and the source code they have been tested on~\cite{hoste2008cole,chen2010evaluating,escobar2015evaluation}.
@@ -12,13 +12,16 @@ Thus, finding the optimal optimization combination for an input source code is a
 Many approaches~\cite{hoste2008cole,martins2014exploration} have attempted to solve this optimization selection problem using techniques such as Genetic Algorithms (GAs), machine learning techniques, etc.
 
 %problem
-It is important to notice that performing optimizations to source code can be so expensive at the expense of resource usage and may induce to compiler bugs or crashes. 
+It is important to notice that performing optimizations to source code can be so expensive at the expense of resource usage and may induce compiler bugs or crashes. 
 %With the increasing of resource usage, it is important to evaluate the compiler behavior. 
 Indeed, in a resource-constrained environment and because of insufficient resources, compiler optimizations can even lead to memory leaks or execution crashes~\cite{yang2011finding}. 
-Thus, a fine-grained understanding of resource consumption and analysis of compilers behavior regarding optimizations becomes necessary to ensure the efficiency of generated code.
+Thus, it becomes necessary to test the non-functional properties of optimized code and check its behavior regarding optimizations that can lead to performance improvement or regression.
+
+%a fine-grained understanding of resource consumption and analysis of compilers behavior regarding optimizations become necessary to ensure the efficiency of generated code.
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\linewidth]{Ressources/autotuning.png}
+	\includegraphics[width=0.9\linewidth]{Ressources/autotuning.pdf}
 	\caption{Process of compiler optimizations exploration}
 	
 \end{figure}
@@ -31,10 +34,10 @@ GCC exposes its various optimizations via a number of flags that can be turned o
 % In next section, we present a search-based technique called Novelty Search for automatic generation of optimization sequences.
 
 For instance, version 4.8.4 provides a wide range of command-line options that can be enabled or disabled, including more than 150 options for optimization. The diversity of available optimization options makes the design space for optimization level very huge, increasing the need for heuristics to explore the search space of feasible optimization sequences.
-For instance, we count 76 optimization flags that are enabled by the 4 default optimization levels (O1, O2, O3, Ofast). 
-In fact, O1 reduces code size and execution time without performing any optimization that reduces the compilation time. It turns on 32 flags. 
-O2 increases both compilation time and the performance of generated code. It turns on all optimization flags specified by O1 plus 35 other options. 
-O3 is more aggressive level which enables all O2 options plus 8 more optimizations. 
+For instance, we count 76 optimization flags that are enabled by the four default optimization levels (O1, O2, O3, Ofast). 
+In fact, O1 reduces the code size and execution time without performing any optimization that reduces the compilation time. It turns on 32 flags. 
+O2 increases the compilation time and reduces the execution time of generated code. It turns on all optimization flags specified by O1 plus 35 other options. 
+O3 is more aggressive level which enables all O2 options plus eight more optimizations. 
 Finally, Ofast is the most aggressive level which enables optimizations that are not valid for all standard-compliant programs. It turns on all O3 optimizations plus one more aggressive optimization. 
 %For example, in GCC, we can distinguish optimization levels from O1 to O3. Each optimization level involves a fixed list of compiler optimization options
 This results in a huge space with $2^{76}$ possible optimization combinations. The full list of optimizations is available here~\cite{mboussaa}.
