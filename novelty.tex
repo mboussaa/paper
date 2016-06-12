@@ -10,21 +10,21 @@ In our approach, we study the use of the Novelty Search (NS) technique to identi
 
 In this work, we aim at providing a new alternative for choosing effective compiler optimization options compared to the state of the art approaches. 
 In fact, since the search space of possible combinations is too large, we aim at using a new search-based technique called Novelty Search~\cite{lehman2008exploiting} to tackle this issue. 
-The idea of this technique is to explore the search space of possible compiler flag options by considering sequences diversity as a single objective. 
+The idea of this technique is to explore the search space of possible compiler flag options by considering sequence diversity as a single objective. 
 Instead of having a fitness-based selection that maximizes one of the non-functional objectives, we select optimization sequences based on a novelty score showing how different they are compared to all other combinations evaluated so far. 
-We claim that the search toward effective optimization sequences is not straightforward since the interactions between optimizations is too complex and difficult to define. 
+We claim that the search towards effective optimization sequences is not straightforward since the interactions between optimizations is too complex and difficult to define. 
 For instance, in a previous work~\cite{chen2012deconstructing}, Chen et al. showed that handful optimizations may lead to higher performance than other techniques of iterative optimization. 
 In fact, the fitness-based search may be trapped into some local optima that cannot escape. 
-This phenomenon is known as \textit{"diversity loss"}. For example, if the most effective optimization sequence that induces less execution time, lies far from the search space defined by the gradient of the fitness function, then some promising search areas may not be reached. 
+This phenomenon is known as \textit{"diversity loss"}. For example, if the most effective optimization sequence that induces less execution time lies far from the search space defined by the gradient of the fitness function, then some promising search areas may not be reached. 
 The issue of premature convergence to local optima has been a common problem in evolutionary algorithms. 
 Many methods are proposed to overcome this problem~\cite{banzhaf1996effect}. 
 However, all these efforts use a fitness-based selection to guide the search. Considering diversity as the unique objective function to be optimized may be a key solution to this problem.
-Therefore, during the evolutionary process, we select optimization sequences that remain in sparse regions of the search space in order to guide the search toward novelty. 
+Therefore, during the evolutionary process, we select optimization sequences that remain in sparse regions of the search space in order to guide the search towards novelty. 
 In the meantime, we choose to gather non-functional metrics of explored sequences such as memory consumption. 
 We describe in more details the way we are collecting these non-functional metrics in section 4.
 
 Generally, NS acts like GAs (Example of GA use in  \cite{cooper2002adaptive}). However, NS needs extra changes. First, a new novelty metric is required to replace the fitness function. Then, an archive must be added to the algorithm, which is a kind of a database that remembers individuals that were highly novel when they were discovered in past generations. 
-Algorithm~\ref{algo:search} describes the overall idea of our NS adaptation. The algorithm takes as input a source code program and a list of optimizations. We initialize first the novelty parameters and create a new archive with limit size L (line 1 \& 2). In this example, we gathered information about memory consumption. In line 3 \& 4, we compile and execute the input program without any optimization (O0). Then, we measure the resulting memory consumption. By doing so, we will be able to compare it to the memory consumption of new generated solutions. The best solution is the one that yields to the lowest memory consumption compared to O0 usage.
+Algorithm~\ref{algo:search} describes the overall idea of our NS adaptation. The algorithm takes as input a source code program and a list of optimizations. We initialize first the novelty parameters and create a new archive with limit size L (lines 1 \& 2). In this example, we gathered information about memory consumption. In lines 3 \& 4, we compile and execute the input program without any optimization (O0). Then, we measure the resulting memory consumption. By doing so, we will be able to compare it to the memory consumption of new generated solutions. The best solution is the one that yields to the lowest memory consumption compared to O0 usage.
 Before starting the evolutionary process, we generate an initial population with random sequences. Line 6-21 encode the main NS loop, which searches for the best sequence in terms of memory consumption. For each sequence in the population, we compile the input program, execute it and evaluate the solution by calculating the average distance from its k-nearest neighbors. Sequences that get a novelty metric higher than the novelty threshold T are added to the archive. T defines the threshold for how novel a sequence has to be before it is added to the archive. In the meantime, we check if the optimization sequence yields to the lowest memory consumption so that, we can consider it as the best solution. Finally, genetic operators
 (mutation and crossover) are applied afterwards to fulfill the next population. This process is iterated until reaching the maximum number of evaluations.
 
@@ -76,8 +76,8 @@ Before starting the evolutionary process, we generate an initial population with
 For our case study, a candidate solution represents all compiler switches that are used in the four standard optimization levels (O1, O2, O3 and Ofast). Thereby, we represent this solution as a vector where each dimension is a compiler flag. 
 The variables that represent compiler options are represented as genes in a chromosome. 
 Thus, a solution represents the CFLAGS value used by GCC to compile programs.
-A solution has always the same size which corresponds to the total number of involved flags. 
-However, during the evolutionary process, these flags are turned on or off depending on the mutation and crossover operators (see example in figure 2). As well, we keep the same order of invoking compiler flags since that does not affect the optimization process and it is handled internally by GCC.
+A solution has always the same size, which corresponds to the total number of involved flags. 
+However, during the evolutionary process, these flags are turned on or off depending on the mutation and crossover operators (see example in Figure 2). As well, we keep the same order of invoking compiler flags since that does not affect the optimization process and it is handled internally by GCC.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\hsize]{Ressources/individual.png}
