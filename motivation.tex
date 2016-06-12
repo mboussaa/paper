@@ -1,10 +1,10 @@
 \section{Motivation}
 \subsection{Compiler Optimizations}
 In the past, researchers have shown that the choice of optimization sequences may influence software performance~\cite{almagor2004finding,chen2012deconstructing}. 
-As a consequence, software-performance optimization becomes a key objective for both software industries and developers, which are often willing to pay additional costs to meet specific performance goals, especially for resource-constrained systems.
+As a consequence, software-performance optimization becomes a key objective for both, software industries and developers, which are often willing to pay additional costs to meet specific performance goals, especially for resource-constrained systems.
 
 Universal and predefined sequences, \eg, O1 to O3 in GCC, may not always produce good performance results and may be highly dependent on the benchmark and the source code they have been tested on~\cite{hoste2008cole,chen2010evaluating,escobar2015evaluation}.
-Indeed, each one of these optimizations interacts with the code and in turn with all other optimizations in complicated ways. Similarly, code transformations can either create or eliminate opportunities for other transformations and it is quite difficult for users to predict the effectiveness of optimizations on their source code program.
+Indeed, each one of these optimizations interacts with the code and in turn, with all other optimizations in complicated ways. Similarly, code transformations can either create or eliminate opportunities for other transformations and it is quite difficult for users to predict the effectiveness of optimizations on their source code program.
 As a result, most software engineering programmers that are not familiar with compiler optimizations find difficulties to select effective optimization sequences~\cite{almagor2004finding}.
 
 To explore the large optimization space, users have to evaluate the effect of optimizations according to a specific performance objective (see Figure 1). Performance can depend on different properties such as execution time, compilation time, resource consumption, code size, etc.
@@ -12,9 +12,9 @@ Thus, finding the optimal optimization combination for an input source code is a
 Many approaches~\cite{hoste2008cole,martins2014exploration} have attempted to solve this optimization selection problem using techniques such as Genetic Algorithms (GAs), machine learning techniques, etc.
 
 %problem
-It is important to notice that performing optimizations to source code can be so expensive at the expense of resource usage and may induce compiler bugs or crashes. 
+It is important to notice that performing optimizations to source code can be so expensive at resource usage that it may induce compiler bugs or crashes. 
 %With the increasing of resource usage, it is important to evaluate the compiler behavior. 
-Indeed, in a resource-constrained environment and because of insufficient resources, compiler optimizations can even lead to memory leaks or execution crashes~\cite{yang2011finding}. 
+Indeed, in a resource-constrained environment and because of insufficient resources, compiler optimizations can lead to memory leaks or execution crashes~\cite{yang2011finding}. 
 Thus, it becomes necessary to test the non-functional properties of optimized code and check its behavior regarding optimizations that can lead to performance improvement or regression.
 
 %a fine-grained understanding of resource consumption and analysis of compilers behavior regarding optimizations become necessary to ensure the efficiency of generated code.
@@ -22,7 +22,7 @@ Thus, it becomes necessary to test the non-functional properties of optimized co
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Ressources/autotuning.pdf}
-	\caption{Process of compiler optimizations exploration}
+	\caption{Process of compiler optimization exploration}
 	
 \end{figure}
 
