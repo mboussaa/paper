@@ -15,7 +15,7 @@ In this experiment, we choose to optimize for execution time (S), memory usage (
 \end{figure}
 
 \setlength\abovecaptionskip{0.25ex}
-As it is shown on the left-hand side of figure 5, given a list of optimizations and a performance objective, we use NOTICE to search for the best optimization sequence across a set of input programs that we call \textit{"the training set"}. Thus, we generate a set of random Csmith programs \textit{"the training set"} (10 programs) and apply generated sequences to these programs. Therefore, the code quality metric, in this setting, is equal to the average performance improvement (S, MR or CR) and that, for all programs under test. 
+As it is shown on the left-hand side of Figure 5, given a list of optimizations and a performance objective, we use NOTICE to search for the best optimization sequence across a set of input programs that we call \textit{"the training set"}. Thus, we generate a set of random Csmith programs \textit{"the training set"} (10 programs) and apply generated sequences to these programs. Therefore, the code quality metric, in this setting, is equal to the average performance improvement (S, MR or CR) and that, for all programs under test. 
 
 %while p
 %the goal of this initial experiment is to: (1) evaluate the effectiveness of our component-based infrastructure to extract non-functional properties such as memory and CPU consumptions; (2) evaluate the performance of our proposed diversity-based exploration of optimization sequences (NS) to GA and RS; and finally (3) find the optimal solution relative to the input training set.
@@ -69,7 +69,7 @@ We remark as well that applying standard optimizations has an impact on the exec
 \subsubsection{RQ2. Sensitivity}
 \paragraph{Method}
 Another interesting experiment is to test the sensitivity of input programs to compiler optimizations and evaluate the general applicability of best optimal optimization sets, previously discovered in RQ1. These sequences correspond to the best generated sequences using NS for the three non-functional properties S, MR and CR (i.e., sequences obtained in column 8 of Table 3). 
-Thus, we apply best discovered optimizations to new unseen Csmith (100 new random programs) and we compare then, the performance improvement across these programs (see right-hand side of figure 5). We also apply standard optimizations, O2 and O3, to new Csmith programs in order to compare the performance results.
+Thus, we apply best discovered optimizations to new unseen Csmith (100 new random programs) and we compare then, the performance improvement across these programs (see right-hand side of Figure 5). We also apply standard optimizations, O2 and O3, to new Csmith programs in order to compare the performance results.
 The idea of this experiment is to test whether new generated Csmith programs are sensitive to previously discovered optimizations or not. 
 %If so, then compiler users and researchers can use NOTICE to auto-tune compilers and build optimizations for their input programs. 
 %in order to build general optimization sequences from their representative
