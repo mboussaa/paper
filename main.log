@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  14 JUN 2016 13:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  14 JUN 2016 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -509,7 +509,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]) (./motivation.tex
-<Ressources/autotuning.pdf, id=12, 359.3425pt x 114.4275pt>
+<Ressources/autotuning.pdf, id=11, 359.3425pt x 114.4275pt>
 File: Ressources/autotuning.pdf Graphic file (type pdf)
 
 <use Ressources/autotuning.pdf>
@@ -637,11 +637,11 @@ Before submitting the final camera ready copy, remember to:
 
 [12] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 7486 strings out of 493308
- 107605 string characters out of 6137815
+ 7487 strings out of 493308
+ 107612 string characters out of 6137815
  316604 words of memory out of 5000000
  10776 multiletter control sequences out of 15000+600000
- 48247 words of font info for 93 fonts, out of 8000000 for 9000
+ 49343 words of font info for 94 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  42i,11n,42p,1626b,1217s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.
@@ -659,7 +659,7 @@ live/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/
 texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 1495633 bytes).
+Output written on main.pdf (12 pages, 1498280 bytes).
 PDF statistics:
  464 PDF objects out of 1000 (max. 8388607)
  302 compressed objects within 4 object streams
