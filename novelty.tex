@@ -24,7 +24,7 @@ In the meantime, we choose to gather non-functional metrics of explored sequence
 We describe in more details the way we are collecting these non-functional metrics in section 4.
 
 Generally, NS acts like GAs (Example of GA use in  \cite{cooper2002adaptive}). However, NS needs extra changes. First, a new novelty metric is required to replace the fitness function. Then, an archive must be added to the algorithm, which is a kind of a database that remembers individuals that were highly novel when they were discovered in past generations. 
-Algorithm~\ref{algo:search} describes the overall idea of our NS adaptation. The algorithm takes as input a source code program and a list of optimizations. We initialize first the novelty parameters and create a new archive with limit size L (lines 1 \& 2). In this example, we gathered information about memory consumption. In lines 3 \& 4, we compile and execute the input program without any optimization (O0). Then, we measure the resulting memory consumption. By doing so, we will be able to compare it to the memory consumption of new generated solutions. The best solution is the one that yields to the lowest memory consumption compared to O0 usage.
+Algorithm~\ref{algo:search} describes the overall idea of our NS adaptation. The algorithm takes as input a source code program and a list of optimizations. We initialize first the novelty parameters and create a new archive with limit size L (lines 1 \& 2). In this example, we gather information about memory consumption. In lines 3 \& 4, we compile and execute the input program without any optimization (O0). Then, we measure the resulting memory consumption. By doing so, we will be able to compare it to the memory consumption of new generated solutions. The best solution is the one that yields to the lowest memory consumption compared to O0 usage.
 Before starting the evolutionary process, we generate an initial population with random sequences. Line 6-21 encode the main NS loop, which searches for the best sequence in terms of memory consumption. For each sequence in the population, we compile the input program, execute it and evaluate the solution by calculating the average distance from its k-nearest neighbors. Sequences that get a novelty metric higher than the novelty threshold T are added to the archive. T defines the threshold for how novel a sequence has to be before it is added to the archive. In the meantime, we check if the optimization sequence yields to the lowest memory consumption so that, we can consider it as the best solution. Finally, genetic operators
 (mutation and crossover) are applied afterwards to fulfill the next population. This process is iterated until reaching the maximum number of evaluations.
 
@@ -33,7 +33,7 @@ Before starting the evolutionary process, we generate an initial population with
 \algsetup{linenosize=\tiny}
   \footnotesize
   %footnotesize
-	\caption{Novelty search algorithm for compiler optimizations exploration}
+	\caption{Novelty search algorithm for compiler optimization exploration}
 	\label{algo:search}
 	\begin{algorithmic}[1]
 	
@@ -90,11 +90,11 @@ The Novelty metric expresses the sparseness of an input optimization sequence. I
 We can quantify the sparseness of a solution as the average distance to the k-nearest neighbors. 
 If the average distance to a given point's nearest neighbors is large then it belongs to a sparse area and will get a high novelty score. 
 Otherwise, if the average distance is small so it belongs certainly to a dense region then it will get a low novelty score. 
-The distance between two sequences is computed as the total number of symmetric differences among optimization options. Formally, we define this distance as follows :
+The distance between two sequences is computed as the total number of symmetric differences among optimization sequences. Formally, we define this distance as follows :
 \begin{equation}
 distance(S1,S2)=\left | S1 \bigtriangleup S2 \right |
 \end{equation}
-where $S1$ and $S2$ are two selected optimization sequences (solutions). The distance value is equal to 0 if two optimization sequences are similar and higher than 0 if there is at least one optimization difference. The maximum distance value is equal to the total number of input flags.
+where $S1$ and $S2$ are two selected optimization sequences (solutions). The distance value is equal to 0 if the two optimization sequences are similar and higher than 0 if there is at least one optimization difference. The maximum distance value is equal to the total number of input flags.
 
 To measure the sparseness of a solution, we use the previously defined distance to compute the average distance of a sequence to its k-nearest neighbors. In this context, we define the novelty metric of a particular solution as follows:
 \begin{equation}
@@ -106,4 +106,4 @@ where $\mu _{i}$ is the $i^{th}$ nearest neighbor of the solution S within the p
 A multi-objective approach provides a trade-off between two objectives where the developers can select their desired solution from the Pareto-optimal front. The idea of this approach is to use multi-objective algorithms to find trade-offs between non-functional properties of generated code such as \textit{$<$ExecutionTime--MemoryUsage$>$}. The correlations we are trying to investigate are more related to the trade-offs between resource consumption and execution time.
   
 For instance, NS can be easily adapted to multi-objective problems. In this adaptation, the SBSE formulation remains the same as described in Algorithm 1. However, in order to evaluate the new discovered solutions, we have to consider two main objectives and add the non-dominated solutions to the Pareto non-dominated set. We apply the Pareto dominance relation to find solutions that are not Pareto dominated by any other solution discovered so far, like in NSGA-II~\cite{lokuciejewski2010multi, deb2002fast}. Then, this Pareto non-dominated set is returned as a result.
-There is typically more than one optimal solution at the end of NS. The maximum size of the final Pareto set is limited by the size of the initial population.
+There is typically more than one optimal solution at the end of NS. The maximum size of the final Pareto set cannot exceed the size of the initial population.

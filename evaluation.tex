@@ -1,7 +1,7 @@
 \section{Evaluation}
-So far, we have presented a sound procedure and automated component-based framework for extracting non-functional properties of generated code. In this section, we evaluate the implementation of our approach by explaining the design of our empirical study; the research questions we set out to answer and different methods we used to answer these questions. The experimental material is available for replication purposes\footnote{https://noticegcc.wordpress.com/}.
+So far, we have presented a sound procedure and automated component-based framework for extracting the non-functional properties of generated code. In this section, we evaluate the implementation of our approach by explaining the design of our empirical study; the research questions we set out to answer and different methods we used to answer these questions. The experimental material is available for replication purposes\footnote{https://noticegcc.wordpress.com/}.
 
-\subsection{Research questions}
+\subsection{Research Questions}
 Our experiments aim at answering the following research questions:
 
 \textbf{RQ1: Mono-objective SBSE Validation.} 
@@ -64,7 +64,7 @@ Selected Csmith programs are described in more details at~\cite{mboussaa}.
 \subsubsection{Parameters Tuning}
 %Our experiments use the classical NS algorithm, where we evolve a set of optimization sequences through generations.
 An important aspect for meta-heuristic search algorithms lies in the parameters tuning and selection, which are necessary to ensure not only fair comparison, but also for potential replication.
-NOTICE implements three mono-objective search algorithms (NS, RS, and GA~\cite{cooper2002adaptive}) and two multi-objective optimizations (NS and NSGA-II~\cite{deb2002fast}). Each initial population/solution of different algorithms is completely random. The stopping criterion is when the maximum number of fitness evaluations is reached.
+NOTICE implements three mono-objective search algorithms (Random Search (RS), NS, and GA~\cite{cooper2002adaptive}) and two multi-objective optimizations (NS and NSGA-II~\cite{deb2002fast}). Each initial population/solution of different algorithms is completely random. The stopping criterion is when the maximum number of fitness evaluations is reached.
 The resulting parameter values are listed in Table 2. The same parameter settings are applied to all algorithms under comparison.
 
 NS, which is our main concern in this work, is implemented as described in Section 3. During the evolutionary process, each solution is evaluated using the novelty metric. Novelty is calculated for each solution by taking the mean of its 15 nearest optimization sequences in terms of similarity (considering all sequences in the current population and in the archive). Initially, the archive is empty. Novelty distance is normalized in the range [0-100].
@@ -104,7 +104,7 @@ For mono-objective algorithms, we use to evaluate solutions using the following 
 
 %-\textit{Hypervolume (HV)}: corresponds to the proportion of objective space that is dominated by the Pareto front approximation returned by the algorithm and delimited by a reference point. The HV reference point is the point obtained by taking the maximum value observed. Thus, the HV metric can be computed as the area between the Pareto frontier and the HV reference point. Larger values for this metric mean better performance. The most interesting features of this indicator are its Pareto dominance compliance and its ability to capture both convergence and diversity~\cite{deb2001multi}. 
 
-\subsubsection{Setting up infrastructure}
+\subsubsection{Setting up Infrastructure}
 To answer the previous research questions, we configure NOTICE to run different experiments. Figure 4 shows a big picture of the testing and monitoring infrastructure considered in these experiments. 
 First, a meta-heuristic (mono or multi-objective) is applied to generate specific optimization sequences for the GCC compiler (step 1). During all experiments, we use GCC 4.8.4, as it is introduced in the motivation section, although it is possible to choose another compiler version using NOTICE since the process of optimizations extraction is done automatically. 
 Then, we generate a new optimized code and deploy the output binary within a new instance of our preconfigured Docker image (step 2). While executing the optimized code inside the container, we collect runtime performance data (step 4) and record it in a new time-series database using our InfluxDB back-end container (step 5). Next, NOTICE accesses remotely to stored data in InfluxDB using REST API calls and assigns new performance values to the current solution (step 6). The choice of performance metrics depends on experiment objectives (Memory improvement, speedup, etc.).

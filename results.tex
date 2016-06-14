@@ -4,7 +4,7 @@ In the following paragraphs, we report the methodology and results of our experi
 \subsubsection{RQ1. Mono-objective SBSE Validation}
 \paragraph{Method}
 
-To answer the first research question RQ1, we conduct a mono-objective search for compiler optimization exploration in order to evaluate the non-functional properties of optimized code. Thus, we generate optimization sequences using three search-based techniques (Random Search RS, GA, and NS) and compare their performance results to standard GCC optimization levels (O1, O2, O3 and Ofast). 
+To answer the first research question RQ1, we conduct a mono-objective search for compiler optimization exploration in order to evaluate the non-functional properties of optimized code. Thus, we generate optimization sequences using three search-based techniques (RS, GA, and NS) and compare their performance results to standard GCC optimization levels (O1, O2, O3, and Ofast). 
 In this experiment, we choose to optimize for execution time (S), memory usage (MR), and CPU consumption (CR). Each non-functional property is improved separately and independently of other metrics. We recall that other properties can be also optimized using NOTICE (e.g., code size, compilation time, etc.), but in this experiment, we focus only on three properties.
 \vspace{-1em}
 \begin{figure}[h]
@@ -15,7 +15,7 @@ In this experiment, we choose to optimize for execution time (S), memory usage (
 \end{figure}
 
 \setlength\abovecaptionskip{0.25ex}
-As it is shown on the left side of Figure 5, given a list of optimizations and a performance objective, we use NOTICE to search for the best optimization sequence across a set of input programs that we call \textit{"the training set"}. Then, we generate a set of random Csmith programs \textit{"the training set"} (10 programs) and apply generated sequences to these programs. Therefore, the code quality metric, in this setting, is equal to the average performance improvement (S, MR, or CR) and that, for all programs under test. 
+As it is shown on the left side of Figure 5, given a list of optimizations and a non-functional objective, we use NOTICE to search for the best optimization sequence across a set of input programs that we call \textit{"the training set"}. This \textit{"training set"} is composed of random Csmith programs (10 programs). We apply then generated sequences to these programs. Therefore, the code quality metric, in this setting, is equal to the average performance improvement (S, MR, or CR) and that, for all programs under test. 
 
 %while p
 %the goal of this initial experiment is to: (1) evaluate the effectiveness of our component-based infrastructure to extract non-functional properties such as memory and CPU consumptions; (2) evaluate the performance of our proposed diversity-based exploration of optimization sequences (NS) to GA and RS; and finally (3) find the optimal solution relative to the input training set.
@@ -69,7 +69,7 @@ We remark as well that applying standard optimizations has an impact on the exec
 \subsubsection{RQ2. Sensitivity}
 \paragraph{Method}
 Another interesting experiment is to test the sensitivity of input programs to compiler optimizations and evaluate the general applicability of best optimal optimization sets, previously discovered in RQ1. These sequences correspond to the best generated sequences using NS for the three non-functional properties S, MR and CR (i.e., sequences obtained in column 8 of Table 3). 
-Thus, we apply best discovered optimizations to new unseen Csmith (100 new random programs) and we compare then, the performance improvement across these programs (see right-hand side of Figure 5). We also apply standard optimizations, O2 and O3, to new Csmith programs in order to compare the performance results.
+Thus, we apply best discovered optimizations in RQ1 to new unseen Csmith (100 new random programs) and we compare then, the performance improvement across these programs (see right side of Figure 5). We also apply standard optimizations, O2 and O3, to new Csmith programs in order to compare the performance results.
 The idea of this experiment is to test whether new generated Csmith programs are sensitive to previously discovered optimizations or not. 
 %If so, then compiler users and researchers can use NOTICE to auto-tune compilers and build optimizations for their input programs. 
 %in order to build general optimization sequences from their representative
@@ -81,7 +81,7 @@ If so, this will be useful for compiler users and researchers to use NOTICE in o
 	\caption{Boxplots of the obtained performance results across 100 unseen Csmith programs, for each non-functional property: Speedup (S), memory (MR) and CPU (CR) and for each optimization strategy: O2, O3 and NS}
 \end{figure}
 \paragraph{Results}
-Figure 6 shows the distribution of memory, CPU and speedup improvement across new Csmith programs. For each non-functional property, we apply O2, O3 and best NS sequences. Speedup results show that the three optimization strategies lead to almost the same distribution with a median value of 1.12 for speedup. This can be explained by the fact that NS needs too long  to find the sequence that best optimizes the execution speed. Meanwhile, O2 and O3 have also the same impact on CR and MR which is almost the same for both levels (CR median value is 8\% and around 5\% for MR).
+Figure 6 shows the distribution of memory, CPU and speedup improvement across new Csmith programs. For each non-functional property, we apply O2, O3 and best NS sequences. Speedup results show that the three optimization strategies lead to almost the same distribution with a median value of 1.12 for speedup. This can be explained by the fact that NS might need more time to find the sequence that best optimizes the execution speed. Meanwhile, O2 and O3 have also the same impact on CR and MR which is almost the same for both levels (CR median value is 8\% and around 5\% for MR).
 However, the impact of applying best generated sequences using NS clearly outperforms O2 and O3 with almost 10\% of CPU improvement and 7\% of memory improvement. This proves that NS sequences are efficient and can be used to optimize resource consumption of new Csmith programs. This result also proves that Csmith code generator applies the same rules and structures to generate C code. For this reason, applied optimization sequences always have a positive impact on the non-functional properties.
 
 
@@ -125,12 +125,12 @@ These results agree to the idea that compiler optimizations do not put too much 
 \subsubsection{RQ4. Trade-offs between non-functional properties}
 \paragraph{Method}
 Finally, to answer RQ4, we use NOTICE again to find trade-offs between non-functional properties. In this experiment, we choose to focus on the trade-off \textit{$<$ExecutionTime--MemoryUsage$>$}. In addition to our NS adaptation for multi-objective optimization, we implement a commonly used multi-objective approach namely NSGA-II~\cite{deb2002fast}. We denote our NS adaptation by \textit{NS-II}. We recall that NS-II is not a multi-objective approach as NSGA-II. It uses the same NS algorithm. However, in this experiment, it returns the optimal Pareto front solutions instead of returning one optimal solution relative to one goal. 
-Apart from that, we apply different optimization strategies to assess our approach. 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Ressources/rq3.pdf}
 	\caption{Impact of speedup improvement on memory and CPU consumption for each optimization strategy}
 \end{figure}
+Apart from that, we apply different optimization strategies to assess our approach. 
 
 First, we apply standard GCC levels. Second, we apply best generated sequences relative to memory and speedup optimization (the same sequences that we have used in RQ2). Thus, we denote by \textit{NS-MR} the sequence that yields to the best memory improvement MR and \textit{NS-S} to the sequence that leads to the best speedup. This is useful to compare mono-objective solutions to new generated ones.
 
