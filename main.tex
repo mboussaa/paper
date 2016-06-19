@@ -391,13 +391,35 @@
 \usepackage{lipsum}
 
 \usepackage{etoolbox}
+ \usepackage{fancyhdr}
+ \usepackage{kantlipsum}
  
+ 
+ \fancyhf{}
+ \fancyfoot[C]{SCEES}    %%% change C to L or R as needed
+ \renewcommand{\headrulewidth}{0pt}
+ \renewcommand{\footrulewidth}{0pt}
+ 
+ \fancypagestyle{plain}{
+ 	\fancyhf{}
+ 	\fancyhead[C]{Conference on \LaTeX}     %% C or L or R.
+ 	\fancyfoot[L]{This is a notice}%                        %% C or L or R.
+ 	\renewcommand{\footrulewidth}{0pt} 
+ 	\renewcommand{\headrulewidth}{0pt}
+ }
+ \usepackage{eso-pic}
 \begin{document}
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 \title{NOTICE: A Framework for Non-functional Testing of Compilers}
 
+\AddToShipoutPictureBG*{%
+	\AtPageUpperLeft{%
+		\setlength\unitlength{1in}%
+		\hspace*{\dimexpr0.5\paperwidth\relax}%%  change \dimexpr0.5\paperwidth\relax appropriately
+		\makebox(0,-0.75)[c]{2016 IEEE International Conference on Software Quality, Reliability and Security}%
+	}}
 
 % author names and affiliations
 % use a multiple column layout for up to three different
